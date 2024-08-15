@@ -28,6 +28,8 @@ jobs:
         with:
           fetch-depth: 0
           lfs: true
+      - name: Ensure Library folder exists
+        run: mkdir -p Library
       - uses: actions/cache@v3
         with:
           path: Library
