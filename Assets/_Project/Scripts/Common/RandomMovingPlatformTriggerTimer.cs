@@ -12,6 +12,8 @@ namespace QuackleBit
 {
     public class RandomMovingPlatformTriggerTimer : MonoBehaviour
     {
+        [SerializeField] private float minTime = 0f;
+        [SerializeField] private float maxTime = 2f;
         private MovingPlatform movingPlatform;
         
         private void Awake()
@@ -21,7 +23,7 @@ namespace QuackleBit
 
         private void Start()
         {
-            StartCoroutine(TriggerMovingPlatformInRandomTime(0, 3));
+            StartCoroutine(TriggerMovingPlatformInRandomTime(minTime, maxTime));
         }
         
         private IEnumerator TriggerMovingPlatformInRandomTime(float min, float max)
