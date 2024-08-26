@@ -248,7 +248,7 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   UpdateMode: 0
-  MinDistanceToGoal: 0.1
+  MinDistanceToGoal: 0.0001
   OnlyMovesWhenPlayerIsColliding: 0
   OnlyMovesWhenCharacterIsColliding: 0
   ResetPositionWhenPlayerRespawns: 0
