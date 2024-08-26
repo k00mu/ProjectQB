@@ -65,6 +65,57 @@ MonoBehaviour:
   NewInputExtendsBuffer: 0
   MaximumBufferDuration: 0.25
   CurrentWeapon: {fileID: 0}
+--- !u!1 &2206346266133622084
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5695609825840107723}
+  - component: {fileID: 2154628864836821403}
+  m_Layer: 9
+  m_Name: Deflect
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5695609825840107723
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2206346266133622084}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7449078595268460863}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2154628864836821403
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2206346266133622084}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfe496f25bfc2d44faaf15027aee9731, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AbilityStartFeedbacks: {fileID: 0}
+  AbilityStopFeedbacks: {fileID: 0}
+  AbilityPermitted: 1
+  BlockingMovementStates: 
+  BlockingConditionStates: 
+  _deflectorOffset: {x: 1, y: 0, z: 0}
+  _deflectorSize: {x: 0.3, y: 2.5}
 --- !u!1 &3301496121910281633
 GameObject:
   m_ObjectHideFlags: 0
@@ -552,6 +603,7 @@ Transform:
   - {fileID: 4417389368504173080}
   - {fileID: 5032752681702217784}
   - {fileID: 6032685929506313884}
+  - {fileID: 5695609825840107723}
   m_Father: {fileID: 8759346489271743860}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &9190756190095144170
@@ -803,6 +855,7 @@ MonoBehaviour:
   - {fileID: 4098957929460376737}
   - {fileID: 61128346624650857}
   - {fileID: 7284092513406115726}
+  - {fileID: 2206346266133622084}
   FlipModelOnDirectionChange: 1
   ModelFlipValue: {x: -1, y: 1, z: 1}
   RotateModelOnDirectionChange: 0
