@@ -2,6 +2,7 @@
   "dependencies": {
     "com.kom-u.komutils": "https://github.com/kom-u/Komutils.git",
     "com.kyrylokuzyk.primetween": "file:../Assets/Plugins/PrimeTween/internal/com.kyrylokuzyk.primetween.tgz",
+    "com.seanba.super-tiled2unity": "https://github.com/kom-u/SuperTiled2.git",
     "com.unity.2d.aseprite": "1.1.4",
     "com.unity.2d.pixel-perfect": "5.0.3",
     "com.unity.2d.psdimporter": "8.0.5",
