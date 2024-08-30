@@ -1,0 +1,1695 @@
+fileFormatVersion: 2
+guid: 74817ced88fc16643959756c42d96469
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 62a9f0aa5b59740cfbadc7e5f9823bb0, type: 3}
+  textureImporterSettings:
+    alphaSource: 1
+    mipMapMode: 0
+    enableMipMap: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+    convertToNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+    swizzle: 50462976
+    isReadable: 0
+    streamingMipmaps: 0
+    streamingMipmapsPriority: 0
+    vTOnly: 0
+    ignoreMipmapLimit: 0
+    nPOTScale: 1
+    sRGBTexture: 1
+    spriteMode: 2
+    spriteExtrude: 1
+    spriteMeshType: 1
+    alignment: 0
+    spritePivot: {x: 0.5, y: 0.5}
+    spritePixelsToUnits: 13
+    spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+    spriteGenerateFallbackPhysicsShape: 0
+    generateCubemap: 6
+    cubemapConvolution: 0
+    seamlessCubemap: 0
+    alphaIsTransparency: 1
+    spriteTessellationDetail: -1
+    textureType: 8
+    textureShape: 1
+    singleChannelComponent: 0
+    flipbookRows: 0
+    flipbookColumns: 0
+    ignorePngGamma: 0
+    cookieMode: 0
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+    normalMap: 0
+    textureFormat: 0
+    maxTextureSize: 0
+    lightmap: 0
+    compressionQuality: 0
+    linearTexture: 0
+    grayScaleToAlpha: 0
+    rGBM: 0
+    cubemapConvolutionSteps: 0
+    cubemapConvolutionExponent: 0
+    maxTextureSizeSet: 0
+    compressionQualitySet: 0
+    textureFormatSet: 0
+    applyGammaDecoding: 0
+  previousAsepriteImporterSettings:
+    fileImportMode: 1
+    importHiddenLayers: 0
+    layerImportMode: 1
+    defaultPivotSpace: 0
+    defaultPivotAlignment: 7
+    customPivotPosition: {x: 0.5, y: 0.5}
+    mosaicPadding: 4
+    spritePadding: 0
+    generateModelPrefab: 1
+    generateAnimationClips: 1
+    addSortingGroup: 1
+    addShadowCasters: 0
+  asepriteImporterSettings:
+    fileImportMode: 1
+    importHiddenLayers: 0
+    layerImportMode: 1
+    defaultPivotSpace: 0
+    defaultPivotAlignment: 7
+    customPivotPosition: {x: 0.5, y: 0.5}
+    mosaicPadding: 4
+    spritePadding: 0
+    generateModelPrefab: 1
+    generateAnimationClips: 1
+    addSortingGroup: 1
+    addShadowCasters: 0
+  importFileNodeState: 1
+  platformSettingsDirtyTick: 638606477956582336
+  textureAssetName: 
+  singleSpriteImportData:
+  - name: 
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    spriteID: 
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 0, y: 0}
+  animatedSpriteImportData:
+  - name: Ro_deflect_attack_dying_Frame_0
+    originalName: 
+    pivot: {x: 0.54545456, y: -0.4848485}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 113
+      y: 279
+      width: 22
+      height: 33
+    spriteID: e77b9e8018c204f4eb33396c900eda12
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 113, y: 279}
+  - name: Ro_deflect_attack_dying_Frame_1
+    originalName: 
+    pivot: {x: 0.57894737, y: -0.4848485}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 149
+      y: 306
+      width: 19
+      height: 33
+    spriteID: c91d6a2c8ce5fe34ebf82c4063937296
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 149, y: 306}
+  - name: Ro_deflect_attack_dying_Frame_2
+    originalName: 
+    pivot: {x: 0.5714286, y: -0.5}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 113
+      y: 476
+      width: 21
+      height: 32
+    spriteID: 62a3def244b4dde4c8b594c83424f237
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 113, y: 476}
+  - name: Ro_deflect_attack_dying_Frame_3
+    originalName: 
+    pivot: {x: 0.56, y: -0.5}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 113
+      y: 161
+      width: 25
+      height: 32
+    spriteID: 50756b282fb87674eae72a1ad8ba0b2b
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 113, y: 161}
+  - name: Ro_deflect_attack_dying_Frame_4
+    originalName: 
+    pivot: {x: 0.5769231, y: -0.516129}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 113
+      y: 83
+      width: 26
+      height: 31
+    spriteID: b91c003b7f7145d439c91a97371b6f04
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 113, y: 83}
+  - name: Ro_deflect_attack_dying_Frame_5
+    originalName: 
+    pivot: {x: 0.6956522, y: -0.62068963}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 149
+      y: 4
+      width: 23
+      height: 29
+    spriteID: ec26289d770f82a48a78202ff9d81baf
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 149, y: 4}
+  - name: Ro_deflect_attack_dying_Frame_6
+    originalName: 
+    pivot: {x: 0.6956522, y: -0.6896552}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 149
+      y: 41
+      width: 23
+      height: 29
+    spriteID: 3623ce2d92004584fbf0244ab73e00c6
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 149, y: 41}
+  - name: Ro_deflect_attack_dying_Frame_7
+    originalName: 
+    pivot: {x: 0.6956522, y: -0.6896552}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 149
+      y: 78
+      width: 23
+      height: 29
+    spriteID: be112b8f905f9664fa8558b06d990f24
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 149, y: 78}
+  - name: Ro_deflect_attack_dying_Frame_8
+    originalName: 
+    pivot: {x: 0.6956522, y: -0.6896552}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 149
+      y: 115
+      width: 23
+      height: 29
+    spriteID: d0ee6440dc6b8c64584f04b50f9ccbc3
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 149, y: 115}
+  - name: Ro_deflect_attack_dying_Frame_9
+    originalName: 
+    pivot: {x: 0.6956522, y: -0.6896552}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 149
+      y: 152
+      width: 23
+      height: 29
+    spriteID: 616ba90292295c944b9855790c813c5d
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 149, y: 152}
+  - name: Ro_deflect_attack_dying_Frame_10
+    originalName: 
+    pivot: {x: 0.4615385, y: -2.909091}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 49
+      y: 323
+      width: 13
+      height: 11
+    spriteID: aa288ead5e3fe5a4690ad7548f6134f9
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 49, y: 323}
+  - name: Ro_deflect_attack_dying_Frame_11
+    originalName: 
+    pivot: {x: 0.4615385, y: -1.4545455}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 49
+      y: 342
+      width: 13
+      height: 11
+    spriteID: dcc02ca239dfac04eaa2976d9cd9c28a
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 49, y: 342}
+  - name: Ro_deflect_attack_dying_Frame_12
+    originalName: 
+    pivot: {x: 0.5, y: -2.2857144}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 55
+      y: 106
+      width: 6
+      height: 7
+    spriteID: ce31aa8f1694bcf4b84e3f9c18871bfa
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 55, y: 106}
+  - name: Ro_deflect_attack_dying_Frame_13
+    originalName: 
+    pivot: {x: 0.4, y: -1.2666668}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 55
+      y: 83
+      width: 5
+      height: 15
+    spriteID: 3c55ed7c19dc19547bb7d0ab173f95c7
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 55, y: 83}
+  - name: Ro_deflect_attack_dying_Frame_14
+    originalName: 
+    pivot: {x: 0.6666667, y: -3.1000001}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 49
+      y: 362
+      width: 3
+      height: 10
+    spriteID: 5d9a8cdeeeac8984d9a3f5ac787f7994
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 49, y: 362}
+  - name: Ro_deflect_attack_dying_Frame_15
+    originalName: 
+    pivot: {x: 1, y: -45}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 49
+      y: 380
+      width: 1
+      height: 1
+    spriteID: 2e9b1d355bee1c24c834f3c508b36c66
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 49, y: 380}
+  - name: Ro_deflect_attack_dying_Frame_16
+    originalName: 
+    pivot: {x: 0.6363636, y: -0.516129}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 113
+      y: 398
+      width: 22
+      height: 31
+    spriteID: e1006e4a7074f694ab1b70ee42f9e28d
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 113, y: 398}
+  - name: Ro_deflect_attack_dying_Frame_17
+    originalName: 
+    pivot: {x: 0.44444445, y: -0.516129}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 441
+      width: 36
+      height: 31
+    spriteID: 4c31a647111cfad48a6b283d898d2fd7
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 441}
+  - name: Ro_deflect_attack_dying_Frame_18
+    originalName: 
+    pivot: {x: 0.5666667, y: -0.516129}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 71
+      y: 322
+      width: 30
+      height: 31
+    spriteID: 22a52e6649567b04790c99481632e5e6
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 71, y: 322}
+  - name: Ro_deflect_attack_dying_Frame_19
+    originalName: 
+    pivot: {x: 0.61538464, y: -0.5}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 122
+      width: 39
+      height: 32
+    spriteID: dbd2527e97c3c644f9f818591f7e5b4e
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 122}
+  - name: Ro_deflect_attack_dying_Frame_20
+    originalName: 
+    pivot: {x: 0.5813953, y: -0.516129}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 83
+      width: 43
+      height: 31
+    spriteID: 3fb8600b9426bde4e8c0366465d45dc2
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 83}
+  - name: Ro_deflect_attack_dying_Frame_21
+    originalName: 
+    pivot: {x: 0.5945946, y: -0.516129}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 323
+      width: 37
+      height: 31
+    spriteID: a0aa9ea7dc098fe448686de7f073650c
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 323}
+  - name: Ro_deflect_attack_dying_Frame_22
+    originalName: 
+    pivot: {x: 0.5945946, y: -0.516129}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 362
+      width: 37
+      height: 31
+    spriteID: 3f213917e15809f4d97ed813de07d14e
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 362}
+  - name: Ro_deflect_attack_dying_Frame_23
+    originalName: 
+    pivot: {x: 0.6538462, y: -0.5}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 113
+      y: 43
+      width: 26
+      height: 32
+    spriteID: c04769fd3a1233a4597ae25643291bc9
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 113, y: 43}
+  - name: Ro_deflect_attack_dying_Frame_24
+    originalName: 
+    pivot: {x: 0.71428573, y: -0.516129}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 149
+      y: 189
+      width: 21
+      height: 31
+    spriteID: 2dc8c305e2964ef44ad6bf4e8aac1c56
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 149, y: 189}
+  - name: Ro_deflect_attack_dying_Frame_25
+    originalName: 
+    pivot: {x: 0.71428573, y: -0.516129}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 71
+      y: 442
+      width: 28
+      height: 31
+    spriteID: c9efe5268b166584c9109b8a19ca5a96
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 71, y: 442}
+  - name: Ro_deflect_attack_dying_Frame_26
+    originalName: 
+    pivot: {x: 0.54545456, y: -0.516129}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 71
+      y: 82
+      width: 33
+      height: 31
+    spriteID: 35580eff04f90654bb6b00ed1d18d6c4
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 71, y: 82}
+  - name: Ro_deflect_attack_dying_Frame_27
+    originalName: 
+    pivot: {x: 0.54545456, y: -0.516129}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 71
+      y: 121
+      width: 33
+      height: 31
+    spriteID: efc46c7b76eaae04185779bdf74afc76
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 71, y: 121}
+  - name: Ro_deflect_attack_dying_Frame_28
+    originalName: 
+    pivot: {x: 0.5, y: -0.516129}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 71
+      y: 4
+      width: 34
+      height: 31
+    spriteID: 456a5aa81240ba9489d4372d7495157e
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 71, y: 4}
+  - name: Ro_deflect_attack_dying_Frame_29
+    originalName: 
+    pivot: {x: 0.68, y: -0.516129}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 113
+      y: 201
+      width: 25
+      height: 31
+    spriteID: 71fab0a78e97f104690010240c7c29c4
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 113, y: 201}
+  - name: Ro_deflect_attack_dying_Frame_30
+    originalName: 
+    pivot: {x: 0.5666667, y: -0.516129}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 71
+      y: 361
+      width: 30
+      height: 31
+    spriteID: 3ac74eeeb7af08248bb2f1c9e2961474
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 71, y: 361}
+  - name: Ro_deflect_attack_dying_Frame_31
+    originalName: 
+    pivot: {x: 0.4857143, y: -0.46875}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 401
+      width: 35
+      height: 32
+    spriteID: 18fc913688e43a6428417df8c1d89ee8
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 401}
+  - name: Ro_deflect_attack_dying_Frame_32
+    originalName: 
+    pivot: {x: 0.5277778, y: -0.46875}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 283
+      width: 36
+      height: 32
+    spriteID: b909155aa533d8d45bcfba6b1e4754b7
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 283}
+  - name: Ro_deflect_attack_dying_Frame_33
+    originalName: 
+    pivot: {x: 0.58064514, y: -0.516129}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 71
+      y: 244
+      width: 31
+      height: 31
+    spriteID: 22cac0fa2c7d6a44288c955a77bddede
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 71, y: 244}
+  - name: Ro_deflect_attack_dying_Frame_34
+    originalName: 
+    pivot: {x: 0.71428573, y: -0.516129}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 149
+      y: 228
+      width: 21
+      height: 31
+    spriteID: de2be2036be248945b42790a44809ec1
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 149, y: 228}
+  - name: Ro_deflect_attack_dying_Frame_35
+    originalName: 
+    pivot: {x: 0.71428573, y: -0.516129}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 113
+      y: 4
+      width: 28
+      height: 31
+    spriteID: 52b3f7e7a032a6341bb9667e3f42aacd
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 113, y: 4}
+  - name: Ro_deflect_attack_dying_Frame_36
+    originalName: 
+    pivot: {x: 0.61290324, y: -0.46875}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 71
+      y: 160
+      width: 31
+      height: 32
+    spriteID: 3b1e63bb4408b8048b861c9e7dfdde13
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 71, y: 160}
+  - name: Ro_deflect_attack_dying_Frame_37
+    originalName: 
+    pivot: {x: 0.43589744, y: -0.46875}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 162
+      width: 39
+      height: 32
+    spriteID: ad6c55da6adad5044aa690116877830b
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 162}
+  - name: Ro_deflect_attack_dying_Frame_38
+    originalName: 
+    pivot: {x: 0.58064514, y: -0.516129}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 71
+      y: 283
+      width: 31
+      height: 31
+    spriteID: 6b3623491264cb94f8fa480ae9184487
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 71, y: 283}
+  - name: Ro_deflect_attack_dying_Frame_39
+    originalName: 
+    pivot: {x: 0.6363636, y: -0.516129}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 113
+      y: 437
+      width: 22
+      height: 31
+    spriteID: 9e8c1d56a5726714981498cbd498a93d
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 113, y: 437}
+  - name: Ro_deflect_attack_dying_Frame_40
+    originalName: 
+    pivot: {x: 0.5925926, y: -0.6388889}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 71
+      y: 200
+      width: 27
+      height: 36
+    spriteID: 3574e0ce06d62774193b1e68d6993844
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 71, y: 200}
+  - name: Ro_deflect_attack_dying_Frame_41
+    originalName: 
+    pivot: {x: 0.42307693, y: -0.7058824}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 71
+      y: 400
+      width: 26
+      height: 34
+    spriteID: d76eebec36f0ea84f9c6e9bbf875e159
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 71, y: 400}
+  - name: Ro_deflect_attack_dying_Frame_42
+    originalName: 
+    pivot: {x: 0.44444445, y: -0.4848485}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 202
+      width: 36
+      height: 33
+    spriteID: 6929d686d0f281e4c8135b1f764b111e
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 202}
+  - name: Ro_deflect_attack_dying_Frame_43
+    originalName: 
+    pivot: {x: 0.5, y: -0.516129}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 71
+      y: 43
+      width: 34
+      height: 31
+    spriteID: 2d5db06b415d4434fae6ad7c0fb66528
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 71, y: 43}
+  - name: Ro_deflect_attack_dying_Frame_44
+    originalName: 
+    pivot: {x: 0.43243244, y: -0.46875}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 243
+      width: 37
+      height: 32
+    spriteID: 04141b23d1c7f6b45ab8db77dd30a237
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 243}
+  - name: Ro_deflect_attack_dying_Frame_45
+    originalName: 
+    pivot: {x: 0.4915254, y: -0.46875}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 4
+      width: 59
+      height: 32
+    spriteID: 1dfe7871f788bba478656ee01dfd5e08
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 4}
+  - name: Ro_deflect_attack_dying_Frame_46
+    originalName: 
+    pivot: {x: 0.4901961, y: -0.516129}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 44
+      width: 51
+      height: 31
+    spriteID: 68789e7ca763e404eb3d6ad041d827d9
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 44}
+  - name: Ro_deflect_attack_dying_Frame_47
+    originalName: 
+    pivot: {x: 0.6956522, y: -0.516129}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 113
+      y: 320
+      width: 23
+      height: 31
+    spriteID: 3624de4035bfa2b45b5ec4d181ce3f7c
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 113, y: 320}
+  - name: Ro_deflect_attack_dying_Frame_48
+    originalName: 
+    pivot: {x: 0.6666667, y: -0.516129}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 149
+      y: 267
+      width: 21
+      height: 31
+    spriteID: cb03e8e46c96f764b9a6e31c18393e87
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 149, y: 267}
+  - name: Ro_deflect_attack_dying_Frame_49
+    originalName: 
+    pivot: {x: 0.68, y: -0.516129}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 113
+      y: 240
+      width: 25
+      height: 31
+    spriteID: ceef8f2d58201fa48834033900d41a93
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 113, y: 240}
+  - name: Ro_deflect_attack_dying_Frame_50
+    originalName: 
+    pivot: {x: 0.61538464, y: -0.516129}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 113
+      y: 122
+      width: 26
+      height: 31
+    spriteID: d8d05b74fbb6ea741b90fce3ed542475
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 113, y: 122}
+  - name: Ro_deflect_attack_dying_Frame_51
+    originalName: 
+    pivot: {x: 0.6956522, y: -0.516129}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 113
+      y: 359
+      width: 23
+      height: 31
+    spriteID: 99d9b20333799f844a8f1e5b4b60e83f
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 113, y: 359}
+  spriteSheetImportData: []
+  asepriteLayers:
+  - layerIndex: 0
+    guid: -272293348
+    name: Ro_deflect_attack_dying
+    layerFlags: 0
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: Ro_deflect_attack_dying_Frame_0
+      frameIndex: 0
+      additiveSortOrder: 0
+      cellRect:
+        x: 20
+        y: 16
+        width: 22
+        height: 33
+      spriteId: e77b9e8018c204f4eb33396c900eda12
+    - name: Ro_deflect_attack_dying_Frame_1
+      frameIndex: 1
+      additiveSortOrder: 0
+      cellRect:
+        x: 21
+        y: 16
+        width: 19
+        height: 33
+      spriteId: c91d6a2c8ce5fe34ebf82c4063937296
+    - name: Ro_deflect_attack_dying_Frame_2
+      frameIndex: 2
+      additiveSortOrder: 0
+      cellRect:
+        x: 20
+        y: 16
+        width: 21
+        height: 32
+      spriteId: 62a3def244b4dde4c8b594c83424f237
+    - name: Ro_deflect_attack_dying_Frame_3
+      frameIndex: 3
+      additiveSortOrder: 0
+      cellRect:
+        x: 18
+        y: 16
+        width: 25
+        height: 32
+      spriteId: 50756b282fb87674eae72a1ad8ba0b2b
+    - name: Ro_deflect_attack_dying_Frame_4
+      frameIndex: 4
+      additiveSortOrder: 0
+      cellRect:
+        x: 17
+        y: 16
+        width: 26
+        height: 31
+      spriteId: b91c003b7f7145d439c91a97371b6f04
+    - name: Ro_deflect_attack_dying_Frame_5
+      frameIndex: 5
+      additiveSortOrder: 0
+      cellRect:
+        x: 16
+        y: 18
+        width: 23
+        height: 29
+      spriteId: ec26289d770f82a48a78202ff9d81baf
+    - name: Ro_deflect_attack_dying_Frame_6
+      frameIndex: 6
+      additiveSortOrder: 0
+      cellRect:
+        x: 16
+        y: 20
+        width: 23
+        height: 29
+      spriteId: 3623ce2d92004584fbf0244ab73e00c6
+    - name: Ro_deflect_attack_dying_Frame_7
+      frameIndex: 7
+      additiveSortOrder: 0
+      cellRect:
+        x: 16
+        y: 20
+        width: 23
+        height: 29
+      spriteId: be112b8f905f9664fa8558b06d990f24
+    - name: Ro_deflect_attack_dying_Frame_8
+      frameIndex: 8
+      additiveSortOrder: 0
+      cellRect:
+        x: 16
+        y: 20
+        width: 23
+        height: 29
+      spriteId: d0ee6440dc6b8c64584f04b50f9ccbc3
+    - name: Ro_deflect_attack_dying_Frame_9
+      frameIndex: 9
+      additiveSortOrder: 0
+      cellRect:
+        x: 16
+        y: 20
+        width: 23
+        height: 29
+      spriteId: 616ba90292295c944b9855790c813c5d
+    - name: Ro_deflect_attack_dying_Frame_10
+      frameIndex: 10
+      additiveSortOrder: 0
+      cellRect:
+        x: 26
+        y: 32
+        width: 13
+        height: 11
+      spriteId: aa288ead5e3fe5a4690ad7548f6134f9
+    - name: Ro_deflect_attack_dying_Frame_11
+      frameIndex: 11
+      additiveSortOrder: 0
+      cellRect:
+        x: 26
+        y: 16
+        width: 13
+        height: 11
+      spriteId: dcc02ca239dfac04eaa2976d9cd9c28a
+    - name: Ro_deflect_attack_dying_Frame_12
+      frameIndex: 12
+      additiveSortOrder: 0
+      cellRect:
+        x: 29
+        y: 16
+        width: 6
+        height: 7
+      spriteId: ce31aa8f1694bcf4b84e3f9c18871bfa
+    - name: Ro_deflect_attack_dying_Frame_13
+      frameIndex: 13
+      additiveSortOrder: 0
+      cellRect:
+        x: 30
+        y: 19
+        width: 5
+        height: 15
+      spriteId: 3c55ed7c19dc19547bb7d0ab173f95c7
+    - name: Ro_deflect_attack_dying_Frame_14
+      frameIndex: 14
+      additiveSortOrder: 0
+      cellRect:
+        x: 30
+        y: 31
+        width: 3
+        height: 10
+      spriteId: 5d9a8cdeeeac8984d9a3f5ac787f7994
+    - name: Ro_deflect_attack_dying_Frame_15
+      frameIndex: 15
+      additiveSortOrder: 0
+      cellRect:
+        x: 31
+        y: 45
+        width: 1
+        height: 1
+      spriteId: 2e9b1d355bee1c24c834f3c508b36c66
+    - name: Ro_deflect_attack_dying_Frame_16
+      frameIndex: 16
+      additiveSortOrder: 0
+      cellRect:
+        x: 18
+        y: 16
+        width: 22
+        height: 31
+      spriteId: e1006e4a7074f694ab1b70ee42f9e28d
+    - name: Ro_deflect_attack_dying_Frame_17
+      frameIndex: 17
+      additiveSortOrder: 0
+      cellRect:
+        x: 16
+        y: 16
+        width: 36
+        height: 31
+      spriteId: 4c31a647111cfad48a6b283d898d2fd7
+    - name: Ro_deflect_attack_dying_Frame_18
+      frameIndex: 18
+      additiveSortOrder: 0
+      cellRect:
+        x: 15
+        y: 16
+        width: 30
+        height: 31
+      spriteId: 22a52e6649567b04790c99481632e5e6
+    - name: Ro_deflect_attack_dying_Frame_19
+      frameIndex: 19
+      additiveSortOrder: 0
+      cellRect:
+        x: 8
+        y: 16
+        width: 39
+        height: 32
+      spriteId: dbd2527e97c3c644f9f818591f7e5b4e
+    - name: Ro_deflect_attack_dying_Frame_20
+      frameIndex: 20
+      additiveSortOrder: 0
+      cellRect:
+        x: 7
+        y: 16
+        width: 43
+        height: 31
+      spriteId: 3fb8600b9426bde4e8c0366465d45dc2
+    - name: Ro_deflect_attack_dying_Frame_21
+      frameIndex: 21
+      additiveSortOrder: 0
+      cellRect:
+        x: 10
+        y: 16
+        width: 37
+        height: 31
+      spriteId: a0aa9ea7dc098fe448686de7f073650c
+    - name: Ro_deflect_attack_dying_Frame_22
+      frameIndex: 22
+      additiveSortOrder: 0
+      cellRect:
+        x: 10
+        y: 16
+        width: 37
+        height: 31
+      spriteId: 3f213917e15809f4d97ed813de07d14e
+    - name: Ro_deflect_attack_dying_Frame_23
+      frameIndex: 23
+      additiveSortOrder: 0
+      cellRect:
+        x: 15
+        y: 16
+        width: 26
+        height: 32
+      spriteId: c04769fd3a1233a4597ae25643291bc9
+    - name: Ro_deflect_attack_dying_Frame_24
+      frameIndex: 24
+      additiveSortOrder: 0
+      cellRect:
+        x: 17
+        y: 16
+        width: 21
+        height: 31
+      spriteId: 2dc8c305e2964ef44ad6bf4e8aac1c56
+    - name: Ro_deflect_attack_dying_Frame_25
+      frameIndex: 25
+      additiveSortOrder: 0
+      cellRect:
+        x: 12
+        y: 16
+        width: 28
+        height: 31
+      spriteId: c9efe5268b166584c9109b8a19ca5a96
+    - name: Ro_deflect_attack_dying_Frame_26
+      frameIndex: 26
+      additiveSortOrder: 0
+      cellRect:
+        x: 14
+        y: 16
+        width: 33
+        height: 31
+      spriteId: 35580eff04f90654bb6b00ed1d18d6c4
+    - name: Ro_deflect_attack_dying_Frame_27
+      frameIndex: 27
+      additiveSortOrder: 0
+      cellRect:
+        x: 14
+        y: 16
+        width: 33
+        height: 31
+      spriteId: efc46c7b76eaae04185779bdf74afc76
+    - name: Ro_deflect_attack_dying_Frame_28
+      frameIndex: 28
+      additiveSortOrder: 0
+      cellRect:
+        x: 15
+        y: 16
+        width: 34
+        height: 31
+      spriteId: 456a5aa81240ba9489d4372d7495157e
+    - name: Ro_deflect_attack_dying_Frame_29
+      frameIndex: 29
+      additiveSortOrder: 0
+      cellRect:
+        x: 15
+        y: 16
+        width: 25
+        height: 31
+      spriteId: 71fab0a78e97f104690010240c7c29c4
+    - name: Ro_deflect_attack_dying_Frame_30
+      frameIndex: 30
+      additiveSortOrder: 0
+      cellRect:
+        x: 15
+        y: 16
+        width: 30
+        height: 31
+      spriteId: 3ac74eeeb7af08248bb2f1c9e2961474
+    - name: Ro_deflect_attack_dying_Frame_31
+      frameIndex: 31
+      additiveSortOrder: 0
+      cellRect:
+        x: 15
+        y: 15
+        width: 35
+        height: 32
+      spriteId: 18fc913688e43a6428417df8c1d89ee8
+    - name: Ro_deflect_attack_dying_Frame_32
+      frameIndex: 32
+      additiveSortOrder: 0
+      cellRect:
+        x: 13
+        y: 15
+        width: 36
+        height: 32
+      spriteId: b909155aa533d8d45bcfba6b1e4754b7
+    - name: Ro_deflect_attack_dying_Frame_33
+      frameIndex: 33
+      additiveSortOrder: 0
+      cellRect:
+        x: 14
+        y: 16
+        width: 31
+        height: 31
+      spriteId: 22cac0fa2c7d6a44288c955a77bddede
+    - name: Ro_deflect_attack_dying_Frame_34
+      frameIndex: 34
+      additiveSortOrder: 0
+      cellRect:
+        x: 17
+        y: 16
+        width: 21
+        height: 31
+      spriteId: de2be2036be248945b42790a44809ec1
+    - name: Ro_deflect_attack_dying_Frame_35
+      frameIndex: 35
+      additiveSortOrder: 0
+      cellRect:
+        x: 12
+        y: 16
+        width: 28
+        height: 31
+      spriteId: 52b3f7e7a032a6341bb9667e3f42aacd
+    - name: Ro_deflect_attack_dying_Frame_36
+      frameIndex: 36
+      additiveSortOrder: 0
+      cellRect:
+        x: 13
+        y: 15
+        width: 31
+        height: 32
+      spriteId: 3b1e63bb4408b8048b861c9e7dfdde13
+    - name: Ro_deflect_attack_dying_Frame_37
+      frameIndex: 37
+      additiveSortOrder: 0
+      cellRect:
+        x: 15
+        y: 15
+        width: 39
+        height: 32
+      spriteId: ad6c55da6adad5044aa690116877830b
+    - name: Ro_deflect_attack_dying_Frame_38
+      frameIndex: 38
+      additiveSortOrder: 0
+      cellRect:
+        x: 14
+        y: 16
+        width: 31
+        height: 31
+      spriteId: 6b3623491264cb94f8fa480ae9184487
+    - name: Ro_deflect_attack_dying_Frame_39
+      frameIndex: 39
+      additiveSortOrder: 0
+      cellRect:
+        x: 18
+        y: 16
+        width: 22
+        height: 31
+      spriteId: 9e8c1d56a5726714981498cbd498a93d
+    - name: Ro_deflect_attack_dying_Frame_40
+      frameIndex: 40
+      additiveSortOrder: 0
+      cellRect:
+        x: 16
+        y: 23
+        width: 27
+        height: 36
+      spriteId: 3574e0ce06d62774193b1e68d6993844
+    - name: Ro_deflect_attack_dying_Frame_41
+      frameIndex: 41
+      additiveSortOrder: 0
+      cellRect:
+        x: 21
+        y: 24
+        width: 26
+        height: 34
+      spriteId: d76eebec36f0ea84f9c6e9bbf875e159
+    - name: Ro_deflect_attack_dying_Frame_42
+      frameIndex: 42
+      additiveSortOrder: 0
+      cellRect:
+        x: 16
+        y: 16
+        width: 36
+        height: 33
+      spriteId: 6929d686d0f281e4c8135b1f764b111e
+    - name: Ro_deflect_attack_dying_Frame_43
+      frameIndex: 43
+      additiveSortOrder: 0
+      cellRect:
+        x: 15
+        y: 16
+        width: 34
+        height: 31
+      spriteId: 2d5db06b415d4434fae6ad7c0fb66528
+    - name: Ro_deflect_attack_dying_Frame_44
+      frameIndex: 44
+      additiveSortOrder: 0
+      cellRect:
+        x: 16
+        y: 15
+        width: 37
+        height: 32
+      spriteId: 04141b23d1c7f6b45ab8db77dd30a237
+    - name: Ro_deflect_attack_dying_Frame_45
+      frameIndex: 45
+      additiveSortOrder: 0
+      cellRect:
+        x: 3
+        y: 15
+        width: 59
+        height: 32
+      spriteId: 1dfe7871f788bba478656ee01dfd5e08
+    - name: Ro_deflect_attack_dying_Frame_46
+      frameIndex: 46
+      additiveSortOrder: 0
+      cellRect:
+        x: 7
+        y: 16
+        width: 51
+        height: 31
+      spriteId: 68789e7ca763e404eb3d6ad041d827d9
+    - name: Ro_deflect_attack_dying_Frame_47
+      frameIndex: 47
+      additiveSortOrder: 0
+      cellRect:
+        x: 16
+        y: 16
+        width: 23
+        height: 31
+      spriteId: 3624de4035bfa2b45b5ec4d181ce3f7c
+    - name: Ro_deflect_attack_dying_Frame_48
+      frameIndex: 48
+      additiveSortOrder: 0
+      cellRect:
+        x: 18
+        y: 16
+        width: 21
+        height: 31
+      spriteId: cb03e8e46c96f764b9a6e31c18393e87
+    - name: Ro_deflect_attack_dying_Frame_49
+      frameIndex: 49
+      additiveSortOrder: 0
+      cellRect:
+        x: 15
+        y: 16
+        width: 25
+        height: 31
+      spriteId: ceef8f2d58201fa48834033900d41a93
+    - name: Ro_deflect_attack_dying_Frame_50
+      frameIndex: 50
+      additiveSortOrder: 0
+      cellRect:
+        x: 16
+        y: 16
+        width: 26
+        height: 31
+      spriteId: d8d05b74fbb6ea741b90fce3ed542475
+    - name: Ro_deflect_attack_dying_Frame_51
+      frameIndex: 51
+      additiveSortOrder: 0
+      cellRect:
+        x: 16
+        y: 16
+        width: 23
+        height: 31
+      spriteId: 99d9b20333799f844a8f1e5b4b60e83f
+    linkedCells: []
+    parentIndex: -1
+  platformSettings:
+  - name: DefaultTexturePlatform
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: Standalone
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: Android
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: WebGL
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  generatePhysicsShape: 0
+  secondarySpriteTextures: []
+  spritePackingTag: 
+  canvasSize: {x: 64, y: 64}

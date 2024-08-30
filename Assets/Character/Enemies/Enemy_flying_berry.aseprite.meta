@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: a49657d78fc258245856c8c3af33ca3b
+guid: 8010fd6f0375d2942952a63ab4534c10
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -35,7 +35,7 @@ ScriptedImporter:
     spriteMeshType: 1
     alignment: 0
     spritePivot: {x: 0.5, y: 0.5}
-    spritePixelsToUnits: 100
+    spritePixelsToUnits: 13
     spriteBorder: {x: 0, y: 0, z: 0, w: 0}
     spriteGenerateFallbackPhysicsShape: 0
     generateCubemap: 6
@@ -97,7 +97,7 @@ ScriptedImporter:
     addSortingGroup: 1
     addShadowCasters: 0
   importFileNodeState: 1
-  platformSettingsDirtyTick: 0
+  platformSettingsDirtyTick: 638606458680293586
   textureAssetName: 
   singleSpriteImportData:
   - name: 
@@ -121,18 +121,18 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
   animatedSpriteImportData:
-  - name: Enemy_botbomb_Frame_0
+  - name: Enemy_flying_berry_Frame_0
     originalName: 
-    pivot: {x: 0.5, y: -1.1428572}
+    pivot: {x: 0.47619048, y: -0.70000005}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 74
-      y: 52
-      width: 22
-      height: 14
-    spriteID: 174c7096a07879c49abb3a6fd3e377b2
+      x: 96
+      y: 76
+      width: 21
+      height: 30
+    spriteID: 75078af8c58d28c4d85924f87f51df89
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -140,19 +140,19 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 74, y: 52}
-  - name: Enemy_botbomb_Frame_1
+    uvTransform: {x: 96, y: 76}
+  - name: Enemy_flying_berry_Frame_1
     originalName: 
-    pivot: {x: 0.5, y: -1.1428572}
+    pivot: {x: 0.55, y: -0.65625}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 74
-      y: 74
-      width: 22
-      height: 14
-    spriteID: 8ef69b8364ce9694faa869eef5976fd1
+      x: 38
+      y: 210
+      width: 20
+      height: 32
+    spriteID: 9dbcc378356ebcf408aee995c66b324b
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -160,19 +160,19 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 74, y: 74}
-  - name: Enemy_botbomb_Frame_2
+    uvTransform: {x: 38, y: 210}
+  - name: Enemy_flying_berry_Frame_2
     originalName: 
-    pivot: {x: 0.5, y: -1.1428572}
+    pivot: {x: 0.5, y: -0.7741935}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 74
-      y: 96
-      width: 22
-      height: 14
-    spriteID: a869c1d41649f3c4db5228d6271aee24
+      x: 68
+      y: 116
+      width: 20
+      height: 31
+    spriteID: ce2838f007d7b644495067aba36a4512
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -180,19 +180,19 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 74, y: 96}
-  - name: Enemy_botbomb_Frame_3
+    uvTransform: {x: 68, y: 116}
+  - name: Enemy_flying_berry_Frame_3
     originalName: 
-    pivot: {x: 0.5, y: -1}
+    pivot: {x: 0.5, y: -0.86666673}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 44
-      y: 206
-      width: 22
-      height: 16
-    spriteID: cb8f1fa191d4f394ebb113977826142b
+      x: 68
+      y: 155
+      width: 20
+      height: 30
+    spriteID: fb99c863a75428f4e9fbaa9aaa44043f
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -200,219 +200,19 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 44, y: 206}
-  - name: Enemy_botbomb_Frame_4
+    uvTransform: {x: 68, y: 155}
+  - name: Enemy_flying_berry_Frame_4
     originalName: 
-    pivot: {x: 0.5, y: -0.9411765}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 44
-      y: 56
-      width: 22
-      height: 17
-    spriteID: a8fced6760173bd45be5b8f9903f5be6
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 44, y: 56}
-  - name: Enemy_botbomb_Frame_5
-    originalName: 
-    pivot: {x: 0.5, y: -0.9411765}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 44
-      y: 81
-      width: 22
-      height: 17
-    spriteID: 56de246aafe48494aacff2b24a33a751
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 44, y: 81}
-  - name: Enemy_botbomb_Frame_6
-    originalName: 
-    pivot: {x: 0.5, y: -0.9411765}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 44
-      y: 106
-      width: 22
-      height: 17
-    spriteID: a8935386ca7e75b4eb87f87cc4c55d28
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 44, y: 106}
-  - name: Enemy_botbomb_Frame_7
-    originalName: 
-    pivot: {x: 0.5, y: -1}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 44
-      y: 230
-      width: 22
-      height: 16
-    spriteID: e5e2677db0262df4aac0912f9c60b184
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 44, y: 230}
-  - name: Enemy_botbomb_Frame_8
-    originalName: 
-    pivot: {x: 0.5, y: -1}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 74
-      y: 4
-      width: 22
-      height: 16
-    spriteID: 3ec3f75818c2a4947a8ce3245eb1be68
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 74, y: 4}
-  - name: Enemy_botbomb_Frame_9
-    originalName: 
-    pivot: {x: 0.5, y: -0.9411765}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 44
-      y: 131
-      width: 22
-      height: 17
-    spriteID: 7eb6967b1caebb84ca7b9715ceb1e5e3
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 44, y: 131}
-  - name: Enemy_botbomb_Frame_10
-    originalName: 
-    pivot: {x: 0.5, y: -0.9411765}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 44
-      y: 156
-      width: 22
-      height: 17
-    spriteID: 6b40316e30a7a8643acf2f73de96a8b2
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 44, y: 156}
-  - name: Enemy_botbomb_Frame_11
-    originalName: 
-    pivot: {x: 0.5, y: -0.9411765}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 44
-      y: 181
-      width: 22
-      height: 17
-    spriteID: b1e84e4abae93534685bddb85ef8071a
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 44, y: 181}
-  - name: Enemy_botbomb_Frame_12
-    originalName: 
-    pivot: {x: 0.5, y: -1.1428572}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 74
-      y: 118
-      width: 22
-      height: 14
-    spriteID: 3edfd9e901e507542ad664b782107328
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 74, y: 118}
-  - name: Enemy_botbomb_Frame_13
-    originalName: 
-    pivot: {x: 0.5, y: -1}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 74
-      y: 28
-      width: 22
-      height: 16
-    spriteID: b475253228d51db4986ba219e104e6d6
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 74, y: 28}
-  - name: Enemy_botbomb_Frame_14
-    originalName: 
-    pivot: {x: 0.5, y: -0.8888889}
+    pivot: {x: 0.45000002, y: -0.8125}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 4
-      y: 139
-      width: 22
-      height: 18
-    spriteID: 660842bdd11a4ff43ba0eccc9cf621bc
+      y: 210
+      width: 20
+      height: 32
+    spriteID: 15018866f46317a4bb6e187dcff82d26
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -420,19 +220,119 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 139}
-  - name: Enemy_botbomb_Frame_15
+    uvTransform: {x: 4, y: 210}
+  - name: Enemy_flying_berry_Frame_5
     originalName: 
-    pivot: {x: 0.5, y: -0.8888889}
+    pivot: {x: 0.5, y: -0.6875}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 68
+      y: 76
+      width: 20
+      height: 32
+    spriteID: 75ac2c7082ef5c946b0323f5ee518321
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 68, y: 76}
+  - name: Enemy_flying_berry_Frame_6
+    originalName: 
+    pivot: {x: 0.4166667, y: -0.13333334}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 4
-      y: 165
+      y: 101
+      width: 24
+      height: 45
+    spriteID: 3ab05dd5440b8db4883e10748608d963
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 101}
+  - name: Enemy_flying_berry_Frame_7
+    originalName: 
+    pivot: {x: 0.52380955, y: -0.10416667}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 38
+      y: 101
+      width: 21
+      height: 48
+    spriteID: 4328361e0fe9f4e4394d20a26e597654
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 38, y: 101}
+  - name: Enemy_flying_berry_Frame_8
+    originalName: 
+    pivot: {x: 0.54545456, y: -0.17021276}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 38
+      y: 46
       width: 22
-      height: 18
-    spriteID: dfe582c832d5aa74892d9937309aabc1
+      height: 47
+    spriteID: 68681c99608ec27479a2cb82516a3d22
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 38, y: 46}
+  - name: Enemy_flying_berry_Frame_9
+    originalName: 
+    pivot: {x: 0.5, y: -0.24444444}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 38
+      y: 157
+      width: 20
+      height: 45
+    spriteID: 876b93022306178489255b02cbea535e
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 38, y: 157}
+  - name: Enemy_flying_berry_Frame_10
+    originalName: 
+    pivot: {x: 0.40909094, y: -0.20833334}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 154
+      width: 22
+      height: 48
+    spriteID: 75dab536ecbd6294e8d68ed0094e070a
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -441,118 +341,18 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 4, y: 154}
-  - name: Enemy_botbomb_Frame_16
+  - name: Enemy_flying_berry_Frame_11
     originalName: 
-    pivot: {x: 0.5, y: -0.8888889}
+    pivot: {x: 0.3846154, y: -0.14893617}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 4
-      y: 191
-      width: 22
-      height: 18
-    spriteID: c63df151c337f6a44af4242f570e5aff
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 4, y: 180}
-  - name: Enemy_botbomb_Frame_17
-    originalName: 
-    pivot: {x: 0.5, y: -0.8888889}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 4
-      y: 217
-      width: 22
-      height: 18
-    spriteID: 8615f5da0bd267442b682a77b9489696
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 4, y: 206}
-  - name: Enemy_botbomb_Frame_18
-    originalName: 
-    pivot: {x: 0.5, y: -0.8888889}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 44
-      y: 4
-      width: 22
-      height: 18
-    spriteID: 6b7c324932a69f44da144c2ddfb1c723
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 23, y: -12}
-  - name: Enemy_botbomb_Frame_19
-    originalName: 
-    pivot: {x: 0.5, y: -0.8333333}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 44
-      y: 30
-      width: 22
-      height: 18
-    spriteID: 62181e7feab3bd54a9e939c4c3dce6e9
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 44, y: 30}
-  - name: Enemy_botbomb_Frame_20
-    originalName: 
-    pivot: {x: 0.5, y: -0.61904764}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 4
-      y: 110
-      width: 22
-      height: 21
-    spriteID: 63b8c77a63046b942b7cc1f604c16179
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 4, y: 110}
-  - name: Enemy_botbomb_Frame_21
-    originalName: 
-    pivot: {x: 0.5, y: -0.44}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 4
-      y: 77
+      y: 46
       width: 26
-      height: 25
-    spriteID: 9d6c33b586e5651448248a4f07002ddf
+      height: 47
+    spriteID: 93778b3fe8a52424d852448b55ff8322
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -560,19 +360,199 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 77}
-  - name: Enemy_botbomb_Frame_22
+    uvTransform: {x: 4, y: 46}
+  - name: Enemy_flying_berry_Frame_12
     originalName: 
-    pivot: {x: 0.53125, y: -0.3448276}
+    pivot: {x: 0.47368422, y: -1.3529412}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 68
+      y: 193
+      width: 19
+      height: 17
+    spriteID: 6dca41e0869c9b248ba0f1dfa71f412c
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 68, y: 193}
+  - name: Enemy_flying_berry_Frame_13
+    originalName: 
+    pivot: {x: 0.47368422, y: -1.3529412}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 68
+      y: 218
+      width: 19
+      height: 17
+    spriteID: ffb38b2fb6d84984e85b53d6a84e64cd
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 68, y: 218}
+  - name: Enemy_flying_berry_Frame_14
+    originalName: 
+    pivot: {x: 0.45000002, y: -1.3333334}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 176
+      y: 46
+      width: 20
+      height: 12
+    spriteID: e9ff2aab5f41cd54084245d0d9daf463
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 176, y: 46}
+  - name: Enemy_flying_berry_Frame_15
+    originalName: 
+    pivot: {x: 0.47368422, y: -1.0588236}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 149
+      y: 46
+      width: 19
+      height: 17
+    spriteID: de67b02f16c9eb84a965e860a51d2ecc
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 149, y: 46}
+  - name: Enemy_flying_berry_Frame_16
+    originalName: 
+    pivot: {x: 0.45000002, y: -1.3333334}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 204
+      y: 46
+      width: 20
+      height: 12
+    spriteID: 60fd08259e614534294040a8be209246
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 204, y: 46}
+  - name: Enemy_flying_berry_Frame_17
+    originalName: 
+    pivot: {x: 0.53333336, y: -0.9411765}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 111
+      y: 46
+      width: 30
+      height: 17
+    spriteID: 50e08936464dddb459e14b603bb2db4f
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 111, y: 46}
+  - name: Enemy_flying_berry_Frame_18
+    originalName: 
+    pivot: {x: 0.51428574, y: -0.72727275}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 68
+      y: 46
+      width: 35
+      height: 22
+    spriteID: 372c9f180dc83504bb2cb004b358503e
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 68, y: 46}
+  - name: Enemy_flying_berry_Frame_19
+    originalName: 
+    pivot: {x: 0.45454547, y: -0.5925926}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 194
+      y: 4
+      width: 33
+      height: 27
+    spriteID: da7f2469375efb24da8a7f01a2fb5e45
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 194, y: 4}
+  - name: Enemy_flying_berry_Frame_20
+    originalName: 
+    pivot: {x: 0.44444445, y: -0.59999996}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 150
+      y: 4
+      width: 36
+      height: 25
+    spriteID: b2a1ce3e53a4c7847966eb3c3056615b
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 150, y: 4}
+  - name: Enemy_flying_berry_Frame_21
+    originalName: 
+    pivot: {x: 0.46666667, y: -0.38235295}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 32
-      height: 29
-    spriteID: f45fe2c3af660d143b26c10ef6086d51
+      width: 45
+      height: 34
+    spriteID: 31f1627aaab0d464495a286314b2bb74
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -581,18 +561,18 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 4, y: 4}
-  - name: Enemy_botbomb_Frame_23
+  - name: Enemy_flying_berry_Frame_22
     originalName: 
-    pivot: {x: 0.48387095, y: -0.35714287}
+    pivot: {x: 0.43589744, y: -0.61538464}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 4
-      y: 41
-      width: 31
-      height: 28
-    spriteID: f95ccd7305a9bc74db43fdadd8c864af
+      x: 57
+      y: 4
+      width: 39
+      height: 26
+    spriteID: 19fa874881ed5da48a5f31a0f92c4a62
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -600,235 +580,303 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 41}
+    uvTransform: {x: 57, y: 4}
+  - name: Enemy_flying_berry_Frame_23
+    originalName: 
+    pivot: {x: 0.4473684, y: -0.6538462}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 104
+      y: 4
+      width: 38
+      height: 26
+    spriteID: c6d9abd935f9e0f44a72a8503c6f388c
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 104, y: 4}
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
-    guid: 1880337396
-    name: Enemy_botbomb
+    guid: 1254776691
+    name: Enemy_flying_berry
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: Enemy_botbomb_Frame_0
+    - name: Enemy_flying_berry_Frame_0
       frameIndex: 0
       additiveSortOrder: 0
       cellRect:
-        x: 21
-        y: 16
-        width: 22
-        height: 14
-      spriteId: 174c7096a07879c49abb3a6fd3e377b2
-    - name: Enemy_botbomb_Frame_1
+        x: 22
+        y: 21
+        width: 21
+        height: 30
+      spriteId: 75078af8c58d28c4d85924f87f51df89
+    - name: Enemy_flying_berry_Frame_1
       frameIndex: 1
       additiveSortOrder: 0
       cellRect:
         x: 21
-        y: 16
-        width: 22
-        height: 14
-      spriteId: 8ef69b8364ce9694faa869eef5976fd1
-    - name: Enemy_botbomb_Frame_2
+        y: 21
+        width: 20
+        height: 32
+      spriteId: 9dbcc378356ebcf408aee995c66b324b
+    - name: Enemy_flying_berry_Frame_2
       frameIndex: 2
       additiveSortOrder: 0
       cellRect:
-        x: 21
-        y: 16
-        width: 22
-        height: 14
-      spriteId: a869c1d41649f3c4db5228d6271aee24
-    - name: Enemy_botbomb_Frame_3
+        x: 22
+        y: 24
+        width: 20
+        height: 31
+      spriteId: ce2838f007d7b644495067aba36a4512
+    - name: Enemy_flying_berry_Frame_3
       frameIndex: 3
       additiveSortOrder: 0
       cellRect:
-        x: 21
-        y: 16
-        width: 22
-        height: 16
-      spriteId: cb8f1fa191d4f394ebb113977826142b
-    - name: Enemy_botbomb_Frame_4
+        x: 22
+        y: 26
+        width: 20
+        height: 30
+      spriteId: fb99c863a75428f4e9fbaa9aaa44043f
+    - name: Enemy_flying_berry_Frame_4
       frameIndex: 4
       additiveSortOrder: 0
       cellRect:
-        x: 21
-        y: 16
-        width: 22
-        height: 17
-      spriteId: a8fced6760173bd45be5b8f9903f5be6
-    - name: Enemy_botbomb_Frame_5
+        x: 23
+        y: 26
+        width: 20
+        height: 32
+      spriteId: 15018866f46317a4bb6e187dcff82d26
+    - name: Enemy_flying_berry_Frame_5
       frameIndex: 5
       additiveSortOrder: 0
       cellRect:
-        x: 21
-        y: 16
-        width: 22
-        height: 17
-      spriteId: 56de246aafe48494aacff2b24a33a751
-    - name: Enemy_botbomb_Frame_6
+        x: 22
+        y: 22
+        width: 20
+        height: 32
+      spriteId: 75ac2c7082ef5c946b0323f5ee518321
+    - name: Enemy_flying_berry_Frame_6
       frameIndex: 6
       additiveSortOrder: 0
       cellRect:
-        x: 21
-        y: 16
-        width: 22
-        height: 17
-      spriteId: a8935386ca7e75b4eb87f87cc4c55d28
-    - name: Enemy_botbomb_Frame_7
+        x: 22
+        y: 6
+        width: 24
+        height: 45
+      spriteId: 3ab05dd5440b8db4883e10748608d963
+    - name: Enemy_flying_berry_Frame_7
       frameIndex: 7
       additiveSortOrder: 0
       cellRect:
         x: 21
-        y: 16
-        width: 22
-        height: 16
-      spriteId: e5e2677db0262df4aac0912f9c60b184
-    - name: Enemy_botbomb_Frame_8
+        y: 5
+        width: 21
+        height: 48
+      spriteId: 4328361e0fe9f4e4394d20a26e597654
+    - name: Enemy_flying_berry_Frame_8
       frameIndex: 8
       additiveSortOrder: 0
       cellRect:
-        x: 21
-        y: 16
+        x: 20
+        y: 8
         width: 22
-        height: 16
-      spriteId: 3ec3f75818c2a4947a8ce3245eb1be68
-    - name: Enemy_botbomb_Frame_9
+        height: 47
+      spriteId: 68681c99608ec27479a2cb82516a3d22
+    - name: Enemy_flying_berry_Frame_9
       frameIndex: 9
       additiveSortOrder: 0
       cellRect:
-        x: 21
-        y: 16
-        width: 22
-        height: 17
-      spriteId: 7eb6967b1caebb84ca7b9715ceb1e5e3
-    - name: Enemy_botbomb_Frame_10
+        x: 22
+        y: 11
+        width: 20
+        height: 45
+      spriteId: 876b93022306178489255b02cbea535e
+    - name: Enemy_flying_berry_Frame_10
       frameIndex: 10
       additiveSortOrder: 0
       cellRect:
-        x: 21
-        y: 16
+        x: 23
+        y: 10
         width: 22
-        height: 17
-      spriteId: 6b40316e30a7a8643acf2f73de96a8b2
-    - name: Enemy_botbomb_Frame_11
+        height: 48
+      spriteId: 75dab536ecbd6294e8d68ed0094e070a
+    - name: Enemy_flying_berry_Frame_11
       frameIndex: 11
       additiveSortOrder: 0
       cellRect:
-        x: 21
-        y: 16
-        width: 22
-        height: 17
-      spriteId: b1e84e4abae93534685bddb85ef8071a
-    - name: Enemy_botbomb_Frame_12
+        x: 22
+        y: 7
+        width: 26
+        height: 47
+      spriteId: 93778b3fe8a52424d852448b55ff8322
+    - name: Enemy_flying_berry_Frame_12
       frameIndex: 12
       additiveSortOrder: 0
       cellRect:
-        x: 21
-        y: 16
-        width: 22
-        height: 14
-      spriteId: 3edfd9e901e507542ad664b782107328
-    - name: Enemy_botbomb_Frame_13
+        x: 23
+        y: 23
+        width: 19
+        height: 17
+      spriteId: 6dca41e0869c9b248ba0f1dfa71f412c
+    - name: Enemy_flying_berry_Frame_13
       frameIndex: 13
       additiveSortOrder: 0
       cellRect:
-        x: 21
-        y: 16
-        width: 22
-        height: 16
-      spriteId: b475253228d51db4986ba219e104e6d6
-    - name: Enemy_botbomb_Frame_14
+        x: 23
+        y: 23
+        width: 19
+        height: 17
+      spriteId: ffb38b2fb6d84984e85b53d6a84e64cd
+    - name: Enemy_flying_berry_Frame_14
       frameIndex: 14
       additiveSortOrder: 0
       cellRect:
-        x: 21
+        x: 23
         y: 16
-        width: 22
-        height: 18
-      spriteId: 660842bdd11a4ff43ba0eccc9cf621bc
-    - name: Enemy_botbomb_Frame_15
+        width: 20
+        height: 12
+      spriteId: e9ff2aab5f41cd54084245d0d9daf463
+    - name: Enemy_flying_berry_Frame_15
       frameIndex: 15
       additiveSortOrder: 0
       cellRect:
-        x: 21
-        y: 5
-        width: 31
-        height: 29
-      spriteId: dfe582c832d5aa74892d9937309aabc1
-    - name: Enemy_botbomb_Frame_16
+        x: 23
+        y: 18
+        width: 19
+        height: 17
+      spriteId: de67b02f16c9eb84a965e860a51d2ecc
+    - name: Enemy_flying_berry_Frame_16
       frameIndex: 16
       additiveSortOrder: 0
       cellRect:
-        x: 21
-        y: 5
-        width: 31
-        height: 29
-      spriteId: c63df151c337f6a44af4242f570e5aff
-    - name: Enemy_botbomb_Frame_17
+        x: 23
+        y: 16
+        width: 20
+        height: 12
+      spriteId: 60fd08259e614534294040a8be209246
+    - name: Enemy_flying_berry_Frame_17
       frameIndex: 17
       additiveSortOrder: 0
       cellRect:
-        x: 21
-        y: 5
-        width: 31
-        height: 29
-      spriteId: 8615f5da0bd267442b682a77b9489696
-    - name: Enemy_botbomb_Frame_18
+        x: 16
+        y: 16
+        width: 30
+        height: 17
+      spriteId: 50e08936464dddb459e14b603bb2db4f
+    - name: Enemy_flying_berry_Frame_18
       frameIndex: 18
       additiveSortOrder: 0
       cellRect:
-        x: 0
-        y: 0
-        width: 64
-        height: 64
-      spriteId: 6b7c324932a69f44da144c2ddfb1c723
-    - name: Enemy_botbomb_Frame_19
+        x: 14
+        y: 16
+        width: 35
+        height: 22
+      spriteId: 372c9f180dc83504bb2cb004b358503e
+    - name: Enemy_flying_berry_Frame_19
       frameIndex: 19
       additiveSortOrder: 0
       cellRect:
-        x: 21
-        y: 15
-        width: 22
-        height: 18
-      spriteId: 62181e7feab3bd54a9e939c4c3dce6e9
-    - name: Enemy_botbomb_Frame_20
+        x: 17
+        y: 16
+        width: 33
+        height: 27
+      spriteId: da7f2469375efb24da8a7f01a2fb5e45
+    - name: Enemy_flying_berry_Frame_20
       frameIndex: 20
       additiveSortOrder: 0
       cellRect:
-        x: 21
-        y: 13
-        width: 22
-        height: 21
-      spriteId: 63b8c77a63046b942b7cc1f604c16179
-    - name: Enemy_botbomb_Frame_21
+        x: 16
+        y: 15
+        width: 36
+        height: 25
+      spriteId: b2a1ce3e53a4c7847966eb3c3056615b
+    - name: Enemy_flying_berry_Frame_21
       frameIndex: 21
       additiveSortOrder: 0
       cellRect:
-        x: 19
-        y: 11
-        width: 26
-        height: 25
-      spriteId: 9d6c33b586e5651448248a4f07002ddf
-    - name: Enemy_botbomb_Frame_22
+        x: 11
+        y: 13
+        width: 45
+        height: 34
+      spriteId: 31f1627aaab0d464495a286314b2bb74
+    - name: Enemy_flying_berry_Frame_22
       frameIndex: 22
       additiveSortOrder: 0
       cellRect:
         x: 15
-        y: 10
-        width: 32
-        height: 29
-      spriteId: f45fe2c3af660d143b26c10ef6086d51
-    - name: Enemy_botbomb_Frame_23
+        y: 16
+        width: 39
+        height: 26
+      spriteId: 19fa874881ed5da48a5f31a0f92c4a62
+    - name: Enemy_flying_berry_Frame_23
       frameIndex: 23
       additiveSortOrder: 0
       cellRect:
-        x: 17
-        y: 10
-        width: 31
-        height: 28
-      spriteId: f95ccd7305a9bc74db43fdadd8c864af
+        x: 15
+        y: 17
+        width: 38
+        height: 26
+      spriteId: c6d9abd935f9e0f44a72a8503c6f388c
     linkedCells: []
     parentIndex: -1
-  platformSettings: []
+  platformSettings:
+  - name: DefaultTexturePlatform
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: Standalone
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: Android
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: WebGL
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
   generatePhysicsShape: 0
   secondarySpriteTextures: []
   spritePackingTag: 
