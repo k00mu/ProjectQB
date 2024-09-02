@@ -232,11 +232,15 @@ GameObject:
   - component: {fileID: 9123875592019066065}
   - component: {fileID: 6486649166298027540}
   - component: {fileID: 105598720451169329}
+  - component: {fileID: 3834440052413212970}
   - component: {fileID: 9143633047573265329}
   - component: {fileID: 8441055865001223879}
+  - component: {fileID: 2632891114355951418}
   - component: {fileID: 8192510143053866213}
   - component: {fileID: 8019429431484823972}
+  - component: {fileID: 8059385492687494124}
   - component: {fileID: 4079848426157750013}
+  - component: {fileID: 4052568502579888723}
   m_Layer: 13
   m_Name: BotBomb
   m_TagString: Untagged
@@ -252,7 +256,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6456946989031147275}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 15.94, y: -5.31, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -571,19 +575,33 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Owner: {fileID: 0}
   States:
-  - StateName: Detect
+  - StateName: Idling
     Actions:
       array:
+      - {fileID: 3834440052413212970}
       - {fileID: 6486649166298027540}
     Transitions:
       array:
       - Decision: {fileID: 8019429431484823972}
-        TrueState: Chase
+        TrueState: Detect
         FalseState: 
-  - StateName: Chase
+  - StateName: Detect
     Actions:
       array:
       - {fileID: 9143633047573265329}
+      - {fileID: 6486649166298027540}
+    Transitions:
+      array:
+      - Decision: {fileID: 8059385492687494124}
+        TrueState: Trigger
+        FalseState: 
+      - Decision: {fileID: 8019429431484823972}
+        TrueState: 
+        FalseState: Idling
+  - StateName: Trigger
+    Actions:
+      array:
+      - {fileID: 8441055865001223879}
       - {fileID: 105598720451169329}
     Transitions:
       array:
@@ -593,7 +611,16 @@ MonoBehaviour:
   - StateName: Explode
     Actions:
       array:
-      - {fileID: 8441055865001223879}
+      - {fileID: 2632891114355951418}
+    Transitions:
+      array:
+      - Decision: {fileID: 4052568502579888723}
+        TrueState: SelfDestruct
+        FalseState: 
+  - StateName: SelfDestruct
+    Actions:
+      array:
+      - {fileID: 8192510143053866213}
     Transitions:
       array: []
   TimeInThisState: 0
@@ -636,6 +663,36 @@ MonoBehaviour:
   InitializationMode: 0
   Label: 
   MinimumDistance: 1
+--- !u!114 &3834440052413212970
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6456946989031147275}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 653b45e453e54664e9b7ea62fbd9d3e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  InitializationMode: 0
+  Label: IdleEvent
+  TargetEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8733662063016724030}
+        m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
+        m_MethodName: Play
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: idle
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnlyPlayWhenEnteringState: 1
 --- !u!114 &9143633047573265329
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -649,12 +706,54 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   InitializationMode: 0
-  Label: ChaseEvent
+  Label: DetectEvent
   TargetEvent:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8733662063016724030}
+        m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
+        m_MethodName: Play
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: detect
+          m_BoolArgument: 0
+        m_CallState: 2
   OnlyPlayWhenEnteringState: 1
 --- !u!114 &8441055865001223879
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6456946989031147275}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 653b45e453e54664e9b7ea62fbd9d3e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  InitializationMode: 0
+  Label: TriggerEvent
+  TargetEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8733662063016724030}
+        m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
+        m_MethodName: Play
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: explode
+          m_BoolArgument: 1
+        m_CallState: 2
+  OnlyPlayWhenEnteringState: 1
+--- !u!114 &2632891114355951418
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -671,18 +770,6 @@ MonoBehaviour:
   TargetEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8733662063016724030}
-        m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
-        m_MethodName: SetTrigger
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: Exploding
-          m_BoolArgument: 1
-        m_CallState: 2
       - m_Target: {fileID: 6934784332892899280}
         m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
         m_MethodName: set_enabled
@@ -692,7 +779,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: Exploding
           m_BoolArgument: 1
         m_CallState: 2
   OnlyPlayWhenEnteringState: 1
@@ -723,7 +810,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c522f668e1b331438fd11022c69a8a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Label: 
+  Label: DetectRadius
+  Radius: 4.5
+  DetectionOriginOffset: {x: 0, y: 0, z: 0}
+  TargetLayer:
+    serializedVersion: 2
+    m_Bits: 512
+--- !u!114 &8059385492687494124
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6456946989031147275}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c522f668e1b331438fd11022c69a8a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Label: ExplodeRadius
   Radius: 2.5
   DetectionOriginOffset: {x: 0, y: 0, z: 0}
   TargetLayer:
@@ -742,8 +847,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Label: ExplodeCountdownDuration
-  AfterTimeMin: 2
-  AfterTimeMax: 2
+  AfterTimeMin: 0.5
+  AfterTimeMax: 0.5
+--- !u!114 &4052568502579888723
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6456946989031147275}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58b7939ffd2f5df4e8efb5fa83e99637, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Label: ExplodeActiveDamageZoneDuration
+  AfterTimeMin: 1
+  AfterTimeMax: 1
 --- !u!1 &6482498843690194626
 GameObject:
   m_ObjectHideFlags: 0
