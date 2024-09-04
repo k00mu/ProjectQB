@@ -20,7 +20,7 @@ namespace QuackleBit
         [SerializeField] private bool _canMove;
         [SerializeField] private float _chargingTime = 0.5f;
         
-        private BoxCollider2D _deflector;
+        private GameObject _deflector;
         private IEnumerator _deflectCoroutine;
         private WaitForSeconds _chargingWFS;
         private bool _isDeflecting;
@@ -29,16 +29,16 @@ namespace QuackleBit
         {
             base.Initialization();
             
-            GameObject deflectorObject = new GameObject("Deflector");
-            deflectorObject.transform.SetParent(_character.CharacterModel.transform);
+            _deflector = new GameObject("Deflector");
+            _deflector.transform.SetParent(_character.CharacterModel.transform);
             
             int deflectorLayer = LayerMask.NameToLayer("Deflector");
-            deflectorObject.layer = deflectorLayer;
-            deflectorObject.transform.localPosition = _deflectorOffset;
+            _deflector.layer = deflectorLayer;
+            _deflector.transform.localPosition = _deflectorOffset;
             
-            _deflector = deflectorObject.GetOrAddComponent<BoxCollider2D>();
-            _deflector.size = _deflectorSize;
+            _deflector.GetOrAddComponent<BoxCollider2D>().size = _deflectorSize;
             
+            _deflector.SetActive(false);
             _chargingWFS = new WaitForSeconds(_chargingTime);
         }
         
@@ -74,7 +74,7 @@ namespace QuackleBit
             MMAnimatorExtensions.UpdateAnimatorBool(_animator, _deflectChargingAnimationParameter, false, _character._animatorParameters, _character.PerformAnimatorSanityChecks);
 
             _isDeflecting = true;
-            _deflector.enabled = true;
+            _deflector.SetActive(true);
         }
         
         private void DeflectStop()
@@ -82,7 +82,7 @@ namespace QuackleBit
             if (!_deflector)
                 return;
             
-            _deflector.enabled = false;
+            _deflector.SetActive(false);
             _isDeflecting = false;
             
             if (!_canMove)
@@ -131,7 +131,7 @@ namespace QuackleBit
             }
             
             if (_deflector)
-                _deflector.enabled = false;
+                _deflector.SetActive(false);
             
             _isDeflecting = false;
         }
