@@ -97,7 +97,7 @@ ScriptedImporter:
     addSortingGroup: 1
     addShadowCasters: 0
   importFileNodeState: 1
-  platformSettingsDirtyTick: 0
+  platformSettingsDirtyTick: 638610659917085863
   textureAssetName: 
   singleSpriteImportData:
   - name: 
@@ -530,7 +530,7 @@ ScriptedImporter:
     layerType: 0
     blendMode: 0
     cells:
-    - name: Enemy_snailcapt_Frame_0
+    - name: Frame_0
       frameIndex: 0
       additiveSortOrder: 0
       cellRect:
@@ -539,7 +539,7 @@ ScriptedImporter:
         width: 51
         height: 48
       spriteId: c62189cd1e7449f41803f7640a65ebf0
-    - name: Enemy_snailcapt_Frame_1
+    - name: Frame_1
       frameIndex: 1
       additiveSortOrder: 0
       cellRect:
@@ -548,7 +548,7 @@ ScriptedImporter:
         width: 51
         height: 48
       spriteId: d1c7c8a679741554d869f9d561c50586
-    - name: Enemy_snailcapt_Frame_2
+    - name: Frame_2
       frameIndex: 2
       additiveSortOrder: 0
       cellRect:
@@ -557,7 +557,7 @@ ScriptedImporter:
         width: 51
         height: 46
       spriteId: a93dd66986183bd49a8bf24637b9d2a7
-    - name: Enemy_snailcapt_Frame_3
+    - name: Frame_3
       frameIndex: 3
       additiveSortOrder: 0
       cellRect:
@@ -566,7 +566,7 @@ ScriptedImporter:
         width: 51
         height: 46
       spriteId: 9f900df45d189ea41a799a18013e9e81
-    - name: Enemy_snailcapt_Frame_4
+    - name: Frame_4
       frameIndex: 4
       additiveSortOrder: 0
       cellRect:
@@ -575,7 +575,7 @@ ScriptedImporter:
         width: 51
         height: 48
       spriteId: f80a5ff1ce4f42d4b85fe0e9f453fc75
-    - name: Enemy_snailcapt_Frame_5
+    - name: Frame_5
       frameIndex: 5
       additiveSortOrder: 0
       cellRect:
@@ -584,7 +584,7 @@ ScriptedImporter:
         width: 51
         height: 48
       spriteId: 880bd12dd07eeca4b9bad93853d5be0e
-    - name: Enemy_snailcapt_Frame_6
+    - name: Frame_6
       frameIndex: 6
       additiveSortOrder: 0
       cellRect:
@@ -593,7 +593,7 @@ ScriptedImporter:
         width: 51
         height: 48
       spriteId: 9cd661ed40c2cdc418a3e3cdfc2bd118
-    - name: Enemy_snailcapt_Frame_7
+    - name: Frame_7
       frameIndex: 7
       additiveSortOrder: 0
       cellRect:
@@ -602,7 +602,7 @@ ScriptedImporter:
         width: 54
         height: 48
       spriteId: 3669a40476e81eb4c921aca857594068
-    - name: Enemy_snailcapt_Frame_8
+    - name: Frame_8
       frameIndex: 8
       additiveSortOrder: 0
       cellRect:
@@ -611,7 +611,7 @@ ScriptedImporter:
         width: 58
         height: 48
       spriteId: 770d6b73e0a2e03459319880f51b4274
-    - name: Enemy_snailcapt_Frame_9
+    - name: Frame_9
       frameIndex: 9
       additiveSortOrder: 0
       cellRect:
@@ -620,7 +620,7 @@ ScriptedImporter:
         width: 13
         height: 15
       spriteId: e8b2415312d04e24eaa6e7a1352096e5
-    - name: Enemy_snailcapt_Frame_10
+    - name: Frame_10
       frameIndex: 10
       additiveSortOrder: 0
       cellRect:
@@ -629,7 +629,7 @@ ScriptedImporter:
         width: 13
         height: 15
       spriteId: 559d93c698293444e9cb6f555ddd6a67
-    - name: Enemy_snailcapt_Frame_11
+    - name: Frame_11
       frameIndex: 11
       additiveSortOrder: 0
       cellRect:
@@ -638,7 +638,7 @@ ScriptedImporter:
         width: 64
         height: 64
       spriteId: a0ed5752168fe4047ab97485cc829e9c
-    - name: Enemy_snailcapt_Frame_12
+    - name: Frame_12
       frameIndex: 12
       additiveSortOrder: 0
       cellRect:
@@ -647,7 +647,7 @@ ScriptedImporter:
         width: 12
         height: 13
       spriteId: 5fac3dbab32d5df46b7ea9ddd4227a02
-    - name: Enemy_snailcapt_Frame_13
+    - name: Frame_13
       frameIndex: 13
       additiveSortOrder: 0
       cellRect:
@@ -656,7 +656,7 @@ ScriptedImporter:
         width: 10
         height: 10
       spriteId: 4a4bc5f9126111d4bab785161602c3be
-    - name: Enemy_snailcapt_Frame_14
+    - name: Frame_14
       frameIndex: 14
       additiveSortOrder: 0
       cellRect:
@@ -665,7 +665,7 @@ ScriptedImporter:
         width: 14
         height: 15
       spriteId: 055d2e88131e4d64491d8c3386350135
-    - name: Enemy_snailcapt_Frame_15
+    - name: Frame_15
       frameIndex: 15
       additiveSortOrder: 0
       cellRect:
@@ -674,7 +674,7 @@ ScriptedImporter:
         width: 20
         height: 20
       spriteId: ac65830889cc33d47b7c91030bc002c8
-    - name: Enemy_snailcapt_Frame_16
+    - name: Frame_16
       frameIndex: 16
       additiveSortOrder: 0
       cellRect:
@@ -683,7 +683,7 @@ ScriptedImporter:
         width: 29
         height: 29
       spriteId: aab92dfa4dd787940ad37e641845e89e
-    - name: Enemy_snailcapt_Frame_17
+    - name: Frame_17
       frameIndex: 17
       additiveSortOrder: 0
       cellRect:
@@ -692,7 +692,7 @@ ScriptedImporter:
         width: 35
         height: 31
       spriteId: bf67618c8fdbc6043b09be17039423d7
-    - name: Enemy_snailcapt_Frame_18
+    - name: Frame_18
       frameIndex: 18
       additiveSortOrder: 0
       cellRect:
@@ -701,7 +701,7 @@ ScriptedImporter:
         width: 42
         height: 33
       spriteId: f2c743e874c929249b66afdc003c26aa
-    - name: Enemy_snailcapt_Frame_19
+    - name: Frame_19
       frameIndex: 19
       additiveSortOrder: 0
       cellRect:
@@ -712,7 +712,55 @@ ScriptedImporter:
       spriteId: 16114f0e960b81e40bd9c066bfdcb3a6
     linkedCells: []
     parentIndex: -1
-  platformSettings: []
+  platformSettings:
+  - name: DefaultTexturePlatform
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 16384
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: Standalone
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: Android
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: WebGL
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
   generatePhysicsShape: 0
   secondarySpriteTextures: []
   spritePackingTag: 

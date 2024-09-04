@@ -97,7 +97,7 @@ ScriptedImporter:
     addSortingGroup: 1
     addShadowCasters: 0
   importFileNodeState: 1
-  platformSettingsDirtyTick: 638606458680293586
+  platformSettingsDirtyTick: 638610659917067897
   textureAssetName: 
   singleSpriteImportData:
   - name: 
@@ -610,7 +610,7 @@ ScriptedImporter:
     layerType: 0
     blendMode: 0
     cells:
-    - name: Enemy_flying_berry_Frame_0
+    - name: Frame_0
       frameIndex: 0
       additiveSortOrder: 0
       cellRect:
@@ -619,7 +619,7 @@ ScriptedImporter:
         width: 21
         height: 30
       spriteId: 75078af8c58d28c4d85924f87f51df89
-    - name: Enemy_flying_berry_Frame_1
+    - name: Frame_1
       frameIndex: 1
       additiveSortOrder: 0
       cellRect:
@@ -628,7 +628,7 @@ ScriptedImporter:
         width: 20
         height: 32
       spriteId: 9dbcc378356ebcf408aee995c66b324b
-    - name: Enemy_flying_berry_Frame_2
+    - name: Frame_2
       frameIndex: 2
       additiveSortOrder: 0
       cellRect:
@@ -637,7 +637,7 @@ ScriptedImporter:
         width: 20
         height: 31
       spriteId: ce2838f007d7b644495067aba36a4512
-    - name: Enemy_flying_berry_Frame_3
+    - name: Frame_3
       frameIndex: 3
       additiveSortOrder: 0
       cellRect:
@@ -646,7 +646,7 @@ ScriptedImporter:
         width: 20
         height: 30
       spriteId: fb99c863a75428f4e9fbaa9aaa44043f
-    - name: Enemy_flying_berry_Frame_4
+    - name: Frame_4
       frameIndex: 4
       additiveSortOrder: 0
       cellRect:
@@ -655,7 +655,7 @@ ScriptedImporter:
         width: 20
         height: 32
       spriteId: 15018866f46317a4bb6e187dcff82d26
-    - name: Enemy_flying_berry_Frame_5
+    - name: Frame_5
       frameIndex: 5
       additiveSortOrder: 0
       cellRect:
@@ -664,7 +664,7 @@ ScriptedImporter:
         width: 20
         height: 32
       spriteId: 75ac2c7082ef5c946b0323f5ee518321
-    - name: Enemy_flying_berry_Frame_6
+    - name: Frame_6
       frameIndex: 6
       additiveSortOrder: 0
       cellRect:
@@ -673,7 +673,7 @@ ScriptedImporter:
         width: 24
         height: 45
       spriteId: 3ab05dd5440b8db4883e10748608d963
-    - name: Enemy_flying_berry_Frame_7
+    - name: Frame_7
       frameIndex: 7
       additiveSortOrder: 0
       cellRect:
@@ -682,7 +682,7 @@ ScriptedImporter:
         width: 21
         height: 48
       spriteId: 4328361e0fe9f4e4394d20a26e597654
-    - name: Enemy_flying_berry_Frame_8
+    - name: Frame_8
       frameIndex: 8
       additiveSortOrder: 0
       cellRect:
@@ -691,7 +691,7 @@ ScriptedImporter:
         width: 22
         height: 47
       spriteId: 68681c99608ec27479a2cb82516a3d22
-    - name: Enemy_flying_berry_Frame_9
+    - name: Frame_9
       frameIndex: 9
       additiveSortOrder: 0
       cellRect:
@@ -700,7 +700,7 @@ ScriptedImporter:
         width: 20
         height: 45
       spriteId: 876b93022306178489255b02cbea535e
-    - name: Enemy_flying_berry_Frame_10
+    - name: Frame_10
       frameIndex: 10
       additiveSortOrder: 0
       cellRect:
@@ -709,7 +709,7 @@ ScriptedImporter:
         width: 22
         height: 48
       spriteId: 75dab536ecbd6294e8d68ed0094e070a
-    - name: Enemy_flying_berry_Frame_11
+    - name: Frame_11
       frameIndex: 11
       additiveSortOrder: 0
       cellRect:
@@ -718,7 +718,7 @@ ScriptedImporter:
         width: 26
         height: 47
       spriteId: 93778b3fe8a52424d852448b55ff8322
-    - name: Enemy_flying_berry_Frame_12
+    - name: Frame_12
       frameIndex: 12
       additiveSortOrder: 0
       cellRect:
@@ -727,7 +727,7 @@ ScriptedImporter:
         width: 19
         height: 17
       spriteId: 6dca41e0869c9b248ba0f1dfa71f412c
-    - name: Enemy_flying_berry_Frame_13
+    - name: Frame_13
       frameIndex: 13
       additiveSortOrder: 0
       cellRect:
@@ -736,7 +736,7 @@ ScriptedImporter:
         width: 19
         height: 17
       spriteId: ffb38b2fb6d84984e85b53d6a84e64cd
-    - name: Enemy_flying_berry_Frame_14
+    - name: Frame_14
       frameIndex: 14
       additiveSortOrder: 0
       cellRect:
@@ -745,7 +745,7 @@ ScriptedImporter:
         width: 20
         height: 12
       spriteId: e9ff2aab5f41cd54084245d0d9daf463
-    - name: Enemy_flying_berry_Frame_15
+    - name: Frame_15
       frameIndex: 15
       additiveSortOrder: 0
       cellRect:
@@ -754,7 +754,7 @@ ScriptedImporter:
         width: 19
         height: 17
       spriteId: de67b02f16c9eb84a965e860a51d2ecc
-    - name: Enemy_flying_berry_Frame_16
+    - name: Frame_16
       frameIndex: 16
       additiveSortOrder: 0
       cellRect:
@@ -763,7 +763,7 @@ ScriptedImporter:
         width: 20
         height: 12
       spriteId: 60fd08259e614534294040a8be209246
-    - name: Enemy_flying_berry_Frame_17
+    - name: Frame_17
       frameIndex: 17
       additiveSortOrder: 0
       cellRect:
@@ -772,7 +772,7 @@ ScriptedImporter:
         width: 30
         height: 17
       spriteId: 50e08936464dddb459e14b603bb2db4f
-    - name: Enemy_flying_berry_Frame_18
+    - name: Frame_18
       frameIndex: 18
       additiveSortOrder: 0
       cellRect:
@@ -781,7 +781,7 @@ ScriptedImporter:
         width: 35
         height: 22
       spriteId: 372c9f180dc83504bb2cb004b358503e
-    - name: Enemy_flying_berry_Frame_19
+    - name: Frame_19
       frameIndex: 19
       additiveSortOrder: 0
       cellRect:
@@ -790,7 +790,7 @@ ScriptedImporter:
         width: 33
         height: 27
       spriteId: da7f2469375efb24da8a7f01a2fb5e45
-    - name: Enemy_flying_berry_Frame_20
+    - name: Frame_20
       frameIndex: 20
       additiveSortOrder: 0
       cellRect:
@@ -799,7 +799,7 @@ ScriptedImporter:
         width: 36
         height: 25
       spriteId: b2a1ce3e53a4c7847966eb3c3056615b
-    - name: Enemy_flying_berry_Frame_21
+    - name: Frame_21
       frameIndex: 21
       additiveSortOrder: 0
       cellRect:
@@ -808,7 +808,7 @@ ScriptedImporter:
         width: 45
         height: 34
       spriteId: 31f1627aaab0d464495a286314b2bb74
-    - name: Enemy_flying_berry_Frame_22
+    - name: Frame_22
       frameIndex: 22
       additiveSortOrder: 0
       cellRect:
@@ -817,7 +817,7 @@ ScriptedImporter:
         width: 39
         height: 26
       spriteId: 19fa874881ed5da48a5f31a0f92c4a62
-    - name: Enemy_flying_berry_Frame_23
+    - name: Frame_23
       frameIndex: 23
       additiveSortOrder: 0
       cellRect:
@@ -832,7 +832,7 @@ ScriptedImporter:
   - name: DefaultTexturePlatform
     overridden: 0
     ignorePlatformSupport: 0
-    maxTextureSize: 2048
+    maxTextureSize: 16384
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0

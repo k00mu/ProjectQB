@@ -97,7 +97,7 @@ ScriptedImporter:
     addSortingGroup: 1
     addShadowCasters: 0
   importFileNodeState: 1
-  platformSettingsDirtyTick: 638606458680304194
+  platformSettingsDirtyTick: 638610659917057897
   textureAssetName: 
   singleSpriteImportData:
   - name: 
@@ -610,7 +610,7 @@ ScriptedImporter:
     layerType: 0
     blendMode: 0
     cells:
-    - name: Enemy_botbomb_Frame_0
+    - name: Frame_0
       frameIndex: 0
       additiveSortOrder: 0
       cellRect:
@@ -619,7 +619,7 @@ ScriptedImporter:
         width: 22
         height: 14
       spriteId: 174c7096a07879c49abb3a6fd3e377b2
-    - name: Enemy_botbomb_Frame_1
+    - name: Frame_1
       frameIndex: 1
       additiveSortOrder: 0
       cellRect:
@@ -628,7 +628,7 @@ ScriptedImporter:
         width: 22
         height: 14
       spriteId: 8ef69b8364ce9694faa869eef5976fd1
-    - name: Enemy_botbomb_Frame_2
+    - name: Frame_2
       frameIndex: 2
       additiveSortOrder: 0
       cellRect:
@@ -637,7 +637,7 @@ ScriptedImporter:
         width: 22
         height: 14
       spriteId: a869c1d41649f3c4db5228d6271aee24
-    - name: Enemy_botbomb_Frame_3
+    - name: Frame_3
       frameIndex: 3
       additiveSortOrder: 0
       cellRect:
@@ -646,7 +646,7 @@ ScriptedImporter:
         width: 22
         height: 16
       spriteId: cb8f1fa191d4f394ebb113977826142b
-    - name: Enemy_botbomb_Frame_4
+    - name: Frame_4
       frameIndex: 4
       additiveSortOrder: 0
       cellRect:
@@ -655,7 +655,7 @@ ScriptedImporter:
         width: 22
         height: 17
       spriteId: a8fced6760173bd45be5b8f9903f5be6
-    - name: Enemy_botbomb_Frame_5
+    - name: Frame_5
       frameIndex: 5
       additiveSortOrder: 0
       cellRect:
@@ -664,7 +664,7 @@ ScriptedImporter:
         width: 22
         height: 17
       spriteId: 56de246aafe48494aacff2b24a33a751
-    - name: Enemy_botbomb_Frame_6
+    - name: Frame_6
       frameIndex: 6
       additiveSortOrder: 0
       cellRect:
@@ -673,7 +673,7 @@ ScriptedImporter:
         width: 22
         height: 17
       spriteId: a8935386ca7e75b4eb87f87cc4c55d28
-    - name: Enemy_botbomb_Frame_7
+    - name: Frame_7
       frameIndex: 7
       additiveSortOrder: 0
       cellRect:
@@ -682,7 +682,7 @@ ScriptedImporter:
         width: 22
         height: 16
       spriteId: e5e2677db0262df4aac0912f9c60b184
-    - name: Enemy_botbomb_Frame_8
+    - name: Frame_8
       frameIndex: 8
       additiveSortOrder: 0
       cellRect:
@@ -691,7 +691,7 @@ ScriptedImporter:
         width: 22
         height: 16
       spriteId: 3ec3f75818c2a4947a8ce3245eb1be68
-    - name: Enemy_botbomb_Frame_9
+    - name: Frame_9
       frameIndex: 9
       additiveSortOrder: 0
       cellRect:
@@ -700,7 +700,7 @@ ScriptedImporter:
         width: 22
         height: 17
       spriteId: 7eb6967b1caebb84ca7b9715ceb1e5e3
-    - name: Enemy_botbomb_Frame_10
+    - name: Frame_10
       frameIndex: 10
       additiveSortOrder: 0
       cellRect:
@@ -709,7 +709,7 @@ ScriptedImporter:
         width: 22
         height: 17
       spriteId: 6b40316e30a7a8643acf2f73de96a8b2
-    - name: Enemy_botbomb_Frame_11
+    - name: Frame_11
       frameIndex: 11
       additiveSortOrder: 0
       cellRect:
@@ -718,7 +718,7 @@ ScriptedImporter:
         width: 22
         height: 17
       spriteId: b1e84e4abae93534685bddb85ef8071a
-    - name: Enemy_botbomb_Frame_12
+    - name: Frame_12
       frameIndex: 12
       additiveSortOrder: 0
       cellRect:
@@ -727,7 +727,7 @@ ScriptedImporter:
         width: 22
         height: 14
       spriteId: 3edfd9e901e507542ad664b782107328
-    - name: Enemy_botbomb_Frame_13
+    - name: Frame_13
       frameIndex: 13
       additiveSortOrder: 0
       cellRect:
@@ -736,7 +736,7 @@ ScriptedImporter:
         width: 22
         height: 16
       spriteId: b475253228d51db4986ba219e104e6d6
-    - name: Enemy_botbomb_Frame_14
+    - name: Frame_14
       frameIndex: 14
       additiveSortOrder: 0
       cellRect:
@@ -745,7 +745,7 @@ ScriptedImporter:
         width: 22
         height: 18
       spriteId: 660842bdd11a4ff43ba0eccc9cf621bc
-    - name: Enemy_botbomb_Frame_15
+    - name: Frame_15
       frameIndex: 15
       additiveSortOrder: 0
       cellRect:
@@ -754,7 +754,7 @@ ScriptedImporter:
         width: 31
         height: 29
       spriteId: dfe582c832d5aa74892d9937309aabc1
-    - name: Enemy_botbomb_Frame_16
+    - name: Frame_16
       frameIndex: 16
       additiveSortOrder: 0
       cellRect:
@@ -763,7 +763,7 @@ ScriptedImporter:
         width: 31
         height: 29
       spriteId: c63df151c337f6a44af4242f570e5aff
-    - name: Enemy_botbomb_Frame_17
+    - name: Frame_17
       frameIndex: 17
       additiveSortOrder: 0
       cellRect:
@@ -772,7 +772,7 @@ ScriptedImporter:
         width: 31
         height: 29
       spriteId: 8615f5da0bd267442b682a77b9489696
-    - name: Enemy_botbomb_Frame_18
+    - name: Frame_18
       frameIndex: 18
       additiveSortOrder: 0
       cellRect:
@@ -781,7 +781,7 @@ ScriptedImporter:
         width: 64
         height: 64
       spriteId: 6b7c324932a69f44da144c2ddfb1c723
-    - name: Enemy_botbomb_Frame_19
+    - name: Frame_19
       frameIndex: 19
       additiveSortOrder: 0
       cellRect:
@@ -790,7 +790,7 @@ ScriptedImporter:
         width: 22
         height: 18
       spriteId: 62181e7feab3bd54a9e939c4c3dce6e9
-    - name: Enemy_botbomb_Frame_20
+    - name: Frame_20
       frameIndex: 20
       additiveSortOrder: 0
       cellRect:
@@ -799,7 +799,7 @@ ScriptedImporter:
         width: 22
         height: 21
       spriteId: 63b8c77a63046b942b7cc1f604c16179
-    - name: Enemy_botbomb_Frame_21
+    - name: Frame_21
       frameIndex: 21
       additiveSortOrder: 0
       cellRect:
@@ -808,7 +808,7 @@ ScriptedImporter:
         width: 26
         height: 25
       spriteId: 9d6c33b586e5651448248a4f07002ddf
-    - name: Enemy_botbomb_Frame_22
+    - name: Frame_22
       frameIndex: 22
       additiveSortOrder: 0
       cellRect:
@@ -817,7 +817,7 @@ ScriptedImporter:
         width: 32
         height: 29
       spriteId: f45fe2c3af660d143b26c10ef6086d51
-    - name: Enemy_botbomb_Frame_23
+    - name: Frame_23
       frameIndex: 23
       additiveSortOrder: 0
       cellRect:
@@ -832,7 +832,7 @@ ScriptedImporter:
   - name: DefaultTexturePlatform
     overridden: 0
     ignorePlatformSupport: 0
-    maxTextureSize: 2048
+    maxTextureSize: 16384
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0

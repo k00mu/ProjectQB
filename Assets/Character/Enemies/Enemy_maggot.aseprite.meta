@@ -97,7 +97,7 @@ ScriptedImporter:
     addSortingGroup: 1
     addShadowCasters: 0
   importFileNodeState: 1
-  platformSettingsDirtyTick: 638606458591935303
+  platformSettingsDirtyTick: 638610659917082929
   textureAssetName: 
   singleSpriteImportData:
   - name: 
@@ -290,7 +290,7 @@ ScriptedImporter:
     layerType: 0
     blendMode: 0
     cells:
-    - name: Enemy_maggot_Frame_0
+    - name: Frame_0
       frameIndex: 0
       additiveSortOrder: 0
       cellRect:
@@ -299,7 +299,7 @@ ScriptedImporter:
         width: 28
         height: 18
       spriteId: 886ff82126f14f94f813785c6c6483ed
-    - name: Enemy_maggot_Frame_1
+    - name: Frame_1
       frameIndex: 1
       additiveSortOrder: 0
       cellRect:
@@ -308,7 +308,7 @@ ScriptedImporter:
         width: 29
         height: 18
       spriteId: b82703a52cee9f54faccec16cc13def3
-    - name: Enemy_maggot_Frame_2
+    - name: Frame_2
       frameIndex: 2
       additiveSortOrder: 0
       cellRect:
@@ -317,7 +317,7 @@ ScriptedImporter:
         width: 29
         height: 18
       spriteId: 64a3440a93aacf94c80045341e288be1
-    - name: Enemy_maggot_Frame_3
+    - name: Frame_3
       frameIndex: 3
       additiveSortOrder: 0
       cellRect:
@@ -326,7 +326,7 @@ ScriptedImporter:
         width: 26
         height: 18
       spriteId: 825f06348a846634d94e7e46adb8d2ba
-    - name: Enemy_maggot_Frame_4
+    - name: Frame_4
       frameIndex: 4
       additiveSortOrder: 0
       cellRect:
@@ -335,7 +335,7 @@ ScriptedImporter:
         width: 28
         height: 18
       spriteId: 94da4aec2f5a0c540b3c1c4b9c92a5c1
-    - name: Enemy_maggot_Frame_5
+    - name: Frame_5
       frameIndex: 5
       additiveSortOrder: 0
       cellRect:
@@ -344,7 +344,7 @@ ScriptedImporter:
         width: 29
         height: 18
       spriteId: c7cc34f2f9b5daf499630b1373271e64
-    - name: Enemy_maggot_Frame_6
+    - name: Frame_6
       frameIndex: 6
       additiveSortOrder: 0
       cellRect:
@@ -353,7 +353,7 @@ ScriptedImporter:
         width: 29
         height: 18
       spriteId: 0877af8454344dd44a29bed78284da09
-    - name: Enemy_maggot_Frame_7
+    - name: Frame_7
       frameIndex: 7
       additiveSortOrder: 0
       cellRect:
@@ -368,7 +368,7 @@ ScriptedImporter:
   - name: DefaultTexturePlatform
     overridden: 0
     ignorePlatformSupport: 0
-    maxTextureSize: 2048
+    maxTextureSize: 16384
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0

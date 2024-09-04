@@ -97,7 +97,7 @@ ScriptedImporter:
     addSortingGroup: 1
     addShadowCasters: 0
   importFileNodeState: 1
-  platformSettingsDirtyTick: 638606458680304194
+  platformSettingsDirtyTick: 638610659917067897
   textureAssetName: 
   singleSpriteImportData:
   - name: 
@@ -490,7 +490,7 @@ ScriptedImporter:
     layerType: 0
     blendMode: 0
     cells:
-    - name: Enemy_laserbot_Frame_0
+    - name: Frame_0
       frameIndex: 0
       additiveSortOrder: 0
       cellRect:
@@ -499,7 +499,7 @@ ScriptedImporter:
         width: 21
         height: 29
       spriteId: 258a721496ddd4c408f0db0b87b1c282
-    - name: Enemy_laserbot_Frame_1
+    - name: Frame_1
       frameIndex: 1
       additiveSortOrder: 0
       cellRect:
@@ -508,7 +508,7 @@ ScriptedImporter:
         width: 37
         height: 42
       spriteId: 731e6b30724db9240a75f53dd4e9d0a0
-    - name: Enemy_laserbot_Frame_2
+    - name: Frame_2
       frameIndex: 2
       additiveSortOrder: 0
       cellRect:
@@ -517,7 +517,7 @@ ScriptedImporter:
         width: 21
         height: 29
       spriteId: 4ddd27501fd4a494abe42f2d32a49b62
-    - name: Enemy_laserbot_Frame_3
+    - name: Frame_3
       frameIndex: 3
       additiveSortOrder: 0
       cellRect:
@@ -526,7 +526,7 @@ ScriptedImporter:
         width: 21
         height: 29
       spriteId: 29900d322dad1684fb370086ac0b11b9
-    - name: Enemy_laserbot_Frame_4
+    - name: Frame_4
       frameIndex: 4
       additiveSortOrder: 0
       cellRect:
@@ -535,7 +535,7 @@ ScriptedImporter:
         width: 21
         height: 29
       spriteId: 7b5a9d57e13abd047b5b0eb314ce64d9
-    - name: Enemy_laserbot_Frame_5
+    - name: Frame_5
       frameIndex: 5
       additiveSortOrder: 0
       cellRect:
@@ -544,7 +544,7 @@ ScriptedImporter:
         width: 37
         height: 42
       spriteId: b07e069c55aafbe4391573a1bb06aa9b
-    - name: Enemy_laserbot_Frame_6
+    - name: Frame_6
       frameIndex: 6
       additiveSortOrder: 0
       cellRect:
@@ -553,7 +553,7 @@ ScriptedImporter:
         width: 21
         height: 38
       spriteId: 627cf83246110414cbddb006b4e0f497
-    - name: Enemy_laserbot_Frame_7
+    - name: Frame_7
       frameIndex: 7
       additiveSortOrder: 0
       cellRect:
@@ -562,7 +562,7 @@ ScriptedImporter:
         width: 48
         height: 56
       spriteId: fd0330f0ff07fe44d8c9bd618b93d9a7
-    - name: Enemy_laserbot_Frame_8
+    - name: Frame_8
       frameIndex: 8
       additiveSortOrder: 0
       cellRect:
@@ -571,7 +571,7 @@ ScriptedImporter:
         width: 21
         height: 38
       spriteId: f0b7df6bb33cf7248b35b9f920279145
-    - name: Enemy_laserbot_Frame_9
+    - name: Frame_9
       frameIndex: 9
       additiveSortOrder: 0
       cellRect:
@@ -580,7 +580,7 @@ ScriptedImporter:
         width: 21
         height: 38
       spriteId: 34b9bdd44bb247b4a976908f8fa75371
-    - name: Enemy_laserbot_Frame_10
+    - name: Frame_10
       frameIndex: 10
       additiveSortOrder: 0
       cellRect:
@@ -589,7 +589,7 @@ ScriptedImporter:
         width: 21
         height: 38
       spriteId: d5641e2336a76d546b669126064c1068
-    - name: Enemy_laserbot_Frame_11
+    - name: Frame_11
       frameIndex: 11
       additiveSortOrder: 0
       cellRect:
@@ -598,7 +598,7 @@ ScriptedImporter:
         width: 21
         height: 37
       spriteId: 8f18938a2e96cbb4b9fcc7175ec4c415
-    - name: Enemy_laserbot_Frame_12
+    - name: Frame_12
       frameIndex: 12
       additiveSortOrder: 0
       cellRect:
@@ -607,7 +607,7 @@ ScriptedImporter:
         width: 64
         height: 59
       spriteId: 44da2f621e921df4098ffb50fe28f4a8
-    - name: Enemy_laserbot_Frame_13
+    - name: Frame_13
       frameIndex: 13
       additiveSortOrder: 0
       cellRect:
@@ -616,7 +616,7 @@ ScriptedImporter:
         width: 64
         height: 59
       spriteId: 4abc088301c4b94468244fbf70485461
-    - name: Enemy_laserbot_Frame_14
+    - name: Frame_14
       frameIndex: 14
       additiveSortOrder: 0
       cellRect:
@@ -625,7 +625,7 @@ ScriptedImporter:
         width: 65
         height: 59
       spriteId: e8065e7ad4ab4ca48b2ed7a5f7b39763
-    - name: Enemy_laserbot_Frame_15
+    - name: Frame_15
       frameIndex: 15
       additiveSortOrder: 0
       cellRect:
@@ -634,7 +634,7 @@ ScriptedImporter:
         width: 64
         height: 58
       spriteId: 4232369d55a5fc44da98ee7a5bde6355
-    - name: Enemy_laserbot_Frame_16
+    - name: Frame_16
       frameIndex: 16
       additiveSortOrder: 0
       cellRect:
@@ -643,7 +643,7 @@ ScriptedImporter:
         width: 65
         height: 48
       spriteId: 6849e727efd7cc843a1cdfc1a47d757e
-    - name: Enemy_laserbot_Frame_17
+    - name: Frame_17
       frameIndex: 17
       additiveSortOrder: 0
       cellRect:
@@ -658,7 +658,7 @@ ScriptedImporter:
   - name: DefaultTexturePlatform
     overridden: 0
     ignorePlatformSupport: 0
-    maxTextureSize: 2048
+    maxTextureSize: 16384
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0

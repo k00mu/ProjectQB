@@ -97,7 +97,7 @@ ScriptedImporter:
     addSortingGroup: 1
     addShadowCasters: 0
   importFileNodeState: 1
-  platformSettingsDirtyTick: 0
+  platformSettingsDirtyTick: 638610659917085863
   textureAssetName: 
   singleSpriteImportData:
   - name: 
@@ -450,7 +450,7 @@ ScriptedImporter:
     layerType: 0
     blendMode: 0
     cells:
-    - name: Enemy_onipoluta_Frame_0
+    - name: Frame_0
       frameIndex: 0
       additiveSortOrder: 0
       cellRect:
@@ -459,7 +459,7 @@ ScriptedImporter:
         width: 33
         height: 54
       spriteId: ae1323040f510004d96e9bc5e46af505
-    - name: Enemy_onipoluta_Frame_1
+    - name: Frame_1
       frameIndex: 1
       additiveSortOrder: 0
       cellRect:
@@ -468,7 +468,7 @@ ScriptedImporter:
         width: 42
         height: 52
       spriteId: 603f1b04af7ab784e8e222bae173b415
-    - name: Enemy_onipoluta_Frame_2
+    - name: Frame_2
       frameIndex: 2
       additiveSortOrder: 0
       cellRect:
@@ -477,7 +477,7 @@ ScriptedImporter:
         width: 42
         height: 52
       spriteId: 23d0dbe56492dca42bf6ed24238db135
-    - name: Enemy_onipoluta_Frame_3
+    - name: Frame_3
       frameIndex: 3
       additiveSortOrder: 0
       cellRect:
@@ -486,7 +486,7 @@ ScriptedImporter:
         width: 33
         height: 54
       spriteId: 2604a8744bfebaf4d824daa60aa9b12f
-    - name: Enemy_onipoluta_Frame_4
+    - name: Frame_4
       frameIndex: 4
       additiveSortOrder: 0
       cellRect:
@@ -495,7 +495,7 @@ ScriptedImporter:
         width: 41
         height: 52
       spriteId: 653605a47c4fcf24b83474e4c2181779
-    - name: Enemy_onipoluta_Frame_5
+    - name: Frame_5
       frameIndex: 5
       additiveSortOrder: 0
       cellRect:
@@ -504,7 +504,7 @@ ScriptedImporter:
         width: 41
         height: 52
       spriteId: 13fd8b0a644869f4ea8d75273f92faa2
-    - name: Enemy_onipoluta_Frame_6
+    - name: Frame_6
       frameIndex: 6
       additiveSortOrder: 0
       cellRect:
@@ -513,7 +513,7 @@ ScriptedImporter:
         width: 41
         height: 52
       spriteId: 7e89fb9bcc205ac4eb6e93d61a98c730
-    - name: Enemy_onipoluta_Frame_7
+    - name: Frame_7
       frameIndex: 7
       additiveSortOrder: 0
       cellRect:
@@ -522,7 +522,7 @@ ScriptedImporter:
         width: 57
         height: 28
       spriteId: 487739210bdde2146b1eadde50d42886
-    - name: Enemy_onipoluta_Frame_8
+    - name: Frame_8
       frameIndex: 8
       additiveSortOrder: 0
       cellRect:
@@ -531,7 +531,7 @@ ScriptedImporter:
         width: 58
         height: 32
       spriteId: c48b7d4c556665b408ce4312a698b28c
-    - name: Enemy_onipoluta_Frame_9
+    - name: Frame_9
       frameIndex: 9
       additiveSortOrder: 0
       cellRect:
@@ -540,7 +540,7 @@ ScriptedImporter:
         width: 45
         height: 54
       spriteId: 7f93a0dd10af9fd40bfdf4940ec88b80
-    - name: Enemy_onipoluta_Frame_10
+    - name: Frame_10
       frameIndex: 10
       additiveSortOrder: 0
       cellRect:
@@ -549,7 +549,7 @@ ScriptedImporter:
         width: 42
         height: 52
       spriteId: 0ffcf9affcec0174d8766d9a936d77c9
-    - name: Enemy_onipoluta_Frame_11
+    - name: Frame_11
       frameIndex: 11
       additiveSortOrder: 0
       cellRect:
@@ -558,7 +558,7 @@ ScriptedImporter:
         width: 42
         height: 52
       spriteId: 8f89ba3217aaa284e81540d12423d68a
-    - name: Enemy_onipoluta_Frame_12
+    - name: Frame_12
       frameIndex: 12
       additiveSortOrder: 0
       cellRect:
@@ -567,7 +567,7 @@ ScriptedImporter:
         width: 64
         height: 42
       spriteId: 4ca3cdec3c1a9814fa614fc196308275
-    - name: Enemy_onipoluta_Frame_13
+    - name: Frame_13
       frameIndex: 13
       additiveSortOrder: 0
       cellRect:
@@ -576,7 +576,7 @@ ScriptedImporter:
         width: 57
         height: 32
       spriteId: b840433ee24086249aba00bf206729ce
-    - name: Enemy_onipoluta_Frame_14
+    - name: Frame_14
       frameIndex: 14
       additiveSortOrder: 0
       cellRect:
@@ -585,7 +585,7 @@ ScriptedImporter:
         width: 47
         height: 54
       spriteId: 2618473d1aef2704e9adccdfe2b892f6
-    - name: Enemy_onipoluta_Frame_15
+    - name: Frame_15
       frameIndex: 15
       additiveSortOrder: 0
       cellRect:
@@ -596,7 +596,55 @@ ScriptedImporter:
       spriteId: 4bf5a1f8398f72a40af52d95442c4e66
     linkedCells: []
     parentIndex: -1
-  platformSettings: []
+  platformSettings:
+  - name: DefaultTexturePlatform
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 16384
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: Standalone
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: Android
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: WebGL
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
   generatePhysicsShape: 0
   secondarySpriteTextures: []
   spritePackingTag: 
