@@ -1,0 +1,719 @@
+fileFormatVersion: 2
+guid: de01ed74fff9f8e4ebd23051ea42ccca
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 62a9f0aa5b59740cfbadc7e5f9823bb0, type: 3}
+  textureImporterSettings:
+    alphaSource: 1
+    mipMapMode: 0
+    enableMipMap: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+    convertToNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+    swizzle: 50462976
+    isReadable: 0
+    streamingMipmaps: 0
+    streamingMipmapsPriority: 0
+    vTOnly: 0
+    ignoreMipmapLimit: 0
+    nPOTScale: 1
+    sRGBTexture: 1
+    spriteMode: 2
+    spriteExtrude: 1
+    spriteMeshType: 1
+    alignment: 0
+    spritePivot: {x: 0.5, y: 0.5}
+    spritePixelsToUnits: 100
+    spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+    spriteGenerateFallbackPhysicsShape: 0
+    generateCubemap: 6
+    cubemapConvolution: 0
+    seamlessCubemap: 0
+    alphaIsTransparency: 1
+    spriteTessellationDetail: -1
+    textureType: 8
+    textureShape: 1
+    singleChannelComponent: 0
+    flipbookRows: 0
+    flipbookColumns: 0
+    ignorePngGamma: 0
+    cookieMode: 0
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+    normalMap: 0
+    textureFormat: 0
+    maxTextureSize: 0
+    lightmap: 0
+    compressionQuality: 0
+    linearTexture: 0
+    grayScaleToAlpha: 0
+    rGBM: 0
+    cubemapConvolutionSteps: 0
+    cubemapConvolutionExponent: 0
+    maxTextureSizeSet: 0
+    compressionQualitySet: 0
+    textureFormatSet: 0
+    applyGammaDecoding: 0
+  previousAsepriteImporterSettings:
+    fileImportMode: 1
+    importHiddenLayers: 0
+    layerImportMode: 1
+    defaultPivotSpace: 0
+    defaultPivotAlignment: 7
+    customPivotPosition: {x: 0.5, y: 0.5}
+    mosaicPadding: 4
+    spritePadding: 0
+    generateModelPrefab: 1
+    generateAnimationClips: 1
+    addSortingGroup: 1
+    addShadowCasters: 0
+  asepriteImporterSettings:
+    fileImportMode: 1
+    importHiddenLayers: 0
+    layerImportMode: 1
+    defaultPivotSpace: 0
+    defaultPivotAlignment: 7
+    customPivotPosition: {x: 0.5, y: 0.5}
+    mosaicPadding: 4
+    spritePadding: 0
+    generateModelPrefab: 1
+    generateAnimationClips: 1
+    addSortingGroup: 1
+    addShadowCasters: 0
+  importFileNodeState: 1
+  platformSettingsDirtyTick: 0
+  textureAssetName: 
+  singleSpriteImportData:
+  - name: 
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    spriteID: 
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 0, y: 0}
+  animatedSpriteImportData:
+  - name: Enemy_snailcapt_Frame_0
+    originalName: 
+    pivot: {x: 0.4509804, y: -0.33333334}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 132
+      y: 4
+      width: 51
+      height: 48
+    spriteID: c62189cd1e7449f41803f7640a65ebf0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 132, y: 4}
+  - name: Enemy_snailcapt_Frame_1
+    originalName: 
+    pivot: {x: 0.4509804, y: -0.33333334}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 191
+      y: 4
+      width: 51
+      height: 48
+    spriteID: d1c7c8a679741554d869f9d561c50586
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 191, y: 4}
+  - name: Enemy_snailcapt_Frame_2
+    originalName: 
+    pivot: {x: 0.4509804, y: -0.3478261}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 181
+      y: 60
+      width: 51
+      height: 46
+    spriteID: a93dd66986183bd49a8bf24637b9d2a7
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 181, y: 60}
+  - name: Enemy_snailcapt_Frame_3
+    originalName: 
+    pivot: {x: 0.4509804, y: -0.3478261}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 116
+      width: 51
+      height: 46
+    spriteID: 9f900df45d189ea41a799a18013e9e81
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 116}
+  - name: Enemy_snailcapt_Frame_4
+    originalName: 
+    pivot: {x: 0.4509804, y: -0.33333334}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 60
+      width: 51
+      height: 48
+    spriteID: f80a5ff1ce4f42d4b85fe0e9f453fc75
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 60}
+  - name: Enemy_snailcapt_Frame_5
+    originalName: 
+    pivot: {x: 0.4509804, y: -0.33333334}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 63
+      y: 60
+      width: 51
+      height: 48
+    spriteID: 880bd12dd07eeca4b9bad93853d5be0e
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 63, y: 60}
+  - name: Enemy_snailcapt_Frame_6
+    originalName: 
+    pivot: {x: 0.4509804, y: -0.33333334}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 122
+      y: 60
+      width: 51
+      height: 48
+    spriteID: 9cd661ed40c2cdc418a3e3cdfc2bd118
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 122, y: 60}
+  - name: Enemy_snailcapt_Frame_7
+    originalName: 
+    pivot: {x: 0.4814815, y: -0.33333334}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 70
+      y: 4
+      width: 54
+      height: 48
+    spriteID: 3669a40476e81eb4c921aca857594068
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 70, y: 4}
+  - name: Enemy_snailcapt_Frame_8
+    originalName: 
+    pivot: {x: 0.51724136, y: -0.33333334}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 4
+      width: 58
+      height: 48
+    spriteID: 770d6b73e0a2e03459319880f51b4274
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 4}
+  - name: Enemy_snailcapt_Frame_9
+    originalName: 
+    pivot: {x: 1, y: -2.7333336}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 54
+      y: 170
+      width: 13
+      height: 15
+    spriteID: e8b2415312d04e24eaa6e7a1352096e5
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 54, y: 170}
+  - name: Enemy_snailcapt_Frame_10
+    originalName: 
+    pivot: {x: 1, y: -2.7333336}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 75
+      y: 170
+      width: 13
+      height: 15
+    spriteID: 559d93c698293444e9cb6f555ddd6a67
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 75, y: 170}
+  - name: Enemy_snailcapt_Frame_11
+    originalName: 
+    pivot: {x: 1, y: -2.7333336}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 96
+      y: 170
+      width: 13
+      height: 15
+    spriteID: a0ed5752168fe4047ab97485cc829e9c
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 77, y: 129}
+  - name: Enemy_snailcapt_Frame_12
+    originalName: 
+    pivot: {x: 1, y: -3.2307694}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 240
+      y: 60
+      width: 12
+      height: 13
+    spriteID: 5fac3dbab32d5df46b7ea9ddd4227a02
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 240, y: 60}
+  - name: Enemy_snailcapt_Frame_13
+    originalName: 
+    pivot: {x: 1.1, y: -4.4}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 240
+      y: 81
+      width: 10
+      height: 10
+    spriteID: 4a4bc5f9126111d4bab785161602c3be
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 240, y: 81}
+  - name: Enemy_snailcapt_Frame_14
+    originalName: 
+    pivot: {x: 1, y: -2.7333336}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 32
+      y: 170
+      width: 14
+      height: 15
+    spriteID: 055d2e88131e4d64491d8c3386350135
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 32, y: 170}
+  - name: Enemy_snailcapt_Frame_15
+    originalName: 
+    pivot: {x: 0.85, y: -2}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 170
+      width: 20
+      height: 20
+    spriteID: ac65830889cc33d47b7c91030bc002c8
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 170}
+  - name: Enemy_snailcapt_Frame_16
+    originalName: 
+    pivot: {x: 0.7586207, y: -1.137931}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 209
+      y: 116
+      width: 29
+      height: 29
+    spriteID: aab92dfa4dd787940ad37e641845e89e
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 209, y: 116}
+  - name: Enemy_snailcapt_Frame_17
+    originalName: 
+    pivot: {x: 0.6857143, y: -1.0645161}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 166
+      y: 116
+      width: 35
+      height: 31
+    spriteID: bf67618c8fdbc6043b09be17039423d7
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 166, y: 116}
+  - name: Enemy_snailcapt_Frame_18
+    originalName: 
+    pivot: {x: 0.64285713, y: -0.90909094}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 116
+      y: 116
+      width: 42
+      height: 33
+    spriteID: f2c743e874c929249b66afdc003c26aa
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 116, y: 116}
+  - name: Enemy_snailcapt_Frame_19
+    originalName: 
+    pivot: {x: 0.62222224, y: -0.8787879}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 63
+      y: 116
+      width: 45
+      height: 33
+    spriteID: 16114f0e960b81e40bd9c066bfdcb3a6
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 63, y: 116}
+  spriteSheetImportData: []
+  asepriteLayers:
+  - layerIndex: 0
+    guid: -1185700456
+    name: Enemy_snailcapt
+    layerFlags: 0
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: Enemy_snailcapt_Frame_0
+      frameIndex: 0
+      additiveSortOrder: 0
+      cellRect:
+        x: 9
+        y: 16
+        width: 51
+        height: 48
+      spriteId: c62189cd1e7449f41803f7640a65ebf0
+    - name: Enemy_snailcapt_Frame_1
+      frameIndex: 1
+      additiveSortOrder: 0
+      cellRect:
+        x: 9
+        y: 16
+        width: 51
+        height: 48
+      spriteId: d1c7c8a679741554d869f9d561c50586
+    - name: Enemy_snailcapt_Frame_2
+      frameIndex: 2
+      additiveSortOrder: 0
+      cellRect:
+        x: 9
+        y: 16
+        width: 51
+        height: 46
+      spriteId: a93dd66986183bd49a8bf24637b9d2a7
+    - name: Enemy_snailcapt_Frame_3
+      frameIndex: 3
+      additiveSortOrder: 0
+      cellRect:
+        x: 9
+        y: 16
+        width: 51
+        height: 46
+      spriteId: 9f900df45d189ea41a799a18013e9e81
+    - name: Enemy_snailcapt_Frame_4
+      frameIndex: 4
+      additiveSortOrder: 0
+      cellRect:
+        x: 9
+        y: 16
+        width: 51
+        height: 48
+      spriteId: f80a5ff1ce4f42d4b85fe0e9f453fc75
+    - name: Enemy_snailcapt_Frame_5
+      frameIndex: 5
+      additiveSortOrder: 0
+      cellRect:
+        x: 9
+        y: 16
+        width: 51
+        height: 48
+      spriteId: 880bd12dd07eeca4b9bad93853d5be0e
+    - name: Enemy_snailcapt_Frame_6
+      frameIndex: 6
+      additiveSortOrder: 0
+      cellRect:
+        x: 9
+        y: 16
+        width: 51
+        height: 48
+      spriteId: 9cd661ed40c2cdc418a3e3cdfc2bd118
+    - name: Enemy_snailcapt_Frame_7
+      frameIndex: 7
+      additiveSortOrder: 0
+      cellRect:
+        x: 6
+        y: 16
+        width: 54
+        height: 48
+      spriteId: 3669a40476e81eb4c921aca857594068
+    - name: Enemy_snailcapt_Frame_8
+      frameIndex: 8
+      additiveSortOrder: 0
+      cellRect:
+        x: 2
+        y: 16
+        width: 58
+        height: 48
+      spriteId: 770d6b73e0a2e03459319880f51b4274
+    - name: Enemy_snailcapt_Frame_9
+      frameIndex: 9
+      additiveSortOrder: 0
+      cellRect:
+        x: 19
+        y: 41
+        width: 13
+        height: 15
+      spriteId: e8b2415312d04e24eaa6e7a1352096e5
+    - name: Enemy_snailcapt_Frame_10
+      frameIndex: 10
+      additiveSortOrder: 0
+      cellRect:
+        x: 19
+        y: 41
+        width: 13
+        height: 15
+      spriteId: 559d93c698293444e9cb6f555ddd6a67
+    - name: Enemy_snailcapt_Frame_11
+      frameIndex: 11
+      additiveSortOrder: 0
+      cellRect:
+        x: 0
+        y: 0
+        width: 64
+        height: 64
+      spriteId: a0ed5752168fe4047ab97485cc829e9c
+    - name: Enemy_snailcapt_Frame_12
+      frameIndex: 12
+      additiveSortOrder: 0
+      cellRect:
+        x: 20
+        y: 42
+        width: 12
+        height: 13
+      spriteId: 5fac3dbab32d5df46b7ea9ddd4227a02
+    - name: Enemy_snailcapt_Frame_13
+      frameIndex: 13
+      additiveSortOrder: 0
+      cellRect:
+        x: 21
+        y: 44
+        width: 10
+        height: 10
+      spriteId: 4a4bc5f9126111d4bab785161602c3be
+    - name: Enemy_snailcapt_Frame_14
+      frameIndex: 14
+      additiveSortOrder: 0
+      cellRect:
+        x: 18
+        y: 41
+        width: 14
+        height: 15
+      spriteId: 055d2e88131e4d64491d8c3386350135
+    - name: Enemy_snailcapt_Frame_15
+      frameIndex: 15
+      additiveSortOrder: 0
+      cellRect:
+        x: 15
+        y: 40
+        width: 20
+        height: 20
+      spriteId: ac65830889cc33d47b7c91030bc002c8
+    - name: Enemy_snailcapt_Frame_16
+      frameIndex: 16
+      additiveSortOrder: 0
+      cellRect:
+        x: 10
+        y: 33
+        width: 29
+        height: 29
+      spriteId: aab92dfa4dd787940ad37e641845e89e
+    - name: Enemy_snailcapt_Frame_17
+      frameIndex: 17
+      additiveSortOrder: 0
+      cellRect:
+        x: 8
+        y: 33
+        width: 35
+        height: 31
+      spriteId: bf67618c8fdbc6043b09be17039423d7
+    - name: Enemy_snailcapt_Frame_18
+      frameIndex: 18
+      additiveSortOrder: 0
+      cellRect:
+        x: 5
+        y: 30
+        width: 42
+        height: 33
+      spriteId: f2c743e874c929249b66afdc003c26aa
+    - name: Enemy_snailcapt_Frame_19
+      frameIndex: 19
+      additiveSortOrder: 0
+      cellRect:
+        x: 4
+        y: 29
+        width: 45
+        height: 33
+      spriteId: 16114f0e960b81e40bd9c066bfdcb3a6
+    linkedCells: []
+    parentIndex: -1
+  platformSettings: []
+  generatePhysicsShape: 0
+  secondarySpriteTextures: []
+  spritePackingTag: 
+  canvasSize: {x: 64, y: 64}
