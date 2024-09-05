@@ -1,0 +1,40 @@
+{
+    "Map/SizeTest": {
+        "height": 4300,
+        "width": 2
+    },
+    "activeFile": "",
+    "expandedProjectPaths": [
+    ],
+    "fileStates": {
+        "Fall Area.tmx": {
+            "scale": 5.5,
+            "selectedLayer": 7,
+            "viewCenter": {
+                "x": 115,
+                "y": 181.45454545454547
+            }
+        },
+        "Tilemap1.tsx": {
+            "scaleInDock": 0.5,
+            "scaleInEditor": 5.5
+        },
+        "Tilemap2.tsx": {
+            "scaleInDock": 0.5,
+            "scaleInEditor": 1
+        }
+    },
+    "last.imagePath": "D:/GitHub/Quacklebit Tilemap/Falling Area",
+    "map.height": 50,
+    "map.lastUsedFormat": "tmx",
+    "map.width": 16,
+    "openFiles": [
+    ],
+    "project": "Fall Area.tiled-project",
+    "recentFiles": [
+        "Tilemap2.tsx",
+        "Tilemap1.tsx",
+        "Fall Area.tmx"
+    ],
+    "tileset.lastUsedFormat": "tsx"
+}

@@ -4841,7 +4841,7 @@ GameObject:
   - component: {fileID: 114000010596316938}
   - component: {fileID: 114587324304491438}
   m_Layer: 0
-  m_Name: MyRobotWeapon
+  m_Name: '[Ex]MyRobotWeapon'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

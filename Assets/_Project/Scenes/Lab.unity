@@ -272,7 +272,7 @@ MonoBehaviour:
   BoundsMode: 1
   LevelBounds:
     m_Center: {x: 50, y: 0, z: 0}
-    m_Extent: {x: 50, y: 4.225, z: 5}
+    m_Extent: {x: 50, y: 4.5, z: 5}
   ConvertToColliderBoundsButton: 0
   LoadingSceneMode: 1
   LoadingSceneName: LoadingScreen
@@ -4887,6 +4887,7 @@ GameObject:
   - component: {fileID: 1810967850}
   - component: {fileID: 1810967849}
   - component: {fileID: 1810967848}
+  - component: {fileID: 1810967854}
   m_Layer: 0
   m_Name: Regular Camera
   m_TagString: MainCamera
@@ -4906,7 +4907,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71978be820ec44066856f2b1df7bd818, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MoveParallax: 1
+  MoveParallax: 0
 --- !u!114 &1810967849
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4963,8 +4964,8 @@ Camera:
   m_GameObject: {fileID: 1810967847}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.5254902, g: 0.5254902, b: 0.5254902, a: 1}
+  m_ClearFlags: 2
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 1}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -5020,6 +5021,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1810967854
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1810967847}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17661864807f4ba5b372b8b6d4454c3c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _targetSize: 4.5
 --- !u!1001 &1912986897
 PrefabInstance:
   m_ObjectHideFlags: 0
