@@ -249,7 +249,7 @@ MonoBehaviour:
   CharacterType: 1
   PlayerID: 
   InitialFacingDirection: 0
-  DirectionOnSpawn: 2
+  DirectionOnSpawn: 1
   CharacterAnimator: {fileID: 4227110275128984302}
   UseDefaultMecanim: 1
   PerformAnimatorSanityChecks: 1
@@ -329,7 +329,7 @@ MonoBehaviour:
   InitialWeapon: {fileID: 114000010596316938, guid: 35af940ad753df943a4cfc2e7a165e1e,
     type: 3}
   CanPickupWeapons: 1
-  WeaponAttachment: {fileID: 5684137346640025645}
+  WeaponAttachment: {fileID: 1657185352952866846}
   ForceWeaponScaleResetOnEquip: 0
   ForceWeaponRotationResetOnEquip: 0
   AutomaticallyBindAnimator: 1
