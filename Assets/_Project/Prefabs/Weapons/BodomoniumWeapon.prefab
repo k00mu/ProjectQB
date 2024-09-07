@@ -60,7 +60,7 @@ MonoBehaviour:
   AutoDestroyWhenEmpty: 0
   AutoDestroyWhenEmptyDelay: 1
   CurrentAmmoLoaded: 0
-  WeaponAttachmentOffset: {x: 0, y: -0.1, z: 0}
+  WeaponAttachmentOffset: {x: 0, y: 0.18125, z: 0}
   FlipWeaponOnCharacterFlip: 1
   FlipValue: {x: 0.1, y: 1, z: 1}
   LeftHandHandle: {fileID: 0}
@@ -155,6 +155,7 @@ MonoBehaviour:
   MutualizeWaitingPools: 1
   NestWaitingPool: 1
   NestUnderThis: 0
-  GameObjectToPool: {fileID: 100000, guid: 69b6bda22e9d2e5478581e4b543cd77b, type: 3}
+  GameObjectToPool: {fileID: 261129630522402023, guid: 4ee6b968fee9bc54a9c3708c07da94f2,
+    type: 3}
   PoolSize: 20
   PoolCanExpand: 1

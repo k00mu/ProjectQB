@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4000013472678096}
   - component: {fileID: 114000010616902070}
-  - component: {fileID: -5917385880340447960}
   - component: {fileID: 51025741899541892}
+  - component: {fileID: -5917385880340447960}
   - component: {fileID: -7196698240889704513}
   m_Layer: 0
   m_Name: RoMelee
@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 1000010407495960}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -69.285, y: -3.546, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -48,8 +48,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TriggerMode: 0
-  DelayBeforeUse: 0
-  DelayBeforeUseReleaseInterruption: 1
+  DelayBeforeUse: 0.2
+  DelayBeforeUseReleaseInterruption: 0
   TimeBetweenUses: 0.3
   TimeBetweenUsesReleaseInterruption: 0
   Interruptable: 0
@@ -136,18 +136,18 @@ MonoBehaviour:
     Delay: 0
     RecoilFeedback: {fileID: 0}
   DamageAreaShape: 0
-  AreaSize: {x: 1.5, y: 1.5}
-  AreaOffset: {x: 1.25, y: -0.25}
+  AreaSize: {x: 0.75, y: 0.75}
+  AreaOffset: {x: 0.55, y: -0.2}
   InitialDelay: 0
   ActiveDuration: 0.2
   TargetLayerMask:
     serializedVersion: 2
-    m_Bits: 8448
+    m_Bits: 8192
   DamageCaused: 10
   Knockback: 0
   KnockbackForce: {x: 40, y: 2}
   InvincibilityDuration: 0.5
---- !u!114 &-5917385880340447960
+--- !u!114 &51025741899541892
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -160,8 +160,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TriggerMode: 0
-  DelayBeforeUse: 0
-  DelayBeforeUseReleaseInterruption: 1
+  DelayBeforeUse: 0.2
+  DelayBeforeUseReleaseInterruption: 0
   TimeBetweenUses: 0.6
   TimeBetweenUsesReleaseInterruption: 0
   Interruptable: 0
@@ -248,18 +248,18 @@ MonoBehaviour:
     Delay: 0
     RecoilFeedback: {fileID: 0}
   DamageAreaShape: 0
-  AreaSize: {x: 1.5, y: 1.5}
-  AreaOffset: {x: 1.25, y: -0.25}
+  AreaSize: {x: 0.75, y: 0.75}
+  AreaOffset: {x: 0.64, y: 0.04}
   InitialDelay: 0
   ActiveDuration: 0.2
   TargetLayerMask:
     serializedVersion: 2
-    m_Bits: 8448
+    m_Bits: 8192
   DamageCaused: 10
   Knockback: 0
   KnockbackForce: {x: 40, y: 2}
   InvincibilityDuration: 0.5
---- !u!114 &51025741899541892
+--- !u!114 &-5917385880340447960
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -272,8 +272,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TriggerMode: 0
-  DelayBeforeUse: 0
-  DelayBeforeUseReleaseInterruption: 1
+  DelayBeforeUse: 0.4
+  DelayBeforeUseReleaseInterruption: 0
   TimeBetweenUses: 0.9
   TimeBetweenUsesReleaseInterruption: 0
   Interruptable: 0
@@ -360,13 +360,13 @@ MonoBehaviour:
     Delay: 0
     RecoilFeedback: {fileID: 0}
   DamageAreaShape: 0
-  AreaSize: {x: 1.5, y: 1.5}
-  AreaOffset: {x: 1.25, y: -0.25}
+  AreaSize: {x: 0.91, y: 0.45}
+  AreaOffset: {x: 0.65, y: -0.2}
   InitialDelay: 0
   ActiveDuration: 0.2
   TargetLayerMask:
     serializedVersion: 2
-    m_Bits: 8448
+    m_Bits: 8192
   DamageCaused: 10
   Knockback: 0
   KnockbackForce: {x: 40, y: 2}
