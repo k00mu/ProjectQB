@@ -4,9 +4,11 @@
 // 
 // ==================================================
 
+using MoreMountains.CorgiEngine;
+
 namespace QuackleBit
 {
-    public class LevelSelector : MoreMountains.CorgiEngine.LevelSelector
+    public class LevelSelectorAddOn : LevelSelector
     {
         public void QuitGame()
         {
@@ -14,3 +16,4 @@ namespace QuackleBit
         }
     }
 }
+    

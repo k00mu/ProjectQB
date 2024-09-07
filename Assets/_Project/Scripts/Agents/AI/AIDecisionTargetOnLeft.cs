@@ -7,7 +7,7 @@
 using MoreMountains.CorgiEngine;
 using MoreMountains.Tools;
 
-namespace QuackleBit.Agents.AI
+namespace QuackleBit
 {
 	public class AIDecisionTargetOnLeft : AIDecision
 	{
