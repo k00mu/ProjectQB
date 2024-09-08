@@ -6,7 +6,13 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/_Project/Scenes/Lab.unity
+    path: Assets/_Project/Scenes/Game/Intro.unity
+    guid: 7d7614a8fb1d0c440b0a33c67b00c3cb
+  - enabled: 1
+    path: Assets/_Project/Scenes/Game/Loading.unity
+    guid: 0ca8ea26cfcab0542bbee51895be9577
+  - enabled: 1
+    path: Assets/_Project/Scenes/Game/Lab.unity
     guid: e9aaf1f6617bb5b4e998b21e597ec77d
   - enabled: 0
     path: Assets/Plugins/CorgiEngine/Demos/StartScreen/SplashScreen.unity

@@ -1,0 +1,3713 @@
+fileFormatVersion: 2
+guid: eb42746a67fe75242b0c60b82f5e6793
+importerOverride:
+  nativeImporterType: 2089858483
+  scriptedImporterType:
+    serializedVersion: 2
+    Hash: b10b55a1aa6a1aa32521bc0cab59632e
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: b2a9591990af98743ba3ff7cf1000886, type: 3}
+  textureImporterSettings:
+    alphaSource: 1
+    mipMapMode: 0
+    enableMipMap: 1
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+    convertToNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+    swizzle: 50462976
+    isReadable: 0
+    streamingMipmaps: 1
+    streamingMipmapsPriority: 0
+    vTOnly: 0
+    ignoreMipmapLimit: 0
+    nPOTScale: 1
+    sRGBTexture: 1
+    spriteMode: 2
+    spriteExtrude: 1
+    spriteMeshType: 1
+    alignment: 0
+    spritePivot: {x: 0.5, y: 0.5}
+    spritePixelsToUnits: 32
+    spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+    spriteGenerateFallbackPhysicsShape: 0
+    generateCubemap: 6
+    cubemapConvolution: 0
+    seamlessCubemap: 0
+    alphaIsTransparency: 1
+    spriteTessellationDetail: -1
+    textureType: 8
+    textureShape: 1
+    singleChannelComponent: 0
+    flipbookRows: 0
+    flipbookColumns: 0
+    ignorePngGamma: 0
+    cookieMode: 0
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 0
+    wrapV: 0
+    wrapW: 0
+    normalMap: 0
+    textureFormat: 0
+    maxTextureSize: 0
+    lightmap: 0
+    compressionQuality: 0
+    linearTexture: 0
+    grayScaleToAlpha: 0
+    rGBM: 0
+    cubemapConvolutionSteps: 0
+    cubemapConvolutionExponent: 0
+    maxTextureSizeSet: 0
+    compressionQualitySet: 0
+    textureFormatSet: 0
+    applyGammaDecoding: 0
+  spriteImportData:
+  - name: 
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    spriteID: 
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 0, y: 0}
+    spritePosition: {x: 0, y: 0}
+  mosaicSpriteImportData:
+  - name: "Thank you for being part of Ro\u2019s first steps in this world!"
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 2264
+      y: 2244
+      width: 1104
+      height: 26
+    spriteID: aafacb61bfed3fb40bbce34f1667e17b
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 2264, y: 2244}
+    spritePosition: {x: 404, y: 527}
+  - name: Sound Engineer  Nico Dicky Hermawan
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 875
+      y: 7913
+      width: 423
+      height: 93
+    spriteID: 63756f5ffe7cb044fa5b59ba0f7d0a40
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 875, y: 7913}
+    spritePosition: {x: 748, y: 498}
+  - name: Programmer  Atqa Munzir
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1932
+      y: 2244
+      width: 324
+      height: 97
+    spriteID: a7364fc673eef30449b002898022d674
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1932, y: 2244}
+    spritePosition: {x: 798, y: 494}
+  - name: Game Artist  Silviana Ginting
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1932
+      y: 2349
+      width: 324
+      height: 97
+    spriteID: 8294255434a9cdd47aefc78bc5f6e5ae
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1932, y: 2349}
+    spritePosition: {x: 798, y: 494}
+  - name: Game Designer  Rendy Rayana
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1306
+      y: 7913
+      width: 404
+      height: 93
+    spriteID: 43d540f4cc2f07742a8a26c6806f1cbc
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1306, y: 7913}
+    spritePosition: {x: 758, y: 498}
+  - name: 'This is just the start, with countless tales to be told, until '
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 8112
+      width: 1448
+      height: 52
+    spriteID: 8537c2ef95c8ffa4c8517f5dd17218f9
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 8112}
+    spritePosition: {x: 232, y: 516}
+  - name: BG Black
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 3860
+      y: 10884
+      width: 1920
+      height: 1080
+    spriteID: 0d58e8a2a0f1fb74bb6f8bc29beffeda
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1932, y: 1092}
+    spritePosition: {x: 0, y: 0}
+  - name: Pause Icon
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 2108
+      y: 7948
+      width: 57
+      height: 55
+    spriteID: 316797c9b496f34409fb57ffd4b4a524
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1848, y: 7948}
+    spritePosition: {x: 118, y: 907}
+  - name: No
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1853
+      y: 7659
+      width: 41
+      height: 24
+    spriteID: 63b666db72770d744965ef0f957b1276
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1853, y: 7659}
+    spritePosition: {x: 940, y: 450}
+  - name: Yes
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1853
+      y: 7620
+      width: 51
+      height: 27
+    spriteID: f6c0d5f4e1739cb47b5169d7893a0969
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1853, y: 7620}
+    spritePosition: {x: 934, y: 503}
+  - name: Quit Game
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 274
+      y: 13458
+      width: 341
+      height: 55
+    spriteID: 81a13483bba1abc45bc4a53661c8ea9d
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1737, y: 7819}
+    spritePosition: {x: 879, y: 421}
+  - name: BG Overlay
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 7620
+      width: 1920
+      height: 1080
+    spriteID: 066e46531cf36444290c65578927ef2f
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 3268}
+    spritePosition: {x: 0, y: 0}
+  - name: Pause Icon_1
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1783
+      y: 7948
+      width: 57
+      height: 55
+    spriteID: eb3f15bd90a3112469aa139a2b3dde55
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1783, y: 7948}
+    spritePosition: {x: 118, y: 907}
+  - name: Game Paused
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1078
+      y: 7924
+      width: 418
+      height: 52
+    spriteID: 9151830aace76e943b566f7c86b844ef
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1269, y: 8018}
+    spritePosition: {x: 750, y: 611}
+  - name: Pointer
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1868
+      y: 7853
+      width: 9
+      height: 40
+    spriteID: f1405c7f5ac8cce4a8ded5a8b4a33636
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1891, y: 7853}
+    spritePosition: {x: 324, y: 488}
+  - name: Slider
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 3220
+      y: 2302
+      width: 702
+      height: 4
+    spriteID: d4a81b5b944272d46b714ebb42cf8383
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 3220, y: 2290}
+    spritePosition: {x: 119, y: 417}
+  - name: Back
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1848
+      y: 7770
+      width: 50
+      height: 19
+    spriteID: 8041cff78eb72c4438d1bb0c8d67a4ae
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1849, y: 7734}
+    spritePosition: {x: 120, y: 337}
+  - name: 'Audio  '
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1746
+      y: 7698
+      width: 96
+      height: 28
+    spriteID: 5bacc2218b704554a876a2cf9144ad25
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1746, y: 7698}
+    spritePosition: {x: 911, y: 530}
+  - name: BG Overlay_1
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 2180
+      width: 1920
+      height: 1080
+    spriteID: dec604af9a25b974cae68894f7eec408
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 2180}
+    spritePosition: {x: 0, y: 0}
+  - name: Pause Icon_2
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1848
+      y: 7948
+      width: 57
+      height: 55
+    spriteID: 54637236ce695474ea7d33ca8ae02057
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1848, y: 7948}
+    spritePosition: {x: 118, y: 907}
+  - name: Game Paused_1
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1269
+      y: 8018
+      width: 418
+      height: 52
+    spriteID: f0a72f9c9ebf05a41a1452318aed730c
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1269, y: 8018}
+    spritePosition: {x: 750, y: 611}
+  - name: Resume
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1718
+      y: 7913
+      width: 122
+      height: 27
+    spriteID: 3e47ef73367f118448cb47f377d98d1e
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1718, y: 7913}
+    spritePosition: {x: 900, y: 530}
+  - name: Option
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1746
+      y: 7698
+      width: 99
+      height: 31
+    spriteID: 46a841ba9c1aa2543968aca2c19ffc4c
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1746, y: 7659}
+    spritePosition: {x: 120, y: 433}
+  - name: Quit Game_1
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1737
+      y: 7819
+      width: 162
+      height: 26
+    spriteID: 4d4c7846145c4454bb69970a194e98b6
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1737, y: 7819}
+    spritePosition: {x: 879, y: 421}
+  - name: BG Overlay_2
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 3268
+      width: 1920
+      height: 1080
+    spriteID: c1ac908561a88eb4a999a6573366f678
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 3268}
+    spritePosition: {x: 0, y: 0}
+  - name: A Journey of a Wildflower Ro...
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1269
+      y: 8078
+      width: 566
+      height: 22
+    spriteID: 40c6a556e5e049a4887f312431918c74
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1269, y: 8078}
+    spritePosition: {x: 677, y: 533}
+  - name: Centuries later, Ro was born into a world on the brink of colla
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1932
+      y: 2180
+      width: 1260
+      height: 56
+    spriteID: 9a5ea930c0f5376498851c903a1c0858
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1932, y: 2180}
+    spritePosition: {x: 330, y: 511}
+  - name: As time passed, humanity could no longer endure...
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 2264
+      y: 2278
+      width: 948
+      height: 26
+    spriteID: afd21fa35335f1d47b0462ec40129e3e
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 2264, y: 2278}
+    spritePosition: {x: 486, y: 529}
+  - name: In a hidden laboratory, a scientist conducted secret experiment
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 8018
+      width: 1257
+      height: 86
+    spriteID: 1c24e796e84a3614db4c02de0f9725c3
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 8018}
+    spritePosition: {x: 331, y: 496}
+  - name: Once upon a time, in a future where Earth's oxygen levels had d
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 875
+      y: 7819
+      width: 854
+      height: 86
+    spriteID: 442a1893df43291429c547888322c3bd
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 875, y: 7819}
+    spritePosition: {x: 532, y: 496}
+  - name: BG Black_1
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 4356
+      width: 1920
+      height: 1080
+    spriteID: 37d2c1c2558c63a4a8810162125bee7b
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 4356}
+    spritePosition: {x: 0, y: 0}
+  - name: Game Tittle
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1746
+      y: 8018
+      width: 863
+      height: 191
+    spriteID: 0adc336bb38088a449805032e332544d
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 7819}
+    spritePosition: {x: 98, y: 644}
+  - name: Ponter
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1913
+      y: 7948
+      width: 9
+      height: 40
+    spriteID: 62d2f00b8f5352945ab1ab4b6a39127a
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1913, y: 7948}
+    spritePosition: {x: 727, y: 399}
+  - name: Slider_1
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 3220
+      y: 2290
+      width: 702
+      height: 4
+    spriteID: 31c1c7ec9d88d7f419b85f68935bd3e7
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 3220, y: 2290}
+    spritePosition: {x: 119, y: 417}
+  - name: Back_1
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1849
+      y: 7734
+      width: 50
+      height: 19
+    spriteID: 951d3388ba37a4648ad796c735c64067
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1849, y: 7734}
+    spritePosition: {x: 120, y: 337}
+  - name: Audio
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1746
+      y: 7734
+      width: 95
+      height: 28
+    spriteID: 72254d030e90df44c9b1b8228ed71ae3
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1746, y: 7734}
+    spritePosition: {x: 118, y: 459}
+  - name: "\xA9 2024 Quackle.bit"
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 3659
+      y: 2278
+      width: 220
+      height: 21
+    spriteID: 15968e9c39aa0a744b4cecc1292d0e81
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 3376, y: 2244}
+    spritePosition: {x: 122, y: 252}
+  - name: BG Image
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 3860
+      y: -3260
+      width: 1920
+      height: 1080
+    spriteID: 9a99610971f8b3b48a4563700d8608a6
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1932, y: 4}
+    spritePosition: {x: 0, y: 0}
+  - name: Game Tittle_1
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 875
+      y: 7620
+      width: 863
+      height: 191
+    spriteID: b3d03362589877e4bba1db335e56d135
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 875, y: 7620}
+    spritePosition: {x: 98, y: 644}
+  - name: Pointer_1
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1891
+      y: 7853
+      width: 15
+      height: 32
+    spriteID: 3bd7e3ee958ca3341bd580121c88bdc4
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1891, y: 7853}
+    spritePosition: {x: 324, y: 488}
+  - name: Start Game
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1695
+      y: 8018
+      width: 185
+      height: 27
+    spriteID: c7bce836c06db524cb05740ef74f1098
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1695, y: 8018}
+    spritePosition: {x: 119, y: 492}
+  - name: Option_1
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1746
+      y: 7659
+      width: 99
+      height: 31
+    spriteID: 6dd2d7ef0dbdabb47a1355efb6417460
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1746, y: 7659}
+    spritePosition: {x: 120, y: 433}
+  - name: Exit Game
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1737
+      y: 7853
+      width: 146
+      height: 24
+    spriteID: 03ee646ea3f1c604997e84e08b6b4772
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1737, y: 7853}
+    spritePosition: {x: 121, y: 385}
+  - name: "\xA9 2024 Quackle.bit_1"
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 3777
+      y: 2210
+      width: 220
+      height: 21
+    spriteID: a889ed2686ce2b843bcfca5d2a605337
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 3777, y: 2210}
+    spritePosition: {x: 122, y: 252}
+  - name: BG Image_1
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 6532
+      width: 1920
+      height: 1080
+    spriteID: f2ec443c6c573834f9fd78f1f4f8381d
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 6532}
+    spritePosition: {x: 0, y: 0}
+  - name: Game Tittle_2
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 7819
+      width: 863
+      height: 191
+    spriteID: 43bdbbf948e0db44fb61907f9d36caab
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 7819}
+    spritePosition: {x: 98, y: 644}
+  - name: Press Any Button
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1932
+      y: 2454
+      width: 263
+      height: 35
+    spriteID: e50d448a9368a8344bb1af94ee657e87
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1932, y: 2454}
+    spritePosition: {x: 121, y: 428}
+  - name: "\xA9 2024 Quackle.bit_2"
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 3376
+      y: 2244
+      width: 220
+      height: 21
+    spriteID: 58a9d69dcc032bb4987d4a4c77fa5ead
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 3376, y: 2244}
+    spritePosition: {x: 122, y: 252}
+  - name: BG Image_2
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1932
+      y: 4
+      width: 1920
+      height: 1080
+    spriteID: 71baf8458fb3e1548bdb77197815c71d
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1932, y: 4}
+    spritePosition: {x: 0, y: 0}
+  - name: Team Quackle.bit Present...
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 3549
+      y: 2180
+      width: 501
+      height: 22
+    spriteID: 0c7d455cdf5235d4b9a07bdad77d9fcd
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 3549, y: 2180}
+    spritePosition: {x: 709, y: 530}
+  - name: BG Black_2
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1932
+      y: 1092
+      width: 1920
+      height: 1080
+    spriteID: 680f7a09d8ebf2046bd69330e58693a1
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1932, y: 1092}
+    spritePosition: {x: 0, y: 0}
+  rigSpriteImportData:
+  - name: "Thank you for being part of Ro\u2019s first steps in this world!"
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 2264
+      y: 2244
+      width: 1104
+      height: 26
+    spriteID: 0b49a1400c892284a942ddf87b682952
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 2264, y: 2244}
+    spritePosition: {x: 404, y: 527}
+  - name: Sound Engineer  Nico Dicky Hermawan
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 875
+      y: 7913
+      width: 423
+      height: 93
+    spriteID: 7752693001256654bac8e04c58b37675
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 875, y: 7913}
+    spritePosition: {x: 748, y: 498}
+  - name: Programmer  Atqa Munzir
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1932
+      y: 2244
+      width: 324
+      height: 97
+    spriteID: de6beca20af9caf4e8bddf389f3d1615
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1932, y: 2244}
+    spritePosition: {x: 798, y: 494}
+  - name: Game Artist  Silviana Ginting
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1932
+      y: 2349
+      width: 324
+      height: 97
+    spriteID: a04bd68b47c85ea49831a96e119f5d66
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1932, y: 2349}
+    spritePosition: {x: 798, y: 494}
+  - name: Game Designer  Rendy Rayana
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1306
+      y: 7913
+      width: 404
+      height: 93
+    spriteID: e81ae952898b8af4cbc0fde9d295a165
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1306, y: 7913}
+    spritePosition: {x: 758, y: 498}
+  - name: 'This is just the start, with countless tales to be told, until '
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 8112
+      width: 1448
+      height: 52
+    spriteID: 37199d4ad03d8a34ea6608d869f12bb4
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 8112}
+    spritePosition: {x: 232, y: 516}
+  - name: Layer 3
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 4
+      width: 1920
+      height: 1080
+    spriteID: be0488392e42f814aba0d31e7cefdfb7
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 4}
+    spritePosition: {x: 0, y: 0}
+  - name: Layer 6
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1718
+      y: 7948
+      width: 57
+      height: 55
+    spriteID: 07f8ce82a8e545947ae12d6fa1dd3539
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1718, y: 7948}
+    spritePosition: {x: 118, y: 907}
+  - name: No
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1853
+      y: 7659
+      width: 41
+      height: 24
+    spriteID: e74c2648ebdbe9a459590d3eb03530d3
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1853, y: 7659}
+    spritePosition: {x: 940, y: 450}
+  - name: Yes
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1853
+      y: 7620
+      width: 51
+      height: 27
+    spriteID: 6b9324a4417f09e47a288f7b31c0f3da
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1853, y: 7620}
+    spritePosition: {x: 934, y: 503}
+  - name: Quit Game
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 3200
+      y: 2180
+      width: 341
+      height: 55
+    spriteID: 9100e01d7e9be8a4e98c21a30fea5005
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 3200, y: 2180}
+    spritePosition: {x: 790, y: 580}
+  - name: Layer 7
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 1092
+      width: 1920
+      height: 1080
+    spriteID: e1ad94d7894043a4fb84c0ad526e9c39
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 1092}
+    spritePosition: {x: 0, y: 0}
+  - name: Pause Icon
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1783
+      y: 7948
+      width: 57
+      height: 55
+    spriteID: 89065c605febcf34089c01f755b3e806
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1783, y: 7948}
+    spritePosition: {x: 118, y: 907}
+  - name: Game Paused
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1460
+      y: 8112
+      width: 418
+      height: 52
+    spriteID: b2704849fd5bb2e47bc19903435c4c53
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1460, y: 8112}
+    spritePosition: {x: 750, y: 611}
+  - name: Pointer
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1914
+      y: 7853
+      width: 9
+      height: 40
+    spriteID: cfc04f5ccbcda114692a9e25c03ce4f9
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1914, y: 7853}
+    spritePosition: {x: 1217, y: 465}
+  - name: Slider
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 3220
+      y: 2278
+      width: 702
+      height: 4
+    spriteID: a297b7169dd7bff47bb95045e79120ca
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 3220, y: 2278}
+    spritePosition: {x: 609, y: 483}
+  - name: Back
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1850
+      y: 7698
+      width: 50
+      height: 19
+    spriteID: 5a3d7bdcf6ecb6544b43959e2df03385
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1850, y: 7698}
+    spritePosition: {x: 936, y: 423}
+  - name: 'Audio  '
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1746
+      y: 7698
+      width: 96
+      height: 28
+    spriteID: de6b098d951252f4b85f2f43a602f4c3
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1746, y: 7698}
+    spritePosition: {x: 911, y: 530}
+  - name: Layer 8
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 2180
+      width: 1920
+      height: 1080
+    spriteID: 995d23f17fef00f409c826f97dc1994b
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 2180}
+    spritePosition: {x: 0, y: 0}
+  - name: Pause Icon
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1848
+      y: 7948
+      width: 57
+      height: 55
+    spriteID: 196c0ad306be6714c8351aefee594a80
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1848, y: 7948}
+    spritePosition: {x: 118, y: 907}
+  - name: Game Paused
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1269
+      y: 8018
+      width: 418
+      height: 52
+    spriteID: 22e7a9ac4d9090c499d94b78256ed910
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1269, y: 8018}
+    spritePosition: {x: 750, y: 611}
+  - name: Resume
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1718
+      y: 7913
+      width: 122
+      height: 27
+    spriteID: da0c067134e92f74fa37ee6bec449023
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1718, y: 7913}
+    spritePosition: {x: 900, y: 530}
+  - name: Option
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1746
+      y: 7620
+      width: 99
+      height: 31
+    spriteID: be8da9d175f6ef147a71472cddcc10e4
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1746, y: 7620}
+    spritePosition: {x: 911, y: 470}
+  - name: Quit Game
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1737
+      y: 7819
+      width: 162
+      height: 26
+    spriteID: 2af0a5223fc0d8d4883be7b5906383dc
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1737, y: 7819}
+    spritePosition: {x: 879, y: 421}
+  - name: Layer 7
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 3268
+      width: 1920
+      height: 1080
+    spriteID: f6d6b2a086837bb4e9564615c2280133
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 3268}
+    spritePosition: {x: 0, y: 0}
+  - name: Layer 4 copy 4
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1912
+      y: 7620
+      width: 6
+      height: 23
+    spriteID: 7da522e381754f946ba218671cad8709
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1912, y: 7620}
+    spritePosition: {x: 1237, y: 533}
+  - name: Layer 4 copy 3
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1908
+      y: 7698
+      width: 6
+      height: 23
+    spriteID: f46cd0e934173914e99173bb7c856fec
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1908, y: 7698}
+    spritePosition: {x: 1453, y: 514}
+  - name: Layer 4 copy 2
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1907
+      y: 7819
+      width: 6
+      height: 23
+    spriteID: 52fecef69ae26ab4ba0c69f37a69cc89
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1907, y: 7819}
+    spritePosition: {x: 1442, y: 532}
+  - name: Layer 4 copy
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1907
+      y: 7734
+      width: 6
+      height: 23
+    spriteID: c13c476ab29def54b9f72799bbae7a9b
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1907, y: 7734}
+    spritePosition: {x: 1143, y: 500}
+  - name: Layer 4
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1902
+      y: 7659
+      width: 6
+      height: 23
+    spriteID: e457bbcbc87e6c54b89eb5e20308fa75
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1902, y: 7659}
+    spritePosition: {x: 1266, y: 500}
+  - name: A Journey of a Wildflower Ro...
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1269
+      y: 8078
+      width: 566
+      height: 22
+    spriteID: 91f2ac72b37ed54439df6bf7cfca5394
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1269, y: 8078}
+    spritePosition: {x: 677, y: 533}
+  - name: Centuries later, Ro was born into a world on the brink of colla
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1932
+      y: 2180
+      width: 1260
+      height: 56
+    spriteID: 8b521c2883fb4d9479219d96811b6c06
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1932, y: 2180}
+    spritePosition: {x: 330, y: 511}
+  - name: As time passed, humanity could no longer endure...
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 2264
+      y: 2278
+      width: 948
+      height: 26
+    spriteID: 178cde9d8f303e44987b9b3091fa897f
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 2264, y: 2278}
+    spritePosition: {x: 486, y: 529}
+  - name: In a hidden laboratory, a scientist conducted secret experiment
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 8018
+      width: 1257
+      height: 86
+    spriteID: 6136cecda1063e54f8db3a30b6b69ef7
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 8018}
+    spritePosition: {x: 331, y: 496}
+  - name: Once upon a time, in a future where Earth's oxygen levels had d
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 875
+      y: 7819
+      width: 854
+      height: 86
+    spriteID: 94beed14aa21fba4e9d81e4a74b5b5c7
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 875, y: 7819}
+    spritePosition: {x: 532, y: 496}
+  - name: Layer 3
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 4356
+      width: 1920
+      height: 1080
+    spriteID: 64ef4097e4e336147a0c95303cb9d1c1
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 4356}
+    spritePosition: {x: 0, y: 0}
+  - name: Game Tittle
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 7620
+      width: 863
+      height: 191
+    spriteID: 54f839368a6cd904c87d973e50eff301
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 7620}
+    spritePosition: {x: 98, y: 644}
+  - name: Ponter
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1913
+      y: 7948
+      width: 9
+      height: 40
+    spriteID: 78ebd9345b9ac694fbd098eae85544af
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1913, y: 7948}
+    spritePosition: {x: 727, y: 399}
+  - name: Slider
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 3220
+      y: 2290
+      width: 702
+      height: 4
+    spriteID: 8f93ed38855d77945a655bbae0f80a07
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 3220, y: 2290}
+    spritePosition: {x: 119, y: 417}
+  - name: Back
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1849
+      y: 7734
+      width: 50
+      height: 19
+    spriteID: c03052733439c9c4792bae0d47b5c8ef
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1849, y: 7734}
+    spritePosition: {x: 120, y: 337}
+  - name: Audio
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1746
+      y: 7734
+      width: 95
+      height: 28
+    spriteID: 7a7cddae47e11b94cbf2250bc781025d
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1746, y: 7734}
+    spritePosition: {x: 118, y: 459}
+  - name: "\xA9 2024 Quackle.bit"
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 3549
+      y: 2210
+      width: 220
+      height: 21
+    spriteID: c185bc4bbcb6c8c4ba084843b3185ae7
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 3549, y: 2210}
+    spritePosition: {x: 122, y: 252}
+  - name: BG Image
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 5444
+      width: 1920
+      height: 1080
+    spriteID: c698ec3bb15f0e74e8832ee82953a439
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 5444}
+    spritePosition: {x: 0, y: 0}
+  - name: Game Tittle
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 875
+      y: 7620
+      width: 863
+      height: 191
+    spriteID: 2d893157d23203c48855527efa1bd086
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 875, y: 7620}
+    spritePosition: {x: 98, y: 644}
+  - name: Pointer
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1891
+      y: 7853
+      width: 15
+      height: 32
+    spriteID: b14a7a293401a5e42adc229505e614fe
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1891, y: 7853}
+    spritePosition: {x: 324, y: 488}
+  - name: Start Game
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1695
+      y: 8018
+      width: 185
+      height: 27
+    spriteID: 65612f152c0e5914d87007fc0240b038
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1695, y: 8018}
+    spritePosition: {x: 119, y: 492}
+  - name: Option
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1746
+      y: 7659
+      width: 99
+      height: 31
+    spriteID: cedbd395d27b02b4f80d08b13fc998cf
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1746, y: 7659}
+    spritePosition: {x: 120, y: 433}
+  - name: Exit Game
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1737
+      y: 7853
+      width: 146
+      height: 24
+    spriteID: e884eab6ef2477e4fad8f493f567917f
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1737, y: 7853}
+    spritePosition: {x: 121, y: 385}
+  - name: "\xA9 2024 Quackle.bit"
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 3777
+      y: 2210
+      width: 220
+      height: 21
+    spriteID: 1e52f8b50e2d09845a87dd651d540aa5
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 3777, y: 2210}
+    spritePosition: {x: 122, y: 252}
+  - name: BG Image
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 6532
+      width: 1920
+      height: 1080
+    spriteID: 0cb415f345d47c04095a00351f54ef03
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 6532}
+    spritePosition: {x: 0, y: 0}
+  - name: Game Tittle
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 7819
+      width: 863
+      height: 191
+    spriteID: b2c9f27471a5c7245b0202b4a3c950e4
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 7819}
+    spritePosition: {x: 98, y: 644}
+  - name: Press Any Button
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1932
+      y: 2454
+      width: 263
+      height: 35
+    spriteID: 2672b0baaeda44d46a8647310e236452
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1932, y: 2454}
+    spritePosition: {x: 121, y: 428}
+  - name: "\xA9 2024 Quackle.bit"
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 3376
+      y: 2244
+      width: 220
+      height: 21
+    spriteID: ec80a90d7b6a2fd4e9292eb0f2359106
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 3376, y: 2244}
+    spritePosition: {x: 122, y: 252}
+  - name: BG Image
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1932
+      y: 4
+      width: 1920
+      height: 1080
+    spriteID: b1b6d3f13bcc8b34a89f6810ea3468f9
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1932, y: 4}
+    spritePosition: {x: 0, y: 0}
+  - name: Team Quackle.bit Present...
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 3549
+      y: 2180
+      width: 501
+      height: 22
+    spriteID: 3484fe2105979e9468507a69338ee442
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 3549, y: 2180}
+    spritePosition: {x: 709, y: 530}
+  - name: BG
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1932
+      y: 1092
+      width: 1920
+      height: 1080
+    spriteID: f1d76d3b3e71fbf479c49c60ca169163
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1932, y: 1092}
+    spritePosition: {x: 0, y: 0}
+  characterData:
+    bones: []
+    parts: []
+    dimension: {x: 0, y: 0}
+    characterGroups: []
+    pivot: {x: 0, y: 0}
+    boneReadOnly: 0
+  sharedRigSpriteImportData: []
+  sharedRigCharacterData:
+    bones: []
+    parts: []
+    dimension: {x: 0, y: 0}
+    characterGroups: []
+    pivot: {x: 0, y: 0}
+    boneReadOnly: 0
+  platformSettings:
+  - name: DefaultTexturePlatform
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: Standalone
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: Android
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: WebGL
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  mosaicLayers: 1
+  characterMode: 0
+  documentPivot: {x: 0, y: 0}
+  documentAlignment: 7
+  importHiddenLayers: 1
+  layerMappingOption: 0
+  generatePhysicsShape: 0
+  paperDollMode: 0
+  keepDupilcateSpriteName: 0
+  skeletonAssetReferenceID: 
+  pipeline: {instanceID: 0}
+  pipelineVersion: 
+  padding: 4
+  spriteSizeExpand: 0
+  spriteCategoryList:
+    categories: []
+  spritePackingTag: 
+  resliceFromLayer: 0
+  mosaicPSDLayers:
+  - name: Artboard 1
+    spriteName: 
+    isGroup: 1
+    parentIndex: -1
+    spriteID: 83fe80097d332714cbf8f1bffa5ea1c6
+    layerID: 3
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: Credits
+    spriteName: 
+    isGroup: 1
+    parentIndex: 0
+    spriteID: c446fc3e24b5c7b4884f57f401f25930
+    layerID: 195
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: "Thank you for being part of Ro\u2019s first steps in this world!"
+    spriteName: "Thank you for being part of Ro\u2019s first steps in this world!"
+    isGroup: 0
+    parentIndex: 1
+    spriteID: aafacb61bfed3fb40bbce34f1667e17b
+    layerID: 185
+    mosaicPosition: {x: 2264, y: 2244}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Sound Engineer  Nico Dicky Hermawan
+    spriteName: Sound Engineer  Nico Dicky Hermawan
+    isGroup: 0
+    parentIndex: 1
+    spriteID: 63756f5ffe7cb044fa5b59ba0f7d0a40
+    layerID: 199
+    mosaicPosition: {x: 875, y: 7913}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Programmer  Atqa Munzir
+    spriteName: Programmer  Atqa Munzir
+    isGroup: 0
+    parentIndex: 1
+    spriteID: a7364fc673eef30449b002898022d674
+    layerID: 198
+    mosaicPosition: {x: 1932, y: 2244}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Game Artist  Silviana Ginting
+    spriteName: Game Artist  Silviana Ginting
+    isGroup: 0
+    parentIndex: 1
+    spriteID: 8294255434a9cdd47aefc78bc5f6e5ae
+    layerID: 197
+    mosaicPosition: {x: 1932, y: 2349}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Game Designer  Rendy Rayana
+    spriteName: Game Designer  Rendy Rayana
+    isGroup: 0
+    parentIndex: 1
+    spriteID: 43d540f4cc2f07742a8a26c6806f1cbc
+    layerID: 196
+    mosaicPosition: {x: 1306, y: 7913}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: 'This is just the start, with countless tales to be told, until '
+    spriteName: 'This is just the start, with countless tales to be told, until '
+    isGroup: 0
+    parentIndex: 1
+    spriteID: 8537c2ef95c8ffa4c8517f5dd17218f9
+    layerID: 207
+    mosaicPosition: {x: 4, y: 8112}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: BG Black
+    spriteName: BG Black
+    isGroup: 0
+    parentIndex: 1
+    spriteID: 0d58e8a2a0f1fb74bb6f8bc29beffeda
+    layerID: 184
+    mosaicPosition: {x: 4, y: 4}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Quit Game
+    spriteName: 
+    isGroup: 1
+    parentIndex: 0
+    spriteID: bdef014db23541646a5532f6d340914c
+    layerID: 138
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: Pause Icon
+    spriteName: Pause Icon
+    isGroup: 0
+    parentIndex: 9
+    spriteID: 316797c9b496f34409fb57ffd4b4a524
+    layerID: 136
+    mosaicPosition: {x: 1718, y: 7948}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: No
+    spriteName: No
+    isGroup: 0
+    parentIndex: 9
+    spriteID: 63b666db72770d744965ef0f957b1276
+    layerID: 134
+    mosaicPosition: {x: 1853, y: 7659}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Yes
+    spriteName: Yes
+    isGroup: 0
+    parentIndex: 9
+    spriteID: f6c0d5f4e1739cb47b5169d7893a0969
+    layerID: 133
+    mosaicPosition: {x: 1853, y: 7620}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Quit Game
+    spriteName: Quit Game
+    isGroup: 0
+    parentIndex: 9
+    spriteID: 81a13483bba1abc45bc4a53661c8ea9d
+    layerID: 132
+    mosaicPosition: {x: 3200, y: 2180}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: BG Overlay
+    spriteName: BG Overlay
+    isGroup: 0
+    parentIndex: 9
+    spriteID: 066e46531cf36444290c65578927ef2f
+    layerID: 131
+    mosaicPosition: {x: 4, y: 1092}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: In Game Option
+    spriteName: 
+    isGroup: 1
+    parentIndex: 0
+    spriteID: 368a2d201e9ab9c4389b6efb11746f75
+    layerID: 145
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: Pause Icon
+    spriteName: Pause Icon
+    isGroup: 0
+    parentIndex: 15
+    spriteID: 316797c9b496f34409fb57ffd4b4a524
+    layerID: 152
+    mosaicPosition: {x: 1783, y: 7948}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Game Paused
+    spriteName: Game Paused
+    isGroup: 0
+    parentIndex: 15
+    spriteID: 9151830aace76e943b566f7c86b844ef
+    layerID: 151
+    mosaicPosition: {x: 1460, y: 8112}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Pointer
+    spriteName: Pointer
+    isGroup: 0
+    parentIndex: 15
+    spriteID: f1405c7f5ac8cce4a8ded5a8b4a33636
+    layerID: 143
+    mosaicPosition: {x: 1914, y: 7853}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Slider
+    spriteName: Slider
+    isGroup: 0
+    parentIndex: 15
+    spriteID: d4a81b5b944272d46b714ebb42cf8383
+    layerID: 142
+    mosaicPosition: {x: 3220, y: 2278}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Back
+    spriteName: Back
+    isGroup: 0
+    parentIndex: 15
+    spriteID: 8041cff78eb72c4438d1bb0c8d67a4ae
+    layerID: 147
+    mosaicPosition: {x: 1850, y: 7698}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: 'Audio  '
+    spriteName: 'Audio  '
+    isGroup: 0
+    parentIndex: 15
+    spriteID: 5bacc2218b704554a876a2cf9144ad25
+    layerID: 141
+    mosaicPosition: {x: 1746, y: 7698}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: BG Overlay
+    spriteName: BG Overlay
+    isGroup: 0
+    parentIndex: 15
+    spriteID: 066e46531cf36444290c65578927ef2f
+    layerID: 146
+    mosaicPosition: {x: 4, y: 2180}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Pause Game
+    spriteName: 
+    isGroup: 1
+    parentIndex: 0
+    spriteID: 9f16df602d15bf44ebcf6a417d4865ba
+    layerID: 124
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: Pause Icon
+    spriteName: Pause Icon
+    isGroup: 0
+    parentIndex: 23
+    spriteID: 316797c9b496f34409fb57ffd4b4a524
+    layerID: 125
+    mosaicPosition: {x: 1848, y: 7948}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Game Paused
+    spriteName: Game Paused
+    isGroup: 0
+    parentIndex: 23
+    spriteID: 9151830aace76e943b566f7c86b844ef
+    layerID: 129
+    mosaicPosition: {x: 1269, y: 8018}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Resume
+    spriteName: Resume
+    isGroup: 0
+    parentIndex: 23
+    spriteID: 3e47ef73367f118448cb47f377d98d1e
+    layerID: 119
+    mosaicPosition: {x: 1718, y: 7913}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Option
+    spriteName: Option
+    isGroup: 0
+    parentIndex: 23
+    spriteID: 46a841ba9c1aa2543968aca2c19ffc4c
+    layerID: 120
+    mosaicPosition: {x: 1746, y: 7620}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Quit Game
+    spriteName: Quit Game
+    isGroup: 0
+    parentIndex: 23
+    spriteID: 81a13483bba1abc45bc4a53661c8ea9d
+    layerID: 121
+    mosaicPosition: {x: 1737, y: 7819}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: BG Overlay
+    spriteName: BG Overlay
+    isGroup: 0
+    parentIndex: 23
+    spriteID: 066e46531cf36444290c65578927ef2f
+    layerID: 127
+    mosaicPosition: {x: 4, y: 3268}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Story Telling
+    spriteName: 
+    isGroup: 1
+    parentIndex: 0
+    spriteID: 1ad55b69e16b22f4da23ac5f042de4d5
+    layerID: 35
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: A Journey of a Wildflower Ro...
+    spriteName: A Journey of a Wildflower Ro...
+    isGroup: 0
+    parentIndex: 30
+    spriteID: 40c6a556e5e049a4887f312431918c74
+    layerID: 41
+    mosaicPosition: {x: 1269, y: 8078}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Centuries later, Ro was born into a world on the brink of colla
+    spriteName: Centuries later, Ro was born into a world on the brink of colla
+    isGroup: 0
+    parentIndex: 30
+    spriteID: 9a5ea930c0f5376498851c903a1c0858
+    layerID: 40
+    mosaicPosition: {x: 1932, y: 2180}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: As time passed, humanity could no longer endure...
+    spriteName: As time passed, humanity could no longer endure...
+    isGroup: 0
+    parentIndex: 30
+    spriteID: afd21fa35335f1d47b0462ec40129e3e
+    layerID: 39
+    mosaicPosition: {x: 2264, y: 2278}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: In a hidden laboratory, a scientist conducted secret experiment
+    spriteName: In a hidden laboratory, a scientist conducted secret experiment
+    isGroup: 0
+    parentIndex: 30
+    spriteID: 1c24e796e84a3614db4c02de0f9725c3
+    layerID: 38
+    mosaicPosition: {x: 4, y: 8018}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Once upon a time, in a future where Earth's oxygen levels had d
+    spriteName: Once upon a time, in a future where Earth's oxygen levels had d
+    isGroup: 0
+    parentIndex: 30
+    spriteID: 442a1893df43291429c547888322c3bd
+    layerID: 37
+    mosaicPosition: {x: 875, y: 7819}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: BG Black
+    spriteName: BG Black
+    isGroup: 0
+    parentIndex: 30
+    spriteID: 0d58e8a2a0f1fb74bb6f8bc29beffeda
+    layerID: 36
+    mosaicPosition: {x: 4, y: 4356}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Option
+    spriteName: 
+    isGroup: 1
+    parentIndex: 0
+    spriteID: 0968ff1c5525bdb4094618cc5577200e
+    layerID: 26
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: Game Tittle
+    spriteName: Game Tittle
+    isGroup: 0
+    parentIndex: 37
+    spriteID: 0adc336bb38088a449805032e332544d
+    layerID: 293
+    mosaicPosition: {x: 4, y: 7620}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Ponter
+    spriteName: Ponter
+    isGroup: 0
+    parentIndex: 37
+    spriteID: 62d2f00b8f5352945ab1ab4b6a39127a
+    layerID: 109
+    mosaicPosition: {x: 1913, y: 7948}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Slider
+    spriteName: Slider
+    isGroup: 0
+    parentIndex: 37
+    spriteID: d4a81b5b944272d46b714ebb42cf8383
+    layerID: 27
+    mosaicPosition: {x: 3220, y: 2290}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Back
+    spriteName: Back
+    isGroup: 0
+    parentIndex: 37
+    spriteID: 8041cff78eb72c4438d1bb0c8d67a4ae
+    layerID: 299
+    mosaicPosition: {x: 1849, y: 7734}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Audio
+    spriteName: Audio
+    isGroup: 0
+    parentIndex: 37
+    spriteID: 72254d030e90df44c9b1b8228ed71ae3
+    layerID: 22
+    mosaicPosition: {x: 1746, y: 7734}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: "\xA9 2024 Quackle.bit"
+    spriteName: "\xA9 2024 Quackle.bit"
+    isGroup: 0
+    parentIndex: 37
+    spriteID: 15968e9c39aa0a744b4cecc1292d0e81
+    layerID: 21
+    mosaicPosition: {x: 3549, y: 2210}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: BG Image
+    spriteName: BG Image
+    isGroup: 0
+    parentIndex: 37
+    spriteID: 9a99610971f8b3b48a4563700d8608a6
+    layerID: 292
+    mosaicPosition: {x: 4, y: 5444}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Start Game
+    spriteName: 
+    isGroup: 1
+    parentIndex: 0
+    spriteID: b22e933e641c78a4ba41936f22eebd80
+    layerID: 18
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: Game Tittle
+    spriteName: Game Tittle
+    isGroup: 0
+    parentIndex: 45
+    spriteID: 0adc336bb38088a449805032e332544d
+    layerID: 285
+    mosaicPosition: {x: 875, y: 7620}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Pointer
+    spriteName: Pointer
+    isGroup: 0
+    parentIndex: 45
+    spriteID: f1405c7f5ac8cce4a8ded5a8b4a33636
+    layerID: 19
+    mosaicPosition: {x: 1891, y: 7853}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Start Game
+    spriteName: Start Game
+    isGroup: 0
+    parentIndex: 45
+    spriteID: c7bce836c06db524cb05740ef74f1098
+    layerID: 15
+    mosaicPosition: {x: 1695, y: 8018}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Option
+    spriteName: Option
+    isGroup: 0
+    parentIndex: 45
+    spriteID: 46a841ba9c1aa2543968aca2c19ffc4c
+    layerID: 105
+    mosaicPosition: {x: 1746, y: 7659}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Exit Game
+    spriteName: Exit Game
+    isGroup: 0
+    parentIndex: 45
+    spriteID: 03ee646ea3f1c604997e84e08b6b4772
+    layerID: 106
+    mosaicPosition: {x: 1737, y: 7853}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: "\xA9 2024 Quackle.bit"
+    spriteName: "\xA9 2024 Quackle.bit"
+    isGroup: 0
+    parentIndex: 45
+    spriteID: 15968e9c39aa0a744b4cecc1292d0e81
+    layerID: 14
+    mosaicPosition: {x: 3777, y: 2210}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: BG Image
+    spriteName: BG Image
+    isGroup: 0
+    parentIndex: 45
+    spriteID: 9a99610971f8b3b48a4563700d8608a6
+    layerID: 274
+    mosaicPosition: {x: 4, y: 6532}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Press Any Button
+    spriteName: 
+    isGroup: 1
+    parentIndex: 0
+    spriteID: d4a1e223a425da64797464f41706947f
+    layerID: 11
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: Game Tittle
+    spriteName: Game Tittle
+    isGroup: 0
+    parentIndex: 53
+    spriteID: 0adc336bb38088a449805032e332544d
+    layerID: 291
+    mosaicPosition: {x: 4, y: 7819}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Press Any Button
+    spriteName: Press Any Button
+    isGroup: 0
+    parentIndex: 53
+    spriteID: e50d448a9368a8344bb1af94ee657e87
+    layerID: 5
+    mosaicPosition: {x: 1932, y: 2454}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: "\xA9 2024 Quackle.bit"
+    spriteName: "\xA9 2024 Quackle.bit"
+    isGroup: 0
+    parentIndex: 53
+    spriteID: 15968e9c39aa0a744b4cecc1292d0e81
+    layerID: 6
+    mosaicPosition: {x: 3376, y: 2244}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: BG Image
+    spriteName: BG Image
+    isGroup: 0
+    parentIndex: 53
+    spriteID: 9a99610971f8b3b48a4563700d8608a6
+    layerID: 290
+    mosaicPosition: {x: 1932, y: 4}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Logo Team
+    spriteName: 
+    isGroup: 1
+    parentIndex: 0
+    spriteID: cd988727a5d3dc543a56dc61743d0a58
+    layerID: 182
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: Team Quackle.bit Present...
+    spriteName: Team Quackle.bit Present...
+    isGroup: 0
+    parentIndex: 58
+    spriteID: 0c7d455cdf5235d4b9a07bdad77d9fcd
+    layerID: 172
+    mosaicPosition: {x: 3549, y: 2180}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: BG Black
+    spriteName: BG Black
+    isGroup: 0
+    parentIndex: 58
+    spriteID: 0d58e8a2a0f1fb74bb6f8bc29beffeda
+    layerID: 171
+    mosaicPosition: {x: 1932, y: 1092}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  rigPSDLayers:
+  - name: Artboard 1
+    spriteName: 
+    isGroup: 1
+    parentIndex: -1
+    spriteID: a35fb8609ec55b749af6f66cb78ce2b7
+    layerID: 3
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: Credits
+    spriteName: 
+    isGroup: 1
+    parentIndex: 0
+    spriteID: fcc0eeeda29e15d449d8621629590f56
+    layerID: 195
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: "Thank you for being part of Ro\u2019s first steps in this world!"
+    spriteName: "Thank you for being part of Ro\u2019s first steps in this world!"
+    isGroup: 0
+    parentIndex: 1
+    spriteID: 0b49a1400c892284a942ddf87b682952
+    layerID: 185
+    mosaicPosition: {x: 2264, y: 2244}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Sound Engineer  Nico Dicky Hermawan
+    spriteName: Sound Engineer  Nico Dicky Hermawan
+    isGroup: 0
+    parentIndex: 1
+    spriteID: 7752693001256654bac8e04c58b37675
+    layerID: 199
+    mosaicPosition: {x: 875, y: 7913}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Programmer  Atqa Munzir
+    spriteName: Programmer  Atqa Munzir
+    isGroup: 0
+    parentIndex: 1
+    spriteID: de6beca20af9caf4e8bddf389f3d1615
+    layerID: 198
+    mosaicPosition: {x: 1932, y: 2244}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Game Artist  Silviana Ginting
+    spriteName: Game Artist  Silviana Ginting
+    isGroup: 0
+    parentIndex: 1
+    spriteID: a04bd68b47c85ea49831a96e119f5d66
+    layerID: 197
+    mosaicPosition: {x: 1932, y: 2349}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Game Designer  Rendy Rayana
+    spriteName: Game Designer  Rendy Rayana
+    isGroup: 0
+    parentIndex: 1
+    spriteID: e81ae952898b8af4cbc0fde9d295a165
+    layerID: 196
+    mosaicPosition: {x: 1306, y: 7913}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: 'This is just the start, with countless tales to be told, until '
+    spriteName: 'This is just the start, with countless tales to be told, until '
+    isGroup: 0
+    parentIndex: 1
+    spriteID: 37199d4ad03d8a34ea6608d869f12bb4
+    layerID: 207
+    mosaicPosition: {x: 4, y: 8112}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Layer 3
+    spriteName: Layer 3
+    isGroup: 0
+    parentIndex: 1
+    spriteID: be0488392e42f814aba0d31e7cefdfb7
+    layerID: 184
+    mosaicPosition: {x: 4, y: 4}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Quit Game
+    spriteName: 
+    isGroup: 1
+    parentIndex: 0
+    spriteID: 4f5167e8383f57b4bb387c2a8607c65f
+    layerID: 138
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: Layer 6
+    spriteName: Layer 6
+    isGroup: 0
+    parentIndex: 9
+    spriteID: 07f8ce82a8e545947ae12d6fa1dd3539
+    layerID: 136
+    mosaicPosition: {x: 1718, y: 7948}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: No
+    spriteName: No
+    isGroup: 0
+    parentIndex: 9
+    spriteID: e74c2648ebdbe9a459590d3eb03530d3
+    layerID: 134
+    mosaicPosition: {x: 1853, y: 7659}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Yes
+    spriteName: Yes
+    isGroup: 0
+    parentIndex: 9
+    spriteID: 6b9324a4417f09e47a288f7b31c0f3da
+    layerID: 133
+    mosaicPosition: {x: 1853, y: 7620}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Quit Game
+    spriteName: Quit Game
+    isGroup: 0
+    parentIndex: 9
+    spriteID: 9100e01d7e9be8a4e98c21a30fea5005
+    layerID: 132
+    mosaicPosition: {x: 3200, y: 2180}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Layer 7
+    spriteName: Layer 7
+    isGroup: 0
+    parentIndex: 9
+    spriteID: e1ad94d7894043a4fb84c0ad526e9c39
+    layerID: 131
+    mosaicPosition: {x: 4, y: 1092}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: In Game Option
+    spriteName: 
+    isGroup: 1
+    parentIndex: 0
+    spriteID: bbb374575fc7c594483f9a3894f7bc0e
+    layerID: 145
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: Pause Icon
+    spriteName: Pause Icon
+    isGroup: 0
+    parentIndex: 15
+    spriteID: 89065c605febcf34089c01f755b3e806
+    layerID: 152
+    mosaicPosition: {x: 1783, y: 7948}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Game Paused
+    spriteName: Game Paused
+    isGroup: 0
+    parentIndex: 15
+    spriteID: b2704849fd5bb2e47bc19903435c4c53
+    layerID: 151
+    mosaicPosition: {x: 1460, y: 8112}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Pointer
+    spriteName: Pointer
+    isGroup: 0
+    parentIndex: 15
+    spriteID: cfc04f5ccbcda114692a9e25c03ce4f9
+    layerID: 143
+    mosaicPosition: {x: 1914, y: 7853}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Slider
+    spriteName: Slider
+    isGroup: 0
+    parentIndex: 15
+    spriteID: a297b7169dd7bff47bb95045e79120ca
+    layerID: 142
+    mosaicPosition: {x: 3220, y: 2278}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Back
+    spriteName: Back
+    isGroup: 0
+    parentIndex: 15
+    spriteID: 5a3d7bdcf6ecb6544b43959e2df03385
+    layerID: 147
+    mosaicPosition: {x: 1850, y: 7698}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: 'Audio  '
+    spriteName: 'Audio  '
+    isGroup: 0
+    parentIndex: 15
+    spriteID: de6b098d951252f4b85f2f43a602f4c3
+    layerID: 141
+    mosaicPosition: {x: 1746, y: 7698}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Layer 8
+    spriteName: Layer 8
+    isGroup: 0
+    parentIndex: 15
+    spriteID: 995d23f17fef00f409c826f97dc1994b
+    layerID: 146
+    mosaicPosition: {x: 4, y: 2180}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Pause Game
+    spriteName: 
+    isGroup: 1
+    parentIndex: 0
+    spriteID: c1df1e00d6c698249b81842f0e879095
+    layerID: 124
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: Pause Icon
+    spriteName: Pause Icon
+    isGroup: 0
+    parentIndex: 23
+    spriteID: 196c0ad306be6714c8351aefee594a80
+    layerID: 125
+    mosaicPosition: {x: 1848, y: 7948}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Game Paused
+    spriteName: Game Paused
+    isGroup: 0
+    parentIndex: 23
+    spriteID: 22e7a9ac4d9090c499d94b78256ed910
+    layerID: 129
+    mosaicPosition: {x: 1269, y: 8018}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Resume
+    spriteName: Resume
+    isGroup: 0
+    parentIndex: 23
+    spriteID: da0c067134e92f74fa37ee6bec449023
+    layerID: 119
+    mosaicPosition: {x: 1718, y: 7913}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Option
+    spriteName: Option
+    isGroup: 0
+    parentIndex: 23
+    spriteID: be8da9d175f6ef147a71472cddcc10e4
+    layerID: 120
+    mosaicPosition: {x: 1746, y: 7620}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Quit Game
+    spriteName: Quit Game
+    isGroup: 0
+    parentIndex: 23
+    spriteID: 2af0a5223fc0d8d4883be7b5906383dc
+    layerID: 121
+    mosaicPosition: {x: 1737, y: 7819}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Layer 7
+    spriteName: Layer 7
+    isGroup: 0
+    parentIndex: 23
+    spriteID: f6d6b2a086837bb4e9564615c2280133
+    layerID: 127
+    mosaicPosition: {x: 4, y: 3268}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Story Telling
+    spriteName: 
+    isGroup: 1
+    parentIndex: 0
+    spriteID: 933de38c57c5b05418bcda37126c5a94
+    layerID: 35
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: Layer 4 copy 4
+    spriteName: Layer 4 copy 4
+    isGroup: 0
+    parentIndex: 30
+    spriteID: 7da522e381754f946ba218671cad8709
+    layerID: 51
+    mosaicPosition: {x: 1912, y: 7620}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Layer 4 copy 3
+    spriteName: Layer 4 copy 3
+    isGroup: 0
+    parentIndex: 30
+    spriteID: f46cd0e934173914e99173bb7c856fec
+    layerID: 50
+    mosaicPosition: {x: 1908, y: 7698}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Layer 4 copy 2
+    spriteName: Layer 4 copy 2
+    isGroup: 0
+    parentIndex: 30
+    spriteID: 52fecef69ae26ab4ba0c69f37a69cc89
+    layerID: 49
+    mosaicPosition: {x: 1907, y: 7819}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Layer 4 copy
+    spriteName: Layer 4 copy
+    isGroup: 0
+    parentIndex: 30
+    spriteID: c13c476ab29def54b9f72799bbae7a9b
+    layerID: 48
+    mosaicPosition: {x: 1907, y: 7734}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Layer 4
+    spriteName: Layer 4
+    isGroup: 0
+    parentIndex: 30
+    spriteID: e457bbcbc87e6c54b89eb5e20308fa75
+    layerID: 47
+    mosaicPosition: {x: 1902, y: 7659}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: A Journey of a Wildflower Ro...
+    spriteName: A Journey of a Wildflower Ro...
+    isGroup: 0
+    parentIndex: 30
+    spriteID: 91f2ac72b37ed54439df6bf7cfca5394
+    layerID: 41
+    mosaicPosition: {x: 1269, y: 8078}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Centuries later, Ro was born into a world on the brink of colla
+    spriteName: Centuries later, Ro was born into a world on the brink of colla
+    isGroup: 0
+    parentIndex: 30
+    spriteID: 8b521c2883fb4d9479219d96811b6c06
+    layerID: 40
+    mosaicPosition: {x: 1932, y: 2180}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: As time passed, humanity could no longer endure...
+    spriteName: As time passed, humanity could no longer endure...
+    isGroup: 0
+    parentIndex: 30
+    spriteID: 178cde9d8f303e44987b9b3091fa897f
+    layerID: 39
+    mosaicPosition: {x: 2264, y: 2278}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: In a hidden laboratory, a scientist conducted secret experiment
+    spriteName: In a hidden laboratory, a scientist conducted secret experiment
+    isGroup: 0
+    parentIndex: 30
+    spriteID: 6136cecda1063e54f8db3a30b6b69ef7
+    layerID: 38
+    mosaicPosition: {x: 4, y: 8018}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Once upon a time, in a future where Earth's oxygen levels had d
+    spriteName: Once upon a time, in a future where Earth's oxygen levels had d
+    isGroup: 0
+    parentIndex: 30
+    spriteID: 94beed14aa21fba4e9d81e4a74b5b5c7
+    layerID: 37
+    mosaicPosition: {x: 875, y: 7819}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Layer 3
+    spriteName: Layer 3
+    isGroup: 0
+    parentIndex: 30
+    spriteID: 64ef4097e4e336147a0c95303cb9d1c1
+    layerID: 36
+    mosaicPosition: {x: 4, y: 4356}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Option
+    spriteName: 
+    isGroup: 1
+    parentIndex: 0
+    spriteID: 5625a10477593c74fb7b44c686865a0c
+    layerID: 26
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: Game Tittle
+    spriteName: Game Tittle
+    isGroup: 0
+    parentIndex: 42
+    spriteID: 54f839368a6cd904c87d973e50eff301
+    layerID: 293
+    mosaicPosition: {x: 4, y: 7620}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Ponter
+    spriteName: Ponter
+    isGroup: 0
+    parentIndex: 42
+    spriteID: 78ebd9345b9ac694fbd098eae85544af
+    layerID: 109
+    mosaicPosition: {x: 1913, y: 7948}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Slider
+    spriteName: Slider
+    isGroup: 0
+    parentIndex: 42
+    spriteID: 8f93ed38855d77945a655bbae0f80a07
+    layerID: 27
+    mosaicPosition: {x: 3220, y: 2290}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Back
+    spriteName: Back
+    isGroup: 0
+    parentIndex: 42
+    spriteID: c03052733439c9c4792bae0d47b5c8ef
+    layerID: 299
+    mosaicPosition: {x: 1849, y: 7734}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Audio
+    spriteName: Audio
+    isGroup: 0
+    parentIndex: 42
+    spriteID: 7a7cddae47e11b94cbf2250bc781025d
+    layerID: 22
+    mosaicPosition: {x: 1746, y: 7734}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: "\xA9 2024 Quackle.bit"
+    spriteName: "\xA9 2024 Quackle.bit"
+    isGroup: 0
+    parentIndex: 42
+    spriteID: c185bc4bbcb6c8c4ba084843b3185ae7
+    layerID: 21
+    mosaicPosition: {x: 3549, y: 2210}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: BG Image
+    spriteName: BG Image
+    isGroup: 0
+    parentIndex: 42
+    spriteID: c698ec3bb15f0e74e8832ee82953a439
+    layerID: 292
+    mosaicPosition: {x: 4, y: 5444}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Start Game
+    spriteName: 
+    isGroup: 1
+    parentIndex: 0
+    spriteID: 85b5bac51ce85094b9a91accfe95654e
+    layerID: 18
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: Game Tittle
+    spriteName: Game Tittle
+    isGroup: 0
+    parentIndex: 50
+    spriteID: 2d893157d23203c48855527efa1bd086
+    layerID: 285
+    mosaicPosition: {x: 875, y: 7620}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Pointer
+    spriteName: Pointer
+    isGroup: 0
+    parentIndex: 50
+    spriteID: b14a7a293401a5e42adc229505e614fe
+    layerID: 19
+    mosaicPosition: {x: 1891, y: 7853}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Start Game
+    spriteName: Start Game
+    isGroup: 0
+    parentIndex: 50
+    spriteID: 65612f152c0e5914d87007fc0240b038
+    layerID: 15
+    mosaicPosition: {x: 1695, y: 8018}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Option
+    spriteName: Option
+    isGroup: 0
+    parentIndex: 50
+    spriteID: cedbd395d27b02b4f80d08b13fc998cf
+    layerID: 105
+    mosaicPosition: {x: 1746, y: 7659}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Exit Game
+    spriteName: Exit Game
+    isGroup: 0
+    parentIndex: 50
+    spriteID: e884eab6ef2477e4fad8f493f567917f
+    layerID: 106
+    mosaicPosition: {x: 1737, y: 7853}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: "\xA9 2024 Quackle.bit"
+    spriteName: "\xA9 2024 Quackle.bit"
+    isGroup: 0
+    parentIndex: 50
+    spriteID: 1e52f8b50e2d09845a87dd651d540aa5
+    layerID: 14
+    mosaicPosition: {x: 3777, y: 2210}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: BG Image
+    spriteName: BG Image
+    isGroup: 0
+    parentIndex: 50
+    spriteID: 0cb415f345d47c04095a00351f54ef03
+    layerID: 274
+    mosaicPosition: {x: 4, y: 6532}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Press Any Button
+    spriteName: 
+    isGroup: 1
+    parentIndex: 0
+    spriteID: 400aabc1a8735e1489ad2c9afc83a75e
+    layerID: 11
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: Game Tittle
+    spriteName: Game Tittle
+    isGroup: 0
+    parentIndex: 58
+    spriteID: b2c9f27471a5c7245b0202b4a3c950e4
+    layerID: 291
+    mosaicPosition: {x: 4, y: 7819}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Press Any Button
+    spriteName: Press Any Button
+    isGroup: 0
+    parentIndex: 58
+    spriteID: 2672b0baaeda44d46a8647310e236452
+    layerID: 5
+    mosaicPosition: {x: 1932, y: 2454}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: "\xA9 2024 Quackle.bit"
+    spriteName: "\xA9 2024 Quackle.bit"
+    isGroup: 0
+    parentIndex: 58
+    spriteID: ec80a90d7b6a2fd4e9292eb0f2359106
+    layerID: 6
+    mosaicPosition: {x: 3376, y: 2244}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: BG Image
+    spriteName: BG Image
+    isGroup: 0
+    parentIndex: 58
+    spriteID: b1b6d3f13bcc8b34a89f6810ea3468f9
+    layerID: 290
+    mosaicPosition: {x: 1932, y: 4}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Logo Team
+    spriteName: 
+    isGroup: 1
+    parentIndex: 0
+    spriteID: 961ffd54019e0514b8b2e85c1ba92a66
+    layerID: 182
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: Team Quackle.bit Present...
+    spriteName: Team Quackle.bit Present...
+    isGroup: 0
+    parentIndex: 63
+    spriteID: 3484fe2105979e9468507a69338ee442
+    layerID: 172
+    mosaicPosition: {x: 3549, y: 2180}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: BG
+    spriteName: BG
+    isGroup: 0
+    parentIndex: 63
+    spriteID: f1d76d3b3e71fbf479c49c60ca169163
+    layerID: 171
+    mosaicPosition: {x: 1932, y: 1092}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  sharedRigPSDLayers: []
+  pSDLayerImportSetting: []
+  importFileNodeState: 1
+  platformSettingsDirtyTick: 638613732305128935
+  spriteSizeExpandChanged: 0
+  generateGOHierarchy: 0
+  textureAssetName: 
+  prefabAssetName: 
+  spriteLibAssetName: 
+  skeletonAssetName: 
+  secondarySpriteTextures: []

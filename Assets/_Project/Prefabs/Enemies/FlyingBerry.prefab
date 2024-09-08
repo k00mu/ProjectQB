@@ -125,7 +125,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TargetLayerMask:
     serializedVersion: 2
-    m_Bits: 2816
+    m_Bits: 11008
   MinDamageCaused: 0
   MaxDamageCaused: 0
   TypedDamages: []
@@ -146,7 +146,7 @@ MonoBehaviour:
   DamageTakenKnockbackForce: {x: 0, y: 0}
   DamageTakenInvincibilityDuration: 0
   HitDamageableFeedback: {fileID: 3743232844779186040}
-  HitNonDamageableFeedback: {fileID: 0}
+  HitNonDamageableFeedback: {fileID: 3743232844779186040}
   FreezeFramesOnHitDuration: 0
   Owner: {fileID: 0}
 --- !u!114 &6591436820754790489
@@ -231,7 +231,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3380101317971676771}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 28.96, y: 12.87, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1314,7 +1314,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TargetLayerMask:
     serializedVersion: 2
-    m_Bits: 768
+    m_Bits: 512
   MinDamageCaused: 10
   MaxDamageCaused: 10
   TypedDamages: []
