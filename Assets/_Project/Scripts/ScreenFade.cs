@@ -13,19 +13,35 @@ namespace QuackleBit
 	public class ScreenFade : MonoBehaviour
 	{
 		private Image _image;
+		private Sprite _defaultSprite;
 		
 		private void Awake()
 		{
 			_image = GetComponent<Image>();
+			_defaultSprite = _image.sprite;
 		}
 
-		public void FadeIn(float duration, bool disable = true)
+		public void FadeIn(Color color, float duration, bool disable = true)
 		{
+			_image.color = new Color(color.r, color.g, color.b);
+			StartCoroutine(FadeImage(_image, _image.color.a, 1, duration, disable));
+		}
+		public void FadeIn(Sprite sprite, float duration, bool disable = true)
+		{
+			_image.color = Color.white;
+			_image.sprite = sprite;
 			StartCoroutine(FadeImage(_image, _image.color.a, 1, duration, disable));
 		}
 		
-		public void FadeOut(float duration, bool disable = true)
+		public void FadeOut(Color color, float duration, bool disable = true)
 		{
+			_image.color = new Color(color.r, color.g, color.b);
+			StartCoroutine(FadeImage(_image, _image.color.a, 0, duration, disable));
+		}
+		public void FadeOut(Sprite sprite, float duration, bool disable = true)
+		{
+			_image.color = Color.white;
+			_image.sprite = sprite;
 			StartCoroutine(FadeImage(_image, _image.color.a, 0, duration, disable));
 		}
 
@@ -45,6 +61,8 @@ namespace QuackleBit
 			
 			if (disable)
 				img.gameObject.SetActive(false);
+			
+			img.sprite = _defaultSprite;
 		}
 	}
 }

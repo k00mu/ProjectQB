@@ -35,22 +35,22 @@ namespace QuackleBit
 		
 		private IEnumerator LoadNextSceneWithLoadingCoroutine()
 		{
-			FadeIn(1f, false);
+			FadeIn(Color.black, 1f, false);
 			yield return new WaitForSeconds(1f);
 			
 			SceneManager.LoadScene("Loading");
 			
-			FadeOut(1f);
+			FadeOut(Color.black, 1f);
 			yield return new WaitForSeconds(1f);
 			
 			yield return new WaitForSeconds(5f);
 			
-			FadeIn(1f, false);
+			FadeIn(Color.black, 1f, false);
 			yield return new WaitForSeconds(1f);
 			
 			SceneManager.LoadScene(_nextScene);
 			
-			FadeOut(1f);
+			FadeOut(Color.black, 1f);
 		}
 		
 		public void LoadNextScene()
@@ -60,24 +60,34 @@ namespace QuackleBit
 		
 		private IEnumerator LoadNextSceneCoroutine()
 		{
-			FadeIn(1f, false);
+			FadeIn(Color.black, 1f, false);
 			yield return new WaitForSeconds(1f);
 			
 			SceneManager.LoadScene(_nextScene);
 			
-			FadeOut(1f);
+			FadeOut(Color.black, 1f);
 		}
 
-		public void FadeIn(float duration, bool disable = true)
+		public void FadeIn(Color color, float duration, bool disable = true)
 		{
 			_screenFade.gameObject.SetActive(true);
-			_screenFade.FadeIn(duration, disable);
+			_screenFade.FadeIn(color, duration, disable);
+		}
+		public void FadeIn(Sprite sprite, float duration, bool disable = true)
+		{
+			_screenFade.gameObject.SetActive(true);
+			_screenFade.FadeIn(sprite, duration, disable);
 		}
 		
-		public void FadeOut(float duration, bool disable = true)
+		public void FadeOut(Color color, float duration, bool disable = true)
 		{
 			_screenFade.gameObject.SetActive(true);
-			_screenFade.FadeOut(duration, disable);
+			_screenFade.FadeOut(color, duration, disable);
+		}
+		public void FadeOut(Sprite sprite, float duration, bool disable = true)
+		{
+			_screenFade.gameObject.SetActive(true);
+			_screenFade.FadeOut(sprite, duration, disable);
 		}
 	}
 }
