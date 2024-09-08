@@ -37,21 +37,21 @@ namespace QuackleBit
 			_videoPlayer.gameObject.SetActive(true);
 			_logoRawImage.gameObject.SetActive(true);
 			
-			SceneHandler.Instance.FadeOut(1f);
+			SceneHandler.Instance.FadeOut(Color.black, 1f);
 			yield return new WaitForSeconds(1f);
 			
 			_videoPlayer.Play();
 			yield return new WaitUntil(() => _videoPlayer.isPlaying);
 			yield return new WaitUntil(() => !_videoPlayer.isPlaying);
 			
-			SceneHandler.Instance.FadeIn(1f);
+			SceneHandler.Instance.FadeIn(Color.black, 1f);
 			yield return new WaitForSeconds(1f);
 			
 			_videoPlayer.gameObject.SetActive(false);
 			_logoRawImage.gameObject.SetActive(false);
 			_teamTextMP.gameObject.SetActive(true);
 			
-			SceneHandler.Instance.FadeOut(1f);
+			SceneHandler.Instance.FadeOut(Color.black, 1f);
 			yield return new WaitForSeconds(1f);
 			
 			yield return new WaitForSeconds(3f);
