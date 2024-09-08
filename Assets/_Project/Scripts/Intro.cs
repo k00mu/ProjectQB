@@ -8,6 +8,7 @@ using System.Collections;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 using UnityEngine.Video;
 using WaitForSeconds = UnityEngine.WaitForSeconds;
 
@@ -16,14 +17,16 @@ namespace QuackleBit
 	public class Intro : MonoBehaviour
 	{
 		[SerializeField] private VideoPlayer _videoPlayer;
+		[SerializeField] private RawImage _logoRawImage;
 		[SerializeField] private TextMeshProUGUI _teamTextMP;
 		
 		private void Start()
 		{
-			_teamTextMP.gameObject.SetActive(false);
 			_videoPlayer.gameObject.SetActive(false);
+			_logoRawImage.gameObject.SetActive(false);
+			_teamTextMP.gameObject.SetActive(false);
 			
-			string videoUrl= $"{Application.streamingAssetsPath}/Logo.mov";
+			string videoUrl= System.IO.Path.Combine(Application.streamingAssetsPath, "Logo.mp4");
 			_videoPlayer.url = videoUrl;
 			
 			StartCoroutine(PlayIntro());
@@ -32,18 +35,20 @@ namespace QuackleBit
 		private IEnumerator PlayIntro()
 		{
 			_videoPlayer.gameObject.SetActive(true);
+			_logoRawImage.gameObject.SetActive(true);
 			
 			SceneHandler.Instance.FadeOut(1f);
 			yield return new WaitForSeconds(1f);
 			
 			_videoPlayer.Play();
-			yield return new WaitUntil(() => _videoPlayer.isPlaying == false);
+			yield return new WaitUntil(() => _videoPlayer.isPlaying);
+			yield return new WaitUntil(() => !_videoPlayer.isPlaying);
 			
 			SceneHandler.Instance.FadeIn(1f);
 			yield return new WaitForSeconds(1f);
 			
 			_videoPlayer.gameObject.SetActive(false);
-			
+			_logoRawImage.gameObject.SetActive(false);
 			_teamTextMP.gameObject.SetActive(true);
 			
 			SceneHandler.Instance.FadeOut(1f);
