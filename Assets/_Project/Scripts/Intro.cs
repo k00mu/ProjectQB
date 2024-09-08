@@ -55,11 +55,6 @@ namespace QuackleBit
 			yield return new WaitForSeconds(1f);
 			
 			yield return new WaitForSeconds(3f);
-			
-			SceneHandler.Instance.FadeIn(1f);
-			yield return new WaitForSeconds(1f);
-			
-			_teamTextMP.gameObject.SetActive(false);
 
 			SceneHandler.Instance.SetNextScene("MainMenu");
 			SceneHandler.Instance.LoadNextSceneWithLoading();
