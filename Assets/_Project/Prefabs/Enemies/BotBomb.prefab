@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 2883717904560431258}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -1.75, z: 0}
+  m_LocalPosition: {x: 0, y: -0.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -172,9 +172,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: 0.15625}
   serializedVersion: 2
-  m_Radius: 1
+  m_Radius: 0.4375
 --- !u!114 &6934784332892899280
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -325,7 +325,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: 0.21875}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -336,7 +336,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.6875, y: 0.4375}
   m_EdgeRadius: 0
 --- !u!114 &3770069311321901046
 MonoBehaviour:
@@ -469,7 +469,7 @@ MonoBehaviour:
   CharacterType: 1
   PlayerID: 
   InitialFacingDirection: 0
-  DirectionOnSpawn: 0
+  DirectionOnSpawn: 2
   CharacterAnimator: {fileID: 8733662063016724030}
   UseDefaultMecanim: 1
   PerformAnimatorSanityChecks: 1
@@ -811,7 +811,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Label: DetectRadius
-  Radius: 4.5
+  Radius: 3
   DetectionOriginOffset: {x: 0, y: 0, z: 0}
   TargetLayer:
     serializedVersion: 2
@@ -829,7 +829,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Label: ExplodeRadius
-  Radius: 2.5
+  Radius: 1.25
   DetectionOriginOffset: {x: 0, y: 0, z: 0}
   TargetLayer:
     serializedVersion: 2

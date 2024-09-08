@@ -28,11 +28,6 @@ PrefabInstance:
       propertyPath: ImmuneToKnockback
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 5842658555804685761, guid: 4f25b7671c3736c49ad0e487d53af471,
-        type: 3}
-      propertyPath: FlickerSpriteOnHit
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 7529162107412397334, guid: 4f25b7671c3736c49ad0e487d53af471,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -86,8 +81,13 @@ PrefabInstance:
     - target: {fileID: 8475713314996299738, guid: 4f25b7671c3736c49ad0e487d53af471,
         type: 3}
       propertyPath: AdditionalAbilityNodes.Array.size
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 8475713314996299738, guid: 4f25b7671c3736c49ad0e487d53af471,
+        type: 3}
+      propertyPath: AdditionalAbilityNodes.Array.data[3]
+      value: 
+      objectReference: {fileID: 5719524983761449529}
     - target: {fileID: 8475713314996299738, guid: 4f25b7671c3736c49ad0e487d53af471,
         type: 3}
       propertyPath: AdditionalAbilityNodes.Array.data[4]

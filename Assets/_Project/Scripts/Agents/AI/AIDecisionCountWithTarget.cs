@@ -6,7 +6,8 @@
 
 using MoreMountains.Tools;
 using UnityEngine;
-namespace QuackleBit.Agents.AI
+
+namespace QuackleBit
 {
 	public class AIDecisionCountWithTarget : AIDecision
 	{
