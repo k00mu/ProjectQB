@@ -19,36 +19,32 @@ namespace QuackleBit
 			_image = GetComponent<Image>();
 		}
 
-		public void FadeIn(float duration)
+		public void FadeIn(float duration, bool disable = true)
 		{
-			StartCoroutine(FadeInCoroutine(duration));
+			StartCoroutine(FadeImage(_image, _image.color.a, 1, duration, disable));
 		}
 		
-		public void FadeOut(float duration)
+		public void FadeOut(float duration, bool disable = true)
 		{
-			StartCoroutine(FadeOutCoroutine(duration));
+			StartCoroutine(FadeImage(_image, _image.color.a, 0, duration, disable));
 		}
 
-		private IEnumerator FadeInCoroutine(float duration)
+		private IEnumerator FadeImage(Image img, float start, float end, float duration, bool disable = true)
 		{
-			float t = 0f;
-			while (t < 1f)
+			float elapsedTime = 0f;
+			Color color = img.color;
+			while (elapsedTime < duration)
 			{
-				t += Time.deltaTime / duration;
-				_image.color = new Color(_image.color.r, _image.color.g, _image.color.b, 1f - t);
+				elapsedTime += Time.deltaTime;
+				color.a = Mathf.Lerp(start, end, elapsedTime / duration);
+				img.color = color;
 				yield return null;
 			}
-		}
-		
-		private IEnumerator FadeOutCoroutine(float duration)
-		{
-			float t = 0f;
-			while (t < 1f)
-			{
-				t += Time.deltaTime / duration;
-				_image.color = new Color(_image.color.r, _image.color.g, _image.color.b, t);
-				yield return null;
-			}
+			color.a = end;
+			img.color = color;
+			
+			if (disable)
+				img.gameObject.SetActive(false);
 		}
 	}
 }
