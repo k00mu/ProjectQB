@@ -23,6 +23,9 @@ namespace QuackleBit
 			_teamTextMP.gameObject.SetActive(false);
 			_videoPlayer.gameObject.SetActive(false);
 			
+			string videoUrl= $"{Application.streamingAssetsPath}/Logo.mov";
+			_videoPlayer.url = videoUrl;
+			
 			StartCoroutine(PlayIntro());
 		}
 		
