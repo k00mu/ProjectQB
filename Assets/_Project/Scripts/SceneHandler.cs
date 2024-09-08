@@ -35,6 +35,9 @@ namespace QuackleBit
 		
 		private IEnumerator LoadNextSceneWithLoadingCoroutine()
 		{
+			FadeIn(1f, false);
+			yield return new WaitForSeconds(1f);
+			
 			SceneManager.LoadScene("Loading");
 			
 			FadeOut(1f);
@@ -46,6 +49,22 @@ namespace QuackleBit
 			yield return new WaitForSeconds(1f);
 			
 			SceneManager.LoadScene(_nextScene);
+			
+			FadeOut(1f);
+		}
+		
+		public void LoadNextScene()
+		{
+			StartCoroutine(LoadNextSceneCoroutine());
+		}
+		
+		private IEnumerator LoadNextSceneCoroutine()
+		{
+			FadeIn(1f, false);
+			yield return new WaitForSeconds(1f);
+			
+			SceneManager.LoadScene(_nextScene);
+			
 			FadeOut(1f);
 		}
 
