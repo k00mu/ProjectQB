@@ -745,8 +745,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _menuGroup: {fileID: 1774890757}
   _optionGroup: {fileID: 688957897}
-  _quitGroup: {fileID: 0}
-  _overlay: {fileID: 0}
 --- !u!1 &688957894
 GameObject:
   m_ObjectHideFlags: 0
