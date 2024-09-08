@@ -46,14 +46,15 @@ jobs:
           name: Build-${{ matrix.targetPlatform }}
           path: build/${{ matrix.targetPlatform }}
 
-      - name: Set target platform as output
-        run: echo "targetPlatform=${{ matrix.targetPlatform }}" >> $GITHUB_ENV
+      - name: Set target platform output
+        id: platform_output
+        run: echo "::set-output name=targetPlatform::${{ matrix.targetPlatform }}"
 
   deployWebGL:
     name: Deploy WebGL to GitHub Pages
     runs-on: ubuntu-latest
     needs: buildForAllSupportedPlatforms
-    if: ${{ env.targetPlatform == 'WebGL' }}
+    if: needs.buildForAllSupportedPlatforms.outputs.targetPlatform == 'WebGL'
     steps:
       - name: Checkout
         uses: actions/checkout@v4
