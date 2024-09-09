@@ -11,7 +11,7 @@ namespace QuackleBit
 {
 	public class Backstory : MonoBehaviour
 	{
-		
+		private float timer;
 		
 		private void Start()
 		{
@@ -29,9 +29,18 @@ namespace QuackleBit
 		
 		private void Update()
 		{
-			if (Input.GetKeyDown(KeyCode.Return))
+			if (Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.E) || Input.GetMouseButtonDown(0))
 			{
 				Typewriter.Instance.WriteNextStringInQueue();
+			}
+
+			if (Typewriter.Instance.IsActive())
+			{
+				timer += Time.deltaTime;
+				if (timer > 5f)
+				{
+					Typewriter.Instance.WriteNextStringInQueue();
+				}
 			}
 		}
 	}

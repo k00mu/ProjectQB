@@ -5,7 +5,7 @@
       "depth": 0,
       "source": "git",
       "dependencies": {},
-      "hash": "22c22ef3f3c824c6ac79779e6131425befb740b6"
+      "hash": "943a5e521eb784fe5a3566f3ac2d36bfa8a823c2"
     },
     "com.kyrylokuzyk.primetween": {
       "version": "file:../Assets/Plugins/PrimeTween/internal/com.kyrylokuzyk.primetween.tgz",
