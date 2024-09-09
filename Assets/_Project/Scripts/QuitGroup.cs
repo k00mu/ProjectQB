@@ -15,7 +15,7 @@ namespace QuackleBit
 		[SerializeField] private Button _yesButton;
 		[SerializeField] private Button _noButton;
 		
-		public Action<string> _callback; 
+		public Action<string> Callback; 
 		
 		private void Start()
 		{
@@ -30,7 +30,7 @@ namespace QuackleBit
 
 		private void OnNoButtonClick()
 		{
-			_callback?.Invoke("No");
+			Callback?.Invoke("No");
 		}
 	}
 }

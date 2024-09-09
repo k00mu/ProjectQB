@@ -49,5 +49,18 @@ namespace QuackleBit
 			_labOpeningCutsceneGO.SetActive(false);
 			currentCharacterHZ.AbilityPermitted = true;
 		}
+
+		public void LabEnding()
+		{
+			StartCoroutine(LabEndingCoroutine());
+		}
+		
+		public IEnumerator LabEndingCoroutine()
+		{
+			SceneHandler.Instance.FadeIn(_labOpeningCutsceneLastFrameSprite, 1f);
+			yield return new WaitForSeconds(1f);
+			SceneHandler.Instance.SetNextScene("Fall");
+			SceneHandler.Instance.LoadNextScene(_labOpeningCutsceneLastFrameSprite);
+		}
 	}
 }

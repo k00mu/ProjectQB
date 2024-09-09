@@ -6,13 +6,14 @@
 
 using System;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 namespace QuackleBit
 {
-	public class MenuGroup : MonoBehaviour
+	public class PauseGroup : MonoBehaviour
 	{
-		[SerializeField] private Button _startButton;
+		[SerializeField] private Button _resumeButton;
 		[SerializeField] private Button _optionButton;
 		[SerializeField] private Button _quitButton;
 		
@@ -20,15 +21,14 @@ namespace QuackleBit
 		
 		private void Start()
 		{
-			_startButton.onClick.AddListener(OnStartButton);
+			_resumeButton.onClick.AddListener(OnResumeButton);
 			_optionButton.onClick.AddListener(OnOptionButton);
 			_quitButton.onClick.AddListener(OnQuitButton);
 		}
 		
-		private void OnStartButton()
+		private void OnResumeButton()
 		{
-			SceneHandler.Instance.SetNextScene("Backstory");
-			SceneHandler.Instance.LoadNextScene();
+			Callback?.Invoke("Resume");
 		}
 		
 		private void OnOptionButton()

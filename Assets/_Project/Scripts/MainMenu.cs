@@ -22,10 +22,16 @@ namespace QuackleBit
 		[SerializeField] private MenuGroup _menuGroup;
 		[SerializeField] private OptionGroup _optionGroup;
 
-		private void Start()
+		private void OnEnable()
 		{
-			_menuGroup._callback += HandleMenuGroupCallback;
-			_optionGroup._callback += HandleOptionGroupCallback;
+			_menuGroup.Callback += HandleMenuGroupCallback;
+			_optionGroup.Callback += HandleOptionGroupCallback;
+		}
+		
+		private void OnDisable()
+		{
+			_menuGroup.Callback -= HandleMenuGroupCallback;
+			_optionGroup.Callback -= HandleOptionGroupCallback;
 		}
 		
 		private void HandleMenuGroupCallback(string obj)
