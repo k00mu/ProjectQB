@@ -15,7 +15,7 @@ namespace QuackleBit
 		[SerializeField] private Slider _audioAmountSlider;
 		[SerializeField] private Button _backButton;
 		
-		public Action<string> _callback; 
+		public Action<string> Callback; 
 		
 		private void Start()
 		{
@@ -24,7 +24,7 @@ namespace QuackleBit
 		
 		private void OnBackButtonClick()
 		{
-			_callback?.Invoke("Back");
+			Callback?.Invoke("Back");
 		}
 	}
 }
