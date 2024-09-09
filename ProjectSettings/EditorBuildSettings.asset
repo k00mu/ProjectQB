@@ -20,4 +20,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_Project/Scenes/Game/Lab.unity
     guid: e9aaf1f6617bb5b4e998b21e597ec77d
+  - enabled: 1
+    path: Assets/_Project/Scenes/Game/Fall.unity
+    guid: b800f9bda8b29974d86b8fc51487ebad
+  - enabled: 1
+    path: Assets/_Project/Scenes/Game/Gameplay.unity
+    guid: 48fc1d96a832b3c41ac04f490f66552b
   m_configObjects: {}
