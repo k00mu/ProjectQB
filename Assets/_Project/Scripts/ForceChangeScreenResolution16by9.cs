@@ -67,6 +67,7 @@ namespace QuackleBit
 			// resolutionDropdown.RefreshShownValue();
 
 			SetResolution(currentResolutionIndex);
+			Screen.fullScreen = true;
 		}
 
 		private void SetResolution(int resolutionIndex)
