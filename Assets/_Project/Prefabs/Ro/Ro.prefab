@@ -558,10 +558,10 @@ MonoBehaviour:
   AbilityPermitted: 1
   BlockingMovementStates: 
   BlockingConditionStates: 
-  _deflectorOffset: {x: 1, y: 2.5, z: 0}
-  _deflectorSize: {x: 0.3, y: 2}
+  _deflectorOffset: {x: 0.34375, y: 1, z: 0}
+  _deflectorSize: {x: 0.3, y: 1}
   _canMove: 0
-  _chargingTime: 0.2
+  _chargingTime: 0.1
 --- !u!1 &8499054158813040110
 GameObject:
   m_ObjectHideFlags: 0
@@ -845,10 +845,10 @@ MonoBehaviour:
   ImmuneToDamage: 0
   DamageFeedbacks: {fileID: 0}
   FeedbackIsProportionalToDamage: 0
-  FlickerSpriteOnHit: 0
+  FlickerSpriteOnHit: 1
   FlickerColor: {r: 1, g: 0.078431375, b: 0.078431375, a: 1}
   ImmuneToKnockback: 0
-  ImmuneToKnockbackIfZeroDamage: 0
+  ImmuneToKnockbackIfZeroDamage: 1
   DeathFeedbacks: {fileID: 0}
   DestroyOnDeath: 1
   DelayBeforeDestruction: 0
