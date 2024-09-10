@@ -100,7 +100,6 @@ namespace QuackleBit
 
 		private IEnumerator Pattern1Coroutine()
 		{
-			
 			yield return StartCoroutine(NormalAttackCoroutine("left"));
 			yield return new WaitForSeconds(5f);
 			

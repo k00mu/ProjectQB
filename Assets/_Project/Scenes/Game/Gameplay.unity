@@ -2928,20 +2928,20 @@ CompositeCollider2D:
   m_ColliderPaths:
   - m_Collider: {fileID: 764718694}
     m_ColliderPaths:
-    - - X: 160000000
+    - - X: 180000000
         Y: 90000000
-      - X: 0
+      - X: 20000000
         Y: 90000000
-      - X: 0
+      - X: 20000000
         Y: 0
-      - X: 160000000
+      - X: 180000000
         Y: 0
   m_CompositePaths:
     m_Paths:
-    - - {x: 15.999997, y: 0}
-      - {x: 15.999997, y: 9}
-      - {x: 0, y: 8.999997}
-      - {x: 0.0000029, y: 0}
+    - - {x: 17.999996, y: 0}
+      - {x: 17.999996, y: 9}
+      - {x: 2, y: 8.999997}
+      - {x: 2.0000029, y: 0}
   m_VertexDistance: 0.0005
   m_OffsetDistance: 0.000005
   m_UseDelaunayMesh: 0
@@ -3005,7 +3005,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 1
-  m_Offset: {x: 8, y: 4.5}
+  m_Offset: {x: 10, y: 4.5}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -3027,7 +3027,7 @@ Transform:
   m_GameObject: {fileID: 764718691}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6657,7 +6657,7 @@ Transform:
   m_GameObject: {fileID: 1452935010}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -59.34375, z: 0}
+  m_LocalPosition: {x: 0, y: -66.65625, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -6684,7 +6684,7 @@ MonoBehaviour:
   VirtualCamera: {fileID: 832098717}
   Confiner: {fileID: 764718692}
   CinemachineCameraConfiner: {fileID: 832098714}
-  ResizeConfinerAutomatically: 1
+  ResizeConfinerAutomatically: 0
   AutoDetectFirstRoomOnStart: 1
   CurrentRoom: 0
   RoomVisited: 0
@@ -8007,11 +8007,11 @@ MonoBehaviour:
   PlayerID: 
   InitialFacingDirection: 1
   DirectionOnSpawn: 0
-  CharacterAnimator: {fileID: 0}
+  CharacterAnimator: {fileID: 807616347}
   UseDefaultMecanim: 1
   PerformAnimatorSanityChecks: 1
   DisableAnimatorLogs: 0
-  CharacterModel: {fileID: 0}
+  CharacterModel: {fileID: 1788351832}
   CameraTarget: {fileID: 0}
   CameraTargetSpeed: 5
   AdditionalAbilityNodes: []
@@ -8020,7 +8020,7 @@ MonoBehaviour:
   RotateModelOnDirectionChange: 0
   ModelRotationValue: {x: 0, y: 180, z: 0}
   ModelRotationSpeed: 0
-  CharacterHealth: {fileID: 0}
+  CharacterHealth: {fileID: 1788351834}
   SendStateChangeEvents: 1
   SendStateUpdateEvents: 1
   AirborneDistance: 0.5
@@ -8155,7 +8155,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0.796875}
