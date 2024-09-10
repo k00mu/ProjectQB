@@ -81,6 +81,10 @@ namespace QuackleBit
 		{
 			StartCoroutine(LoadNextSceneCoroutine());
 		}
+		public void LoadNextScene(Color color)
+		{
+			StartCoroutine(LoadNextSceneCoroutine(color));
+		}
 		public void LoadNextScene(Sprite sprite)
 		{
 			StartCoroutine(LoadNextSceneCoroutine(sprite));
@@ -94,6 +98,16 @@ namespace QuackleBit
 			SceneManager.LoadScene(_nextScene);
 			
 			FadeOut(Color.black, 1f);
+		}
+		
+		private IEnumerator LoadNextSceneCoroutine(Color color)
+		{
+			FadeIn(color, 1f, false);
+			yield return new WaitForSeconds(1f);
+			
+			SceneManager.LoadScene(_nextScene);
+			
+			FadeOut(color, 1f);
 		}
 
 		private IEnumerator LoadNextSceneCoroutine(Sprite sprite)

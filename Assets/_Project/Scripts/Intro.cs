@@ -19,6 +19,7 @@ namespace QuackleBit
 		[SerializeField] private VideoPlayer _videoPlayer;
 		[SerializeField] private RawImage _logoRawImage;
 		[SerializeField] private TextMeshProUGUI _teamTextMP;
+		[SerializeField] private IntroBGM _introBGM;
 		
 		private void Start()
 		{
@@ -50,6 +51,7 @@ namespace QuackleBit
 			_videoPlayer.gameObject.SetActive(false);
 			_logoRawImage.gameObject.SetActive(false);
 			_teamTextMP.gameObject.SetActive(true);
+			_introBGM.PlayBGM();
 			
 			SceneHandler.Instance.FadeOut(Color.black, 1f);
 			yield return new WaitForSeconds(1f);

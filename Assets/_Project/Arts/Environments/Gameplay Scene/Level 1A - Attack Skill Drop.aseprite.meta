@@ -35,7 +35,7 @@ ScriptedImporter:
     spriteMeshType: 1
     alignment: 0
     spritePivot: {x: 0.5, y: 0.5}
-    spritePixelsToUnits: 100
+    spritePixelsToUnits: 32
     spriteBorder: {x: 0, y: 0, z: 0, w: 0}
     spriteGenerateFallbackPhysicsShape: 0
     generateCubemap: 6
@@ -73,9 +73,9 @@ ScriptedImporter:
   previousAsepriteImporterSettings:
     fileImportMode: 1
     importHiddenLayers: 0
-    layerImportMode: 1
+    layerImportMode: 0
     defaultPivotSpace: 0
-    defaultPivotAlignment: 7
+    defaultPivotAlignment: 6
     customPivotPosition: {x: 0.5, y: 0.5}
     mosaicPadding: 4
     spritePadding: 0
@@ -86,9 +86,9 @@ ScriptedImporter:
   asepriteImporterSettings:
     fileImportMode: 1
     importHiddenLayers: 0
-    layerImportMode: 1
+    layerImportMode: 0
     defaultPivotSpace: 0
-    defaultPivotAlignment: 7
+    defaultPivotAlignment: 6
     customPivotPosition: {x: 0.5, y: 0.5}
     mosaicPadding: 4
     spritePadding: 0
@@ -97,7 +97,7 @@ ScriptedImporter:
     addSortingGroup: 1
     addShadowCasters: 0
   importFileNodeState: 1
-  platformSettingsDirtyTick: 0
+  platformSettingsDirtyTick: 638615664597411390
   textureAssetName: 
   singleSpriteImportData:
   - name: 
@@ -121,18 +121,18 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
   animatedSpriteImportData:
-  - name: Level 1A - Attack Skill Drop
+  - name: Sky
     originalName: 
-    pivot: {x: 0.4848485, y: 0.16476347}
+    pivot: {x: 0, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 3300
-      height: 613
-    spriteID: 488efbee56d76e64eb899b9402510f66
+      width: 3200
+      height: 512
+    spriteID: 1d517df0110b8ae448805f0c77d7f9e7
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -141,26 +141,719 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 4, y: 4}
+  - name: Cloud
+    originalName: 
+    pivot: {x: -0.33162072, y: -0.49382716}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1748
+      y: 1327
+      width: 2141
+      height: 324
+    spriteID: 986d058574c4a7549ae32e456c646ca5
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1748, y: 1327}
+  - name: Grass1
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 1000
+      width: 3200
+      height: 319
+    spriteID: f6798694a7c6ed64fa196ba957a87d94
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 1000}
+  - name: Unique
+    originalName: 
+    pivot: {x: -0.124521896, y: -0.05769231}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 524
+      width: 2353
+      height: 468
+    spriteID: e9095da48cddf744c91a51be5e86f2f5
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 507}
+  - name: Grass2
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 1809
+      width: 3200
+      height: 209
+    spriteID: d6516916df40b2f4ab67942d89e1047d
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 1809}
+  - name: Grass3
+    originalName: 
+    pivot: {x: -0.7062212, y: -0.06329113}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 1327
+      width: 1736
+      height: 474
+    spriteID: befdb182a89802245bfcb88f7065450c
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: -178, y: 1291}
+  - name: Grass4
+    originalName: 
+    pivot: {x: -0.40858966, y: -0.045454543}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 2365
+      y: 524
+      width: 1723
+      height: 330
+    spriteID: 92b22a0be75c4ff4b8e48b6545a3a6b6
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 2365, y: 524}
+  - name: Platforms E
+    originalName: 
+    pivot: {x: -23.625, y: -0.15409836}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 3897
+      y: 1327
+      width: 128
+      height: 305
+    spriteID: b5b0fda7638fcf9408c0f5cd689db0f4
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 3808, y: 1280}
+  - name: Platforms D
+    originalName: 
+    pivot: {x: -0.98, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 2918
+      width: 1600
+      height: 320
+    spriteID: 2e2b0a07daa888949b1c24b5408d0e63
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: -1564, y: 2918}
+  - name: Platforms C
+    originalName: 
+    pivot: {x: -0.38129497, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 2264
+      width: 2224
+      height: 256
+    spriteID: 226bb66d143ca64498294e27bb7ed9b0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 2264}
+  - name: Platforms B
+    originalName: 
+    pivot: {x: -1.1, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 3212
+      y: 1000
+      width: 800
+      height: 224
+    spriteID: 5e2a721c84a2ed842aeb65b6482ddda7
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 3212, y: 1000}
+  - name: Platforms A
+    originalName: 
+    pivot: {x: 0, y: 0.61212116}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 2528
+      width: 3200
+      height: 165
+    spriteID: 143370fe78c64b2418b127612447d82f
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 2528}
+  - name: FG
+    originalName: 
+    pivot: {x: 0, y: 0.022222223}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 3246
+      width: 3200
+      height: 45
+    spriteID: 519678aa3d47c734cba4528f07ee11d9
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 3246}
+  - name: PLACEHOLDER ENEMY/DELETE
+    originalName: 
+    pivot: {x: -0.13119642, y: -0.2521739}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 2026
+      width: 2683
+      height: 230
+    spriteID: 4aa99fe5a93176046bc9bea00e02943a
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 1985}
+  - name: PLACEHOLDER OBS
+    originalName: 
+    pivot: {x: -0.26944667, y: -0.27751195}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 2701
+      width: 2494
+      height: 209
+    spriteID: 9874922f21288304f84b9254185adf3e
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 2701}
+  - name: Open
+    originalName: 
+    pivot: {x: -11.222221, y: -0.15652174}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 3212
+      y: 4
+      width: 270
+      height: 345
+    spriteID: c0fdedb3cf9e5f44ab15a2939e776641
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 3120, y: -28}
+  - name: Closed
+    originalName: 
+    pivot: {x: -25.173553, y: -0.35625002}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 3897
+      y: 1640
+      width: 121
+      height: 160
+    spriteID: b22a0a4ab7acbe34985895ea9cc7e751
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 3832, y: 1612}
+  - name: Attack Skill
+    originalName: 
+    pivot: {x: -2.931818, y: -2.0810812}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4026
+      y: 1640
+      width: 44
+      height: 37
+    spriteID: d2202b08e955086448aab245cb2e59d8
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4010, y: 1619}
+  - name: Key
+    originalName: 
+    pivot: {x: -121.72, y: -11.580645}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4026
+      y: 1685
+      width: 25
+      height: 31
+    spriteID: 1f6776388f602d242acf7a519fbd66dc
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4004, y: 1665}
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
-    guid: 785569479
-    name: Level 1A - Attack Skill Drop
-    layerFlags: 0
+    guid: -312994415
+    name: Sky
+    layerFlags: 35
     layerType: 0
     blendMode: 0
     cells:
-    - name: Level 1A - Attack Skill Drop
+    - name: Sky
+      frameIndex: 0
+      additiveSortOrder: 0
+      cellRect:
+        x: 0
+        y: 0
+        width: 3200
+        height: 512
+      spriteId: 1d517df0110b8ae448805f0c77d7f9e7
+    linkedCells: []
+    parentIndex: -1
+  - layerIndex: 1
+    guid: -399938108
+    name: Cloud
+    layerFlags: 35
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: Cloud
+      frameIndex: 0
+      additiveSortOrder: 0
+      cellRect:
+        x: 710
+        y: 160
+        width: 2141
+        height: 324
+      spriteId: 986d058574c4a7549ae32e456c646ca5
+    linkedCells: []
+    parentIndex: -1
+  - layerIndex: 2
+    guid: -2074030553
+    name: Grass1
+    layerFlags: 35
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: Grass1
+      frameIndex: 0
+      additiveSortOrder: 0
+      cellRect:
+        x: 0
+        y: 0
+        width: 3200
+        height: 512
+      spriteId: f6798694a7c6ed64fa196ba957a87d94
+    linkedCells: []
+    parentIndex: -1
+  - layerIndex: 3
+    guid: -1948649032
+    name: Unique
+    layerFlags: 35
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: Unique
+      frameIndex: 0
+      additiveSortOrder: 0
+      cellRect:
+        x: 293
+        y: 10
+        width: 2353
+        height: 512
+      spriteId: e9095da48cddf744c91a51be5e86f2f5
+    linkedCells: []
+    parentIndex: -1
+  - layerIndex: 4
+    guid: 1186003394
+    name: Grass2
+    layerFlags: 35
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: Grass2
+      frameIndex: 0
+      additiveSortOrder: 0
+      cellRect:
+        x: 0
+        y: 0
+        width: 3200
+        height: 512
+      spriteId: d6516916df40b2f4ab67942d89e1047d
+    linkedCells: []
+    parentIndex: -1
+  - layerIndex: 5
+    guid: 151070050
+    name: Grass3
+    layerFlags: 35
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: Grass3
+      frameIndex: 0
+      additiveSortOrder: 0
+      cellRect:
+        x: 1044
+        y: -6
+        width: 1918
+        height: 512
+      spriteId: befdb182a89802245bfcb88f7065450c
+    linkedCells: []
+    parentIndex: -1
+  - layerIndex: 6
+    guid: -1194331130
+    name: Grass4
+    layerFlags: 35
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: Grass4
+      frameIndex: 0
+      additiveSortOrder: 0
+      cellRect:
+        x: 704
+        y: 15
+        width: 1723
+        height: 330
+      spriteId: 92b22a0be75c4ff4b8e48b6545a3a6b6
+    linkedCells: []
+    parentIndex: -1
+  - layerIndex: 7
+    guid: -695106086
+    name: Platforms E
+    layerFlags: 35
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: Platforms E
+      frameIndex: 0
+      additiveSortOrder: 0
+      cellRect:
+        x: 2935
+        y: 0
+        width: 265
+        height: 478
+      spriteId: b5b0fda7638fcf9408c0f5cd689db0f4
+    linkedCells: []
+    parentIndex: -1
+  - layerIndex: 8
+    guid: -695105694
+    name: Platforms D
+    layerFlags: 35
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: Platforms D
+      frameIndex: 0
+      additiveSortOrder: 0
+      cellRect:
+        x: 0
+        y: 0
+        width: 3200
+        height: 512
+      spriteId: 2e2b0a07daa888949b1c24b5408d0e63
+    linkedCells: []
+    parentIndex: -1
+  - layerIndex: 9
+    guid: -695108474
+    name: Platforms C
+    layerFlags: 35
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: Platforms C
+      frameIndex: 0
+      additiveSortOrder: 0
+      cellRect:
+        x: 848
+        y: 0
+        width: 2224
+        height: 256
+      spriteId: 226bb66d143ca64498294e27bb7ed9b0
+    linkedCells: []
+    parentIndex: -1
+  - layerIndex: 10
+    guid: -695108074
+    name: Platforms B
+    layerFlags: 35
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: Platforms B
+      frameIndex: 0
+      additiveSortOrder: 0
+      cellRect:
+        x: 880
+        y: 0
+        width: 882
+        height: 306
+      spriteId: 5e2a721c84a2ed842aeb65b6482ddda7
+    linkedCells: []
+    parentIndex: -1
+  - layerIndex: 11
+    guid: -695107678
+    name: Platforms A
+    layerFlags: 35
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: Platforms A
       frameIndex: 0
       additiveSortOrder: 0
       cellRect:
         x: 0
         y: -101
-        width: 3321
-        height: 623
-      spriteId: 488efbee56d76e64eb899b9402510f66
+        width: 3200
+        height: 253
+      spriteId: 143370fe78c64b2418b127612447d82f
     linkedCells: []
     parentIndex: -1
+  - layerIndex: 12
+    guid: -1793758683
+    name: FG
+    layerFlags: 35
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: FG
+      frameIndex: 0
+      additiveSortOrder: 0
+      cellRect:
+        x: 0
+        y: -1
+        width: 3200
+        height: 102
+      spriteId: 519678aa3d47c734cba4528f07ee11d9
+    linkedCells: []
+    parentIndex: -1
+  - layerIndex: 13
+    guid: 44098470
+    name: PLACEHOLDER ENEMY/DELETE
+    layerFlags: 35
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: PLACEHOLDER ENEMY/DELETE
+      frameIndex: 0
+      additiveSortOrder: 0
+      cellRect:
+        x: 352
+        y: 17
+        width: 2683
+        height: 271
+      spriteId: 4aa99fe5a93176046bc9bea00e02943a
+    linkedCells: []
+    parentIndex: -1
+  - layerIndex: 14
+    guid: 1267763459
+    name: PLACEHOLDER OBS
+    layerFlags: 35
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: PLACEHOLDER OBS
+      frameIndex: 0
+      additiveSortOrder: 0
+      cellRect:
+        x: 672
+        y: 58
+        width: 2494
+        height: 209
+      spriteId: 9874922f21288304f84b9254185adf3e
+    linkedCells: []
+    parentIndex: -1
+  - layerIndex: 15
+    guid: -184346497
+    name: INTERACT
+    layerFlags: 35
+    layerType: 1
+    blendMode: 0
+    cells: []
+    linkedCells: []
+    parentIndex: -1
+  - layerIndex: 16
+    guid: 1195105134
+    name: Open
+    layerFlags: 35
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: Open
+      frameIndex: 0
+      additiveSortOrder: 0
+      cellRect:
+        x: 2938
+        y: 22
+        width: 383
+        height: 423
+      spriteId: c0fdedb3cf9e5f44ab15a2939e776641
+    linkedCells: []
+    parentIndex: 15
+  - layerIndex: 17
+    guid: 1628564107
+    name: Closed
+    layerFlags: 35
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: Closed
+      frameIndex: 0
+      additiveSortOrder: 0
+      cellRect:
+        x: 2981
+        y: 29
+        width: 260
+        height: 255
+      spriteId: b22a0a4ab7acbe34985895ea9cc7e751
+    linkedCells: []
+    parentIndex: 15
+  - layerIndex: 18
+    guid: 1963187267
+    name: Attack Skill
+    layerFlags: 35
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: Attack Skill
+      frameIndex: 0
+      additiveSortOrder: 0
+      cellRect:
+        x: 113
+        y: 56
+        width: 73
+        height: 71
+      spriteId: d2202b08e955086448aab245cb2e59d8
+    linkedCells: []
+    parentIndex: 15
+  - layerIndex: 19
+    guid: 1291072056
+    name: Key
+    layerFlags: 35
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: Key
+      frameIndex: 0
+      additiveSortOrder: 0
+      cellRect:
+        x: 3021
+        y: 339
+        width: 63
+        height: 68
+      spriteId: 1f6776388f602d242acf7a519fbd66dc
+    linkedCells: []
+    parentIndex: 15
   platformSettings:
   - name: Default
     overridden: 0
@@ -169,6 +862,54 @@ ScriptedImporter:
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: DefaultTexturePlatform
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 16384
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: Standalone
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: Android
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: WebGL
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
     compressionQuality: 50
     forceMaximumCompressionQuality_BC6H_BC7: 0
     crunchedCompression: 0

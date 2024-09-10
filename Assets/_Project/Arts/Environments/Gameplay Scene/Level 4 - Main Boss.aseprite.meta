@@ -35,7 +35,7 @@ ScriptedImporter:
     spriteMeshType: 1
     alignment: 0
     spritePivot: {x: 0.5, y: 0.5}
-    spritePixelsToUnits: 100
+    spritePixelsToUnits: 32
     spriteBorder: {x: 0, y: 0, z: 0, w: 0}
     spriteGenerateFallbackPhysicsShape: 0
     generateCubemap: 6
@@ -73,9 +73,9 @@ ScriptedImporter:
   previousAsepriteImporterSettings:
     fileImportMode: 1
     importHiddenLayers: 0
-    layerImportMode: 1
+    layerImportMode: 0
     defaultPivotSpace: 0
-    defaultPivotAlignment: 7
+    defaultPivotAlignment: 6
     customPivotPosition: {x: 0.5, y: 0.5}
     mosaicPadding: 4
     spritePadding: 0
@@ -86,9 +86,9 @@ ScriptedImporter:
   asepriteImporterSettings:
     fileImportMode: 1
     importHiddenLayers: 0
-    layerImportMode: 1
+    layerImportMode: 0
     defaultPivotSpace: 0
-    defaultPivotAlignment: 7
+    defaultPivotAlignment: 6
     customPivotPosition: {x: 0.5, y: 0.5}
     mosaicPadding: 4
     spritePadding: 0
@@ -97,7 +97,7 @@ ScriptedImporter:
     addSortingGroup: 1
     addShadowCasters: 0
   importFileNodeState: 1
-  platformSettingsDirtyTick: 0
+  platformSettingsDirtyTick: 638615664597466927
   textureAssetName: 
   singleSpriteImportData:
   - name: 
@@ -121,18 +121,18 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
   animatedSpriteImportData:
-  - name: Level 4 - Main Boss
+  - name: Sky
     originalName: 
-    pivot: {x: 0.5, y: 0.07760532}
+    pivot: {x: 0, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 4
+      x: 1364
       y: 4
-      width: 1536
-      height: 451
-    spriteID: 5df94ba7db3ba574e92b4bdd436a35ea
+      width: 640
+      height: 416
+    spriteID: e58740fc36d78a64c8c2f11c35b8d121
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -140,25 +140,405 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: -206, y: -57}
+    uvTransform: {x: 1364, y: 4}
+  - name: Moon
+    originalName: 
+    pivot: {x: -0.49074075, y: -0.18518518}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 1331
+      width: 324
+      height: 324
+    spriteID: ad4d80ef92507aa459be03ba9f735082
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 1331}
+  - name: Cloud1
+    originalName: 
+    pivot: {x: -0.6190476, y: 0.08101852}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 4
+      width: 672
+      height: 432
+    spriteID: fefb8a5e609f815478ed782e701142bd
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: -423, y: 4}
+  - name: Cloud2
+    originalName: 
+    pivot: {x: 0.6666667, y: 0.0787037}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 684
+      y: 4
+      width: 672
+      height: 432
+    spriteID: 72b6a15a7a644f947a9304158363def9
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 474, y: -58}
+  - name: Grass2
+    originalName: 
+    pivot: {x: 0.04017857, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 652
+      y: 444
+      width: 672
+      height: 319
+    spriteID: 97eafd000670e454c8c75441b6aed24b
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 652, y: 444}
+  - name: Grass1
+    originalName: 
+    pivot: {x: 0.007440476, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 868
+      width: 672
+      height: 209
+    spriteID: cf1da7f25ad48fe4dbd113c3fe28cf49
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 868}
+  - name: Platforms
+    originalName: 
+    pivot: {x: 0, y: 0.33333334}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1332
+      y: 740
+      width: 672
+      height: 96
+    spriteID: 95b898e25a501874bb7b17f166020fbf
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1332, y: 740}
+  - name: FG
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 684
+      y: 868
+      width: 768
+      height: 44
+    spriteID: 5f4c6553f9741584ab72ffb36ccd70f1
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 684, y: 868}
+  - name: BOSS POSITION/DEL
+    originalName: 
+    pivot: {x: -0.13492064, y: -0.24789917}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 1085
+      width: 504
+      height: 238
+    spriteID: d1deaff3db577c948bee0f6b324a4382
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: -64, y: 1022}
+  - name: CAMVIEW/DELETE
+    originalName: 
+    pivot: {x: -0.125, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1332
+      y: 444
+      width: 512
+      height: 288
+    spriteID: ca4d785099155634cb52b1d466af2c59
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1332, y: 436}
+  - name: Unplayable Area / Only.n for Camera Shake Purpose
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 444
+      width: 640
+      height: 416
+    spriteID: a11834a1ab473d242a207f254aa1a723
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 444}
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
-    guid: 110132965
-    name: Level 4 - Main Boss
-    layerFlags: 0
+    guid: -312994415
+    name: Sky
+    layerFlags: 35
     layerType: 0
     blendMode: 0
     cells:
-    - name: Level 4 - Main Boss
+    - name: Sky
+      frameIndex: 0
+      additiveSortOrder: 0
+      cellRect:
+        x: 0
+        y: 0
+        width: 640
+        height: 416
+      spriteId: e58740fc36d78a64c8c2f11c35b8d121
+    linkedCells: []
+    parentIndex: -1
+  - layerIndex: 1
+    guid: 1609266494
+    name: Moon
+    layerFlags: 35
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: Moon
+      frameIndex: 0
+      additiveSortOrder: 0
+      cellRect:
+        x: 159
+        y: 60
+        width: 324
+        height: 324
+      spriteId: ad4d80ef92507aa459be03ba9f735082
+    linkedCells: []
+    parentIndex: -1
+  - layerIndex: 2
+    guid: -1579886860
+    name: Cloud1
+    layerFlags: 35
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: Cloud1
+      frameIndex: 0
+      additiveSortOrder: 0
+      cellRect:
+        x: -11
+        y: -35
+        width: 1099
+        height: 506
+      spriteId: fefb8a5e609f815478ed782e701142bd
+    linkedCells: []
+    parentIndex: -1
+  - layerIndex: 3
+    guid: 1680147092
+    name: Cloud2
+    layerFlags: 35
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: Cloud2
       frameIndex: 0
       additiveSortOrder: 0
       cellRect:
         x: -658
         y: -96
-        width: 1746
+        width: 1384
         height: 568
-      spriteId: 5df94ba7db3ba574e92b4bdd436a35ea
+      spriteId: 72b6a15a7a644f947a9304158363def9
+    linkedCells: []
+    parentIndex: -1
+  - layerIndex: 4
+    guid: 1186003394
+    name: Grass2
+    layerFlags: 35
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: Grass2
+      frameIndex: 0
+      additiveSortOrder: 0
+      cellRect:
+        x: -27
+        y: 0
+        width: 672
+        height: 416
+      spriteId: 97eafd000670e454c8c75441b6aed24b
+    linkedCells: []
+    parentIndex: -1
+  - layerIndex: 5
+    guid: -2074030560
+    name: Grass1
+    layerFlags: 35
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: Grass1
+      frameIndex: 0
+      additiveSortOrder: 0
+      cellRect:
+        x: -5
+        y: 0
+        width: 672
+        height: 416
+      spriteId: cf1da7f25ad48fe4dbd113c3fe28cf49
+    linkedCells: []
+    parentIndex: -1
+  - layerIndex: 6
+    guid: -969750768
+    name: Platforms
+    layerFlags: 35
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: Platforms
+      frameIndex: 0
+      additiveSortOrder: 0
+      cellRect:
+        x: 0
+        y: -32
+        width: 672
+        height: 105
+      spriteId: 95b898e25a501874bb7b17f166020fbf
+    linkedCells: []
+    parentIndex: -1
+  - layerIndex: 7
+    guid: -1793758674
+    name: FG
+    layerFlags: 35
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: FG
+      frameIndex: 0
+      additiveSortOrder: 0
+      cellRect:
+        x: 0
+        y: 0
+        width: 768
+        height: 416
+      spriteId: 5f4c6553f9741584ab72ffb36ccd70f1
+    linkedCells: []
+    parentIndex: -1
+  - layerIndex: 8
+    guid: 1729742508
+    name: BOSS POSITION/DEL
+    layerFlags: 33
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: BOSS POSITION/DEL
+      frameIndex: 0
+      additiveSortOrder: 0
+      cellRect:
+        x: 0
+        y: -4
+        width: 640
+        height: 420
+      spriteId: d1deaff3db577c948bee0f6b324a4382
+    linkedCells: []
+    parentIndex: -1
+  - layerIndex: 9
+    guid: 1113490523
+    name: CAMVIEW/DELETE
+    layerFlags: 33
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: CAMVIEW/DELETE
+      frameIndex: 0
+      additiveSortOrder: 0
+      cellRect:
+        x: 64
+        y: -8
+        width: 639
+        height: 416
+      spriteId: ca4d785099155634cb52b1d466af2c59
+    linkedCells: []
+    parentIndex: -1
+  - layerIndex: 10
+    guid: -1833064117
+    name: Unplayable Area / Only.n for Camera Shake Purpose
+    layerFlags: 33
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: Unplayable Area / Only.n for Camera Shake Purpose
+      frameIndex: 0
+      additiveSortOrder: 0
+      cellRect:
+        x: 0
+        y: 0
+        width: 640
+        height: 416
+      spriteId: a11834a1ab473d242a207f254aa1a723
     linkedCells: []
     parentIndex: -1
   platformSettings:
@@ -169,6 +549,54 @@ ScriptedImporter:
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: DefaultTexturePlatform
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 16384
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: Standalone
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: Android
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: WebGL
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
     compressionQuality: 50
     forceMaximumCompressionQuality_BC6H_BC7: 0
     crunchedCompression: 0
