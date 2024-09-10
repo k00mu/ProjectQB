@@ -5,8 +5,8 @@ namespace QuackleBit
 {
     public class SoundPlayer : MonoBehaviour
     {
-        private AudioSource audioSource;
-        private AudioSource bgmSource;
+        [SerializeField]private AudioSource audioSource;
+        [SerializeField]private AudioSource bgmSource;
         [SerializeField] private UnityEvent onStart;
 
         void Start()
