@@ -149,7 +149,7 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 4
-      y: 1331
+      y: 771
       width: 324
       height: 324
     spriteID: ad4d80ef92507aa459be03ba9f735082
@@ -160,7 +160,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 1331}
+    uvTransform: {x: 4, y: 771}
   - name: Cloud1
     originalName: 
     pivot: {x: -0.6190476, y: 0.08101852}
@@ -208,7 +208,7 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 652
+      x: 4
       y: 444
       width: 672
       height: 319
@@ -220,7 +220,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 652, y: 444}
+    uvTransform: {x: 4, y: 444}
   - name: Grass1
     originalName: 
     pivot: {x: 0.007440476, y: 0}
@@ -228,8 +228,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 4
-      y: 868
+      x: 684
+      y: 444
       width: 672
       height: 209
     spriteID: cf1da7f25ad48fe4dbd113c3fe28cf49
@@ -240,7 +240,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 868}
+    uvTransform: {x: 684, y: 444}
   - name: Platforms
     originalName: 
     pivot: {x: 0, y: 0.33333334}
@@ -248,8 +248,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 1332
-      y: 740
+      x: 1364
+      y: 444
       width: 672
       height: 96
     spriteID: 95b898e25a501874bb7b17f166020fbf
@@ -260,7 +260,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 1332, y: 740}
+    uvTransform: {x: 1364, y: 444}
   - name: FG
     originalName: 
     pivot: {x: 0, y: 0}
@@ -269,7 +269,7 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 684
-      y: 868
+      y: 661
       width: 768
       height: 44
     spriteID: 5f4c6553f9741584ab72ffb36ccd70f1
@@ -280,67 +280,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 684, y: 868}
-  - name: BOSS POSITION/DEL
-    originalName: 
-    pivot: {x: -0.13492064, y: -0.24789917}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 4
-      y: 1085
-      width: 504
-      height: 238
-    spriteID: d1deaff3db577c948bee0f6b324a4382
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: -64, y: 1022}
-  - name: CAMVIEW/DELETE
-    originalName: 
-    pivot: {x: -0.125, y: 0}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 1332
-      y: 444
-      width: 512
-      height: 288
-    spriteID: ca4d785099155634cb52b1d466af2c59
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 1332, y: 436}
-  - name: Unplayable Area / Only.n for Camera Shake Purpose
-    originalName: 
-    pivot: {x: 0, y: 0}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 4
-      y: 444
-      width: 640
-      height: 416
-    spriteID: a11834a1ab473d242a207f254aa1a723
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 4, y: 444}
+    uvTransform: {x: 684, y: 661}
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
@@ -485,60 +425,6 @@ ScriptedImporter:
         width: 768
         height: 416
       spriteId: 5f4c6553f9741584ab72ffb36ccd70f1
-    linkedCells: []
-    parentIndex: -1
-  - layerIndex: 8
-    guid: 1729742508
-    name: BOSS POSITION/DEL
-    layerFlags: 33
-    layerType: 0
-    blendMode: 0
-    cells:
-    - name: BOSS POSITION/DEL
-      frameIndex: 0
-      additiveSortOrder: 0
-      cellRect:
-        x: 0
-        y: -4
-        width: 640
-        height: 420
-      spriteId: d1deaff3db577c948bee0f6b324a4382
-    linkedCells: []
-    parentIndex: -1
-  - layerIndex: 9
-    guid: 1113490523
-    name: CAMVIEW/DELETE
-    layerFlags: 33
-    layerType: 0
-    blendMode: 0
-    cells:
-    - name: CAMVIEW/DELETE
-      frameIndex: 0
-      additiveSortOrder: 0
-      cellRect:
-        x: 64
-        y: -8
-        width: 639
-        height: 416
-      spriteId: ca4d785099155634cb52b1d466af2c59
-    linkedCells: []
-    parentIndex: -1
-  - layerIndex: 10
-    guid: -1833064117
-    name: Unplayable Area / Only.n for Camera Shake Purpose
-    layerFlags: 33
-    layerType: 0
-    blendMode: 0
-    cells:
-    - name: Unplayable Area / Only.n for Camera Shake Purpose
-      frameIndex: 0
-      additiveSortOrder: 0
-      cellRect:
-        x: 0
-        y: 0
-        width: 640
-        height: 416
-      spriteId: a11834a1ab473d242a207f254aa1a723
     linkedCells: []
     parentIndex: -1
   platformSettings:

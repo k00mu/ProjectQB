@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace QuackleBit
 {
@@ -18,6 +19,13 @@ namespace QuackleBit
 
         public void PlayBGM() {
             audioSource.Play();
+        }
+
+        private void Update() {
+            if (SceneManager.GetActiveScene().name == "Lab") {
+                audioSource.Stop();
+                Destroy(gameObject);
+            }
         }
 
     }

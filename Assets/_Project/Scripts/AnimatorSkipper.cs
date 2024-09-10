@@ -26,7 +26,7 @@ namespace QuackleBit
 
         private void Update()
         {
-            if (Input.GetKeyUp(KeyCode.Space))
+            if (Input.GetKeyUp(KeyCode.E))
             {
                 if (!skippable)
                 {
@@ -42,7 +42,6 @@ namespace QuackleBit
 
         private IEnumerator WarningCoroutine()
         {
-            Debug.Log("Press Space again to skip the animation.");
             if (warningText != null)
             {
                 Color color = warningText.color;
