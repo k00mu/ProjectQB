@@ -93,6 +93,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7774224746670451762, guid: 4f25b7671c3736c49ad0e487d53af471,
+        type: 3}
+      propertyPath: WalkSpeed
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 8475713314996299738, guid: 4f25b7671c3736c49ad0e487d53af471,
         type: 3}
       propertyPath: AdditionalAbilityNodes.Array.size
