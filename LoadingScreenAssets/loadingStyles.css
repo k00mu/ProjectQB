@@ -19,9 +19,8 @@
     font-size: 2rem;
     margin-bottom: 20px;
   }
-  
-  /* Progress bar container */
-  #progressBar {
+
+  #progressBarContainer {
     width: 80%;
     height: 20px;
     background-color: #444;
@@ -30,8 +29,14 @@
     margin-bottom: 20px;
   }
   
-  /* Progress fill */
-  #progressFill {
+  #progressBar {
+    width: 0%;
+    height: 100%;
+    background-color: #4caf50;
+  }
+  
+  /* Progress bar container */
+  #progressBar {
     height: 100%;
     background-color: #fff;
     width: 0%; /* Starts at 0% and will be updated via JavaScript */
