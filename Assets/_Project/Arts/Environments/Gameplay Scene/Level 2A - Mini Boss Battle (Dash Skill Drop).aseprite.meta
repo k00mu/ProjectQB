@@ -35,7 +35,7 @@ ScriptedImporter:
     spriteMeshType: 1
     alignment: 0
     spritePivot: {x: 0.5, y: 0.5}
-    spritePixelsToUnits: 100
+    spritePixelsToUnits: 32
     spriteBorder: {x: 0, y: 0, z: 0, w: 0}
     spriteGenerateFallbackPhysicsShape: 0
     generateCubemap: 6
@@ -73,31 +73,31 @@ ScriptedImporter:
   previousAsepriteImporterSettings:
     fileImportMode: 1
     importHiddenLayers: 0
-    layerImportMode: 1
+    layerImportMode: 0
     defaultPivotSpace: 0
-    defaultPivotAlignment: 7
+    defaultPivotAlignment: 6
     customPivotPosition: {x: 0.5, y: 0.5}
     mosaicPadding: 4
     spritePadding: 0
     generateModelPrefab: 1
-    generateAnimationClips: 1
+    generateAnimationClips: 0
     addSortingGroup: 1
     addShadowCasters: 0
   asepriteImporterSettings:
     fileImportMode: 1
     importHiddenLayers: 0
-    layerImportMode: 1
+    layerImportMode: 0
     defaultPivotSpace: 0
-    defaultPivotAlignment: 7
+    defaultPivotAlignment: 6
     customPivotPosition: {x: 0.5, y: 0.5}
     mosaicPadding: 4
     spritePadding: 0
     generateModelPrefab: 1
-    generateAnimationClips: 1
+    generateAnimationClips: 0
     addSortingGroup: 1
     addShadowCasters: 0
   importFileNodeState: 1
-  platformSettingsDirtyTick: 0
+  platformSettingsDirtyTick: 638615664597436424
   textureAssetName: 
   singleSpriteImportData:
   - name: 
@@ -121,18 +121,18 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
   animatedSpriteImportData:
-  - name: Level 2A - Mini Boss Battle (Dash Skill Drop)
+  - name: Sky
     originalName: 
-    pivot: {x: 0.3882915, y: 0.20954359}
+    pivot: {x: 0, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 4
-      y: 4
-      width: 837
-      height: 482
-    spriteID: 3ce96fd9699fe00488520ad9e4f18273
+      y: 663
+      width: 512
+      height: 288
+    spriteID: 14ed4644510325f48939b90dacad48ad
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -140,25 +140,367 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: -22}
+    uvTransform: {x: 4, y: 663}
+  - name: Cloud
+    originalName: 
+    pivot: {x: 0.102678575, y: -0.17592593}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 4
+      width: 672
+      height: 324
+    spriteID: 6107d0a52b846804c93497c0ae8884f5
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: -86}
+  - name: Grass1
+    originalName: 
+    pivot: {x: 0.05059524, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 336
+      width: 672
+      height: 319
+    spriteID: 91c1f1737a2fed24cacec2a8852735e0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 336}
+  - name: Botol
+    originalName: 
+    pivot: {x: -0.25793654, y: 0.31761009}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 684
+      y: 336
+      width: 252
+      height: 318
+    spriteID: 8474a5911f8d2944abbd1729c99d9084
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 655, y: 310}
+  - name: Grass2
+    originalName: 
+    pivot: {x: 0.04613095, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 1255
+      width: 672
+      height: 209
+    spriteID: cd65a4148b0ef634599cda381d650a1c
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 1255}
+  - name: Grass3
+    originalName: 
+    pivot: {x: 0, y: -0.054945055}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 1472
+      width: 504
+      height: 273
+    spriteID: 51cae76313759144eaab7cab3c94c14a
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 1472}
+  - name: Grass4
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 959
+      width: 512
+      height: 288
+    spriteID: e38604687627a6547b87c1050e6a63f0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 959}
+  - name: Platforms
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 1805
+      width: 512
+      height: 64
+    spriteID: 47ed1c38412fa40479d3dbb453a83342
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 1805}
+  - name: Stone
+    originalName: 
+    pivot: {x: -0.11538462, y: -0.7407407}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 516
+      y: 1472
+      width: 416
+      height: 81
+    spriteID: c38c8350c71167d4190bb4285f5752d2
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 516, y: 1472}
+  - name: Grass
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 1753
+      width: 768
+      height: 44
+    spriteID: d7c9a10dd13838f4a8ca54742b003868
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 1753}
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
-    guid: -1014808977
-    name: Level 2A - Mini Boss Battle (Dash Skill Drop)
-    layerFlags: 0
+    guid: -312994415
+    name: Sky
+    layerFlags: 35
     layerType: 0
     blendMode: 0
     cells:
-    - name: Level 2A - Mini Boss Battle (Dash Skill Drop)
+    - name: Sky
+      frameIndex: 0
+      additiveSortOrder: 0
+      cellRect:
+        x: 0
+        y: 0
+        width: 512
+        height: 288
+      spriteId: 14ed4644510325f48939b90dacad48ad
+    linkedCells: []
+    parentIndex: -1
+  - layerIndex: 1
+    guid: -399938108
+    name: Cloud
+    layerFlags: 35
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: Cloud
       frameIndex: 0
       additiveSortOrder: 0
       cellRect:
         x: -69
+        y: -33
+        width: 672
+        height: 431
+      spriteId: 6107d0a52b846804c93497c0ae8884f5
+    linkedCells: []
+    parentIndex: -1
+  - layerIndex: 2
+    guid: -2074030553
+    name: Grass1
+    layerFlags: 35
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: Grass1
+      frameIndex: 0
+      additiveSortOrder: 0
+      cellRect:
+        x: -34
+        y: 0
+        width: 672
+        height: 331
+      spriteId: 91c1f1737a2fed24cacec2a8852735e0
+    linkedCells: []
+    parentIndex: -1
+  - layerIndex: 3
+    guid: 2031648635
+    name: Botol
+    layerFlags: 35
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: Botol
+      frameIndex: 0
+      additiveSortOrder: 0
+      cellRect:
+        x: 36
         y: -127
-        width: 852
-        height: 525
-      spriteId: 3ce96fd9699fe00488520ad9e4f18273
+        width: 285
+        height: 434
+      spriteId: 8474a5911f8d2944abbd1729c99d9084
+    linkedCells: []
+    parentIndex: -1
+  - layerIndex: 4
+    guid: 1186003394
+    name: Grass2
+    layerFlags: 35
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: Grass2
+      frameIndex: 0
+      additiveSortOrder: 0
+      cellRect:
+        x: -31
+        y: 0
+        width: 672
+        height: 209
+      spriteId: cd65a4148b0ef634599cda381d650a1c
+    linkedCells: []
+    parentIndex: -1
+  - layerIndex: 5
+    guid: 151070050
+    name: Grass3
+    layerFlags: 35
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: Grass3
+      frameIndex: 0
+      additiveSortOrder: 0
+      cellRect:
+        x: 0
+        y: 15
+        width: 504
+        height: 273
+      spriteId: 51cae76313759144eaab7cab3c94c14a
+    linkedCells: []
+    parentIndex: -1
+  - layerIndex: 6
+    guid: -1194331130
+    name: Grass4
+    layerFlags: 35
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: Grass4
+      frameIndex: 0
+      additiveSortOrder: 0
+      cellRect:
+        x: 0
+        y: 0
+        width: 512
+        height: 288
+      spriteId: e38604687627a6547b87c1050e6a63f0
+    linkedCells: []
+    parentIndex: -1
+  - layerIndex: 7
+    guid: -969750767
+    name: Platforms
+    layerFlags: 35
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: Platforms
+      frameIndex: 0
+      additiveSortOrder: 0
+      cellRect:
+        x: 0
+        y: 0
+        width: 557
+        height: 141
+      spriteId: 47ed1c38412fa40479d3dbb453a83342
+    linkedCells: []
+    parentIndex: -1
+  - layerIndex: 8
+    guid: 2142182627
+    name: Stone
+    layerFlags: 35
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: Stone
+      frameIndex: 0
+      additiveSortOrder: 0
+      cellRect:
+        x: 48
+        y: 60
+        width: 416
+        height: 81
+      spriteId: c38c8350c71167d4190bb4285f5752d2
+    linkedCells: []
+    parentIndex: -1
+  - layerIndex: 9
+    guid: -454194211
+    name: Grass
+    layerFlags: 35
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: Grass
+      frameIndex: 0
+      additiveSortOrder: 0
+      cellRect:
+        x: 0
+        y: 0
+        width: 783
+        height: 114
+      spriteId: d7c9a10dd13838f4a8ca54742b003868
     linkedCells: []
     parentIndex: -1
   platformSettings:
@@ -169,6 +511,54 @@ ScriptedImporter:
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: DefaultTexturePlatform
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 16384
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: Standalone
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: Android
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: WebGL
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
     compressionQuality: 50
     forceMaximumCompressionQuality_BC6H_BC7: 0
     crunchedCompression: 0

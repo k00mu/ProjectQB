@@ -35,7 +35,7 @@ ScriptedImporter:
     spriteMeshType: 1
     alignment: 0
     spritePivot: {x: 0.5, y: 0.5}
-    spritePixelsToUnits: 100
+    spritePixelsToUnits: 32
     spriteBorder: {x: 0, y: 0, z: 0, w: 0}
     spriteGenerateFallbackPhysicsShape: 0
     generateCubemap: 6
@@ -73,9 +73,9 @@ ScriptedImporter:
   previousAsepriteImporterSettings:
     fileImportMode: 1
     importHiddenLayers: 0
-    layerImportMode: 1
+    layerImportMode: 0
     defaultPivotSpace: 0
-    defaultPivotAlignment: 7
+    defaultPivotAlignment: 6
     customPivotPosition: {x: 0.5, y: 0.5}
     mosaicPadding: 4
     spritePadding: 0
@@ -86,9 +86,9 @@ ScriptedImporter:
   asepriteImporterSettings:
     fileImportMode: 1
     importHiddenLayers: 0
-    layerImportMode: 1
+    layerImportMode: 0
     defaultPivotSpace: 0
-    defaultPivotAlignment: 7
+    defaultPivotAlignment: 6
     customPivotPosition: {x: 0.5, y: 0.5}
     mosaicPadding: 4
     spritePadding: 0
@@ -97,7 +97,7 @@ ScriptedImporter:
     addSortingGroup: 1
     addShadowCasters: 0
   importFileNodeState: 1
-  platformSettingsDirtyTick: 0
+  platformSettingsDirtyTick: 638615664597466927
   textureAssetName: 
   singleSpriteImportData:
   - name: 
@@ -121,18 +121,18 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
   animatedSpriteImportData:
-  - name: Level 3C - Rest Area
+  - name: Sky
     originalName: 
-    pivot: {x: 0.5652174, y: 0}
+    pivot: {x: 0, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 920
+      width: 800
       height: 512
-    spriteID: 2c25108aa28dfa44ebe434925a829d90
+    spriteID: 5b714c6215b12e24ebaf6980205c168e
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -140,25 +140,253 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: -38, y: 4}
+    uvTransform: {x: 4, y: 4}
+  - name: Cloud
+    originalName: 
+    pivot: {x: 0, y: -0.096875004}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 879
+      width: 800
+      height: 320
+    spriteID: b1e3e6a1fd10b7b4e828a8c864957122
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 879}
+  - name: Grass1
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 1207
+      width: 800
+      height: 319
+    spriteID: 754c364bdd6a7384293d25c4656a3f83
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 1207}
+  - name: Grass2
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 1534
+      width: 800
+      height: 209
+    spriteID: 5641654adbc36ef4f94edb182d64f70b
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 1534}
+  - name: Platforms
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 1751
+      width: 800
+      height: 64
+    spriteID: ec62547d795876a4c8e24398e6a0bcdf
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 1751}
+  - name: FG
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 1823
+      width: 800
+      height: 44
+    spriteID: 22abb5fb5f77d974080ec64cee7e7400
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 1823}
+  - name: Gate
+    originalName: 
+    pivot: {x: 0.13043478, y: -0.15273775}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 524
+      width: 920
+      height: 347
+    spriteID: fdd70f7417ec4264891a234de3ed1bd7
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: -38, y: 498}
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
-    guid: -1947448470
-    name: Level 3C - Rest Area
-    layerFlags: 0
+    guid: -312994415
+    name: Sky
+    layerFlags: 35
     layerType: 0
     blendMode: 0
     cells:
-    - name: Level 3C - Rest Area
+    - name: Sky
+      frameIndex: 0
+      additiveSortOrder: 0
+      cellRect:
+        x: 0
+        y: 0
+        width: 800
+        height: 512
+      spriteId: 5b714c6215b12e24ebaf6980205c168e
+    linkedCells: []
+    parentIndex: -1
+  - layerIndex: 1
+    guid: -399938108
+    name: Cloud
+    layerFlags: 35
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: Cloud
+      frameIndex: 0
+      additiveSortOrder: 0
+      cellRect:
+        x: 0
+        y: 31
+        width: 800
+        height: 320
+      spriteId: b1e3e6a1fd10b7b4e828a8c864957122
+    linkedCells: []
+    parentIndex: -1
+  - layerIndex: 2
+    guid: -2074030553
+    name: Grass1
+    layerFlags: 35
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: Grass1
+      frameIndex: 0
+      additiveSortOrder: 0
+      cellRect:
+        x: 0
+        y: 0
+        width: 800
+        height: 512
+      spriteId: 754c364bdd6a7384293d25c4656a3f83
+    linkedCells: []
+    parentIndex: -1
+  - layerIndex: 3
+    guid: 1186003397
+    name: Grass2
+    layerFlags: 35
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: Grass2
+      frameIndex: 0
+      additiveSortOrder: 0
+      cellRect:
+        x: 0
+        y: 0
+        width: 800
+        height: 512
+      spriteId: 5641654adbc36ef4f94edb182d64f70b
+    linkedCells: []
+    parentIndex: -1
+  - layerIndex: 4
+    guid: -969750766
+    name: Platforms
+    layerFlags: 35
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: Platforms
+      frameIndex: 0
+      additiveSortOrder: 0
+      cellRect:
+        x: 0
+        y: 0
+        width: 800
+        height: 64
+      spriteId: ec62547d795876a4c8e24398e6a0bcdf
+    linkedCells: []
+    parentIndex: -1
+  - layerIndex: 5
+    guid: -1793758676
+    name: FG
+    layerFlags: 35
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: FG
+      frameIndex: 0
+      additiveSortOrder: 0
+      cellRect:
+        x: 0
+        y: 0
+        width: 800
+        height: 44
+      spriteId: 22abb5fb5f77d974080ec64cee7e7400
+    linkedCells: []
+    parentIndex: -1
+  - layerIndex: 6
+    guid: 885267737
+    name: Gate
+    layerFlags: 35
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: Gate
       frameIndex: 0
       additiveSortOrder: 0
       cellRect:
         x: -162
-        y: 0
+        y: 27
         width: 962
-        height: 512
-      spriteId: 2c25108aa28dfa44ebe434925a829d90
+        height: 457
+      spriteId: fdd70f7417ec4264891a234de3ed1bd7
     linkedCells: []
     parentIndex: -1
   platformSettings:
@@ -169,6 +397,54 @@ ScriptedImporter:
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: DefaultTexturePlatform
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 16384
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: Standalone
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: Android
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: WebGL
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
     compressionQuality: 50
     forceMaximumCompressionQuality_BC6H_BC7: 0
     crunchedCompression: 0

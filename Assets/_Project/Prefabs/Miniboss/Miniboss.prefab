@@ -18,6 +18,7 @@ GameObject:
   - component: {fileID: 5807541617600097229}
   - component: {fileID: 8194285757437829894}
   - component: {fileID: 2616898669961971645}
+  - component: {fileID: 8568418709155818914}
   m_Layer: 13
   m_Name: Miniboss
   m_TagString: Player
@@ -76,7 +77,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.3}
+  m_Offset: {x: 0, y: 0.40312576}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -87,7 +88,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 3.5, y: 2}
+  m_Size: {x: 1.5, y: 0.78125}
   m_EdgeRadius: 0
 --- !u!50 &7136733668817434402
 Rigidbody2D:
@@ -274,15 +275,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CurrentHealth: 0
-  InitialHealth: 30
-  MaximumHealth: 30
+  InitialHealth: 100
+  MaximumHealth: 100
   Invulnerable: 0
   TemporarilyInvulnerable: 0
   PostDamageInvulnerable: 0
   ImmuneToDamage: 0
   DamageFeedbacks: {fileID: 0}
   FeedbackIsProportionalToDamage: 0
-  FlickerSpriteOnHit: 0
+  FlickerSpriteOnHit: 1
   FlickerColor: {r: 1, g: 0.078431375, b: 0.078431375, a: 1}
   ImmuneToKnockback: 0
   ImmuneToKnockbackIfZeroDamage: 0
@@ -383,6 +384,19 @@ MonoBehaviour:
   InterruptibleFeedback: 0
   AlwaysInterruptFeedbackBeforePlay: 0
   TriggerFeedbackIfDamageIsZero: 0
+--- !u!114 &8568418709155818914
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 36937423924113404}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db415d7dcaab447a9635509f01df9b95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _animator: {fileID: 6547104536422536985}
 --- !u!1 &2062688030842182542
 GameObject:
   m_ObjectHideFlags: 0
@@ -593,6 +607,7 @@ GameObject:
   - component: {fileID: 2938097392654899156}
   - component: {fileID: 7155334313700807098}
   - component: {fileID: 5247799334581378953}
+  - component: {fileID: 207225640219323032}
   m_Layer: 13
   m_Name: HitBox
   m_TagString: Untagged
@@ -609,7 +624,7 @@ Transform:
   m_GameObject: {fileID: 4429938374011829587}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.25, y: 5, z: 0}
+  m_LocalPosition: {x: 0.1, y: 0.75, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -647,7 +662,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.7}
+  m_Offset: {x: -0.953125, y: 0.8}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -658,7 +673,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 3}
+  m_Size: {x: 0.59375, y: 1}
   m_EdgeRadius: 0
 --- !u!114 &5247799334581378953
 MonoBehaviour:
@@ -687,6 +702,46 @@ MonoBehaviour:
   InterruptibleFeedback: 0
   AlwaysInterruptFeedbackBeforePlay: 0
   TriggerFeedbackIfDamageIsZero: 0
+--- !u!114 &207225640219323032
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4429938374011829587}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ccf018ac3224f2dba8d606f64493e29, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CurrentHealth: 0
+  InitialHealth: 10
+  MaximumHealth: 10
+  Invulnerable: 0
+  TemporarilyInvulnerable: 0
+  PostDamageInvulnerable: 0
+  ImmuneToDamage: 0
+  DamageFeedbacks: {fileID: 0}
+  FeedbackIsProportionalToDamage: 0
+  FlickerSpriteOnHit: 1
+  FlickerColor: {r: 1, g: 0.078431375, b: 0.078431375, a: 1}
+  ImmuneToKnockback: 0
+  ImmuneToKnockbackIfZeroDamage: 0
+  DeathFeedbacks: {fileID: 0}
+  DestroyOnDeath: 1
+  DelayBeforeDestruction: 0
+  CollisionsOffOnDeath: 1
+  GravityOffOnDeath: 0
+  PointsWhenDestroyed: 0
+  RespawnAtInitialLocation: 0
+  ApplyDeathForce: 1
+  DeathForce: {x: 0, y: 10}
+  ResetForcesOnDeath: 0
+  ResetColorOnRevive: 1
+  ColorMaterialPropertyName: _Color
+  UseMaterialPropertyBlocks: 0
+  MasterHealth: {fileID: 5718502381647300396}
+  TargetDamageResistanceProcessor: {fileID: 8194285757437829894}
 --- !u!1 &4931034052713262321
 GameObject:
   m_ObjectHideFlags: 0
@@ -771,13 +826,15 @@ GameObject:
   - component: {fileID: 9129742265027944852}
   - component: {fileID: 3817075452546778234}
   - component: {fileID: 1827543444811857770}
+  - component: {fileID: 677337060863874488}
   - component: {fileID: 8961689052499296915}
   - component: {fileID: 3274928014198663814}
   - component: {fileID: 8726954878404998227}
-  - component: {fileID: 4680591527323734771}
   - component: {fileID: 7434316840409226461}
   - component: {fileID: 8264112051314638991}
+  - component: {fileID: 6496259346197077058}
   - component: {fileID: 1931858267255397483}
+  - component: {fileID: 4400500042754458643}
   m_Layer: 13
   m_Name: AIBrain
   m_TagString: Untagged
@@ -834,20 +891,17 @@ MonoBehaviour:
       - Decision: {fileID: 3274928014198663814}
         TrueState: Attack
         FalseState: 
-      - Decision: {fileID: 7434316840409226461}
-        TrueState: Dash
-        FalseState: 
   - StateName: Attack
     Actions:
       array:
       - {fileID: 4381936582791384739}
     Transitions:
       array:
-      - Decision: {fileID: 8264112051314638991}
-        TrueState: Chase
-        FalseState: 
       - Decision: {fileID: 8726954878404998227}
         TrueState: Dash
+        FalseState: 
+      - Decision: {fileID: 8264112051314638991}
+        TrueState: Chase
         FalseState: 
   - StateName: Dash
     Actions:
@@ -855,18 +909,28 @@ MonoBehaviour:
       - {fileID: 33833805607254179}
     Transitions:
       array:
-      - Decision: {fileID: 4680591527323734771}
+      - Decision: {fileID: 6496259346197077058}
         TrueState: Stall
         FalseState: 
   - StateName: Stall
     Actions:
       array:
       - {fileID: 1827543444811857770}
-      - {fileID: 5493936507259954253}
       - {fileID: 9129742265027944852}
+      - {fileID: 5493936507259954253}
     Transitions:
       array:
       - Decision: {fileID: 1931858267255397483}
+        TrueState: EndStall
+        FalseState: 
+  - StateName: EndStall
+    Actions:
+      array:
+      - {fileID: 677337060863874488}
+      - {fileID: 5493936507259954253}
+    Transitions:
+      array:
+      - Decision: {fileID: 4400500042754458643}
         TrueState: Chase
         FalseState: 
   TimeInThisState: 0
@@ -1005,7 +1069,49 @@ MonoBehaviour:
   Label: StallEvent
   TargetEvent:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8568418709155818914}
+        m_TargetAssemblyTypeName: QuackleBit.Miniboss, Assembly-CSharp
+        m_MethodName: Stall
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Stall
+          m_BoolArgument: 1
+        m_CallState: 2
+  OnlyPlayWhenEnteringState: 1
+--- !u!114 &677337060863874488
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6007078522578511046}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 653b45e453e54664e9b7ea62fbd9d3e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  InitializationMode: 0
+  Label: EndStallEvent
+  TargetEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8568418709155818914}
+        m_TargetAssemblyTypeName: QuackleBit.Miniboss, Assembly-CSharp
+        m_MethodName: Stall
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Stall
+          m_BoolArgument: 0
+        m_CallState: 2
   OnlyPlayWhenEnteringState: 1
 --- !u!114 &8961689052499296915
 MonoBehaviour:
@@ -1020,7 +1126,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Label: MinibossActiveRadius
-  Radius: 15
+  Radius: 7.9
   DetectionOriginOffset: {x: 0, y: 0, z: 0}
   TargetLayer:
     serializedVersion: 2
@@ -1038,7 +1144,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Label: MinibossAttackRadius
-  Radius: 4
+  Radius: 3.5
   DetectionOriginOffset: {x: 0, y: 0, z: 0}
   TargetLayer:
     serializedVersion: 2
@@ -1056,30 +1162,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Label: 
---- !u!114 &4680591527323734771
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6007078522578511046}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 817e5a5fe0898ae4789b92ad0fb3cc01, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Label: 
-  DetectMethod: 0
-  DetectionDirection: 2
-  RayWidth: 1
-  DetectionDistance: 2
-  DetectionOriginOffset: {x: 0, y: 0, z: 0}
-  TargetLayer:
-    serializedVersion: 2
-    m_Bits: 8388608
-  ObstaclesLayer:
-    serializedVersion: 2
-    m_Bits: 0
 --- !u!114 &7434316840409226461
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1110,6 +1192,21 @@ MonoBehaviour:
   Label: AttackDuration
   AfterTimeMin: 2
   AfterTimeMax: 2
+--- !u!114 &6496259346197077058
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6007078522578511046}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58b7939ffd2f5df4e8efb5fa83e99637, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Label: DashDuration
+  AfterTimeMin: 1
+  AfterTimeMax: 1
 --- !u!114 &1931858267255397483
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1125,6 +1222,19 @@ MonoBehaviour:
   Label: StallDuration
   AfterTimeMin: 5
   AfterTimeMax: 5
+--- !u!114 &4400500042754458643
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6007078522578511046}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78af24e9f3636734591fe84a621a9542, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Label: 
 --- !u!1 &8801324933229338100
 GameObject:
   m_ObjectHideFlags: 0
@@ -1153,7 +1263,7 @@ Transform:
   m_GameObject: {fileID: 8801324933229338100}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -3.775, z: 0}
+  m_LocalPosition: {x: 0, y: -0.75, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1201,13 +1311,13 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 130
-  m_Sprite: {fileID: -2358396829520890155, guid: 13dbaa1e283059648a7e699a0a94967b,
+  m_Sprite: {fileID: 4181560867901217122, guid: 170966ddabc0dfe45945dc12bc0c2b0c,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 5.6923075, y: 5}
+  m_Size: {x: 2.3125, y: 2.0625}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -1223,7 +1333,7 @@ Animator:
   m_GameObject: {fileID: 8801324933229338100}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 6e6a1bbbfe609654c958acce36970aca, type: 2}
+  m_Controller: {fileID: 9100000, guid: 3beb9a5bd5371eb48b94713677f75fe5, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
