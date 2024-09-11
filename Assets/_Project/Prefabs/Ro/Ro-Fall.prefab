@@ -21,7 +21,7 @@ PrefabInstance:
     - target: {fileID: 2607408564563019891, guid: 4f25b7671c3736c49ad0e487d53af471,
         type: 3}
       propertyPath: DefaultParameters.FallMultiplier
-      value: 0.1
+      value: 0.01
       objectReference: {fileID: 0}
     - target: {fileID: 5842658555804685761, guid: 4f25b7671c3736c49ad0e487d53af471,
         type: 3}
@@ -41,6 +41,11 @@ PrefabInstance:
     - target: {fileID: 7024022719042013853, guid: 4f25b7671c3736c49ad0e487d53af471,
         type: 3}
       propertyPath: NumberOfJumps
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7403060579320892010, guid: 4f25b7671c3736c49ad0e487d53af471,
+        type: 3}
+      propertyPath: VerticalForce
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7529162107412397334, guid: 4f25b7671c3736c49ad0e487d53af471,
