@@ -287,7 +287,7 @@ MonoBehaviour:
   FlickerColor: {r: 1, g: 0.078431375, b: 0.078431375, a: 1}
   ImmuneToKnockback: 0
   ImmuneToKnockbackIfZeroDamage: 0
-  DeathFeedbacks: {fileID: 0}
+  DeathFeedbacks: {fileID: 223119123469974132}
   DestroyOnDeath: 1
   DelayBeforeDestruction: 0
   CollisionsOffOnDeath: 0
