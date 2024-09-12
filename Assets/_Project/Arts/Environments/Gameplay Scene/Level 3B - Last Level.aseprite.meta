@@ -149,7 +149,7 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 4
-      y: 1364
+      y: 949
       width: 3268
       height: 327
     spriteID: 9083d817c9bd0984dab2218bf9021cab
@@ -160,7 +160,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: -145, y: 1260}
+    uvTransform: {x: -145, y: 845}
   - name: Grass1
     originalName: 
     pivot: {x: 0, y: 0}
@@ -169,7 +169,7 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 4
-      y: 1699
+      y: 1284
       width: 3200
       height: 319
     spriteID: be4cd09877568504daf3d9a53428deab
@@ -180,7 +180,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 1699}
+    uvTransform: {x: 4, y: 1284}
   - name: Grass2
     originalName: 
     pivot: {x: 0, y: 0}
@@ -189,7 +189,7 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 4
-      y: 2833
+      y: 2418
       width: 3200
       height: 209
     spriteID: 3349a79cb7b1d93429d6a54c1a75e7c2
@@ -200,7 +200,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 2833}
+    uvTransform: {x: 4, y: 2418}
   - name: Grass3
     originalName: 
     pivot: {x: -1.0777558, y: 0.039337475}
@@ -209,7 +209,7 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 4
-      y: 3050
+      y: 2635
       width: 1016
       height: 483
     spriteID: 6500908ad3a38a447984b7ff1fc5af32
@@ -220,7 +220,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 3050}
+    uvTransform: {x: 4, y: 2635}
   - name: Grass4
     originalName: 
     pivot: {x: -0.33981964, y: 0}
@@ -229,7 +229,7 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 4
-      y: 2026
+      y: 1611
       width: 2107
       height: 342
     spriteID: 1a42c954f76083f4f98352bc723f6404
@@ -240,7 +240,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 2026}
+    uvTransform: {x: 4, y: 1611}
   - name: Platforms D
     originalName: 
     pivot: {x: -2.75, y: 0.1871345}
@@ -249,7 +249,7 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 4
-      y: 3541
+      y: 3126
       width: 768
       height: 513
     spriteID: 7952da7ed234b4144aae2a6137eba68a
@@ -260,7 +260,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 3541}
+    uvTransform: {x: 4, y: 3126}
   - name: Platforms C
     originalName: 
     pivot: {x: -0.12371133, y: 0.30935252}
@@ -289,7 +289,7 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 4
-      y: 2376
+      y: 1961
       width: 1504
       height: 449
     spriteID: fad8be377e8dd9b4aa60c36de1dc698e
@@ -300,7 +300,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 2376}
+    uvTransform: {x: 4, y: 1961}
   - name: Platforms A
     originalName: 
     pivot: {x: 0, y: 0.33333334}
@@ -309,7 +309,7 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 780
-      y: 3541
+      y: 3126
       width: 3200
       height: 96
     spriteID: 590acfaabf7afbb4cb3f4c0dee6ab40b
@@ -320,7 +320,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 780, y: 3541}
+    uvTransform: {x: 780, y: 3126}
   - name: FG
     originalName: 
     pivot: {x: 0, y: 0}
@@ -329,7 +329,7 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 780
-      y: 3645
+      y: 3230
       width: 3200
       height: 44
     spriteID: c3ad2ba7d1a63e84fa2d6eaa15cc4cb0
@@ -340,87 +340,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 780, y: 3645}
-  - name: PLACEHOLDER ENEMY
-    originalName: 
-    pivot: {x: -0.14522669, y: -0.13759214}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 4
-      y: 949
-      width: 2713
-      height: 407
-    spriteID: 19201024c0da45943b1656d775205e42
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 4, y: 949}
-  - name: Gate
-    originalName: 
-    pivot: {x: 0.4259259, y: -0.1536232}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 3492
-      y: 4
-      width: 270
-      height: 345
-    spriteID: 50b0c619c52dd064ea42db6ae5a5a7bf
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 3342, y: -41}
-  - name: Gate Open
-    originalName: 
-    pivot: {x: -11.121324, y: -0.1536232}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 3212
-      y: 4
-      width: 272
-      height: 345
-    spriteID: e50461fb6439fb840b73d547f2d2c442
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 3094, y: -33}
-  - name: Gate Closed
-    originalName: 
-    pivot: {x: -11.203703, y: -0.1536232}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 3770
-      y: 4
-      width: 270
-      height: 345
-    spriteID: 6f952a0c206f817478be13ea34deebc4
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 3706, y: -21}
+    uvTransform: {x: 780, y: 3230}
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
@@ -621,87 +541,6 @@ ScriptedImporter:
       spriteId: c3ad2ba7d1a63e84fa2d6eaa15cc4cb0
     linkedCells: []
     parentIndex: -1
-  - layerIndex: 12
-    guid: 1060871337
-    name: PLACEHOLDER ENEMY
-    layerFlags: 35
-    layerType: 0
-    blendMode: 0
-    cells:
-    - name: PLACEHOLDER ENEMY
-      frameIndex: 0
-      additiveSortOrder: 0
-      cellRect:
-        x: 394
-        y: 56
-        width: 2713
-        height: 407
-      spriteId: 19201024c0da45943b1656d775205e42
-    linkedCells: []
-    parentIndex: -1
-  - layerIndex: 13
-    guid: -184346499
-    name: INTERACT
-    layerFlags: 35
-    layerType: 1
-    blendMode: 0
-    cells: []
-    linkedCells: []
-    parentIndex: -1
-  - layerIndex: 14
-    guid: 885267729
-    name: Gate
-    layerFlags: 35
-    layerType: 0
-    blendMode: 0
-    cells:
-    - name: Gate
-      frameIndex: 0
-      additiveSortOrder: 0
-      cellRect:
-        x: -265
-        y: 8
-        width: 431
-        height: 465
-      spriteId: 50b0c619c52dd064ea42db6ae5a5a7bf
-    linkedCells: []
-    parentIndex: 13
-  - layerIndex: 15
-    guid: -1578403428
-    name: Gate Open
-    layerFlags: 35
-    layerType: 0
-    blendMode: 0
-    cells:
-    - name: Gate Open
-      frameIndex: 0
-      additiveSortOrder: 0
-      cellRect:
-        x: 2907
-        y: 16
-        width: 473
-        height: 474
-      spriteId: e50461fb6439fb840b73d547f2d2c442
-    linkedCells: []
-    parentIndex: 13
-  - layerIndex: 16
-    guid: 1652552673
-    name: Gate Closed
-    layerFlags: 35
-    layerType: 0
-    blendMode: 0
-    cells:
-    - name: Gate Closed
-      frameIndex: 0
-      additiveSortOrder: 0
-      cellRect:
-        x: 2961
-        y: 28
-        width: 345
-        height: 423
-      spriteId: 6f952a0c206f817478be13ea34deebc4
-    linkedCells: []
-    parentIndex: 13
   platformSettings:
   - name: Default
     overridden: 0
