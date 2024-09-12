@@ -11,10 +11,15 @@ namespace QuackleBit
 
         void Start()
         {
-            audioSource = GetComponent<AudioSource>();
+            audioSource = gameObject.AddComponent<AudioSource>();
 
            
             bgmSource = gameObject.AddComponent<AudioSource>();
+
+            audioSource.playOnAwake = false;
+            audioSource.spatialBlend = 1;
+            audioSource.rolloffMode = AudioRolloffMode.Logarithmic;
+            bgmSource.playOnAwake = false;
             bgmSource.loop = true;
             onStart.Invoke();
         }

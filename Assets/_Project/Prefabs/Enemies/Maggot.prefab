@@ -333,7 +333,7 @@ MonoBehaviour:
     DisplayWarnings: 1
   PlatformMask:
     serializedVersion: 2
-    m_Bits: 256
+    m_Bits: 134217984
   MovingPlatformMask:
     serializedVersion: 2
     m_Bits: 262144
@@ -354,8 +354,8 @@ MonoBehaviour:
   AutomaticallySetPhysicsSettings: 0
   StandingOn: {fileID: 0}
   UpdateMode: 0
-  NumberOfHorizontalRays: 8
-  NumberOfVerticalRays: 8
+  NumberOfHorizontalRays: 2
+  NumberOfVerticalRays: 2
   RayOffsetHorizontal: 0.05
   RayOffsetVertical: 0.05
   CrouchedRaycastLengthMultiplier: 1

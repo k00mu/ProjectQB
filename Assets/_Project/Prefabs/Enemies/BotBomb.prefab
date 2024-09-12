@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1825171800232639388}
   - component: {fileID: 493479891469797353}
   - component: {fileID: 8733662063016724030}
+  - component: {fileID: 5851556619507885886}
   m_Layer: 0
   m_Name: Model
   m_TagString: Untagged
@@ -107,6 +108,23 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &5851556619507885886
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2883717904560431258}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de1725182a473124d86c2cea5e2e542f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioSource: {fileID: 0}
+  bgmSource: {fileID: 0}
+  onStart:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &3588010800875328237
 GameObject:
   m_ObjectHideFlags: 0
@@ -418,7 +436,7 @@ MonoBehaviour:
     DisplayWarnings: 1
   PlatformMask:
     serializedVersion: 2
-    m_Bits: 256
+    m_Bits: 134217984
   MovingPlatformMask:
     serializedVersion: 2
     m_Bits: 262144
@@ -439,8 +457,8 @@ MonoBehaviour:
   AutomaticallySetPhysicsSettings: 0
   StandingOn: {fileID: 0}
   UpdateMode: 0
-  NumberOfHorizontalRays: 8
-  NumberOfVerticalRays: 8
+  NumberOfHorizontalRays: 2
+  NumberOfVerticalRays: 2
   RayOffsetHorizontal: 0.05
   RayOffsetVertical: 0.05
   CrouchedRaycastLengthMultiplier: 1

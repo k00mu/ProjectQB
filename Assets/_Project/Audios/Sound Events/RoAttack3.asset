@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad8e17b104576cd4285b38d12218470a, type: 3}
   m_Name: RoAttack3
   m_EditorClassIdentifier: 
-  clip: {fileID: 8300000, guid: b3696f1a602fc31479399d49b3077dc9, type: 3}
+  clip: {fileID: 8300000, guid: 04b42aed21f9869458553e042bba42ae, type: 3}
   audioMixerGroup: {fileID: -7274289730799028074, guid: 3a357b21789aa454c92fee0f641f4ff0,
     type: 2}
   isBGM: 0

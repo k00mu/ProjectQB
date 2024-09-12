@@ -217,6 +217,7 @@ GameObject:
   - component: {fileID: 327777119641168879}
   - component: {fileID: 3559109896848537296}
   - component: {fileID: 8767543713020475204}
+  - component: {fileID: 8826308691279267364}
   m_Layer: 13
   m_Name: Model
   m_TagString: Untagged
@@ -315,6 +316,23 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &8826308691279267364
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4410780079522068235}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de1725182a473124d86c2cea5e2e542f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioSource: {fileID: 0}
+  bgmSource: {fileID: 0}
+  onStart:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &4583057677136950206
 GameObject:
   m_ObjectHideFlags: 0
@@ -346,7 +364,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4583057677136950206}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 20.875, y: 1.90625, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -528,8 +546,8 @@ MonoBehaviour:
   AutomaticallySetPhysicsSettings: 0
   StandingOn: {fileID: 0}
   UpdateMode: 0
-  NumberOfHorizontalRays: 8
-  NumberOfVerticalRays: 8
+  NumberOfHorizontalRays: 2
+  NumberOfVerticalRays: 2
   RayOffsetHorizontal: 0.05
   RayOffsetVertical: 0.05
   CrouchedRaycastLengthMultiplier: 1

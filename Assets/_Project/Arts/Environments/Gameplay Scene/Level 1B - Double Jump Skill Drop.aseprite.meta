@@ -149,7 +149,7 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 4
-      y: 3428
+      y: 3114
       width: 2373
       height: 324
     spriteID: d5c7bea9edb61d14eb390acf0ca13202
@@ -160,7 +160,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 3309}
+    uvTransform: {x: 4, y: 2995}
   - name: Grass1
     originalName: 
     pivot: {x: 0, y: 0}
@@ -189,7 +189,7 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 4
-      y: 4686
+      y: 4091
       width: 1646
       height: 332
     spriteID: 15785887bbb6681428338c679f447d4e
@@ -200,7 +200,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: -8, y: 4652}
+    uvTransform: {x: -8, y: 4057}
   - name: Grass2
     originalName: 
     pivot: {x: 0, y: 0}
@@ -209,7 +209,7 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 4
-      y: 4469
+      y: 3874
       width: 3200
       height: 209
     spriteID: 15428456e734b6f498439379a6e66e92
@@ -220,7 +220,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 4469}
+    uvTransform: {x: 4, y: 3874}
   - name: Grass3
     originalName: 
     pivot: {x: -0.059920106, y: 0.046421666}
@@ -288,8 +288,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 3443
-      y: 2358
+      x: 3444
+      y: 3446
       width: 288
       height: 256
     spriteID: 8a8adfb6bad8f0140b5a618decbef9be
@@ -300,7 +300,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 3342, y: 2348}
+    uvTransform: {x: 3343, y: 3436}
   - name: Platforms C
     originalName: 
     pivot: {x: -0.74545455, y: 0}
@@ -309,7 +309,7 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 1676
-      y: 3760
+      y: 3446
       width: 1760
       height: 352
     spriteID: 8548f2d659bbf9149b59c88540df851b
@@ -320,7 +320,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 364, y: 3760}
+    uvTransform: {x: 364, y: 3446}
   - name: Platforms B
     originalName: 
     pivot: {x: -0.07692307, y: 0.27142859}
@@ -329,7 +329,7 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 4
-      y: 3760
+      y: 3446
       width: 1664
       height: 420
     spriteID: 3c1b5bc6e50b9374d8930f8f6b1f4ac7
@@ -340,7 +340,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 3760}
+    uvTransform: {x: 4, y: 3446}
   - name: Platforms A
     originalName: 
     pivot: {x: 0, y: 0.239905}
@@ -369,7 +369,7 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 4
-      y: 5026
+      y: 4431
       width: 3200
       height: 46
     spriteID: 58e2fb3f0f352ee4b8b397e1e49646ae
@@ -380,147 +380,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 5026}
-  - name: PLACEHOLDER ENEMY/DELETE
-    originalName: 
-    pivot: {x: -0.07101865, y: -0.18954249}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 4
-      y: 3114
-      width: 2788
-      height: 306
-    spriteID: c0392874caad3f34696ad6d69b125f9a
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 4, y: 3114}
-  - name: PLACEHOLDER OBS
-    originalName: 
-    pivot: {x: -0.21873744, y: -0.21611722}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 4
-      y: 4188
-      width: 2487
-      height: 273
-    spriteID: a34fb7a87dff6da4c976a9e26237b10e
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 4, y: 4162}
-  - name: Double Jump
-    originalName: 
-    pivot: {x: -0.11358404, y: -0.6896552}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 2499
-      y: 4188
-      width: 1303
-      height: 203
-    spriteID: 9d6fb694ed924074f9adf48f4376e083
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 2499, y: 4188}
-  - name: Key
-    originalName: 
-    pivot: {x: -85.28, y: -10.709677}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 3212
-      y: 2711
-      width: 25
-      height: 31
-    spriteID: e4d9afe8c0a3cbc4b9abd0d7af1e4859
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 3179, y: 2666}
-  - name: Open
-    originalName: 
-    pivot: {x: 0.45185184, y: -0.1710145}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 3444
-      y: 3760
-      width: 270
-      height: 345
-    spriteID: c2e7cbc29524a2e459c0a917c97dbb3b
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 3366, y: 3706}
-  - name: Open2
-    originalName: 
-    pivot: {x: -11.188889, y: -0.15072465}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 3722
-      y: 3760
-      width: 270
-      height: 345
-    spriteID: 1adfbbf5c286bdc45ac12475cdaf1d2f
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 3644, y: 3706}
-  - name: Closed
-    originalName: 
-    pivot: {x: -13.547085, y: -0.15072465}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 3212
-      y: 2358
-      width: 223
-      height: 345
-    spriteID: 4c5a9ac8266bc1a4eae5269cc28cad7a
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 3151, y: 2330}
+    uvTransform: {x: 4, y: 4431}
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
@@ -757,141 +617,6 @@ ScriptedImporter:
       spriteId: 58e2fb3f0f352ee4b8b397e1e49646ae
     linkedCells: []
     parentIndex: -1
-  - layerIndex: 13
-    guid: 44098470
-    name: PLACEHOLDER ENEMY/DELETE
-    layerFlags: 35
-    layerType: 0
-    blendMode: 0
-    cells:
-    - name: PLACEHOLDER ENEMY/DELETE
-      frameIndex: 0
-      additiveSortOrder: 0
-      cellRect:
-        x: 198
-        y: 58
-        width: 2788
-        height: 306
-      spriteId: c0392874caad3f34696ad6d69b125f9a
-    linkedCells: []
-    parentIndex: -1
-  - layerIndex: 14
-    guid: 1267763459
-    name: PLACEHOLDER OBS
-    layerFlags: 35
-    layerType: 0
-    blendMode: 0
-    cells:
-    - name: PLACEHOLDER OBS
-      frameIndex: 0
-      additiveSortOrder: 0
-      cellRect:
-        x: 544
-        y: 33
-        width: 2487
-        height: 299
-      spriteId: a34fb7a87dff6da4c976a9e26237b10e
-    linkedCells: []
-    parentIndex: -1
-  - layerIndex: 15
-    guid: -184346497
-    name: INTERACT
-    layerFlags: 3
-    layerType: 1
-    blendMode: 0
-    cells: []
-    linkedCells: []
-    parentIndex: -1
-  - layerIndex: 16
-    guid: 930042867
-    name: Double Jump
-    layerFlags: 35
-    layerType: 0
-    blendMode: 0
-    cells:
-    - name: Double Jump
-      frameIndex: 0
-      additiveSortOrder: 0
-      cellRect:
-        x: 148
-        y: 140
-        width: 1303
-        height: 203
-      spriteId: 9d6fb694ed924074f9adf48f4376e083
-    linkedCells: []
-    parentIndex: 15
-  - layerIndex: 17
-    guid: 1291072058
-    name: Key
-    layerFlags: 35
-    layerType: 0
-    blendMode: 0
-    cells:
-    - name: Key
-      frameIndex: 0
-      additiveSortOrder: 0
-      cellRect:
-        x: 2099
-        y: 287
-        width: 87
-        height: 129
-      spriteId: e4d9afe8c0a3cbc4b9abd0d7af1e4859
-    linkedCells: []
-    parentIndex: 15
-  - layerIndex: 18
-    guid: 1195105132
-    name: Open
-    layerFlags: 35
-    layerType: 0
-    blendMode: 0
-    cells:
-    - name: Open
-      frameIndex: 0
-      additiveSortOrder: 0
-      cellRect:
-        x: -200
-        y: 5
-        width: 359
-        height: 413
-      spriteId: c2e7cbc29524a2e459c0a917c97dbb3b
-    linkedCells: []
-    parentIndex: 15
-  - layerIndex: 19
-    guid: -1640632345
-    name: Open2
-    layerFlags: 35
-    layerType: 0
-    blendMode: 0
-    cells:
-    - name: Open2
-      frameIndex: 0
-      additiveSortOrder: 0
-      cellRect:
-        x: 2943
-        y: -2
-        width: 359
-        height: 413
-      spriteId: 1adfbbf5c286bdc45ac12475cdaf1d2f
-    linkedCells: []
-    parentIndex: 15
-  - layerIndex: 20
-    guid: 1628564110
-    name: Closed
-    layerFlags: 35
-    layerType: 0
-    blendMode: 0
-    cells:
-    - name: Closed
-      frameIndex: 0
-      additiveSortOrder: 0
-      cellRect:
-        x: 2960
-        y: 24
-        width: 284
-        height: 390
-      spriteId: 4c5a9ac8266bc1a4eae5269cc28cad7a
-    linkedCells: []
-    parentIndex: 15
   platformSettings:
   - name: Default
     overridden: 0
