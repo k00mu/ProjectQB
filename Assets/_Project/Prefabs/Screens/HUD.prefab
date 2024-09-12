@@ -87,7 +87,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HeartFull: {fileID: 21300000, guid: b5ad93e8a23e84d49a7bf9bfd770e5d9, type: 3}
   HeartEmpty: {fileID: 21300000, guid: 029279a838ae2aa4882dff02601ed92d, type: 3}
-  HeartSize: {x: 50, y: 50}
+  HeartSize: {x: 25, y: 25}
 --- !u!1 &5345390105553115603
 GameObject:
   m_ObjectHideFlags: 0

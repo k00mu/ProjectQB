@@ -52,6 +52,7 @@ namespace QuackleBit.UI
 		protected virtual void DrawHearts()
 		{
 			if (!LevelManager.Current) return;
+			if (!_health) return;
 
 			// we init our list
 			Hearts = new List<Image>();
