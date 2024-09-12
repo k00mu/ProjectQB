@@ -217,7 +217,7 @@ GameObject:
   - component: {fileID: 910804020012866092}
   - component: {fileID: 8968849936185414806}
   m_Layer: 13
-  m_Name: FlyingBerry
+  m_Name: FlyingBerry.000
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -124,7 +124,7 @@ GameObject:
   - component: {fileID: 939325236842090407}
   - component: {fileID: 1846377546843152871}
   m_Layer: 13
-  m_Name: Onipoluta
+  m_Name: Onipoluta.000
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -481,7 +481,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TargetLayerMask:
     serializedVersion: 2
-    m_Bits: 768
+    m_Bits: 8704
   MinDamageCaused: 10
   MaxDamageCaused: 10
   TypedDamages: []
@@ -689,7 +689,7 @@ MonoBehaviour:
   FlipValue: {x: -1, y: 1, z: 1}
   ProjectileIsFacingRight: 1
   InitialInvulnerabilityDuration: 0
-  DamageOwner: 0
+  DamageOwner: 1
   SpawnSecurityCheck: 0
   SpawnSecurityCheckLayerMask:
     serializedVersion: 2
@@ -715,7 +715,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TargetLayerMask:
     serializedVersion: 2
-    m_Bits: 512
+    m_Bits: 8704
   MinDamageCaused: 0
   MaxDamageCaused: 0
   TypedDamages: []
