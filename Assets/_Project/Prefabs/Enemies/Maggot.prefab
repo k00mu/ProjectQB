@@ -158,7 +158,7 @@ GameObject:
   - component: {fileID: 3066848560722001578}
   - component: {fileID: 5019309679650546833}
   m_Layer: 13
-  m_Name: Maggot.000
+  m_Name: Maggot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

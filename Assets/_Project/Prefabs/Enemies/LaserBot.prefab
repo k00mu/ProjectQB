@@ -332,7 +332,7 @@ GameObject:
   - component: {fileID: 2269746614155950209}
   - component: {fileID: 8102920986916857844}
   m_Layer: 13
-  m_Name: LaserBot.000
+  m_Name: LaserBot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

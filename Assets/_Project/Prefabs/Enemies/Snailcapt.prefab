@@ -163,7 +163,7 @@ GameObject:
   - component: {fileID: 2981133118341282872}
   - component: {fileID: 8887916902623204951}
   m_Layer: 13
-  m_Name: Snailcapt.000
+  m_Name: Snailcapt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
