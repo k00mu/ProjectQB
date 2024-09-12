@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Attack
+  m_Name: Stall
   serializedVersion: 7
   m_Legacy: 0
   m_Compressed: 0
@@ -21,16 +21,31 @@ AnimationClip:
   - serializedVersion: 2
     curve:
     - time: 0
-      value: {fileID: 7985126159164589161, guid: de01ed74fff9f8e4ebd23051ea42ccca,
+      value: {fileID: 7831186915794716863, guid: 170966ddabc0dfe45945dc12bc0c2b0c,
         type: 3}
-    - time: 0.099999964
-      value: {fileID: 8149035023247878283, guid: de01ed74fff9f8e4ebd23051ea42ccca,
+    - time: 0.14199996
+      value: {fileID: -5100166913713306846, guid: 170966ddabc0dfe45945dc12bc0c2b0c,
         type: 3}
-    - time: 0.19999999
-      value: {fileID: 1116304213270829998, guid: de01ed74fff9f8e4ebd23051ea42ccca,
+    - time: 0.28400016
+      value: {fileID: -2969998615592203130, guid: 170966ddabc0dfe45945dc12bc0c2b0c,
         type: 3}
-    - time: 0.29
-      value: {fileID: 1116304213270829998, guid: de01ed74fff9f8e4ebd23051ea42ccca,
+    - time: 0.42600012
+      value: {fileID: 6004491294868322252, guid: 170966ddabc0dfe45945dc12bc0c2b0c,
+        type: 3}
+    - time: 0.5680001
+      value: {fileID: 7289865736067288155, guid: 170966ddabc0dfe45945dc12bc0c2b0c,
+        type: 3}
+    - time: 0.7100003
+      value: {fileID: 1080533521980874576, guid: 170966ddabc0dfe45945dc12bc0c2b0c,
+        type: 3}
+    - time: 0.852
+      value: {fileID: -4916194025042762287, guid: 170966ddabc0dfe45945dc12bc0c2b0c,
+        type: 3}
+    - time: 0.9940002
+      value: {fileID: -1527076614552802606, guid: 170966ddabc0dfe45945dc12bc0c2b0c,
+        type: 3}
+    - time: 1.1260002
+      value: {fileID: -1527076614552802606, guid: 170966ddabc0dfe45945dc12bc0c2b0c,
         type: 3}
     attribute: m_Sprite
     path: 
@@ -43,27 +58,14 @@ AnimationClip:
     m_Center: {x: 0, y: 0, z: 0}
     m_Extent: {x: 0, y: 0, z: 0}
   m_ClipBindingConstant:
-    genericBindings:
-    - serializedVersion: 2
-      path: 0
-      attribute: 0
-      script: {fileID: 0}
-      typeID: 212
-      customType: 23
-      isPPtrCurve: 1
-      isIntCurve: 0
-      isSerializeReferenceCurve: 0
-    pptrCurveMapping:
-    - {fileID: 7985126159164589161, guid: de01ed74fff9f8e4ebd23051ea42ccca, type: 3}
-    - {fileID: 8149035023247878283, guid: de01ed74fff9f8e4ebd23051ea42ccca, type: 3}
-    - {fileID: 1116304213270829998, guid: de01ed74fff9f8e4ebd23051ea42ccca, type: 3}
-    - {fileID: 1116304213270829998, guid: de01ed74fff9f8e4ebd23051ea42ccca, type: 3}
+    genericBindings: []
+    pptrCurveMapping: []
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.29999998
+    m_StopTime: 1.1360002
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -82,12 +84,4 @@ AnimationClip:
   m_EulerEditorCurves: []
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
-  m_Events:
-  - time: 0.1
-    functionName: PlaySound
-    data: 
-    objectReferenceParameter: {fileID: 11400000, guid: c0b1ce14b015c154b8286cd2796f13fb,
-      type: 2}
-    floatParameter: 0
-    intParameter: 0
-    messageOptions: 0
+  m_Events: []
