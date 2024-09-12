@@ -2157,8 +2157,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: -3100369314251171874, guid: 170966ddabc0dfe45945dc12bc0c2b0c,
-    type: 3}
+  m_Motion: {fileID: 7400000, guid: 29cb9f1e6ee7c694db275ab913e4cbb3, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -2185,8 +2184,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: -5186999109085960617, guid: 170966ddabc0dfe45945dc12bc0c2b0c,
-    type: 3}
+  m_Motion: {fileID: 7400000, guid: 9c7baf40d9cfa0e46b24020d14a8f74b, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -2241,8 +2239,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: -7328481960246106791, guid: 170966ddabc0dfe45945dc12bc0c2b0c,
-    type: 3}
+  m_Motion: {fileID: 7400000, guid: 6b8778d0ace863d4c80e3d6a986b2b84, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -2405,8 +2402,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 6720303635017113406, guid: 170966ddabc0dfe45945dc12bc0c2b0c,
-    type: 3}
+  m_Motion: {fileID: 7400000, guid: aace8f089643062449aa3b4da783a7f6, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -2460,8 +2456,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 2667949614841947897, guid: 170966ddabc0dfe45945dc12bc0c2b0c,
-    type: 3}
+  m_Motion: {fileID: 7400000, guid: 4ba31b10e89c2e6458322e6a469fdcad, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -2773,12 +2768,12 @@ AnimatorStateMachine:
   - {fileID: -4973151482045517838}
   m_EntryTransitions: []
   m_StateMachineTransitions:
-  - first: {fileID: -5770477614302510298}
-    second:
-    - {fileID: 4207318742079221461}
   - first: {fileID: -1963410753278083814}
     second:
     - {fileID: -1806348824796641394}
+  - first: {fileID: -5770477614302510298}
+    second:
+    - {fileID: 4207318742079221461}
   - first: {fileID: 1888188322940687448}
     second:
     - {fileID: -4216663863816595906}
