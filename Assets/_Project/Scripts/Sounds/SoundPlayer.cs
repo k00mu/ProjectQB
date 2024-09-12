@@ -20,7 +20,7 @@ namespace QuackleBit
             audioSource.spatialBlend = 1f;
             audioSource.rolloffMode = AudioRolloffMode.Logarithmic;
             audioSource.minDistance = 1f;
-            audioSource.maxDistance = 30f;
+            audioSource.maxDistance = 80f;
             bgmSource.playOnAwake = false;
             bgmSource.loop = true;
             onStart.Invoke();
