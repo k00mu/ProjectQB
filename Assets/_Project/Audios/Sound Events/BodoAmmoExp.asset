@@ -16,3 +16,4 @@ MonoBehaviour:
   audioMixerGroup: {fileID: -7028199423487493462, guid: 3a357b21789aa454c92fee0f641f4ff0,
     type: 2}
   isBGM: 0
+  volume: 0.8

@@ -15,3 +15,5 @@ MonoBehaviour:
   clip: {fileID: 8300000, guid: 997078707b7848645aa2f220e60197bb, type: 3}
   audioMixerGroup: {fileID: -1850104512865187309, guid: 3a357b21789aa454c92fee0f641f4ff0,
     type: 2}
+  isBGM: 0
+  volume: 0.8

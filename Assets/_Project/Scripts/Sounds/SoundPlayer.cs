@@ -17,8 +17,10 @@ namespace QuackleBit
             bgmSource = gameObject.AddComponent<AudioSource>();
 
             audioSource.playOnAwake = false;
-            audioSource.spatialBlend = 1;
+            audioSource.spatialBlend = 1f;
             audioSource.rolloffMode = AudioRolloffMode.Logarithmic;
+            audioSource.minDistance = 1f;
+            audioSource.maxDistance = 30f;
             bgmSource.playOnAwake = false;
             bgmSource.loop = true;
             onStart.Invoke();
@@ -33,6 +35,7 @@ namespace QuackleBit
             {
                 source.clip = soundEvent.clip;
                 source.outputAudioMixerGroup = soundEvent.audioMixerGroup;
+                source.volume = soundEvent.volume;
                 source.Play();
             }
         }
