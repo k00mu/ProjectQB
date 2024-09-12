@@ -1,3 +1,4 @@
+using UnityEditor.Timeline.Actions;
 using UnityEngine;
 using UnityEngine.Audio;
 
@@ -7,4 +8,5 @@ public class SoundEvent : ScriptableObject
     public AudioClip clip;
     public AudioMixerGroup audioMixerGroup;
     public bool isBGM;
+    public float volume = 1f;
 }
