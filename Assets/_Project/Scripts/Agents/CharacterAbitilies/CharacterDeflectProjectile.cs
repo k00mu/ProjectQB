@@ -20,7 +20,7 @@ namespace QuackleBit
         [SerializeField] private bool _canMove;
         [SerializeField] private float _chargingTime = 0.5f;
         
-        private GameObject _deflector;
+        [SerializeField] private GameObject _deflector;
         private IEnumerator _deflectCoroutine;
         private WaitForSeconds _chargingWFS;
         private bool _isDeflecting;
@@ -29,14 +29,8 @@ namespace QuackleBit
         {
             base.Initialization();
             
-            _deflector = new GameObject("Deflector");
-            _deflector.transform.SetParent(_character.CharacterModel.transform);
-            
             int deflectorLayer = LayerMask.NameToLayer("Deflector");
             _deflector.layer = deflectorLayer;
-            _deflector.transform.localPosition = _deflectorOffset;
-            
-            _deflector.GetOrAddComponent<BoxCollider2D>().size = _deflectorSize;
             
             _deflector.SetActive(false);
             _chargingWFS = new WaitForSeconds(_chargingTime);
