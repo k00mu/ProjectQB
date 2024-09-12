@@ -289,7 +289,7 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 4
-      y: 2918
+      y: 2463
       width: 1600
       height: 320
     spriteID: 2e2b0a07daa888949b1c24b5408d0e63
@@ -300,7 +300,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: -1564, y: 2918}
+    uvTransform: {x: -1564, y: 2463}
   - name: Platforms C
     originalName: 
     pivot: {x: -0.38129497, y: 0}
@@ -309,7 +309,7 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 4
-      y: 2264
+      y: 2026
       width: 2224
       height: 256
     spriteID: 226bb66d143ca64498294e27bb7ed9b0
@@ -320,7 +320,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 2264}
+    uvTransform: {x: 4, y: 2026}
   - name: Platforms B
     originalName: 
     pivot: {x: -1.1, y: 0}
@@ -349,7 +349,7 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 4
-      y: 2528
+      y: 2290
       width: 3200
       height: 165
     spriteID: 143370fe78c64b2418b127612447d82f
@@ -360,7 +360,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 2528}
+    uvTransform: {x: 4, y: 2290}
   - name: FG
     originalName: 
     pivot: {x: 0, y: 0.022222223}
@@ -369,7 +369,7 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 4
-      y: 3246
+      y: 2791
       width: 3200
       height: 45
     spriteID: 519678aa3d47c734cba4528f07ee11d9
@@ -380,127 +380,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 3246}
-  - name: PLACEHOLDER ENEMY/DELETE
-    originalName: 
-    pivot: {x: -0.13119642, y: -0.2521739}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 4
-      y: 2026
-      width: 2683
-      height: 230
-    spriteID: 4aa99fe5a93176046bc9bea00e02943a
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 4, y: 1985}
-  - name: PLACEHOLDER OBS
-    originalName: 
-    pivot: {x: -0.26944667, y: -0.27751195}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 4
-      y: 2701
-      width: 2494
-      height: 209
-    spriteID: 9874922f21288304f84b9254185adf3e
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 4, y: 2701}
-  - name: Open
-    originalName: 
-    pivot: {x: -11.222221, y: -0.15652174}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 3212
-      y: 4
-      width: 270
-      height: 345
-    spriteID: c0fdedb3cf9e5f44ab15a2939e776641
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 3120, y: -28}
-  - name: Closed
-    originalName: 
-    pivot: {x: -25.173553, y: -0.35625002}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 3897
-      y: 1640
-      width: 121
-      height: 160
-    spriteID: b22a0a4ab7acbe34985895ea9cc7e751
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 3832, y: 1612}
-  - name: Attack Skill
-    originalName: 
-    pivot: {x: -2.931818, y: -2.0810812}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 4026
-      y: 1640
-      width: 44
-      height: 37
-    spriteID: d2202b08e955086448aab245cb2e59d8
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 4010, y: 1619}
-  - name: Key
-    originalName: 
-    pivot: {x: -121.72, y: -11.580645}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 4026
-      y: 1685
-      width: 25
-      height: 31
-    spriteID: 1f6776388f602d242acf7a519fbd66dc
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 4004, y: 1665}
+    uvTransform: {x: 4, y: 2791}
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
@@ -737,123 +617,6 @@ ScriptedImporter:
       spriteId: 519678aa3d47c734cba4528f07ee11d9
     linkedCells: []
     parentIndex: -1
-  - layerIndex: 13
-    guid: 44098470
-    name: PLACEHOLDER ENEMY/DELETE
-    layerFlags: 35
-    layerType: 0
-    blendMode: 0
-    cells:
-    - name: PLACEHOLDER ENEMY/DELETE
-      frameIndex: 0
-      additiveSortOrder: 0
-      cellRect:
-        x: 352
-        y: 17
-        width: 2683
-        height: 271
-      spriteId: 4aa99fe5a93176046bc9bea00e02943a
-    linkedCells: []
-    parentIndex: -1
-  - layerIndex: 14
-    guid: 1267763459
-    name: PLACEHOLDER OBS
-    layerFlags: 35
-    layerType: 0
-    blendMode: 0
-    cells:
-    - name: PLACEHOLDER OBS
-      frameIndex: 0
-      additiveSortOrder: 0
-      cellRect:
-        x: 672
-        y: 58
-        width: 2494
-        height: 209
-      spriteId: 9874922f21288304f84b9254185adf3e
-    linkedCells: []
-    parentIndex: -1
-  - layerIndex: 15
-    guid: -184346497
-    name: INTERACT
-    layerFlags: 35
-    layerType: 1
-    blendMode: 0
-    cells: []
-    linkedCells: []
-    parentIndex: -1
-  - layerIndex: 16
-    guid: 1195105134
-    name: Open
-    layerFlags: 35
-    layerType: 0
-    blendMode: 0
-    cells:
-    - name: Open
-      frameIndex: 0
-      additiveSortOrder: 0
-      cellRect:
-        x: 2938
-        y: 22
-        width: 383
-        height: 423
-      spriteId: c0fdedb3cf9e5f44ab15a2939e776641
-    linkedCells: []
-    parentIndex: 15
-  - layerIndex: 17
-    guid: 1628564107
-    name: Closed
-    layerFlags: 35
-    layerType: 0
-    blendMode: 0
-    cells:
-    - name: Closed
-      frameIndex: 0
-      additiveSortOrder: 0
-      cellRect:
-        x: 2981
-        y: 29
-        width: 260
-        height: 255
-      spriteId: b22a0a4ab7acbe34985895ea9cc7e751
-    linkedCells: []
-    parentIndex: 15
-  - layerIndex: 18
-    guid: 1963187267
-    name: Attack Skill
-    layerFlags: 35
-    layerType: 0
-    blendMode: 0
-    cells:
-    - name: Attack Skill
-      frameIndex: 0
-      additiveSortOrder: 0
-      cellRect:
-        x: 113
-        y: 56
-        width: 73
-        height: 71
-      spriteId: d2202b08e955086448aab245cb2e59d8
-    linkedCells: []
-    parentIndex: 15
-  - layerIndex: 19
-    guid: 1291072056
-    name: Key
-    layerFlags: 35
-    layerType: 0
-    blendMode: 0
-    cells:
-    - name: Key
-      frameIndex: 0
-      additiveSortOrder: 0
-      cellRect:
-        x: 3021
-        y: 339
-        width: 63
-        height: 68
-      spriteId: 1f6776388f602d242acf7a519fbd66dc
-    linkedCells: []
-    parentIndex: 15
   platformSettings:
   - name: Default
     overridden: 0
