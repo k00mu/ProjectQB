@@ -11,6 +11,7 @@ namespace QuackleBit
 {
 	public class BouncyProjectileAddOn : BouncyProjectile
 	{
+		[SerializeField] private bool _isBoss;
 		public void SetSpeed(float speed)
 		{
 			Speed = speed;
@@ -24,6 +25,13 @@ namespace QuackleBit
 			{
 				_reflectedDirection = (_owner.transform.position - transform.position).normalized;
 				Direction = _reflectedDirection.normalized;
+
+				if (_isBoss)
+				{
+					var dot = GetComponent<DamageOnTouch>();
+					dot.MinDamageCaused = 50;
+					dot.MaxDamageCaused = 50;
+				}
 			}
 			else
 			{	

@@ -1018,7 +1018,6 @@ MonoBehaviour:
   - StateName: Inactive
     Actions:
       array:
-      - {fileID: 3817075452546778234}
       - {fileID: 5493936507259954253}
     Transitions:
       array:
@@ -1028,6 +1027,7 @@ MonoBehaviour:
   - StateName: Chase
     Actions:
       array:
+      - {fileID: 3817075452546778234}
       - {fileID: 6615531632859357915}
       - {fileID: 1144267979250493911}
     Transitions:
