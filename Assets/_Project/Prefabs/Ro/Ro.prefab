@@ -460,7 +460,7 @@ MonoBehaviour:
   AbilityPermitted: 1
   BlockingMovementStates: 
   BlockingConditionStates: 
-  VerticalForce: -0.1
+  VerticalForce: -1
   GlideOnlyIfNoJumpsLeft: 1
 --- !u!1 &4998460576883146823
 GameObject:
