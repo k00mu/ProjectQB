@@ -21,17 +21,32 @@ PrefabInstance:
     - target: {fileID: 2607408564563019891, guid: 4f25b7671c3736c49ad0e487d53af471,
         type: 3}
       propertyPath: DefaultParameters.FallMultiplier
-      value: 0.01
+      value: 0.005
+      objectReference: {fileID: 0}
+    - target: {fileID: 2963287893727769499, guid: 4f25b7671c3736c49ad0e487d53af471,
+        type: 3}
+      propertyPath: m_BodyType
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2963287893727769499, guid: 4f25b7671c3736c49ad0e487d53af471,
+        type: 3}
+      propertyPath: m_GravityScale
+      value: 0.001
+      objectReference: {fileID: 0}
+    - target: {fileID: 2963287893727769499, guid: 4f25b7671c3736c49ad0e487d53af471,
+        type: 3}
+      propertyPath: m_CollisionDetection
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5842658555804685761, guid: 4f25b7671c3736c49ad0e487d53af471,
         type: 3}
       propertyPath: InitialHealth
-      value: 10
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 5842658555804685761, guid: 4f25b7671c3736c49ad0e487d53af471,
         type: 3}
       propertyPath: MaximumHealth
-      value: 10
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 5842658555804685761, guid: 4f25b7671c3736c49ad0e487d53af471,
         type: 3}
@@ -46,7 +61,7 @@ PrefabInstance:
     - target: {fileID: 7403060579320892010, guid: 4f25b7671c3736c49ad0e487d53af471,
         type: 3}
       propertyPath: VerticalForce
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7529162107412397334, guid: 4f25b7671c3736c49ad0e487d53af471,
         type: 3}

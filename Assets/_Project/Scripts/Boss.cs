@@ -89,6 +89,7 @@ namespace QuackleBit
 			
 			Vector3 direction = _targetCharacter.transform.position - _weaknessBullet.transform.position;
 			direction.Normalize();
+			projectile.SetOwner(gameObject);
 			
 			projectile.SetDirection(direction, Quaternion.identity);
 			
