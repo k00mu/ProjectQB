@@ -1,6 +1,6 @@
 ﻿// ==================================================
 // 
-//   Created by Atqa Munzir
+//   Created by Atqa Munzir & Nico Dicky Hermawan
 // 
 // ==================================================
 
@@ -34,8 +34,28 @@ namespace QuackleBit
 		{
 			_targetCharacter = LevelManager.Current.Players[0];
 			
-			StartCoroutine(Pattern1Coroutine());
+			StartCoroutine(EndlessPatternCoroutine());
 		}
+
+		private IEnumerator EndlessPatternCoroutine()
+        {
+            while (true)
+            {
+                int patternIndex = Random.Range(0, 3); 
+                switch (patternIndex)
+                {
+                    case 0:
+                        yield return StartCoroutine(Pattern1Coroutine());
+                        break;
+                    case 1:
+                        yield return StartCoroutine(Pattern2Coroutine());
+                        break;
+                    case 2:
+                        yield return StartCoroutine(Pattern3Coroutine());
+                        break;
+                }
+            }
+        }
 
 		private void Start()
 		{
@@ -51,6 +71,8 @@ namespace QuackleBit
 			_weaknessBullet = Instantiate(_weaknessPrefab, _weaknessPoint);
 			_weaknessBullet.SetActive(false);
 		}
+
+
 		
 		private IEnumerator NormalAttackCoroutine(string attackName)
 		{
@@ -100,33 +122,69 @@ namespace QuackleBit
 		}
 
 		private IEnumerator Pattern1Coroutine()
-		{
-			yield return StartCoroutine(NormalAttackCoroutine("left"));
-			yield return new WaitForSeconds(5f);
-			
-			yield return StartCoroutine(NormalAttackCoroutine("left"));
-			yield return new WaitForSeconds(5f);
-			
-			yield return StartCoroutine(NormalAttackCoroutine("middle"));
-			yield return new WaitForSeconds(5f);
-			
-			yield return StartCoroutine(NormalAttackCoroutine("right"));
-			yield return new WaitForSeconds(5f);
-			
-			yield return StartCoroutine(NormalAttackCoroutine("right"));
-			yield return new WaitForSeconds(5f);
-			
-			yield return StartCoroutine(UltimateAttackCoroutine());
-			yield return new WaitForSeconds(5f);
-			
-			yield return StartCoroutine(UltimateAttackCoroutine());
-			yield return new WaitForSeconds(5f);
-			
-			yield return StartCoroutine(UltimateAttackCoroutine());
-			yield return new WaitForSeconds(5f);
-			
-			yield return StartCoroutine(WeaknessAttackCoroutine());
-			yield return new WaitForSeconds(5f);
-		}
+        {
+            yield return StartCoroutine(NormalAttackCoroutine("left"));
+            yield return new WaitForSeconds(Random.Range(2f, 5f));
+            
+            yield return StartCoroutine(NormalAttackCoroutine("left"));
+            yield return new WaitForSeconds(Random.Range(2f, 5f));
+            
+            yield return StartCoroutine(NormalAttackCoroutine("middle"));
+            yield return new WaitForSeconds(Random.Range(2f, 5f));
+            
+            yield return StartCoroutine(NormalAttackCoroutine("right"));
+            yield return new WaitForSeconds(Random.Range(2f, 5f));
+            
+            yield return StartCoroutine(NormalAttackCoroutine("right"));
+            yield return new WaitForSeconds(Random.Range(2f, 5f));
+            
+            yield return StartCoroutine(UltimateAttackCoroutine());
+            yield return new WaitForSeconds(Random.Range(2f, 5f));
+            
+            yield return StartCoroutine(UltimateAttackCoroutine());
+            yield return new WaitForSeconds(Random.Range(2f, 5f));
+            
+            yield return StartCoroutine(UltimateAttackCoroutine());
+        }
+
+        private IEnumerator Pattern2Coroutine()
+        {
+            yield return StartCoroutine(NormalAttackCoroutine("middle"));
+            yield return new WaitForSeconds(Random.Range(2f, 5f));
+            
+            yield return StartCoroutine(NormalAttackCoroutine("right"));
+            yield return new WaitForSeconds(Random.Range(2f, 5f));
+            
+            yield return StartCoroutine(NormalAttackCoroutine("left"));
+            yield return new WaitForSeconds(Random.Range(2f, 5f));
+            
+            yield return StartCoroutine(UltimateAttackCoroutine());
+            yield return new WaitForSeconds(Random.Range(2f, 5f));
+            
+            yield return StartCoroutine(UltimateAttackCoroutine());
+            yield return new WaitForSeconds(Random.Range(2f, 5f));
+            
+            yield return StartCoroutine(WeaknessAttackCoroutine());
+        }
+
+        private IEnumerator Pattern3Coroutine()
+        {
+            yield return StartCoroutine(NormalAttackCoroutine("right"));
+            yield return new WaitForSeconds(Random.Range(2f, 5f));
+            
+            yield return StartCoroutine(NormalAttackCoroutine("middle"));
+            yield return new WaitForSeconds(Random.Range(2f, 5f));
+            
+            yield return StartCoroutine(NormalAttackCoroutine("left"));
+            yield return new WaitForSeconds(Random.Range(2f, 5f));
+            
+            yield return StartCoroutine(WeaknessAttackCoroutine());
+            yield return new WaitForSeconds(Random.Range(2f, 5f));
+            
+            yield return StartCoroutine(UltimateAttackCoroutine());
+            yield return new WaitForSeconds(Random.Range(2f, 5f));
+            
+            yield return StartCoroutine(UltimateAttackCoroutine());
+        }
 	}
 }
