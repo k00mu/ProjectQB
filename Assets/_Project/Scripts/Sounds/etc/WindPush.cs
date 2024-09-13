@@ -25,6 +25,7 @@ namespace QuackleBit
         /// </summary>
         void Update()
         {
+            if (player != null)
             gameObject.transform.position = player.transform.position;
         }
 
