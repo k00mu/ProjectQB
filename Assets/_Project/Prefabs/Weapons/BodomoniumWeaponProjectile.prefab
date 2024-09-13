@@ -150,6 +150,7 @@ MonoBehaviour:
   BounceFeedback: {fileID: 0}
   AmountOfBounces: {x: 1, y: 1}
   SpeedModifier: {x: 1, y: 1}
+  _isBoss: 0
 --- !u!114 &3074927041557254849
 MonoBehaviour:
   m_ObjectHideFlags: 0

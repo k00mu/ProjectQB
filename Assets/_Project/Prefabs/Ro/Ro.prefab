@@ -80,7 +80,7 @@ MonoBehaviour:
   AbilityPermitted: 1
   BlockingMovementStates: 
   BlockingConditionStates: 
-  NumberOfJumps: 2
+  NumberOfJumps: 1
   JumpHeight: 2
   JumpRestrictions: 0
   ResetCameraOffsetOnJump: 0
@@ -141,7 +141,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AbilityStartFeedbacks: {fileID: 0}
   AbilityStopFeedbacks: {fileID: 0}
-  AbilityPermitted: 1
+  AbilityPermitted: 0
   BlockingMovementStates: 
   BlockingConditionStates: 
   DashDistance: 3
@@ -508,7 +508,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AbilityStartFeedbacks: {fileID: 0}
   AbilityStopFeedbacks: {fileID: 0}
-  AbilityPermitted: 1
+  AbilityPermitted: 0
   BlockingMovementStates: 
   BlockingConditionStates: 
   InitialWeapon: {fileID: 114000010616902070, guid: a479b190396f5004cac00214ae9aa8b6,
@@ -697,7 +697,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AbilityStartFeedbacks: {fileID: 0}
   AbilityStopFeedbacks: {fileID: 0}
-  AbilityPermitted: 1
+  AbilityPermitted: 0
   BlockingMovementStates: 
   BlockingConditionStates: 
   _deflectorOffset: {x: 0.147584, y: 0.2200608, z: 0}
