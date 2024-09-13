@@ -2575,6 +2575,18 @@ Transform:
   - {fileID: 1788351833}
   m_Father: {fileID: 1452935011}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &98748085 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5913141900432516819, guid: e4a31b101797d294fb29e2edd0073d96,
+    type: 3}
+  m_PrefabInstance: {fileID: 1558013407}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45c525db97d3445a9bc21f62c45aca08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &100138858
 GameObject:
   m_ObjectHideFlags: 0
@@ -12227,6 +12239,51 @@ PrefabInstance:
       propertyPath: m_Name
       value: Scroll - Attack
       objectReference: {fileID: 0}
+    - target: {fileID: 7064818450268620772, guid: 414394eb1a72b15448ff3035f5c60a1b,
+        type: 3}
+      propertyPath: PlayEvents.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7064818450268620772, guid: 414394eb1a72b15448ff3035f5c60a1b,
+        type: 3}
+      propertyPath: PlayEvents.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7064818450268620772, guid: 414394eb1a72b15448ff3035f5c60a1b,
+        type: 3}
+      propertyPath: PlayEvents.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 98748085}
+    - target: {fileID: 7064818450268620772, guid: 414394eb1a72b15448ff3035f5c60a1b,
+        type: 3}
+      propertyPath: PlayEvents.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7064818450268620772, guid: 414394eb1a72b15448ff3035f5c60a1b,
+        type: 3}
+      propertyPath: PlayEvents.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: ShowAttackTooltip
+      objectReference: {fileID: 0}
+    - target: {fileID: 7064818450268620772, guid: 414394eb1a72b15448ff3035f5c60a1b,
+        type: 3}
+      propertyPath: PlayEvents.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: QuackleBit.TooltipContainer, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7064818450268620772, guid: 414394eb1a72b15448ff3035f5c60a1b,
+        type: 3}
+      propertyPath: PlayEvents.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 7576384318530101417, guid: 414394eb1a72b15448ff3035f5c60a1b,
+        type: 3}
+      propertyPath: PlayEvents.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7576384318530101417, guid: 414394eb1a72b15448ff3035f5c60a1b,
+        type: 3}
+      propertyPath: PlayEvents.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7576384318530101417, guid: 414394eb1a72b15448ff3035f5c60a1b,
         type: 3}
       propertyPath: PlayEvents.m_PersistentCalls.m_Calls.Array.data[1].m_Target
@@ -12234,8 +12291,23 @@ PrefabInstance:
       objectReference: {fileID: 764580617}
     - target: {fileID: 7576384318530101417, guid: 414394eb1a72b15448ff3035f5c60a1b,
         type: 3}
+      propertyPath: PlayEvents.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 98748085}
+    - target: {fileID: 7576384318530101417, guid: 414394eb1a72b15448ff3035f5c60a1b,
+        type: 3}
+      propertyPath: PlayEvents.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7576384318530101417, guid: 414394eb1a72b15448ff3035f5c60a1b,
+        type: 3}
       propertyPath: PlayEvents.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
       value: EnableAttack
+      objectReference: {fileID: 0}
+    - target: {fileID: 7576384318530101417, guid: 414394eb1a72b15448ff3035f5c60a1b,
+        type: 3}
+      propertyPath: PlayEvents.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: ShowAttackTooltip
       objectReference: {fileID: 0}
     - target: {fileID: 7576384318530101417, guid: 414394eb1a72b15448ff3035f5c60a1b,
         type: 3}
@@ -12244,7 +12316,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7576384318530101417, guid: 414394eb1a72b15448ff3035f5c60a1b,
         type: 3}
+      propertyPath: PlayEvents.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
+      value: QuackleBit.TooltipContainer, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7576384318530101417, guid: 414394eb1a72b15448ff3035f5c60a1b,
+        type: 3}
       propertyPath: PlayEvents.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 7576384318530101417, guid: 414394eb1a72b15448ff3035f5c60a1b,
+        type: 3}
+      propertyPath: PlayEvents.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -21637,11 +21719,61 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7064818450268620772, guid: 414394eb1a72b15448ff3035f5c60a1b,
+        type: 3}
+      propertyPath: PlayEvents.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7064818450268620772, guid: 414394eb1a72b15448ff3035f5c60a1b,
+        type: 3}
+      propertyPath: PlayEvents.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7064818450268620772, guid: 414394eb1a72b15448ff3035f5c60a1b,
+        type: 3}
+      propertyPath: PlayEvents.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 98748085}
+    - target: {fileID: 7064818450268620772, guid: 414394eb1a72b15448ff3035f5c60a1b,
+        type: 3}
+      propertyPath: PlayEvents.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7064818450268620772, guid: 414394eb1a72b15448ff3035f5c60a1b,
+        type: 3}
+      propertyPath: PlayEvents.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: ShowDashTooltip
+      objectReference: {fileID: 0}
+    - target: {fileID: 7064818450268620772, guid: 414394eb1a72b15448ff3035f5c60a1b,
+        type: 3}
+      propertyPath: PlayEvents.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: QuackleBit.TooltipContainer, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7064818450268620772, guid: 414394eb1a72b15448ff3035f5c60a1b,
+        type: 3}
+      propertyPath: PlayEvents.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 7576384318530101417, guid: 414394eb1a72b15448ff3035f5c60a1b,
+        type: 3}
+      propertyPath: PlayEvents.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7576384318530101417, guid: 414394eb1a72b15448ff3035f5c60a1b,
+        type: 3}
+      propertyPath: PlayEvents.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7576384318530101417, guid: 414394eb1a72b15448ff3035f5c60a1b,
         type: 3}
       propertyPath: PlayEvents.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 764580617}
+    - target: {fileID: 7576384318530101417, guid: 414394eb1a72b15448ff3035f5c60a1b,
+        type: 3}
+      propertyPath: PlayEvents.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 7576384318530101417, guid: 414394eb1a72b15448ff3035f5c60a1b,
         type: 3}
       propertyPath: PlayEvents.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
@@ -21650,6 +21782,11 @@ PrefabInstance:
     - target: {fileID: 7576384318530101417, guid: 414394eb1a72b15448ff3035f5c60a1b,
         type: 3}
       propertyPath: PlayEvents.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: QuackleBit.Gameplay, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7576384318530101417, guid: 414394eb1a72b15448ff3035f5c60a1b,
+        type: 3}
+      propertyPath: PlayEvents.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
       value: QuackleBit.Gameplay, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 7576384318530101417, guid: 414394eb1a72b15448ff3035f5c60a1b,
@@ -23905,6 +24042,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 4334631965779798210, guid: 74b40dc45eb71c34fa270e75c8757f6e,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.3000002
+      objectReference: {fileID: 0}
+    - target: {fileID: 5837801244638207499, guid: 74b40dc45eb71c34fa270e75c8757f6e,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.3000002
       objectReference: {fileID: 0}
     - target: {fileID: 6196743726076412383, guid: 74b40dc45eb71c34fa270e75c8757f6e,
         type: 3}
@@ -29090,7 +29237,7 @@ PrefabInstance:
     - target: {fileID: 5276759263648566965, guid: e4a31b101797d294fb29e2edd0073d96,
         type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5276759263648566965, guid: e4a31b101797d294fb29e2edd0073d96,
         type: 3}
@@ -29105,17 +29252,17 @@ PrefabInstance:
     - target: {fileID: 5276759263648566965, guid: e4a31b101797d294fb29e2edd0073d96,
         type: 3}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5276759263648566965, guid: e4a31b101797d294fb29e2edd0073d96,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5276759263648566965, guid: e4a31b101797d294fb29e2edd0073d96,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5276759263648566965, guid: e4a31b101797d294fb29e2edd0073d96,
         type: 3}
@@ -29155,12 +29302,12 @@ PrefabInstance:
     - target: {fileID: 5276759263648566965, guid: e4a31b101797d294fb29e2edd0073d96,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 112
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5276759263648566965, guid: e4a31b101797d294fb29e2edd0073d96,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -53.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5276759263648566965, guid: e4a31b101797d294fb29e2edd0073d96,
         type: 3}
@@ -29181,6 +29328,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: HUD
+      objectReference: {fileID: 0}
+    - target: {fileID: 8362417189719476886, guid: e4a31b101797d294fb29e2edd0073d96,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -29569,6 +29721,41 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Scroll - Deflect
+      objectReference: {fileID: 0}
+    - target: {fileID: 7064818450268620772, guid: 414394eb1a72b15448ff3035f5c60a1b,
+        type: 3}
+      propertyPath: PlayEvents.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7064818450268620772, guid: 414394eb1a72b15448ff3035f5c60a1b,
+        type: 3}
+      propertyPath: PlayEvents.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7064818450268620772, guid: 414394eb1a72b15448ff3035f5c60a1b,
+        type: 3}
+      propertyPath: PlayEvents.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 98748085}
+    - target: {fileID: 7064818450268620772, guid: 414394eb1a72b15448ff3035f5c60a1b,
+        type: 3}
+      propertyPath: PlayEvents.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7064818450268620772, guid: 414394eb1a72b15448ff3035f5c60a1b,
+        type: 3}
+      propertyPath: PlayEvents.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: ShowDeflectTooltip
+      objectReference: {fileID: 0}
+    - target: {fileID: 7064818450268620772, guid: 414394eb1a72b15448ff3035f5c60a1b,
+        type: 3}
+      propertyPath: PlayEvents.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: QuackleBit.TooltipContainer, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7064818450268620772, guid: 414394eb1a72b15448ff3035f5c60a1b,
+        type: 3}
+      propertyPath: PlayEvents.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 7576384318530101417, guid: 414394eb1a72b15448ff3035f5c60a1b,
         type: 3}
@@ -38147,6 +38334,51 @@ PrefabInstance:
       propertyPath: m_Name
       value: Scroll - Double Jump
       objectReference: {fileID: 0}
+    - target: {fileID: 7064818450268620772, guid: 414394eb1a72b15448ff3035f5c60a1b,
+        type: 3}
+      propertyPath: PlayEvents.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7064818450268620772, guid: 414394eb1a72b15448ff3035f5c60a1b,
+        type: 3}
+      propertyPath: PlayEvents.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7064818450268620772, guid: 414394eb1a72b15448ff3035f5c60a1b,
+        type: 3}
+      propertyPath: PlayEvents.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 98748085}
+    - target: {fileID: 7064818450268620772, guid: 414394eb1a72b15448ff3035f5c60a1b,
+        type: 3}
+      propertyPath: PlayEvents.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7064818450268620772, guid: 414394eb1a72b15448ff3035f5c60a1b,
+        type: 3}
+      propertyPath: PlayEvents.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: ShowDoubleJumpTooltip
+      objectReference: {fileID: 0}
+    - target: {fileID: 7064818450268620772, guid: 414394eb1a72b15448ff3035f5c60a1b,
+        type: 3}
+      propertyPath: PlayEvents.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: QuackleBit.TooltipContainer, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7064818450268620772, guid: 414394eb1a72b15448ff3035f5c60a1b,
+        type: 3}
+      propertyPath: PlayEvents.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 7576384318530101417, guid: 414394eb1a72b15448ff3035f5c60a1b,
+        type: 3}
+      propertyPath: PlayEvents.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7576384318530101417, guid: 414394eb1a72b15448ff3035f5c60a1b,
+        type: 3}
+      propertyPath: PlayEvents.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7576384318530101417, guid: 414394eb1a72b15448ff3035f5c60a1b,
         type: 3}
       propertyPath: PlayEvents.m_PersistentCalls.m_Calls.Array.data[1].m_Target
@@ -38154,8 +38386,23 @@ PrefabInstance:
       objectReference: {fileID: 764580617}
     - target: {fileID: 7576384318530101417, guid: 414394eb1a72b15448ff3035f5c60a1b,
         type: 3}
+      propertyPath: PlayEvents.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 98748085}
+    - target: {fileID: 7576384318530101417, guid: 414394eb1a72b15448ff3035f5c60a1b,
+        type: 3}
+      propertyPath: PlayEvents.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7576384318530101417, guid: 414394eb1a72b15448ff3035f5c60a1b,
+        type: 3}
       propertyPath: PlayEvents.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
       value: EnableDoubleJump
+      objectReference: {fileID: 0}
+    - target: {fileID: 7576384318530101417, guid: 414394eb1a72b15448ff3035f5c60a1b,
+        type: 3}
+      propertyPath: PlayEvents.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: ShowDoubleJumpTooltip
       objectReference: {fileID: 0}
     - target: {fileID: 7576384318530101417, guid: 414394eb1a72b15448ff3035f5c60a1b,
         type: 3}
@@ -38164,7 +38411,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7576384318530101417, guid: 414394eb1a72b15448ff3035f5c60a1b,
         type: 3}
+      propertyPath: PlayEvents.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
+      value: QuackleBit.TooltipContainer, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7576384318530101417, guid: 414394eb1a72b15448ff3035f5c60a1b,
+        type: 3}
       propertyPath: PlayEvents.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 7576384318530101417, guid: 414394eb1a72b15448ff3035f5c60a1b,
+        type: 3}
+      propertyPath: PlayEvents.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
