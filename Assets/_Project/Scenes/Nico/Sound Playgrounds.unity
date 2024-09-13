@@ -334,7 +334,7 @@ PrefabInstance:
     - target: {fileID: 8412189404009190362, guid: 77fcbab2fcb16c443b00bebebfd1ef1c,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -740,6 +740,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1575492000847857508, guid: 4f25b7671c3736c49ad0e487d53af471,
+        type: 3}
+      propertyPath: AbilityPermitted
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7529162107412397334, guid: 4f25b7671c3736c49ad0e487d53af471,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -816,12 +821,17 @@ PrefabInstance:
     - target: {fileID: 36937423924113404, guid: db63dfc9d2206b042a27411a0693268d,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5718502381647300396, guid: db63dfc9d2206b042a27411a0693268d,
+        type: 3}
+      propertyPath: InitialHealth
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 7746117900417131453, guid: db63dfc9d2206b042a27411a0693268d,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5.18
+      value: 6.78
       objectReference: {fileID: 0}
     - target: {fileID: 7746117900417131453, guid: db63dfc9d2206b042a27411a0693268d,
         type: 3}

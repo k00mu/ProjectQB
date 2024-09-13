@@ -24176,6 +24176,26 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9192579117531573359, guid: 74b40dc45eb71c34fa270e75c8757f6e,
+        type: 3}
+      propertyPath: secretEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9192579117531573359, guid: 74b40dc45eb71c34fa270e75c8757f6e,
+        type: 3}
+      propertyPath: secretEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 764580617}
+    - target: {fileID: 9192579117531573359, guid: 74b40dc45eb71c34fa270e75c8757f6e,
+        type: 3}
+      propertyPath: secretEvent.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: EnableAllAbilities
+      objectReference: {fileID: 0}
+    - target: {fileID: 9192579117531573359, guid: 74b40dc45eb71c34fa270e75c8757f6e,
+        type: 3}
+      propertyPath: secretEvent.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: QuackleBit.Gameplay, Assembly-CSharp
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
