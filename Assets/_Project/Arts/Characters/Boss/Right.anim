@@ -31,7 +31,7 @@ AnimationClip:
         inWeight: 0
         outWeight: 0
       - serializedVersion: 3
-        time: 0.27
+        time: 0.67
         value: 1
         inSlope: Infinity
         outSlope: Infinity
@@ -40,7 +40,7 @@ AnimationClip:
         inWeight: 0
         outWeight: 0
       - serializedVersion: 3
-        time: 0.45
+        time: 0.85
         value: 0
         inSlope: Infinity
         outSlope: Infinity
@@ -49,7 +49,7 @@ AnimationClip:
         inWeight: 0
         outWeight: 0
       - serializedVersion: 3
-        time: 0.54
+        time: 0.94
         value: 1
         inSlope: Infinity
         outSlope: Infinity
@@ -58,7 +58,7 @@ AnimationClip:
         inWeight: 0
         outWeight: 0
       - serializedVersion: 3
-        time: 0.72
+        time: 1.12
         value: 0
         inSlope: Infinity
         outSlope: Infinity
@@ -67,7 +67,7 @@ AnimationClip:
         inWeight: 0
         outWeight: 0
       - serializedVersion: 3
-        time: 0.98
+        time: 1.38
         value: 0
         inSlope: Infinity
         outSlope: Infinity
@@ -95,31 +95,31 @@ AnimationClip:
     - time: 0.18000007
       value: {fileID: 6847080276725121137, guid: d6a938beba073ea48b3121a5bb416c2c,
         type: 3}
-    - time: 0.26999998
+    - time: 0.67
       value: {fileID: -246771164918543380, guid: d6a938beba073ea48b3121a5bb416c2c,
         type: 3}
-    - time: 0.3599999
+    - time: 0.76
       value: {fileID: -7862815150951246696, guid: d6a938beba073ea48b3121a5bb416c2c,
         type: 3}
-    - time: 0.45000005
+    - time: 0.85
       value: {fileID: 1488424371539475119, guid: d6a938beba073ea48b3121a5bb416c2c,
         type: 3}
-    - time: 0.53999996
+    - time: 0.94
       value: {fileID: 3455844419000379204, guid: d6a938beba073ea48b3121a5bb416c2c,
         type: 3}
-    - time: 0.6300001
+    - time: 1.03
       value: {fileID: 8375588294984914412, guid: d6a938beba073ea48b3121a5bb416c2c,
         type: 3}
-    - time: 0.72
+    - time: 1.12
       value: {fileID: -4473996172647902729, guid: d6a938beba073ea48b3121a5bb416c2c,
         type: 3}
-    - time: 0.80999994
+    - time: 1.21
       value: {fileID: -76787038258636908, guid: d6a938beba073ea48b3121a5bb416c2c,
         type: 3}
-    - time: 0.9000001
+    - time: 1.3
       value: {fileID: 723987761620479048, guid: d6a938beba073ea48b3121a5bb416c2c,
         type: 3}
-    - time: 0.98000014
+    - time: 1.38
       value: {fileID: 723987761620479048, guid: d6a938beba073ea48b3121a5bb416c2c,
         type: 3}
     attribute: m_Sprite
@@ -170,7 +170,7 @@ AnimationClip:
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.9900001
+    m_StopTime: 1.39
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -200,7 +200,7 @@ AnimationClip:
         inWeight: 0
         outWeight: 0
       - serializedVersion: 3
-        time: 0.27
+        time: 0.67
         value: 1
         inSlope: Infinity
         outSlope: Infinity
@@ -209,7 +209,7 @@ AnimationClip:
         inWeight: 0
         outWeight: 0
       - serializedVersion: 3
-        time: 0.45
+        time: 0.85
         value: 0
         inSlope: Infinity
         outSlope: Infinity
@@ -218,7 +218,7 @@ AnimationClip:
         inWeight: 0
         outWeight: 0
       - serializedVersion: 3
-        time: 0.54
+        time: 0.94
         value: 1
         inSlope: Infinity
         outSlope: Infinity
@@ -227,7 +227,7 @@ AnimationClip:
         inWeight: 0
         outWeight: 0
       - serializedVersion: 3
-        time: 0.72
+        time: 1.12
         value: 0
         inSlope: Infinity
         outSlope: Infinity
@@ -236,7 +236,7 @@ AnimationClip:
         inWeight: 0
         outWeight: 0
       - serializedVersion: 3
-        time: 0.98
+        time: 1.38
         value: 0
         inSlope: Infinity
         outSlope: Infinity
@@ -256,7 +256,7 @@ AnimationClip:
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
   m_Events:
-  - time: 0.45
+  - time: 0.67
     functionName: PlaySound
     data: 
     objectReferenceParameter: {fileID: 11400000, guid: e32b24a774228fd4692a5104c6156609,
