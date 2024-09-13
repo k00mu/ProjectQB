@@ -284,8 +284,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CurrentHealth: 0
-  InitialHealth: 20
-  MaximumHealth: 20
+  InitialHealth: 50
+  MaximumHealth: 50
   Invulnerable: 0
   TemporarilyInvulnerable: 0
   PostDamageInvulnerable: 0
@@ -298,9 +298,9 @@ MonoBehaviour:
   ImmuneToKnockbackIfZeroDamage: 0
   DeathFeedbacks: {fileID: 0}
   DestroyOnDeath: 1
-  DelayBeforeDestruction: 0
-  CollisionsOffOnDeath: 0
-  GravityOffOnDeath: 0
+  DelayBeforeDestruction: 2
+  CollisionsOffOnDeath: 1
+  GravityOffOnDeath: 1
   PointsWhenDestroyed: 20
   RespawnAtInitialLocation: 0
   ApplyDeathForce: 0

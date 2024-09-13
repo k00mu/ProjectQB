@@ -614,11 +614,11 @@ MonoBehaviour:
   DeathFeedbacks: {fileID: 0}
   DestroyOnDeath: 1
   DelayBeforeDestruction: 0
-  CollisionsOffOnDeath: 0
-  GravityOffOnDeath: 0
+  CollisionsOffOnDeath: 1
+  GravityOffOnDeath: 1
   PointsWhenDestroyed: 20
   RespawnAtInitialLocation: 0
-  ApplyDeathForce: 1
+  ApplyDeathForce: 0
   DeathForce: {x: 0, y: 10}
   ResetForcesOnDeath: 0
   ResetColorOnRevive: 1

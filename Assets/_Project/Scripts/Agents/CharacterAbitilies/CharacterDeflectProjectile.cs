@@ -38,6 +38,9 @@ namespace QuackleBit
         
         protected override void HandleInput()
         {
+            if (!AbilityPermitted)
+                return;
+            
             if (_inputManager.SecondaryShootButton.State.CurrentState == MMInput.ButtonStates.ButtonDown)
             {
                 DeflectStart();

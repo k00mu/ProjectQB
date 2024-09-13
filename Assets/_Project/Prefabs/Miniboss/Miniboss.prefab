@@ -289,12 +289,12 @@ MonoBehaviour:
   ImmuneToKnockbackIfZeroDamage: 0
   DeathFeedbacks: {fileID: 223119123469974132}
   DestroyOnDeath: 1
-  DelayBeforeDestruction: 0
-  CollisionsOffOnDeath: 0
-  GravityOffOnDeath: 0
+  DelayBeforeDestruction: 2
+  CollisionsOffOnDeath: 1
+  GravityOffOnDeath: 1
   PointsWhenDestroyed: 0
   RespawnAtInitialLocation: 0
-  ApplyDeathForce: 1
+  ApplyDeathForce: 0
   DeathForce: {x: 0, y: 0}
   ResetForcesOnDeath: 0
   ResetColorOnRevive: 1
