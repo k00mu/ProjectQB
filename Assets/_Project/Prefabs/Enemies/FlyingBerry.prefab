@@ -78,11 +78,11 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 134228736
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
-  m_LayerOverridePriority: 0
+  m_LayerOverridePriority: 10
   m_ForceSendLayers:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -95,7 +95,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: -0.65}
@@ -125,7 +125,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TargetLayerMask:
     serializedVersion: 2
-    m_Bits: 11008
+    m_Bits: 671099648
   MinDamageCaused: 0
   MaxDamageCaused: 0
   TypedDamages: []
@@ -138,9 +138,9 @@ MonoBehaviour:
   DurationBetweenRepeats: 1
   DamageOverTimeInterruptible: 1
   RepeatedDamageType: {fileID: 0}
-  DamageTakenEveryTime: 0
-  DamageTakenDamageable: 0
-  DamageTakenNonDamageable: 0
+  DamageTakenEveryTime: 10
+  DamageTakenDamageable: 10
+  DamageTakenNonDamageable: 10
   DamageTakenKnockbackType: 0
   DamageTakenKnockbackDirection: 0
   DamageTakenKnockbackForce: {x: 0, y: 0}
@@ -656,7 +656,7 @@ MonoBehaviour:
     m_Bits: 512
   ObstaclesLayer:
     serializedVersion: 2
-    m_Bits: 256
+    m_Bits: 0
 --- !u!114 &8968849936185414806
 MonoBehaviour:
   m_ObjectHideFlags: 0

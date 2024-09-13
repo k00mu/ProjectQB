@@ -61,7 +61,7 @@ MonoBehaviour:
   AmmoConsumedPerShot: 1
   AutoDestroyWhenEmpty: 0
   AutoDestroyWhenEmptyDelay: 1
-  CurrentAmmoLoaded: 0
+  CurrentAmmoLoaded: 30
   WeaponAttachmentOffset: {x: 0, y: 0, z: 0}
   FlipWeaponOnCharacterFlip: 1
   FlipValue: {x: -1, y: 1, z: 1}
@@ -136,8 +136,8 @@ MonoBehaviour:
     Delay: 0
     RecoilFeedback: {fileID: 0}
   DamageAreaShape: 0
-  AreaSize: {x: 0.75, y: 0.75}
-  AreaOffset: {x: 0.55, y: -0.2}
+  AreaSize: {x: 1.7, y: 1.12}
+  AreaOffset: {x: 1.03, y: -0.09}
   InitialDelay: 0
   ActiveDuration: 0.2
   TargetLayerMask:
@@ -248,8 +248,8 @@ MonoBehaviour:
     Delay: 0
     RecoilFeedback: {fileID: 0}
   DamageAreaShape: 0
-  AreaSize: {x: 0.75, y: 0.75}
-  AreaOffset: {x: 0.64, y: 0.04}
+  AreaSize: {x: 1.75, y: 1.37}
+  AreaOffset: {x: 1.03, y: 0.13}
   InitialDelay: 0
   ActiveDuration: 0.2
   TargetLayerMask:
@@ -360,8 +360,8 @@ MonoBehaviour:
     Delay: 0
     RecoilFeedback: {fileID: 0}
   DamageAreaShape: 0
-  AreaSize: {x: 0.91, y: 0.45}
-  AreaOffset: {x: 0.65, y: -0.2}
+  AreaSize: {x: 1.51, y: 1.31}
+  AreaOffset: {x: 1.69, y: -0.06}
   InitialDelay: 0
   ActiveDuration: 0.2
   TargetLayerMask:
