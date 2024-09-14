@@ -5,6 +5,7 @@
 // ==================================================
 
 using MoreMountains.CorgiEngine;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 namespace QuackleBit
 {
@@ -83,6 +84,13 @@ namespace QuackleBit
 			EnableAttack();
 			EnableDeflect();
 			EnableDash();
+		}
+
+		public void GameplayEnding()
+		{
+			SceneHandler.Instance.SetNextScene("Outro");
+			SceneHandler.Instance.FadeOut(Color.white,1f,true);
+			SceneHandler.Instance.LoadNextScene();
 		}
 	}
 }
