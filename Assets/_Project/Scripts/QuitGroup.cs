@@ -6,6 +6,7 @@
 
 using System;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 namespace QuackleBit
@@ -25,7 +26,7 @@ namespace QuackleBit
 		
 		private void OnYesButtonClick()
 		{
-			Komutils.Helpers.QuitGame();
+			SceneManager.LoadScene("MainMenu");
 		}
 
 		private void OnNoButtonClick()
