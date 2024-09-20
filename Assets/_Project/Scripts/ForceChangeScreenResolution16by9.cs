@@ -73,7 +73,7 @@ namespace QuackleBit
 		private void SetResolution(int resolutionIndex)
 		{
 			Resolution resolution = possibleResolutionsForUsersMonitor[resolutionIndex];
-			Screen.SetResolution(resolution.width, resolution.height, Screen.fullScreen);
+			Screen.SetResolution(resolution.width, resolution.height, 0);
 		}
 
 		private Vector2Int GetLargestDisplaysResolution()
