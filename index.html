@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Blomtales</title>
+    <title>Bloomtales</title>
     <style>
          html,
          body {
@@ -78,8 +78,8 @@
                  				codeUrl: "Build/WebGL.wasm",
                  				streamingAssetsUrl: "StreamingAssets",
                  				companyName: "QuackleBit",
-                 				productName: "Blomtales",
-                 				productVersion: "0.0.203",
+                 				productName: "Bloomtales",
+                 				productVersion: "0.0.210",
                  			};
                  			var scaleToFit;
                  			try {
@@ -105,15 +105,15 @@
                  					w = window.innerWidth;
                  					h = window.innerHeight;
 
-                 					var r = 288 / 512;
+                 					var r = 400 / 720;
 
                  					if (w * r > window.innerHeight) {
                  						w = Math.min(w, Math.ceil(h / r));
                  					}
                  					h = Math.floor(w * r);
                  				} else {
-                 					w = 512;
-                 					h = 288;
+                 					w = 720;
+                 					h = 400;
                  				}
 
                  				container.style.width = canvas.style.width = w + "px";
