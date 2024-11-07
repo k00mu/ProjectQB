@@ -10,7 +10,7 @@ namespace MoreMountains.CorgiEngine
 	/// </summary>
 	[RequireComponent(typeof(Health))]
 	[AddComponentMenu("Corgi Engine/Character/Core/Health Auto Refill")]
-	public class HealthAutoRefill : MonoBehaviour
+	public class HealthAutoRefill : CorgiMonoBehaviour
 	{
 		/// the possible refill modes :
 		/// - linear : constant health refill at a certain rate per second

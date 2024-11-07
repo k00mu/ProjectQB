@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
@@ -9,8 +8,8 @@ namespace QuackleBit
     {
         [SerializeField] private Animator anim;
         [SerializeField] private bool skippable = false;
-        [SerializeField] private float warningDuration = 2.0f; 
-        [SerializeField ]private TMP_Text warningText;
+        [SerializeField] private float warningDuration = 2.0f;
+        [SerializeField] private TMP_Text warningText;
 
         private void Start()
         {
@@ -19,7 +18,8 @@ namespace QuackleBit
             {
                 // Set initial alpha to 0
                 Color color = warningText.color;
-                color.a = 0;
+                color.a = 100;
+                warningText.text = "Press \"E\" to skip the animation.";
                 warningText.color = color;
             }
         }
@@ -28,6 +28,7 @@ namespace QuackleBit
         {
             if (Input.GetKeyUp(KeyCode.E))
             {
+                warningText.text = "Press \"E\" again to skip the animation.";
                 if (!skippable)
                 {
                     skippable = true;

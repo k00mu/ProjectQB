@@ -7,7 +7,7 @@ namespace MoreMountains.CorgiEngine
 	/// Add this class to an area (water for example) and it will pass its parameters to any character that gets into it.
 	/// </summary>
 	[AddComponentMenu("Corgi Engine/Environment/Corgi Controller Override")]
-	public class CorgiControllerPhysicsVolume2D : MonoBehaviour 
+	public class CorgiControllerPhysicsVolume2D : CorgiMonoBehaviour 
 	{
 		/// the new parameters meant to override the olds ones
 		[Tooltip("the new parameters meant to override the olds ones")]

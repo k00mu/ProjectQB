@@ -12,7 +12,7 @@ namespace MoreMountains.CorgiEngine
 	/// Finally, you need to set left and right handles (or only one of these) on your weapon(s). 
 	/// </summary>
 	[AddComponentMenu("Corgi Engine/Weapons/Weapon IK")]
-	public class WeaponIK : MonoBehaviour 
+	public class WeaponIK : CorgiMonoBehaviour 
 	{
 		protected Animator _animator;
 		protected Transform _leftHandTarget = null;

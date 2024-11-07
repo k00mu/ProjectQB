@@ -8,7 +8,7 @@ using MoreMountains.Feedbacks;
 
 namespace MoreMountains.CorgiEngine
 {
-	public class SfxSwitch : MonoBehaviour
+	public class SfxSwitch : CorgiMonoBehaviour
 	{
 		public virtual void On()
 		{

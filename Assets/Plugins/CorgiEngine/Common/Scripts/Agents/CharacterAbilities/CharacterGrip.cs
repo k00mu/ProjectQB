@@ -20,12 +20,19 @@ namespace MoreMountains.CorgiEngine
 		[Tooltip("whether or not grip input has to be pressed to enter grip")]
 		public bool InputBasedGrip = false;
 		/// Returns true if the character can grip right now, false otherwise
-		public bool CanGrip { get { return (Time.time - _lastGripTimestamp > BufferDurationAfterGrip); }}
+		public virtual bool CanGrip { get { return (Time.time - _lastGripTimestamp > BufferDurationAfterGrip); }}
 
 		protected CharacterJump _characterJump;
+		protected float _gripStartedTimestamp = 0f;
 		protected float _lastGripTimestamp = 0f;
 		protected Grip _gripTarget;
 		protected bool _attached = false;
+
+		protected bool _tweenToGripPosition;
+		protected MMTweenType _tweenType;
+		protected float _tweenDuration;
+		protected Vector3 _initialPosition;
+		protected Vector3 _newPosition;
 
 		// animation parameters
 		protected const string _grippingAnimationParameterName = "Gripping";
@@ -86,6 +93,11 @@ namespace MoreMountains.CorgiEngine
 			MMCharacterEvent.Trigger(_character, MMCharacterEventTypes.Grip, MMCharacterEvent.Moments.Start);
 			_attached = true;
 			_gripTarget = gripTarget;
+			_gripStartedTimestamp = Time.time;
+			_initialPosition = _controller.transform.position;
+			_tweenToGripPosition = gripTarget.TweenToGripPosition;
+			_tweenType = gripTarget.TweenType;
+			_tweenDuration = gripTarget.TweenDuration;
 			_movement.ChangeState (CharacterStates.MovementStates.Gripping);
 		}
 
@@ -103,7 +115,18 @@ namespace MoreMountains.CorgiEngine
 				{
 					_characterJump.ResetNumberOfJumps();
 				}
-				_controller.SetTransformPosition(_gripTarget.transform.position + _gripTarget.GripOffset);
+
+				if (_tweenToGripPosition && (Time.time - _gripStartedTimestamp < _tweenDuration))
+				{
+					float progress = MMMaths.Remap(Time.time - _gripStartedTimestamp, 0f, _tweenDuration, 0f, 1f);
+					float tweenProgress = _tweenType.Evaluate(progress);
+					_newPosition = Vector3.Lerp(_initialPosition, _gripTarget.transform.position + _gripTarget.GripOffset, tweenProgress);
+				}
+				else
+				{
+					_newPosition = _gripTarget.transform.position + _gripTarget.GripOffset;
+				}
+				_controller.SetTransformPosition(_newPosition);	
 			}
 		}	
 

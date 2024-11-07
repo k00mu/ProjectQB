@@ -9,7 +9,7 @@ namespace MoreMountains.CorgiEngine
 	/// Add this class to a background image so it will act as your level's background
 	/// </summary>
 	[AddComponentMenu("Corgi Engine/Camera/Level Background")]
-	public class LevelBackground : MonoBehaviour
+	public class LevelBackground : CorgiMonoBehaviour
 	{
 		/// if this is true, the background will be following the camera 
 		public bool Following = true;

@@ -9,7 +9,7 @@ namespace MoreMountains.CorgiEngine
 	/// </summary>
 	[RequireComponent(typeof(Weapon))]
 	[AddComponentMenu("Corgi Engine/Weapons/Weapon Laser Sight")]
-	public class WeaponLaserSight : MonoBehaviour 
+	public class WeaponLaserSight : CorgiMonoBehaviour 
 	{
 		[Header("Raycasts")]
 		[MMInformation("Add this class to a weapon and it'll project a laser ray towards the direction the weapon is facing",MoreMountains.Tools.MMInformationAttribute.InformationType.Info,false)]
@@ -34,6 +34,12 @@ namespace MoreMountains.CorgiEngine
 		/// the material used to render the laser
 		[Tooltip("the material used to render the laser")]
 		public Material LaserMaterial;
+
+		/// the world space coordinates of the laser's origin point
+		public Vector3 LaserOrigin => _origin;
+		/// the world space coordinates of the laser's destination point
+		public Vector3 LaserDestination => _destination;
+		
 
 		protected Weapon _weapon;
 		protected Vector3 _direction;

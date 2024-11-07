@@ -8,7 +8,7 @@ namespace MoreMountains.CorgiEngine
 	/// <summary>
 	/// Dialogue box class. Don't add this directly to your game, look at DialogueZone instead.
 	/// </summary>
-	public class DialogueBox : MonoBehaviour 
+	public class DialogueBox : CorgiMonoBehaviour 
 	{
 		/// the text panel background
 		[Tooltip("the text panel background")]

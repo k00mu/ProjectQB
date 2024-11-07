@@ -1,13 +1,12 @@
 // ==================================================
-// 
+//
 //   Created by Atqa Munzir
-// 
+//
 // ==================================================
 
 using MoreMountains.CorgiEngine;
 using MoreMountains.Tools;
 using UnityEngine;
-using Komutils.Extensions;
 using System.Collections;
 
 namespace QuackleBit
@@ -16,50 +15,50 @@ namespace QuackleBit
     {
         [SerializeField] private Vector3 _deflectorOffset = new Vector3(1f, 0f, 0f);
         [SerializeField] private Vector2 _deflectorSize = new Vector2(0.3f, 2.5f);
-        
+
         [SerializeField] private bool _canMove;
         [SerializeField] private float _chargingTime = 0.5f;
-        
+
         [SerializeField] private GameObject _deflector;
         private IEnumerator _deflectCoroutine;
         private WaitForSeconds _chargingWFS;
         private bool _isDeflecting;
-        
+
         protected override void Initialization()
         {
             base.Initialization();
-            
+
             int deflectorLayer = LayerMask.NameToLayer("Deflector");
             _deflector.layer = deflectorLayer;
-            
+
             _deflector.SetActive(false);
             _chargingWFS = new WaitForSeconds(_chargingTime);
         }
-        
+
         protected override void HandleInput()
         {
             if (!AbilityPermitted)
                 return;
-            
+
             if (_inputManager.SecondaryShootButton.State.CurrentState == MMInput.ButtonStates.ButtonDown)
             {
                 DeflectStart();
             }
-            
+
             if (_inputManager.SecondaryShootButton.State.CurrentState == MMInput.ButtonStates.ButtonUp)
             {
                 DeflectStop();
             }
         }
-        
+
         private void DeflectStart()
         {
             if (!_deflector)
                 return;
-            
-            if (!_canMove) 
+
+            if (!_canMove)
                 _characterHorizontalMovement.MovementForbidden = true;
-            
+
             _deflectCoroutine = DeflectCoroutine();
             StartCoroutine(_deflectCoroutine);
         }
@@ -73,25 +72,25 @@ namespace QuackleBit
             _isDeflecting = true;
             _deflector.SetActive(true);
         }
-        
+
         private void DeflectStop()
         {
             if (!_deflector)
                 return;
-            
+
             _deflector.SetActive(false);
             _isDeflecting = false;
-            
+
             if (!_canMove)
                 _characterHorizontalMovement.MovementForbidden = false;
         }
-        
+
         public void SetChargingTime(float time)
         {
             _chargingTime = time;
             _chargingWFS = new WaitForSeconds(_chargingTime);
         }
-        
+
         // animation parameters
         protected const string _deflectChargingAnimationParameterName = "DeflectCharging";
         protected int _deflectChargingAnimationParameter;
@@ -123,13 +122,13 @@ namespace QuackleBit
             base.ResetAbility();
             if (_animator)
             {
-                MMAnimatorExtensions.UpdateAnimatorBool(_animator, _deflectChargingAnimationParameter, false, _character._animatorParameters, _character.PerformAnimatorSanityChecks);    
+                MMAnimatorExtensions.UpdateAnimatorBool(_animator, _deflectChargingAnimationParameter, false, _character._animatorParameters, _character.PerformAnimatorSanityChecks);
                 MMAnimatorExtensions.UpdateAnimatorBool(_animator, _deflectingAnimationParameter, false, _character._animatorParameters, _character.PerformAnimatorSanityChecks);
             }
-            
+
             if (_deflector)
                 _deflector.SetActive(false);
-            
+
             _isDeflecting = false;
         }
     }

@@ -10,7 +10,7 @@ namespace MoreMountains.CorgiEngine
 	/// Add this component to an object and it'll become carryable by a Character with the appropriate ability (CharacterGrabCarryAndThrow)
 	/// </summary>
 	[AddComponentMenu("Corgi Engine/Environment/Grab Carry and Throw Object")]
-	public class GrabCarryAndThrowObject : MonoBehaviour
+	public class GrabCarryAndThrowObject : CorgiMonoBehaviour
 	{
 		/// The possible ways this object can be carried :
 		/// - Parent : the object gets parented to the Character, optionnally under a specified transform

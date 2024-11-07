@@ -139,9 +139,9 @@ namespace MoreMountains.CorgiEngine
 		/// the shoot axis, used as a button (non analogic)
 		public MMInput.ButtonStates SecondaryShootAxis { get; protected set; }
 		/// the primary movement value (used to move the character around)
-		public Vector2 PrimaryMovement {get { return _primaryMovement; } }
+		public virtual Vector2 PrimaryMovement {get { return _primaryMovement; } }
 		/// the secondary movement (usually the right stick on a gamepad), used to aim
-		public Vector2 SecondaryMovement {get { return _secondaryMovement; } }
+		public virtual Vector2 SecondaryMovement {get { return _secondaryMovement; } }
 
 		protected List<MMInput.IMButton> ButtonList;
 		protected Vector2 _primaryMovement = Vector2.zero;
@@ -152,6 +152,15 @@ namespace MoreMountains.CorgiEngine
 		protected string _axisSecondaryVertical;
 		protected string _axisShoot;
 		protected string _axisShootSecondary;
+		
+		/// <summary>
+		/// Statics initialization to support enter play modes
+		/// </summary>
+		[RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]
+		protected static void InitializeStatics()
+		{
+			_instance = null;
+		}
 
 		/// <summary>
 		/// On Start we look for what mode to use, and initialize our axis and buttons
@@ -473,14 +482,23 @@ namespace MoreMountains.CorgiEngine
 		/// If we lose focus, we reset the states of all buttons
 		/// </summary>
 		/// <param name="hasFocus"></param>
-		protected void OnApplicationFocus(bool hasFocus)
+		protected virtual void OnApplicationFocus(bool hasFocus)
 		{
-			if (!hasFocus && ResetButtonStatesOnFocusLoss)
+			if (!hasFocus && ResetButtonStatesOnFocusLoss && (ButtonList != null))
 			{
-				foreach (MMInput.IMButton button in ButtonList)
-				{
-					button.State.ChangeState(MMInput.ButtonStates.ButtonUp);
-				}
+				ForceAllButtonStatesTo(MMInput.ButtonStates.ButtonUp);
+			}
+		}
+
+		/// <summary>
+		/// Lets you force the state of all buttons in the InputManager to the one specified in parameters
+		/// </summary>
+		/// <param name="newState"></param>
+		public virtual void ForceAllButtonStatesTo(MMInput.ButtonStates newState)
+		{
+			foreach (MMInput.IMButton button in ButtonList)
+			{
+				button.State.ChangeState(newState);
 			}
 		}
 

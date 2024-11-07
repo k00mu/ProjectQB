@@ -10,11 +10,14 @@ namespace MoreMountains.CorgiEngine
 	/// <summary>
 	/// Simple start screen class.
 	/// </summary>
-	public class StartScreen : MonoBehaviour
+	public class StartScreen : CorgiMonoBehaviour
 	{
 		/// the level to load after the start screen
 		[Tooltip("the level to load after the start screen")]
 		public string NextLevel;
+		/// the name of the loading screen to use to load NextLevel
+		[Tooltip("the name of the loading screen to use to load NextLevel")]
+		public string LoadingSceneName = "LoadingScreen";
 		/// the delay after which the level should auto skip (if less than 1s, won't autoskip)
 		[Tooltip("the delay after which the level should auto skip (if less than 1s, won't autoskip)")]
 		public float AutoSkipDelay = 0f;
@@ -101,7 +104,7 @@ namespace MoreMountains.CorgiEngine
 		protected virtual IEnumerator LoadFirstLevel()
 		{
 			yield return new WaitForSeconds (FadeOutDuration);
-			MMSceneLoadingManager.LoadScene (NextLevel);
+			MMSceneLoadingManager.LoadScene (NextLevel, LoadingSceneName);
 		}
 	}
 }

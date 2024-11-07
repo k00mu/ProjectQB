@@ -15,10 +15,10 @@ namespace MoreMountains.CorgiEngine
 	/// You can see an example of rooms in action in the RetroVania demo scene.
 	/// </summary>
 	[RequireComponent(typeof(Collider2D))]
-	public class Room : MonoBehaviour, MMEventListener<CorgiEngineEvent>
+	public class Room : CorgiMonoBehaviour, MMEventListener<CorgiEngineEvent>
 	{
 		/// the collider for this room
-		public Collider2D RoomCollider { get { return _roomCollider2D; } }
+		public virtual Collider2D RoomCollider { get { return _roomCollider2D; } }
 
 		[Header("Camera")]
 
@@ -155,12 +155,15 @@ namespace MoreMountains.CorgiEngine
 			{
 				if (LevelManager.HasInstance)
 				{
-					if (_roomCollider2D.bounds.Contains(LevelManager.Instance.Players[0].transform.position))
+					if (_roomCollider2D.bounds.Contains(LevelManager.Instance.Players[0].transform.position.MMSetZ(transform.position.z)))
 					{
 						MMCameraEvent.Trigger(MMCameraEventTypes.ResetPriorities);
 						MMCinemachineBrainEvent.Trigger(MMCinemachineBrainEventTypes.ChangeBlendDuration, 0f);
-						VirtualCamera.Priority = 10;
-                        
+						if (VirtualCamera != null)
+						{
+							VirtualCamera.Priority = 10;
+						}
+
 						MMSpriteMaskEvent.Trigger(MMSpriteMaskEvent.MMSpriteMaskEventTypes.MoveToNewPosition,
 							(Vector2)_roomCollider2D.bounds.center,
 							_roomCollider2D.bounds.size,

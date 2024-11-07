@@ -13,7 +13,7 @@ namespace MoreMountains.CorgiEngine
 	/// If you're just after a visual change, look at the CharacterSwitchModel ability.
 	/// If you want to swap characters between a bunch of characters within a scene, look at the CharacterSwap ability and CharacterSwapManager
 	/// </summary>
-	public class CharacterSwitchManager : MonoBehaviour
+	public class CharacterSwitchManager : CorgiMonoBehaviour
 	{
 		/// the possible orders the next character can be selected from
 		public enum NextCharacterChoices { Sequential, Random }
@@ -38,6 +38,9 @@ namespace MoreMountains.CorgiEngine
 		/// if this is true, current health value will be passed from character to character
 		[Tooltip("if this is true, current health value will be passed from character to character")]
 		public bool CommonHealth;
+		/// if this is true, newly switched to characters will flip (if needed) to face the direction the previous character was facing
+		[Tooltip("if this is true, newly switched to characters will flip (if needed) to face the direction the previous character was facing")]
+		public bool MaintainPreviousCharacterFacingDirection = false;
 
 		[Header("Visual Effects")]
 
@@ -227,6 +230,7 @@ namespace MoreMountains.CorgiEngine
 		protected virtual IEnumerator OperateSwitch()
 		{
 			float newHealth = LevelManager.Instance.Players[PlayerIndex].gameObject.MMGetComponentNoAlloc<Health>().CurrentHealth;
+			bool facingRight = LevelManager.Instance.Players[PlayerIndex].IsFacingRight;
 
 			// we disable the old main character, and enable the new one
 			LevelManager.Instance.Players[PlayerIndex].gameObject.SetActive(false);
@@ -261,6 +265,13 @@ namespace MoreMountains.CorgiEngine
 			if (CommonHealth)
 			{
 				LevelManager.Instance.Players[PlayerIndex].gameObject.MMGetComponentNoAlloc<Health>().SetHealth(newHealth, this.gameObject);
+			}
+			
+			// we force facing direction if needed
+			if (MaintainPreviousCharacterFacingDirection)
+			{
+				Character.FacingDirections facingDirection = facingRight ? Character.FacingDirections.Right : Character.FacingDirections.Left;
+				LevelManager.Instance.Players[PlayerIndex].Face(facingDirection);
 			}
 		}
 	}

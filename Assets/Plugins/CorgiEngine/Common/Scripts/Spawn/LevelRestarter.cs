@@ -9,7 +9,7 @@ namespace MoreMountains.CorgiEngine
 	/// Add this class to a trigger to cause the level to restart when the player hits the trigger
 	/// </summary>
 	[AddComponentMenu("Corgi Engine/Spawn/Level Restarter")]
-	public class LevelRestarter : MonoBehaviour 
+	public class LevelRestarter : CorgiMonoBehaviour 
 	{
 		/// <summary>
 		/// When a character enters the zone, restarts the level

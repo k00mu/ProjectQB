@@ -44,6 +44,9 @@ namespace MoreMountains.CorgiEngine
 		/// if this is true, this character can jump down one way platforms by doing down + jump
 		[Tooltip("if this is true, this character can jump down one way platforms by doing down + jump")]
 		public bool CanJumpDownOneWayPlatforms = true;
+		/// deducts an additional jump if the sequence begins in the air. This keeps aerial jump count consistent regardless of whether the first jump began in the air or on the ground.
+		[Tooltip("deducts an additional jump if the sequence begins in the air. This keeps aerial jump count consistent regardless of whether the first jump began in the air or on the ground.")]
+		public bool FixedAerialJumpCount = false;
 
 		[Header("Proportional jumps")]
 
@@ -97,6 +100,7 @@ namespace MoreMountains.CorgiEngine
 
 		protected float _jumpButtonPressTime = 0;
 		protected float _lastJumpAt = 0;
+		protected bool _stillGroundedAfterJump;
 		protected bool _jumpButtonPressed = false;
 		protected bool _jumpButtonReleased = false;
 		protected bool _doubleJumping = false;
@@ -110,14 +114,17 @@ namespace MoreMountains.CorgiEngine
 		protected bool _coyoteTime = false;
 		protected bool _inputBuffer = false;
 		protected bool _jumpingDownFromOneWayPlatform = false;
+		protected float _lastJumpButtonDownTimestamp = 0f;
                 
 		// animation parameters
 		protected const string _jumpingAnimationParameterName = "Jumping";
 		protected const string _doubleJumpingAnimationParameterName = "DoubleJumping";
 		protected const string _hitTheGroundAnimationParameterName = "HitTheGround";
+		protected const string _numberOfJumpsLeftParameterName = "NumberOfJumpsLeft";
 		protected int _jumpingAnimationParameter;
 		protected int _doubleJumpingAnimationParameter;
 		protected int _hitTheGroundAnimationParameter;
+		protected int _numberOfJumpsLeftAnimationParameter;
 
 		/// Evaluates the jump restrictions
 		public virtual bool JumpAuthorized 
@@ -217,7 +224,7 @@ namespace MoreMountains.CorgiEngine
 			// we handle input buffer
 			if ((InputBufferDuration > 0f) && (_controller.State.JustGotGrounded))
 			{
-				if ((_inputManager.JumpButton.TimeSinceLastButtonDown < InputBufferDuration) && (Time.time - _lastJumpAt > InputBufferDuration) && !_jumpingDownFromOneWayPlatform) 
+				if ((Time.unscaledTime - _lastJumpButtonDownTimestamp < InputBufferDuration) && (Time.time - _lastJumpAt > InputBufferDuration) && !_jumpingDownFromOneWayPlatform) 
 				{
 					NumberOfJumpsLeft = NumberOfJumps;	
 					_doubleJumping = false;
@@ -234,6 +241,11 @@ namespace MoreMountains.CorgiEngine
 			if (_inputManager.JumpButton.State.CurrentState == MMInput.ButtonStates.ButtonUp)
 			{
 				JumpStop();
+			}
+
+			if (_inputManager.JumpButton.IsDown)
+			{
+				_lastJumpButtonDownTimestamp = Time.unscaledTime;
 			}
 		}	
 
@@ -254,6 +266,8 @@ namespace MoreMountains.CorgiEngine
 				_doubleJumping = false;
 				_jumpingDownFromOneWayPlatform = false;
 			}
+
+			HandlePreventedJump();
 			
 			// if we're grounded, and have jumped a while back but still haven't gotten our jumps back, we reset them
 			if ((_controller.State.IsGrounded) && (Time.time - _lastJumpAt > JumpMinimumAirTime) && (NumberOfJumpsLeft < NumberOfJumps) && !_inputBuffer)
@@ -293,6 +307,28 @@ namespace MoreMountains.CorgiEngine
 			UpdateController();
             
 			_inputBuffer = false;
+		}
+
+		/// <summary>
+		/// Checks if the character is still grounded after a jump, potentially prevented by reset forces by another ability / weapon
+		/// </summary>
+		protected virtual void HandlePreventedJump()
+		{
+			if (_stillGroundedAfterJump && (_movement.CurrentState == CharacterStates.MovementStates.Jumping))
+			{
+				if (!_controller.State.IsGrounded)
+				{
+					_stillGroundedAfterJump = false;
+				}
+				else
+				{
+					if (Time.time - _lastJumpAt > 0.5f)
+					{
+						_movement.ChangeState(CharacterStates.MovementStates.Falling);
+						_stillGroundedAfterJump = false;
+					}
+				}
+			}
 		}
 
 		/// <summary>
@@ -348,6 +384,11 @@ namespace MoreMountains.CorgiEngine
 				return false;
 			}
 
+			if ((_characterWallJump != null) && (_characterWallJump.InWalljumpCoyoteTime()))
+			{
+				return false;
+			}
+
 			// if we're in a button activated zone and can interact with it
 			if (_characterButtonActivation != null)
 			{
@@ -374,6 +415,11 @@ namespace MoreMountains.CorgiEngine
 						return false;
 					}
 				}
+			}
+
+			if (FixedAerialJumpCount && !(_controller.State.IsGrounded || EvaluateJumpTimeWindow()) && NumberOfJumpsLeft == NumberOfJumps)
+			{
+				NumberOfJumpsLeft -= 1;
 			}
 
 			// if we're not grounded, not on a ladder, and don't have any jumps left, we do nothing and exit
@@ -431,6 +477,7 @@ namespace MoreMountains.CorgiEngine
 				return;
 			}
 			
+			
 			// we reset our walking speed
 			if ((_movement.CurrentState == CharacterStates.MovementStates.Crawling)
 			    || (_movement.CurrentState == CharacterStates.MovementStates.Crouching)
@@ -442,11 +489,13 @@ namespace MoreMountains.CorgiEngine
 			if (_movement.CurrentState == CharacterStates.MovementStates.LadderClimbing)
 			{
 				_characterLadder.GetOffTheLadder();
+				_characterLadder.JumpFromLadder();
 			}
 
 			_controller.ResetColliderSize();
 
 			_lastJumpAt = Time.time;
+			_stillGroundedAfterJump = true;
 
 			// if we're still here, the jump will happen
 			// we set our current state to Jumping
@@ -510,7 +559,7 @@ namespace MoreMountains.CorgiEngine
 		/// <summary>
 		/// Handles jumping down from a one way platform.
 		/// </summary>
-		protected virtual bool JumpDownFromOneWayPlatform()
+		public virtual bool JumpDownFromOneWayPlatform()
 		{
 			if (!CanJumpDownOneWayPlatforms || _jumpingDownFromOneWayPlatform)
 			{
@@ -636,9 +685,10 @@ namespace MoreMountains.CorgiEngine
 		/// </summary>
 		protected override void InitializeAnimatorParameters()
 		{
-			RegisterAnimatorParameter (_jumpingAnimationParameterName, AnimatorControllerParameterType.Bool, out _jumpingAnimationParameter);
-			RegisterAnimatorParameter (_doubleJumpingAnimationParameterName, AnimatorControllerParameterType.Bool, out _doubleJumpingAnimationParameter);
-			RegisterAnimatorParameter (_hitTheGroundAnimationParameterName, AnimatorControllerParameterType.Bool, out _hitTheGroundAnimationParameter);
+			RegisterAnimatorParameter(_jumpingAnimationParameterName, AnimatorControllerParameterType.Bool, out _jumpingAnimationParameter);
+			RegisterAnimatorParameter(_doubleJumpingAnimationParameterName, AnimatorControllerParameterType.Bool, out _doubleJumpingAnimationParameter);
+			RegisterAnimatorParameter(_hitTheGroundAnimationParameterName, AnimatorControllerParameterType.Bool, out _hitTheGroundAnimationParameter);
+			RegisterAnimatorParameter(_numberOfJumpsLeftParameterName, AnimatorControllerParameterType.Int, out _numberOfJumpsLeftAnimationParameter);
 		}
 
 		/// <summary>
@@ -648,7 +698,8 @@ namespace MoreMountains.CorgiEngine
 		{
 			MMAnimatorExtensions.UpdateAnimatorBool(_animator, _jumpingAnimationParameter, (_movement.CurrentState == CharacterStates.MovementStates.Jumping),_character._animatorParameters, _character.PerformAnimatorSanityChecks);
 			MMAnimatorExtensions.UpdateAnimatorBool(_animator, _doubleJumpingAnimationParameter, _doubleJumping,_character._animatorParameters, _character.PerformAnimatorSanityChecks);
-			MMAnimatorExtensions.UpdateAnimatorBool (_animator, _hitTheGroundAnimationParameter, _controller.State.JustGotGrounded, _character._animatorParameters, _character.PerformAnimatorSanityChecks);
+			MMAnimatorExtensions.UpdateAnimatorBool(_animator, _hitTheGroundAnimationParameter, _controller.State.JustGotGrounded, _character._animatorParameters, _character.PerformAnimatorSanityChecks);
+			MMAnimatorExtensions.UpdateAnimatorInteger(_animator, _numberOfJumpsLeftAnimationParameter, NumberOfJumpsLeft, _character._animatorParameters, _character.PerformAnimatorSanityChecks);
 		}
 
 		/// <summary>

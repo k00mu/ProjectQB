@@ -9,7 +9,7 @@ namespace MoreMountains.CorgiEngine
 	/// <summary>
 	/// A class used to handle aim markers, (usually circular) visual elements 
 	/// </summary>
-	public class AimMarker : MonoBehaviour
+	public class AimMarker : CorgiMonoBehaviour
 	{
 		/// the possible movement modes for aim markers
 		public enum MovementModes { Instant, Interpolate }

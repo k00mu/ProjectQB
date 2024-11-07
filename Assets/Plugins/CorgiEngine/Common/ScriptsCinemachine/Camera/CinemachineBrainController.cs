@@ -34,7 +34,7 @@ namespace MoreMountains.CorgiEngine
 	/// This class is designed to control CinemachineBrains, letting you control their default blend values via events from any class
 	/// </summary>
 	[RequireComponent(typeof(CinemachineBrain))]
-	public class CinemachineBrainController : MonoBehaviour, MMEventListener<MMCinemachineBrainEvent>
+	public class CinemachineBrainController : CorgiMonoBehaviour, MMEventListener<MMCinemachineBrainEvent>
 	{
 		protected CinemachineBrain _brain;
 

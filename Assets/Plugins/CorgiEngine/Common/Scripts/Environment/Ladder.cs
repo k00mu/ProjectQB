@@ -8,7 +8,7 @@ namespace MoreMountains.CorgiEngine
 	/// Adds this class to your ladders so a Character can climb them.
 	/// </summary>
 	[AddComponentMenu("Corgi Engine/Environment/Ladder")]
-	public class Ladder : MonoBehaviour 
+	public class Ladder : CorgiMonoBehaviour 
 	{
 		/// the different types of ladders
 		public enum LadderTypes { Simple, BiDirectional }
@@ -98,7 +98,7 @@ namespace MoreMountains.CorgiEngine
 			{
 				_newLadderPlatformPosition = LadderPlatformEdgeCollider2D.transform.localPosition;
 				_newLadderPlatformPosition.x = 0;
-				_newLadderPlatformPosition.y = _collider2D.bounds.size.y/2 - LadderPlatformBoxCollider2D.bounds.size.y/2;
+				_newLadderPlatformPosition.y = _collider2D.bounds.size.y/2;
 				_newLadderPlatformPosition.z = this.transform.position.z;
 				LadderPlatformEdgeCollider2D.transform.localPosition = _newLadderPlatformPosition;
 			}

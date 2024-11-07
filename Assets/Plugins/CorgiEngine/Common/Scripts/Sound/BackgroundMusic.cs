@@ -17,8 +17,20 @@ namespace MoreMountains.CorgiEngine
 		/// whether or not the music should loop
 		[Tooltip("whether or not the music should loop")]
 		public bool Loop = true;
+		/// the ID to create this background music with
+		[Tooltip("the ID to create this background music with")]
+		public int ID = 255;
 
 		protected AudioSource _source;
+		
+		/// <summary>
+		/// Statics initialization to support enter play modes
+		/// </summary>
+		[RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]
+		protected static void InitializeStatics()
+		{
+			_instance = null;
+		}
 
 		/// <summary>
 		/// Gets the AudioSource associated to that GameObject, and asks the GameManager to play it.
@@ -26,6 +38,7 @@ namespace MoreMountains.CorgiEngine
 		protected virtual void Start () 
 		{
 			MMSoundManagerPlayOptions options = MMSoundManagerPlayOptions.Default;
+			options.ID = ID;
 			options.Loop = Loop;
 			options.Location = Vector3.zero;
 			options.MmSoundManagerTrack = MMSoundManager.MMSoundManagerTracks.Music;

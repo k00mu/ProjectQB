@@ -2,6 +2,7 @@
 using UnityEngine;
 using System.Collections;
 using MoreMountains.Tools;
+using UnityEngine.Serialization;
 
 namespace MoreMountains.CorgiEngine
 {
@@ -13,18 +14,29 @@ namespace MoreMountains.CorgiEngine
 	{
 		/// the possible shapes for the melee weapon's damage area
 		public enum MeleeDamageAreaShapes { Rectangle, Circle }
+		public enum MeleeDamageAreaModes { Generated, Existing }
 
 		[MMInspectorGroup("Melee Damage Area", true, 65)]
 
+		/// the possible modes to handle the damage area. In Generated, the MeleeWeapon will create it, in Existing, you can bind an existing damage area - usually nested under the weapon
+		[Tooltip("the possible modes to handle the damage area. In Generated, the MeleeWeapon will create it, in Existing, you can bind an existing damage area - usually nested under the weapon")]
+		public MeleeDamageAreaModes MeleeDamageAreaMode = MeleeDamageAreaModes.Generated;
 		/// the shape of the damage area (rectangle or circle)
 		[Tooltip("the shape of the damage area (rectangle or circle)")]
+		[MMEnumCondition("MeleeDamageAreaMode", (int)MeleeDamageAreaModes.Generated)]
 		public MeleeDamageAreaShapes DamageAreaShape = MeleeDamageAreaShapes.Rectangle;
-		/// the size of the damage area
-		[Tooltip("the size of the damage area")]
-		public Vector2 AreaSize = new Vector2(1,1);
 		/// the offset to apply to the damage area (from the weapon's attachment position
 		[Tooltip("the offset to apply to the damage area (from the weapon's attachment position")]
+		[MMEnumCondition("MeleeDamageAreaMode", (int)MeleeDamageAreaModes.Generated)]
 		public Vector2 AreaOffset = new Vector2(1,0);
+		/// the size of the damage area
+		[Tooltip("the size of the damage area")]
+		[MMEnumCondition("MeleeDamageAreaMode", (int)MeleeDamageAreaModes.Generated)]
+		public Vector2 AreaSize = new Vector2(1,1);
+		/// an existing damage area to activate/handle as the weapon is used
+		[Tooltip("an existing damage area to activate/handle as the weapon is used")]
+		[MMEnumCondition("MeleeDamageAreaMode", (int)MeleeDamageAreaModes.Existing)]
+		public DamageOnTouch ExistingDamageArea;
 
 		[MMInspectorGroup("Melee Damage Area Timing", true, 70)]
 
@@ -40,9 +52,20 @@ namespace MoreMountains.CorgiEngine
 		/// the layers that will be damaged by this object
 		[Tooltip("the layers that will be damaged by this object")]
 		public LayerMask TargetLayerMask;
-		/// The amount of health to remove from the player's health
-		[Tooltip("The amount of health to remove from the player's health")]
-		public int DamageCaused = 10;
+		/// if this is true, the damage will apply on trigger enter
+		[Tooltip("if this is true, the damage will apply on trigger enter")]
+		public bool ApplyDamageOnTriggerEnter = true;
+		/// if this is true, the damage will apply on trigger stay
+		[Tooltip("if this is true, the damage will apply on trigger stay")]
+		public bool ApplyDamageOnTriggerStay = true;
+		
+		/// The min amount of health to remove from the player's health
+		[FormerlySerializedAs("DamageCaused")] 
+		[Tooltip("The min amount of health to remove from the player's health")]
+		public int MinDamageCaused = 10;
+		/// The max amount of health to remove from the player's health - has to be above MinDamageCaused, otherwise it'll be set to MinDamageCaused
+		[Tooltip("The max amount of health to remove from the player's health, otherwise it'll be set to MinDamageCaused")]
+		public int MaxDamageCaused = 0;
 		/// the kind of knockback to apply
 		[Tooltip("the kind of knockback to apply")]
 		public DamageOnTouch.KnockbackStyles Knockback;
@@ -92,6 +115,16 @@ namespace MoreMountains.CorgiEngine
 		/// </summary>
 		protected virtual void CreateDamageArea()
 		{
+			if ((MeleeDamageAreaMode == MeleeDamageAreaModes.Existing) && (ExistingDamageArea != null))
+			{
+				_damageArea = ExistingDamageArea.gameObject;
+				_boxCollider2D = _damageArea.GetComponent<BoxCollider2D>();
+				_circleCollider2D = _damageArea.GetComponent<CircleCollider2D>();
+				_damageOnTouch = ExistingDamageArea;
+				_damageAreaCollider = _damageArea.GetComponent<Collider2D>();
+				return;
+			}
+			
 			_damageArea = new GameObject();
 			_damageArea.name = this.name+"DamageArea";
 			_damageArea.transform.position = this.transform.position;
@@ -119,7 +152,11 @@ namespace MoreMountains.CorgiEngine
 
 			_damageOnTouch = _damageArea.AddComponent<DamageOnTouch>();
 			_damageOnTouch.TargetLayerMask = TargetLayerMask;
-			_damageOnTouch.MinDamageCaused = DamageCaused;
+			_damageOnTouch.ApplyDamageOnTriggerEnter = ApplyDamageOnTriggerEnter;
+			_damageOnTouch.ApplyDamageOnTriggerStay = ApplyDamageOnTriggerStay;
+			_damageOnTouch.MinDamageCaused = MinDamageCaused;
+			MaxDamageCaused = (MaxDamageCaused <= MinDamageCaused) ? MinDamageCaused : MaxDamageCaused;
+			_damageOnTouch.MaxDamageCaused = MaxDamageCaused;
 			_damageOnTouch.DamageCausedKnockbackType = Knockback;
 			_damageOnTouch.DamageCausedKnockbackForce = KnockbackForce;
 			_damageOnTouch.InvincibilityDuration = InvincibilityDuration;
@@ -188,6 +225,11 @@ namespace MoreMountains.CorgiEngine
 		/// </summary>
 		protected virtual void DrawGizmos()
 		{
+			if (MeleeDamageAreaMode == MeleeDamageAreaModes.Existing)
+			{
+				return;
+			}
+			
 			_gizmoOffset = AreaOffset;
 
 			Gizmos.color = Color.red;
@@ -304,8 +346,9 @@ namespace MoreMountains.CorgiEngine
 		/// <summary>
 		/// On Disable we unsubscribe from our delegates
 		/// </summary>
-		protected virtual void OnDisable()
+		protected override void OnDisable()
 		{
+			base.OnDisable();
 			if (_damageOnTouch != null)
 			{
 				_damageOnTouch.OnKill -= OnKill;

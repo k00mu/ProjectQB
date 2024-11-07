@@ -9,7 +9,7 @@ namespace MoreMountains.CorgiEngine
 	/// </summary>
 	[RequireComponent(typeof(CharacterHandleWeapon))]
 	[AddComponentMenu("Corgi Engine/Character/AI/Legacy/AI Shoot on Sight")] 
-	public class AIShootOnSight : MonoBehaviour 
+	public class AIShootOnSight : CorgiMonoBehaviour 
 	{
 		[Header("Behaviour")]
 		[MMInformation("Add this component to a CorgiController2D and it will try to kill your player on sight. This component requires a CharacterHandleWeapon component, and will simply tell it to press the trigger whenever a Player crosses its sight.",MoreMountains.Tools.MMInformationAttribute.InformationType.Info,false)]

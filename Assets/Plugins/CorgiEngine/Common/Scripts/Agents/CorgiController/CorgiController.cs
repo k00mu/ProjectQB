@@ -18,7 +18,7 @@ namespace MoreMountains.CorgiEngine
 	/// It requires a Collider2D and a rigidbody to function.
 	/// </summary>
 	[AddComponentMenu("Corgi Engine/Character/Core/Corgi Controller")] 
-	public class CorgiController : MonoBehaviour 
+	public class CorgiController : CorgiMonoBehaviour 
 	{
 		/// the possible modes this controller can update on
 		public enum UpdateModes {Update, FixedUpdate}
@@ -58,21 +58,13 @@ namespace MoreMountains.CorgiEngine
 		/// the possible directions a ray can be cast
 		public enum RaycastDirections { up, down, left, right };
 		/// The possible ways a character can detach from a oneway or moving platform
-		public enum DetachmentMethods { Layer, Object }
+		public enum DetachmentMethods { Layer, Object, LayerChange }
 		/// When a character jumps from a oneway or moving platform, collisions are off for a short moment. You can decide if they should happen on a whole moving/1way platform layer basis or just with the object the character just left
 		[Tooltip("When a character jumps from a oneway or moving platform, collisions are off for a short moment. You can decide if they should happen on a whole moving/1way platform layer basis or just with the object the character just left")]
 		public DetachmentMethods DetachmentMethod = DetachmentMethods.Layer;
-        
-		[Header("Safe Mode")]
-		[MMInformation("If you set SafeSetTransform to true, abilities that modify directly the character's position, like CharacterGrip, will perform a check to make sure there's enough room to do so." +
-		               "This isn't enabled by default because this comes at a (small) performance cost and can usually be avoided by having a safe level design.", MoreMountains.Tools.MMInformationAttribute.InformationType.Info, false)]
-
-		/// whether or not to perform additional checks when setting the transform's position. Slightly more expensive in terms of performance, but also safer. 
-		[Tooltip("whether or not to perform additional checks when setting the transform's position. Slightly more expensive in terms of performance, but also safer. ")]
-		public bool SafeSetTransform = false;
-		/// if this is true, this controller will set a number of physics settings automatically on init, to ensure they're correct
-		[Tooltip("if this is true, this controller will set a number of physics settings automatically on init, to ensure they're correct")]
-		public bool AutomaticallySetPhysicsSettings = false;
+		/// When using the LayerChange detachment method, this is the layer one way and moving platforms will be moved to temporarily
+		[Tooltip("When using the LayerChange detachment method, this is the layer one way and moving platforms will be moved to temporarily")]
+		public MMLayer DetachmentLayer;
 
 		/// gives you the object the character is standing on
 		[Tooltip("gives you the object the character is standing on")]
@@ -87,11 +79,11 @@ namespace MoreMountains.CorgiEngine
 		/// the current speed of the character
 		public Vector2 Speed { get{ return _speed; } }
 		/// the world speed of the character
-		public Vector2 WorldSpeed { get { return _worldSpeed; } }
+		public virtual Vector2 WorldSpeed { get { return _worldSpeed; } }
 		/// the value of the forces applied at one point in time 
-		public Vector2 ForcesApplied { get; protected set; }
+		public virtual Vector2 ForcesApplied { get; protected set; }
 		/// the wall we're currently colliding with
-		public GameObject CurrentWallCollider { get; protected set; }
+		public virtual GameObject CurrentWallCollider { get; protected set; }
 
 		[Header("Raycasting")]
 		[MMInformation(
@@ -113,6 +105,13 @@ namespace MoreMountains.CorgiEngine
 		/// a small value added to all raycasts to accomodate for edge cases	
 		[Tooltip("a small value added to all vertical raycasts to accomodate for edge cases")]
 		public float RayOffsetVertical = 0.05f;
+		/// an extra length you an add when casting rays horizontally
+		[Tooltip("an extra length you an add when casting rays horizontally")]
+		public float RayExtraLengthHorizontal = 0f;
+		/// an extra length you an add when casting rays vertically
+		[Tooltip("an extra length you an add when casting rays vertically")]
+		public float RayExtraLengthVertical = 0f;
+		
 		/// by default, the length of the raycasts used to get back to normal size will be auto generated based on your character's normal/standing height, but here you can specify a different value
 		[Tooltip("by default, the length of the raycasts used to get back to normal size will be auto generated based on your character's normal/standing height, but here you can specify a different value")]
 		public float CrouchedRaycastLengthMultiplier = 1f;
@@ -122,16 +121,13 @@ namespace MoreMountains.CorgiEngine
 		/// the maximum length of the ray used to detect the distance to the ground
 		[Tooltip("the maximum length of the ray used to detect the distance to the ground")]
 		public float DistanceToTheGroundRayMaximumLength = 100f;
-		/// if this is true, an extra boxcast will be performed to prevent going through a platform
-		[Tooltip("if this is true, an extra boxcast will be performed to prevent going through a platform")]
-		public bool PerformSafetyBoxcast = false;
 		/// a multiplier to apply to vertical downward raycasts while on a moving platform (longer == more stable movement on platforms)
 		[Tooltip("a multiplier to apply to vertical downward raycasts while on a moving platform (longer == more stable movement on platforms)")]
 		public float OnMovingPlatformRaycastLengthMultiplier = 2f;
 		/// an offset to apply vertically to the origin of the controller's raycasts that will have an impact on obstacle detection. Tweak this to adapt to your character's and obstacle's size.
 		[Tooltip("an offset to apply vertically to the origin of the controller's raycasts that will have an impact on obstacle detection. Tweak this to adapt to your character's and obstacle's size")]
 		public float ObstacleHeightTolerance = 0.05f;
-
+		
 		[Header("Stickiness")]
 		[MMInformation("Here you can define whether or not you want your character stick to slopes when walking down them, and how long the raycast handling that should be (0 means automatic length).",MoreMountains.Tools.MMInformationAttribute.InformationType.Info,false)]
 
@@ -153,19 +149,47 @@ namespace MoreMountains.CorgiEngine
 		[Header("Safety")]
 		[MMInformation("Here you can authorize your controller to start rotated. This will change its gravity direction. It's safer to leave this safety on and use a CharacterGravity ability instead.",MoreMountains.Tools.MMInformationAttribute.InformationType.Info,false)]
 
+		/// whether or not to perform additional checks when setting the transform's position (typically done by abilities like CharacterGrip). Slightly more expensive in terms of performance, but also safer. 
+		[Tooltip("whether or not to perform additional checks when setting the transform's position (typically done by abilities like CharacterGrip). Slightly more expensive in terms of performance, but also safer. ")]
+		public bool SafeSetTransform = false;
+		/// if this is true, this controller will set a number of physics settings automatically on init, to ensure they're correct
+		[Tooltip("if this is true, this controller will set a number of physics settings automatically on init, to ensure they're correct")]
+		public bool AutomaticallySetPhysicsSettings = true;
+		
 		/// if this is true, gravity ability settings will be automatically set. It's recommended to set that to true.
 		[Tooltip("if this is true, gravity ability settings will be automatically set. It's recommended to set that to true.")]
 		public bool AutomaticGravitySettings = true;
+		
+		
+		/// if this is true, the controller will perform an extra boxcast before authorizing movement, from the previous place to the next.
+		/// If an obstacle is found between the two, movement will be prevented, and extraction will be attempted
+		/// In most contexts this can remain false, but if you experience characters going through platforms, turn it on 
+		[Tooltip("if this is true, the controller will perform an extra boxcast before authorizing movement, from the previous place to the next. " +
+		         "If an obstacle is found between the two, movement will be prevented, and extraction will be attempted. " +
+		         "In most contexts this can remain false, but if you experience characters going through platforms, turn it on")]
+		public bool PerformSafetyBoxcast = false;
+		/// whether or not to only perform the safety boxcast check in the air
+		[Tooltip("whether or not to only perform the safety boxcast check in the air")]
+		[MMCondition("PerformSafetyBoxcast", true)]
+		public bool SafetyBoxcastInAirOnly = true;
+		/// the ratio to apply to the Character's size when boxcasting. You'll want it to be always smaller than the actual bounds. 0.8, or 0.5 are good default values in most contexts
+		[Tooltip("the ratio to apply to the Character's size when boxcasting. You'll want it to be always smaller than the actual bounds. 0.8, or 0.5 are good default values in most contexts")]
+		[MMCondition("PerformSafetyBoxcast", true)]
+		public Vector2 SafetyBoxcastSizeRatio = new Vector2(0.8f, 0.8f);
+		/// if an obstacle is found, extraction will be attempted, and the controller will move back along its last movement line, trying to find a safe space to put the character.
+		/// This defines the distance of each of these moves. Keep it small, and consistent with your character's size and speed
+		[Tooltip("if an obstacle is found, extraction will be attempted, and the controller will move back along its last movement line, trying to find a safe space to put the character. " +
+		         "This defines the distance of each of these moves. Keep it small, and consistent with your character's size and speed")]
+		[MMCondition("PerformSafetyBoxcast", true)]
+		public float ExtractionIncrement = 0.05f;
+		/// The amount of times the controller should try to extract from a potential non safe space
+		[Tooltip("The amount of times the controller should try to extract from a potential non safe space")]
+		[MMCondition("PerformSafetyBoxcast", true)]
+		public int MaxExtractionsIterations = 10;
 
-		public Vector3 ColliderSize {get
-		{
-			return Vector3.Scale(transform.localScale, _boxCollider.size);
-		}}
-
-		public Vector3 ColliderCenterPosition {get
-		{
-			return _boxCollider.bounds.center;
-		}}
+		public Vector3 ColliderSize => Vector3.Scale(transform.localScale, _boxCollider.size);
+		public Vector2 ColliderOffset => _boxCollider.offset;
+		public Vector3 ColliderCenterPosition => _boxCollider.bounds.center;
 
 		public virtual Vector3 ColliderBottomPosition { get
 		{
@@ -200,9 +224,9 @@ namespace MoreMountains.CorgiEngine
 		}}
 		
 		/// Is gravity active? 
-		public bool IsGravityActive { get { return _gravityActive; } }
-		public virtual float DeltaTime { get { return _update ? Time.deltaTime : Time.fixedDeltaTime;  } }
-		public float Friction { get { return _friction; } }
+		public bool IsGravityActive => _gravityActive; 
+		public virtual float DeltaTime => _update ? Time.deltaTime : Time.fixedDeltaTime;  
+		public float Friction => _friction; 
 		public SurfaceModifier CurrentSurfaceModifier { get; set; }
 		public GameObject[] StandingOnArray { get; set; }
 
@@ -305,7 +329,8 @@ namespace MoreMountains.CorgiEngine
 		protected LayerMask _raysBelowLayerMaskPlatformsWithoutOneWay;
 		protected LayerMask _raysBelowLayerMaskPlatformsWithoutMidHeight;
 		protected int _savedBelowLayer;
-		protected MMPathMovement _movingPlatform=null;
+		protected MMPathMovement _movingPlatform = null;
+		protected MMPathMovement _pusherPlatform = null;
 		protected float _movingPlatformCurrentGravity;
 		protected bool _gravityActive=true;
 		protected Collider2D _ignoredCollider = null;
@@ -363,6 +388,7 @@ namespace MoreMountains.CorgiEngine
 
 		protected List<RaycastHit2D> _contactList;
 		protected bool _shouldComputeNewSpeed = false;
+		protected Vector2 _safetyExtractionSize = Vector2.zero;
 
 		/// <summary>
 		/// initialization
@@ -392,7 +418,7 @@ namespace MoreMountains.CorgiEngine
 			State = new CorgiControllerState();
 
 			// we add the edge collider platform and moving platform masks to our initial platform mask so they can be walked on	
-			_platformMaskSave = PlatformMask;	
+			CachePlatformMask();
 			PlatformMask |= OneWayPlatformMask;
 			PlatformMask |= MovingPlatformMask;
 			PlatformMask |= MovingOneWayPlatformMask;
@@ -423,8 +449,13 @@ namespace MoreMountains.CorgiEngine
 				Physics2D.queriesHitTriggers = true;
 				Physics2D.queriesStartInColliders = true;
 				Physics2D.callbacksOnDisable = true;
-				Physics2D.reuseCollisionCallbacks = false;
-				Physics2D.autoSyncTransforms = true;
+				Physics2D.reuseCollisionCallbacks = true;
+				Physics2D.autoSyncTransforms = false;
+
+				if (PlatformMask.MMContains(this.gameObject.layer))
+				{
+					Physics2D.queriesStartInColliders = false;
+				}
 			}
 		}
 
@@ -516,6 +547,14 @@ namespace MoreMountains.CorgiEngine
 		}
 
 		/// <summary>
+		/// A method you can use to cache the PlatformMask should you change it
+		/// </summary>
+		public virtual void CachePlatformMask()
+		{
+			_platformMaskSave = PlatformMask;	
+		}
+
+		/// <summary>
 		/// On FixedUpdate we run our routine if needed 
 		/// </summary>
 		protected virtual void FixedUpdate()
@@ -561,7 +600,8 @@ namespace MoreMountains.CorgiEngine
 
 			// we initialize our rays
 			SetRaysParameters();
-			HandleMovingPlatforms();
+			HandleMovingPlatforms(_movingPlatform);
+			HandleMovingPlatforms(_pusherPlatform, true);
 
 			// we store our current speed for use in moving platforms mostly
 			ForcesApplied = _speed;
@@ -645,16 +685,28 @@ namespace MoreMountains.CorgiEngine
 			} else if (_externalForce.x > _movementDirectionThreshold)
 			{
 				_movementDirection = 1;
-			}              
+			}
 
-			if (_movingPlatform != null)
+			ApplyMovingPlatformMovementDirection(_movingPlatform);
+			ApplyMovingPlatformMovementDirection(_pusherPlatform);
+			
+			_storedMovementDirection = _movementDirection;                        
+		}
+
+		public virtual void SetPusherPlatform(MMPathMovement newPusherPlatform)
+		{
+			_pusherPlatform = newPusherPlatform;
+		}
+
+		protected virtual void ApplyMovingPlatformMovementDirection(MMPathMovement movingPlatform)
+		{
+			if (movingPlatform != null)
 			{
-				if (Mathf.Abs(_movingPlatform.CurrentSpeed.x) > Mathf.Abs(_speed.x))
+				if (Mathf.Abs(movingPlatform.CurrentSpeed.x) > Mathf.Abs(_speed.x))
 				{
-					_movementDirection = Mathf.Sign(_movingPlatform.CurrentSpeed.x);
+					_movementDirection = Mathf.Sign(movingPlatform.CurrentSpeed.x);
 				}
 			}
-			_storedMovementDirection = _movementDirection;                        
 		}
 
 		/// <summary>
@@ -662,21 +714,53 @@ namespace MoreMountains.CorgiEngine
 		/// </summary>
 		protected virtual void MoveTransform()
 		{
-			if (PerformSafetyBoxcast)
-			{
-				_stickRaycast = MMDebug.BoxCast(_boundsCenter, Bounds, Vector2.Angle(transform.up, Vector2.up), _newPosition.normalized, _newPosition.magnitude, PlatformMask, Color.red, true);
-				if (_stickRaycast)
-				{
-					if (Mathf.Abs(_stickRaycast.distance - _newPosition.magnitude) < 0.0002f)
-					{
-						_newPosition = Vector2.zero;
-						return;
-					}
-				}
-			}            
-
 			// we move our transform to its next position
+			RunSafetyBoxcast();
+			
 			_transform.Translate(_newPosition, Space.Self);
+		}
+
+		/// <summary>
+		/// Returns true if a safety extraction is required, false otherwise
+		/// </summary>
+		/// <returns></returns>
+		protected virtual void RunSafetyBoxcast()
+		{
+			if (!PerformSafetyBoxcast)
+			{
+				return;
+			}
+
+			if (SafetyBoxcastInAirOnly && !State.IsGrounded)
+			{
+				return;
+			}
+
+			_safetyExtractionSize.x = Bounds.x * SafetyBoxcastSizeRatio.x - RayOffsetHorizontal;
+			_safetyExtractionSize.y = Bounds.y * SafetyBoxcastSizeRatio.y - RayOffsetVertical;
+			_stickRaycast = MMDebug.BoxCast(_boundsCenter, _safetyExtractionSize, Vector2.Angle(transform.up, Vector2.up), _newPosition.normalized, _newPosition.magnitude, 
+				PlatformMask & ~OneWayPlatformMask & ~MovingOneWayPlatformMask, Color.yellow, true);
+
+			if (_stickRaycast)
+			{
+				int i = 1;
+				bool extractionFound = false;
+
+				while (i < MaxExtractionsIterations && !extractionFound)
+				{
+					_newPosition = _newPosition.normalized * (_stickRaycast.distance - ExtractionIncrement);
+					_safetyExtractionSize.x = Bounds.x - RayOffsetHorizontal;
+					_safetyExtractionSize.y = Bounds.y - RayOffsetVertical;
+					_stickRaycast = MMDebug.BoxCast(_boundsCenter, _safetyExtractionSize, Vector2.Angle(transform.up, Vector2.up), _newPosition.normalized, _newPosition.magnitude, 
+						PlatformMask & ~OneWayPlatformMask & ~MovingOneWayPlatformMask, Color.yellow, true);
+					if (!_stickRaycast)
+					{
+						extractionFound = true;
+					}
+					i++;
+				}
+				
+			}
 		}
 
 		/// <summary>
@@ -693,32 +777,26 @@ namespace MoreMountains.CorgiEngine
 			{
 				_currentGravity = _currentGravity * Parameters.FallMultiplier;
 			}
-
-
 			if (_gravityActive)
 			{
-				_speed.y += (_currentGravity + _movingPlatformCurrentGravity) * DeltaTime;
-			}
-
-			if (_fallSlowFactor!=0)
-			{
-				_speed.y *= _fallSlowFactor;
+				float fallSlowFactor = (_fallSlowFactor != 0) ? _fallSlowFactor : 1f;
+				_speed.y += (_currentGravity + _movingPlatformCurrentGravity) * fallSlowFactor * DeltaTime;
 			}
 		}
 
 		/// <summary>
 		/// If the CorgiController is standing on a moving platform, we match its speed
 		/// </summary>
-		protected virtual void HandleMovingPlatforms()
+		protected virtual void HandleMovingPlatforms(MMPathMovement movingPlatform, bool pushingPlatform = false)
 		{
-			if (_movingPlatform != null)			
+			if ((movingPlatform != null) && (movingPlatform.enabled))			
 			{
-				if (!float.IsNaN(_movingPlatform.CurrentSpeed.x) && !float.IsNaN(_movingPlatform.CurrentSpeed.y) && !float.IsNaN(_movingPlatform.CurrentSpeed.z))
+				if (!float.IsNaN(movingPlatform.CurrentSpeed.x) && !float.IsNaN(movingPlatform.CurrentSpeed.y) && !float.IsNaN(movingPlatform.CurrentSpeed.z))
 				{
-					_transform.Translate(this.transform.rotation * _movingPlatform.CurrentSpeed * DeltaTime);
+					_transform.Translate(this.transform.rotation * movingPlatform.CurrentSpeed * DeltaTime);
 				}
 
-				if ( (Time.timeScale == 0) || float.IsNaN(_movingPlatform.CurrentSpeed.x) || float.IsNaN(_movingPlatform.CurrentSpeed.y) || float.IsNaN(_movingPlatform.CurrentSpeed.z) )
+				if ( (Time.timeScale == 0) || float.IsNaN(movingPlatform.CurrentSpeed.x) || float.IsNaN(movingPlatform.CurrentSpeed.y) || float.IsNaN(movingPlatform.CurrentSpeed.z) )
 				{
 					return;
 				}
@@ -733,13 +811,13 @@ namespace MoreMountains.CorgiEngine
 					return;
 				}
 
-				State.OnAMovingPlatform = true;
-
-				GravityActive(false);
-
-				_movingPlatformCurrentGravity = _movingPlatformsGravity;
-
-				_newPosition.y = _movingPlatform.CurrentSpeed.y * DeltaTime;		
+				if (!pushingPlatform)
+				{
+					State.OnAMovingPlatform = true;
+					GravityActive(false);
+					_movingPlatformCurrentGravity = _movingPlatformsGravity;
+					_newPosition.y = movingPlatform.CurrentSpeed.y * DeltaTime;	
+				}
 
 				_speed = - _newPosition / DeltaTime;	
 				_speed.x = -_speed.x;
@@ -759,7 +837,7 @@ namespace MoreMountains.CorgiEngine
 			}
 			GravityActive(true);
 			State.OnAMovingPlatform=false;
-			_movingPlatform=null;
+			_movingPlatform = null;
 			_movingPlatformCurrentGravity=0;
 		}
 
@@ -887,7 +965,7 @@ namespace MoreMountains.CorgiEngine
 			_horizontalRayCastToTop = _horizontalRayCastToTop - (Vector2)transform.up * ObstacleHeightTolerance;
 
 			// we determine the length of our rays
-			float horizontalRayLength = Mathf.Abs(_speed.x * DeltaTime) + _boundsWidth / 2 + RayOffsetHorizontal * 2;
+			float horizontalRayLength = Mathf.Abs(_speed.x * DeltaTime) + _boundsWidth / 2 + RayOffsetHorizontal * 2 + RayExtraLengthHorizontal;
 
 			// we resize our storage if needed
 			if (_sideHitsStorage.Length != NumberOfHorizontalRays)
@@ -1007,7 +1085,7 @@ namespace MoreMountains.CorgiEngine
 				return;
 			}				
 
-			float rayLength = (_boundsHeight / 2) + RayOffsetVertical; 	
+			float rayLength = (_boundsHeight / 2) + RayOffsetVertical + RayExtraLengthVertical; 	
 
 			if (State.OnAMovingPlatform)
 			{
@@ -1112,6 +1190,7 @@ namespace MoreMountains.CorgiEngine
 
 					hitConnected = true;
 					State.BelowSlopeAngle = Vector2.Angle( _belowHitsStorage[i].normal, transform.up );
+					State.BlowSlopeNormal = _belowHitsStorage[i].normal;
 					State.BelowSlopeAngleAbsolute = MMMaths.AngleBetween(_belowHitsStorage[i].normal, Vector2.up);
 					
 					StandingOnArray[i] = _belowHitsStorage[i].collider.gameObject;
@@ -1199,7 +1278,7 @@ namespace MoreMountains.CorgiEngine
 				_movingPlatformTest = _belowHitsStorage[smallestDistanceIndex].collider.gameObject.MMGetComponentNoAlloc<MMPathMovement>();
 				if (_movingPlatformTest != null && State.IsGrounded)
 				{
-					_movingPlatform=_movingPlatformTest.GetComponent<MMPathMovement>();
+					_movingPlatform = _movingPlatformTest.GetComponent<MMPathMovement>();
 				}
 				else
 				{
@@ -1225,10 +1304,7 @@ namespace MoreMountains.CorgiEngine
 		/// If we're in the air and moving up, we cast rays above the character's head to check for collisions
 		/// </summary>
 		protected virtual void CastRaysAbove()
-		{			
-			/*if (_newPosition.y<0)
-				return;*/
-
+		{
 			float rayLength = State.IsGrounded ? RayOffsetVertical : _newPosition.y;
 			rayLength += _boundsHeight / 2;
 
@@ -1587,6 +1663,8 @@ namespace MoreMountains.CorgiEngine
 			PlatformMask=0;
 		}
 
+		protected GameObject _detachmentObject;
+
 		/// <summary>
 		/// Disables the collisions with one way platforms for the specified duration
 		/// </summary>
@@ -1613,6 +1691,13 @@ namespace MoreMountains.CorgiEngine
 					// we turn clear it
 					SetIgnoreCollider(null);
 					break;
+				case DetachmentMethods.LayerChange:
+					_detachmentObject = StandingOnCollider.gameObject;
+					int saveLayer = _detachmentObject.layer;
+					_detachmentObject.layer = DetachmentLayer.LayerIndex;
+					yield return new WaitForSeconds(duration);
+					_detachmentObject.layer = saveLayer;
+					break;
 			}
 		}
 
@@ -1622,23 +1707,28 @@ namespace MoreMountains.CorgiEngine
 		/// <param name="duration">the duration for which the collisions must be disabled</param>
 		public virtual IEnumerator DisableCollisionsWithMovingPlatforms(float duration)
 		{
-			if (DetachmentMethod == DetachmentMethods.Layer)
+			switch (DetachmentMethod)
 			{
-				// we turn the collisions off
-				CollisionsOffWithMovingPlatformsLayer ();
-				// we wait for a few seconds
-				yield return new WaitForSeconds (duration);
-				// we turn them on again
-				CollisionsOn ();
-			}
-			else
-			{
-				// we set our current platform collider as ignored
-				SetIgnoreCollider (StandingOnCollider);
-				// we wait for a few seconds
-				yield return new WaitForSeconds (duration);
-				// we turn clear it
-				SetIgnoreCollider (null);				
+				case DetachmentMethods.Layer:
+					CollisionsOffWithMovingPlatformsLayer ();
+					yield return new WaitForSeconds (duration);
+					CollisionsOn ();
+					break;
+				case DetachmentMethods.Object:
+					// we set our current platform collider as ignored
+					SetIgnoreCollider (StandingOnCollider);
+					// we wait for a few seconds
+					yield return new WaitForSeconds (duration);
+					// we turn clear it
+					SetIgnoreCollider (null);	
+					break;
+				case DetachmentMethods.LayerChange:
+					_detachmentObject = StandingOnCollider.gameObject;
+					int saveLayer = _detachmentObject.layer;
+					_detachmentObject.layer = DetachmentLayer.LayerIndex;
+					yield return new WaitForSeconds(duration);
+					_detachmentObject.layer = saveLayer;
+					break;
 			}
 		}
 
@@ -1723,6 +1813,7 @@ namespace MoreMountains.CorgiEngine
 
 		/// <summary>
 		/// Resizes the collider to the new size set in parameters
+		/// This is temporary - typically when crouching - and will be reverted by ResetColliderSize()
 		/// </summary>
 		/// <param name="newSize">New size.</param>
 		public virtual void ResizeCollider(Vector2 newSize) 
@@ -1733,7 +1824,19 @@ namespace MoreMountains.CorgiEngine
 			_boxCollider.offset = newYOffset * Vector3.up;
 			SetRaysParameters();
 			State.ColliderResized = true;
+		}
 
+		/// <summary>
+		/// Resizes the collider to the new size set in parameters, won't be reverted by ResetColliderSize()
+		/// </summary>
+		/// <param name="newSize"></param>
+		public virtual void ResizeColliderPermanently(Vector2 newSize)
+		{
+			ResizeCollider(newSize);
+			_originalColliderSize = _boxCollider.size;
+			_originalColliderOffset = _boxCollider.offset;
+			SetRaysParameters();
+			State.ColliderResized = false;
 		}
 
 		/// <summary>
@@ -1761,10 +1864,10 @@ namespace MoreMountains.CorgiEngine
 			float headCheckDistance = _originalColliderSize.y * transform.localScale.y * CrouchedRaycastLengthMultiplier;
 
 			// we cast two rays above our character to check for obstacles. If we didn't hit anything, we can go back to original size, otherwise we can't
-			_originalSizeRaycastOrigin = _boundsTopLeftCorner + (Vector2)transform.up * _smallValue;
+			_originalSizeRaycastOrigin = _boundsBottomLeftCorner + (Vector2)transform.up * _smallValue;
 			bool headCheckLeft = MMDebug.RayCast(_originalSizeRaycastOrigin, transform.up, headCheckDistance, PlatformMask - OneWayPlatformMask, MMColors.LightSlateGray, true);
 
-			_originalSizeRaycastOrigin = _boundsTopRightCorner + (Vector2)transform.up * _smallValue;
+			_originalSizeRaycastOrigin = _boundsBottomRightCorner + (Vector2)transform.up * _smallValue;
 			bool headCheckRight = MMDebug.RayCast(_originalSizeRaycastOrigin, transform.up, headCheckDistance, PlatformMask - OneWayPlatformMask, MMColors.LightSlateGray, true);
 			if (headCheckLeft || headCheckRight)
 			{

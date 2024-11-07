@@ -13,10 +13,10 @@ namespace MoreMountains.CorgiEngine
 	{		
 		/// This method is only used to display a helpbox text at the beginning of the ability's inspector
 		public override string HelpBoxText() { return "This component allows your character to dash. Here you can define the distance the dash should cover, " +
-		                                              "how much force to apply during the dash (which impacts its duration), whether forces should be reset on dash exit (otherwise inertia will apply)." +
-		                                              "Then you can define how to pick the dash's direction, whether or not the character should be automatically flipped to match the dash's direction, and " +
-		                                              "whether or not you want to correct the trajectory to prevent grounded characters to not dash if the input was slightly wrong." +
-		                                              "And finally you can tweak the cooldown between the end of a dash and the start of the next one."; }
+													  "how much force to apply during the dash (which impacts its duration), whether forces should be reset on dash exit (otherwise inertia will apply)." +
+													  "Then you can define how to pick the dash's direction, whether or not the character should be automatically flipped to match the dash's direction, and " +
+													  "whether or not you want to correct the trajectory to prevent grounded characters to not dash if the input was slightly wrong." +
+													  "And finally you can tweak the cooldown between the end of a dash and the start of the next one."; }
 
 		[Header("Dash")]
 
@@ -32,6 +32,9 @@ namespace MoreMountains.CorgiEngine
 		/// if this is true, position will be forced on exit to match an exact distance
 		[Tooltip("if this is true, position will be forced on exit to match an exact distance")]
 		public bool ForceExactDistance = false;
+		/// if this is true, the character's controller will detach from moving platforms when dash starts
+		[Tooltip("if this is true, the character's controller will detach from moving platforms when dash starts")]
+		public bool DetachFromMovingPlatformsOnDash = false;
 
 		[Header("Direction")]
 
@@ -47,6 +50,9 @@ namespace MoreMountains.CorgiEngine
 		/// if this is true, will prevent the character from dashing into the ground when already grounded
 		[Tooltip("if this is true, will prevent the character from dashing into the ground when already grounded")]
 		public bool AutoCorrectTrajectory = true;
+		/// the direction threshold over which to compare direction when authorizing the dash. You'll likely want to keep it fairly close to zero 
+		[Tooltip("the direction threshold over which to compare direction when authorizing the dash. You'll likely want to keep it fairly close to zero")] 
+		public float DashDirectionMinThreshold = 0.1f;
 
 		public enum SuccessiveDashResetMethods { Grounded, Time }
 
@@ -95,6 +101,7 @@ namespace MoreMountains.CorgiEngine
 		protected float _lastDashAt = 0f;
 		protected float _averageDistancePerFrame;
 		protected int _startFrame;
+		protected Bounds _bounds;
 
 		// animation parameters
 		protected const string _dashingAnimationParameterName = "Dashing";
@@ -228,10 +235,13 @@ namespace MoreMountains.CorgiEngine
 		{
 			// if the Dash action is enabled in the permissions, we continue, if not we do nothing
 			if (!AbilityAuthorized
-			    || (_condition.CurrentState != CharacterStates.CharacterConditions.Normal)
-			    || (_movement.CurrentState == CharacterStates.MovementStates.LedgeHanging)
-			    || (_movement.CurrentState == CharacterStates.MovementStates.Gripping))
+				|| (_condition.CurrentState != CharacterStates.CharacterConditions.Normal)
+				|| (_movement.CurrentState == CharacterStates.MovementStates.LedgeHanging)
+				|| (_movement.CurrentState == CharacterStates.MovementStates.Gripping))
+			{
 				return false;
+			}
+			
 
 			// If the user presses the dash button and is not aiming down
 			if (_characterDive != null)
@@ -247,12 +257,17 @@ namespace MoreMountains.CorgiEngine
 
 			return true;
 		}
-        
+		
 		/// <summary>
 		/// initializes all parameters prior to a dash and triggers the pre dash feedbacks
 		/// </summary>
 		public virtual void InitiateDash()
 		{
+			if (DetachFromMovingPlatformsOnDash)
+			{
+				_controller.DetachFromMovingPlatform();
+			}
+			
 			// we set its dashing state to true
 			_movement.ChangeState(CharacterStates.MovementStates.Dashing);
 
@@ -303,12 +318,12 @@ namespace MoreMountains.CorgiEngine
 				Aim.PrimaryMovement = _character.LinkedInputManager.PrimaryMovement;
 				Aim.SecondaryMovement = _character.LinkedInputManager.SecondaryMovement;
 			}
-            
+			
 			Aim.CurrentPosition = _characterTransform.position;
 			_dashDirection = Aim.GetCurrentAim();
 
 			CheckAutoCorrectTrajectory();
-            
+			
 			if (_dashDirection.magnitude < MinimumInputThreshold)
 			{
 				_dashDirection = _character.IsFacingRight ? Vector2.right : Vector2.left;
@@ -352,25 +367,25 @@ namespace MoreMountains.CorgiEngine
 		{
 			// if the character is not in a position where it can move freely, we do nothing.
 			if ( !AbilityAuthorized
-			     || (_condition.CurrentState != CharacterStates.CharacterConditions.Normal))
+				 || (_condition.CurrentState != CharacterStates.CharacterConditions.Normal))
 			{
 				yield break;
-			}            
+			}
 
 			// we keep dashing until we've reached our target distance or until we get interrupted
 			while (_distanceTraveled < DashDistance 
-			       && _shouldKeepDashing 
-			       && !_controller.State.TouchingLevelBounds
-			       && TestForExactDistance()
-			       && _movement.CurrentState == CharacterStates.MovementStates.Dashing)
+				   && _shouldKeepDashing 
+				   && TestForLevelBounds()
+				   && TestForExactDistance()
+				   && _movement.CurrentState == CharacterStates.MovementStates.Dashing)
 			{
 				_distanceTraveled = Vector3.Distance(_initialPosition,_characterTransform.position);
 
 				// if we collide with something on our left or right (wall, slope), we stop dashing, otherwise we apply horizontal force
-				if ( (_controller.State.IsCollidingLeft && _dashDirection.x < 0f)
-				     || (_controller.State.IsCollidingRight && _dashDirection.x > 0f)
-				     || (_controller.State.IsCollidingAbove && _dashDirection.y > 0f)
-				     || (_controller.State.IsCollidingBelow && _dashDirection.y < 0f))
+				if ( (_controller.State.IsCollidingLeft && _dashDirection.x < -DashDirectionMinThreshold)
+					 || (_controller.State.IsCollidingRight && _dashDirection.x > DashDirectionMinThreshold)
+					 || (_controller.State.IsCollidingAbove && _dashDirection.y > DashDirectionMinThreshold)
+					 || (_controller.State.IsCollidingBelow && _dashDirection.y < -DashDirectionMinThreshold))
 				{
 					_shouldKeepDashing = false;
 					_controller.SetForce (Vector2.zero);
@@ -384,6 +399,23 @@ namespace MoreMountains.CorgiEngine
 			}
 
 			StopDash();				
+		}
+
+		/// <summary>
+		/// If the character is hitting level bounds, we check if they're "in front" of us or "behind" us, and whether it should prevent the dash or not
+		/// </summary>
+		/// <returns></returns>
+		protected virtual bool TestForLevelBounds()
+		{
+			if (!_controller.State.TouchingLevelBounds)
+			{
+				return true;
+			}
+			else
+			{
+				_bounds = LevelManager.Instance.LevelBounds;
+				return (_character.IsFacingRight) ? (_character.transform.position.x < _bounds.center.x) : (_character.transform.position.x > _bounds.center.x);
+			}
 		}
 
 		/// <summary>
@@ -436,7 +468,7 @@ namespace MoreMountains.CorgiEngine
 			{
 				_health.DamageEnabled();
 			}
-            
+			
 			// we play our exit sound
 			StopStartFeedbacks();
 			MMCharacterEvent.Trigger(_character, MMCharacterEventTypes.Dash, MMCharacterEvent.Moments.End);

@@ -148,21 +148,35 @@ namespace MoreMountains.CorgiEngine
 		/// the settings to use when loading the scene in additive mode
 		[Tooltip("the settings to use when loading the scene in additive mode")]
 		[MMEnumCondition("LoadingSceneMode", (int)MMLoadScene.LoadingSceneModes.MMAdditiveSceneLoadingManager)]
-		public MMAdditiveSceneLoadingManagerSettings AdditiveLoadingSettings; 
+		public MMAdditiveSceneLoadingManagerSettings AdditiveLoadingSettings;
+
+		[Header("Feedbacks")] 
+		/// if this is true, an event will be triggered on player instantiation to set the range target of all feedbacks to it
+		[Tooltip("if this is true, an event will be triggered on player instantiation to set the range target of all feedbacks to it")]
+		public bool SetPlayerAsFeedbackRangeCenter = false;
         
 		/// the elapsed time since the start of the level
-		public TimeSpan RunningTime { get { return DateTime.UtcNow - _started ;}}
-		public CameraController LevelCameraController { get; set; }
+		public virtual TimeSpan RunningTime { get { return DateTime.UtcNow - _started ;}}
+		public virtual CameraController LevelCameraController { get; set; }
 
 		// private stuff
-		public List<Character> Players { get; protected set; }
-		public List<CheckPoint> Checkpoints { get; protected set; }
+		public virtual List<Character> Players { get; protected set; }
+		public virtual List<CheckPoint> Checkpoints { get; protected set; }
 		protected DateTime _started;
 		protected int _savedPoints;
 		protected string _nextLevel = null;
 		protected BoxCollider _collider;
 		protected BoxCollider2D _collider2D;
 		protected Bounds _originalBounds;
+		
+		/// <summary>
+		/// Statics initialization to support enter play modes
+		/// </summary>
+		[RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]
+		protected static void InitializeStatics()
+		{
+			_instance = null;
+		}
 
 		/// <summary>
 		/// On awake, instantiates the player
@@ -255,9 +269,14 @@ namespace MoreMountains.CorgiEngine
 			CheckpointAssignment ();
 
 			// we trigger a level start event
-			CorgiEngineEvent.Trigger(CorgiEngineEventTypes.LevelStart);
+			CorgiEngineEvent.Trigger(CorgiEngineEventTypes.LevelStart, Players[0]);
 			MMGameEvent.Trigger("Load");
-            
+
+			if (SetPlayerAsFeedbackRangeCenter)
+			{
+				MMSetFeedbackRangeCenterEvent.Trigger(Players[0].transform);
+			}
+			
 			MMCameraEvent.Trigger(MMCameraEventTypes.SetConfiner, null, BoundsCollider, BoundsCollider2D);
 			MMCameraEvent.Trigger(MMCameraEventTypes.SetTargetCharacter, Players[0]);
 			MMCameraEvent.Trigger(MMCameraEventTypes.StartFollowing);
@@ -323,7 +342,7 @@ namespace MoreMountains.CorgiEngine
 		protected virtual void CheckpointAssignment()
 		{
 			// we get all respawnable objects in the scene and attribute them to their corresponding checkpoint
-			IEnumerable<Respawnable> listeners = FindObjectsOfType<MonoBehaviour>().OfType<Respawnable>();
+			IEnumerable<Respawnable> listeners = FindObjectsOfType<MonoBehaviour>(true).OfType<Respawnable>();
 			AutoRespawn autoRespawn;
 			foreach(Respawnable listener in listeners)
 			{
@@ -577,6 +596,11 @@ namespace MoreMountains.CorgiEngine
 			CorgiEngineEvent.Trigger(CorgiEngineEventTypes.LoadNextScene);
 
 			string destinationScene = (string.IsNullOrEmpty(levelName)) ? "StartScreen" : levelName;
+			LoadScene(destinationScene);
+		}
+
+		protected virtual void LoadScene(string destinationScene)
+		{
 			switch (LoadingSceneMode)
 			{
 				case MMLoadScene.LoadingSceneModes.UnityNative:
@@ -586,7 +610,7 @@ namespace MoreMountains.CorgiEngine
 					MMSceneLoadingManager.LoadScene(destinationScene, LoadingSceneName);
 					break;
 				case MMLoadScene.LoadingSceneModes.MMAdditiveSceneLoadingManager:
-					MMAdditiveSceneLoadingManager.LoadScene(levelName, AdditiveLoadingSettings);
+					MMAdditiveSceneLoadingManager.LoadScene(destinationScene, AdditiveLoadingSettings);
 					break;
 			}
 		}
@@ -596,7 +620,7 @@ namespace MoreMountains.CorgiEngine
 		/// </summary>
 		public virtual void PlayerDead(Character player)
 		{
-			Health characterHealth = player.GetComponent<Health>();
+			Health characterHealth = player.CharacterHealth;
 			if (characterHealth == null)
 			{
 				return;
@@ -616,7 +640,7 @@ namespace MoreMountains.CorgiEngine
 						CorgiEngineEvent.Trigger(CorgiEngineEventTypes.GameOver);
 						if ((GameManager.Instance.GameOverScene != null) && (GameManager.Instance.GameOverScene != ""))
 						{
-							MMSceneLoadingManager.LoadScene (GameManager.Instance.GameOverScene);
+							LoadScene (GameManager.Instance.GameOverScene);
 						}
 					}
 				}
@@ -673,7 +697,7 @@ namespace MoreMountains.CorgiEngine
 			}
 			// we trigger a respawn event
 			ResetLevelBoundsToOriginalBounds();
-			CorgiEngineEvent.Trigger(CorgiEngineEventTypes.Respawn);
+			CorgiEngineEvent.Trigger(CorgiEngineEventTypes.Respawn, Players[0]);
 		}
 
 		/// <summary>

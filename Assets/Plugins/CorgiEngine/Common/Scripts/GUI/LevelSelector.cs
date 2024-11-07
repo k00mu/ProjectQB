@@ -8,7 +8,7 @@ namespace MoreMountains.CorgiEngine
 	/// <summary>
 	/// This component allows the definition of a level that can then be accessed and loaded. Used mostly in the level map scene.
 	/// </summary>
-	public class LevelSelector : MonoBehaviour
+	public class LevelSelector : CorgiMonoBehaviour
 	{
 		/// the exact name of the target level
 		[Tooltip("the exact name of the target level")]
@@ -38,6 +38,6 @@ namespace MoreMountains.CorgiEngine
 			// we trigger an unPause event for the GameManager (and potentially other classes)
 			//CorgiEngineEvent.Trigger(CorgiEngineEventTypes.UnPause);
 			//LoadingSceneManager.LoadScene(SceneManager.GetActiveScene().name);
-		}
+		}		
 	}
 }

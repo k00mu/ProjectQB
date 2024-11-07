@@ -12,7 +12,7 @@ namespace MoreMountains.CorgiEngine
 	/// The spawn can be triggered by any script, at any time, and comes with automatic hooks
 	/// to trigger loot on damage or death
 	/// </summary>
-	public class Loot : MonoBehaviour
+	public class Loot : CorgiMonoBehaviour
 	{
 		/// the possible modes by which loot can be defined 
 		public enum LootModes { Unique, LootTable, LootTableScriptableObject }
@@ -73,8 +73,12 @@ namespace MoreMountains.CorgiEngine
 		/// the position, rotation and scale objects should spawn at
 		[Tooltip("the position, rotation and scale objects should spawn at")]
 		public MMSpawnAroundProperties SpawnProperties;
+		/// if this is true, loot will be limited to MaximumQuantity, any new loot attempt beyond that will have no outcome. If this is false, loot is unlimited and can happen forever.
+		[Tooltip("if this is true, loot will be limited to MaximumQuantity, any new loot attempt beyond that will have no outcome. If this is false, loot is unlimited and can happen forever.")]
+		public bool LimitedLootQuantity = true;
 		/// The maximum quantity of objects that can be looted from this Loot object
 		[Tooltip("The maximum quantity of objects that can be looted from this object")]
+		[MMCondition("LimitedLootQuantity", true)]
 		public int MaximumQuantity = 100;
 		/// The remaining quantity of objects that can be looted from this Loot object, displayed for debug purposes 
 		[Tooltip("The remaining quantity of objects that can be looted from this Loot object, displayed for debug purposes")]
@@ -123,6 +127,13 @@ namespace MoreMountains.CorgiEngine
 
 		public static List<MMSimpleObjectPooler> SimplePoolers = new List<MMSimpleObjectPooler>();
 		public static List<MMMultipleObjectPooler> MultiplePoolers = new List<MMMultipleObjectPooler>();
+		
+		[RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]
+		protected static void InitializeStatics()
+		{
+			SimplePoolers = new List<MMSimpleObjectPooler>();
+			MultiplePoolers = new List<MMMultipleObjectPooler>();
+		}
         
 		protected Health _health;
 		protected GameObject _objectToSpawn;
@@ -271,7 +282,7 @@ namespace MoreMountains.CorgiEngine
 			}
 			else
 			{
-				_spawnedObject = Instantiate(_objectToSpawn);    
+				_spawnedObject = Instantiate(gameObjectToSpawn);    
 			}
 		}
 
@@ -307,7 +318,7 @@ namespace MoreMountains.CorgiEngine
 			{
 				yield return MMCoroutine.WaitFor(Delay);
 			}            
-			int randomQuantity = Random.Range((int)Quantity.x, (int)Quantity.y);
+			int randomQuantity = Random.Range((int)Quantity.x, (int)Quantity.y + 1);
 			for (int i = 0; i < randomQuantity; i++)
 			{
 				SpawnOneLoot();
@@ -327,7 +338,7 @@ namespace MoreMountains.CorgiEngine
 				return;
 			}
 
-			if (RemainingQuantity <= 0)
+			if (LimitedLootQuantity && (RemainingQuantity <= 0))
 			{
 				return;
 			}
@@ -363,7 +374,10 @@ namespace MoreMountains.CorgiEngine
 				_spawnedObject.gameObject.SetActive(true);
 			}
 			_spawnedObject.SendMessage("OnInstantiate", SendMessageOptions.DontRequireReceiver);
-			RemainingQuantity--;
+			if (LimitedLootQuantity)
+			{
+				RemainingQuantity--;	
+			}
 		}
 
 		/// <summary>

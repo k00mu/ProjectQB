@@ -9,7 +9,7 @@ namespace MoreMountains.CorgiEngine
 	/// <summary>
 	/// Add this component to an object in your scene to have it act like a chest. You'll need a key operated zone to open it, and item picker(s) on it to fill its contents
 	/// </summary>
-	public class InventoryEngineChest : MonoBehaviour 
+	public class InventoryEngineChest : CorgiMonoBehaviour 
 	{
 		protected Animator _animator;
 		protected ItemPicker[] _itemPickerList;

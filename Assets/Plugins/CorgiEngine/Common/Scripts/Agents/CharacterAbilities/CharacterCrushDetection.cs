@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 using MoreMountains.Tools;
 
 namespace MoreMountains.CorgiEngine
@@ -46,7 +47,7 @@ namespace MoreMountains.CorgiEngine
 		/// the amount of damage to take per crush
 		[MMCondition("ApplyDamageWhenCrushed", true)]
 		[Tooltip("the amount of damage to take per crush")]
-		public int DamageTakenWhenCrushed = 10;
+		public float DamageTakenWhenCrushed = 10;
 		/// how long the character should flicker when crushed
 		[MMCondition("ApplyDamageWhenCrushed", true)]
 		[Tooltip("how long the character should flicker when crushed")]
@@ -55,6 +56,9 @@ namespace MoreMountains.CorgiEngine
 		[MMCondition("ApplyDamageWhenCrushed", true)]
 		[Tooltip("how long (in seconds) the character should remain invincible after a crush")]
 		public float DamageTakenInvincibilityDuration = 0.6f;
+		/// an optional list of damage types to apply when crush damage kicks in  
+		[Tooltip("an optional list of damage types to apply when crush damage kicks in")]
+		public List<TypedDamage> CrushDamageTypes;
 
 		protected bool _crushedThisFrame = false;
 		protected RaycastHit2D _hit;
@@ -145,19 +149,33 @@ namespace MoreMountains.CorgiEngine
 			{
 				return;
 			}
-			if (DieWhenCrushed && (_character.CharacterType == Character.CharacterTypes.Player))
+			if (DieWhenCrushed )
 			{
 				_character.CharacterHealth.Kill();
 			}
 			if (ApplyDamageWhenCrushed)
 			{
-				_health.Damage(DamageTakenWhenCrushed, this.gameObject, DamageTakenFlickerDuration, DamageTakenInvincibilityDuration, Vector3.up);
+				_health.Damage(DamageTakenWhenCrushed, this.gameObject, DamageTakenFlickerDuration, DamageTakenInvincibilityDuration, Vector3.up, CrushDamageTypes);
 			}
 			if (!_startFeedbackIsPlaying)
 			{
 				PlayAbilityStartFeedbacks();
 				MMCharacterEvent.Trigger(_character, MMCharacterEventTypes.Crush);
+				if (this.gameObject.activeInHierarchy)
+				{
+					StartCoroutine(DelayedStopStartFeedbacks(DamageTakenInvincibilityDuration));	
+				}
+				else
+				{
+					StopStartFeedbacks();
+				}
 			}
+		}
+
+		protected virtual IEnumerator DelayedStopStartFeedbacks(float delay)
+		{
+			yield return MMCoroutine.WaitFor(delay);
+			StopStartFeedbacks();
 		}
         
 		/// <summary>

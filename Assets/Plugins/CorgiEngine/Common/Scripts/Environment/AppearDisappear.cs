@@ -11,7 +11,7 @@ namespace MoreMountains.CorgiEngine
 	/// Add this class to an object (usually a platform but it could be anything really) to have it run on an appearing/disappearing loop, like the appearing platforms in Megaman for example.
 	/// </summary>
 	[AddComponentMenu("Corgi Engine/Environment/Appear and Disappear")]
-	public class AppearDisappear : MonoBehaviour
+	public class AppearDisappear : CorgiMonoBehaviour
 	{
 		/// the possible states this object can be in
 		public enum AppearDisappearStates { Visible, Hidden, VisibleToHidden, HiddenToVisible }

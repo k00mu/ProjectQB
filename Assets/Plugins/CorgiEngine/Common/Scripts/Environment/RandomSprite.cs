@@ -8,7 +8,7 @@ namespace MoreMountains.CorgiEngine
 	/// <summary>
 	/// This component will randomize the object's sprite renderer's sprite out of a collection
 	/// </summary>
-	public class RandomSprite : MonoBehaviour
+	public class RandomSprite : CorgiMonoBehaviour
 	{
 		/// the collection of sprite to choose from
 		[Tooltip("the collection of sprite to choose from")]

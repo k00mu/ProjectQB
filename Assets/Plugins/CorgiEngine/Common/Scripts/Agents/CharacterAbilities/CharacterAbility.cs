@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 using System.Linq;
 using MoreMountains.Tools;
 using MoreMountains.Feedbacks;
@@ -10,7 +11,7 @@ namespace MoreMountains.CorgiEngine
 	/// A class meant to be overridden that handles a character's ability. 
 	/// </summary>
 	/// 
-	public class CharacterAbility : MonoBehaviour 
+	public class CharacterAbility : CorgiMonoBehaviour 
 	{
 		/// the feedbacks to play when the ability starts
 		[Tooltip("the feedbacks to play when the ability starts")]
@@ -30,6 +31,9 @@ namespace MoreMountains.CorgiEngine
 		/// an array containing all the blocking condition states. If the Character is in one of these states and tries to trigger this ability, it won't be permitted. Useful to prevent this ability from being used while dead, for example.
 		[Tooltip("an array containing all the blocking condition states. If the Character is in one of these states and tries to trigger this ability, it won't be permitted. Useful to prevent this ability from being used while dead, for example.")]
 		public CharacterStates.CharacterConditions[] BlockingConditionStates;
+		/// an array containing all the blocking weapon states. If one of the character's weapons is in one of these states and yet the character tries to trigger this ability, it won't be permitted. Useful to prevent this ability from being used while attacking, for example.
+		[Tooltip("an array containing all the blocking weapon states. If one of the character's weapons is in one of these states and yet the character tries to trigger this ability, it won't be permitted. Useful to prevent this ability from being used while attacking, for example.")]
+		public Weapon.WeaponStates[] BlockingWeaponStates;
 
 		public virtual bool AbilityAuthorized
 		{
@@ -52,10 +56,27 @@ namespace MoreMountains.CorgiEngine
 					{
 						for (int i = 0; i < BlockingConditionStates.Length; i++)
 						{
-							if (BlockingConditionStates[i] == (_character.ConditionState.CurrentState))
+							if (BlockingConditionStates[i] == _character.ConditionState.CurrentState)
 							{
 								return false;
 							}  
+						}
+					}
+
+					if ((BlockingWeaponStates != null) && (BlockingWeaponStates.Length > 0))
+					{
+						for (int i = 0; i < BlockingWeaponStates.Length; i++)
+						{
+							foreach (CharacterHandleWeapon handleWeapon in _handleWeaponList)
+							{
+								if (handleWeapon.CurrentWeapon != null)
+								{
+									if (BlockingWeaponStates[i] == (handleWeapon.CurrentWeapon.WeaponState.CurrentState))
+									{
+										return false;
+									}
+								}
+							}
 						}
 					}
 				}
@@ -64,7 +85,7 @@ namespace MoreMountains.CorgiEngine
 		}
 		
 		/// true if the ability has already been initialized
-		public bool AbilityInitialized { get { return _abilityInitialized; } }
+		public virtual bool AbilityInitialized { get { return _abilityInitialized; } }
 
 		protected Character _character;
 		protected Transform _characterTransform;
@@ -83,6 +104,7 @@ namespace MoreMountains.CorgiEngine
 		protected float _verticalInput;
 		protected float _horizontalInput;
 		protected bool _startFeedbackIsPlaying = false;
+		protected List<CharacterHandleWeapon> _handleWeaponList;
 
 		/// This method is only used to display a helpbox text at the beginning of the ability's inspector
 		public virtual string HelpBoxText() { return ""; }
@@ -105,7 +127,8 @@ namespace MoreMountains.CorgiEngine
 			_characterHorizontalMovement = _character?.FindAbility<CharacterHorizontalMovement>();
 			_characterGravity = _character?.FindAbility<CharacterGravity> ();
 			_spriteRenderer = this.gameObject.GetComponentInParent<SpriteRenderer>();
-			_health = this.gameObject.GetComponentInParent<Health> ();
+			_health = _character.CharacterHealth;
+			_handleWeaponList = _character?.FindAbilities<CharacterHandleWeapon>();
 			BindAnimator();
 			if (_character != null)
 			{
@@ -255,7 +278,7 @@ namespace MoreMountains.CorgiEngine
 		/// <summary>
 		/// Plays the ability start sound effect
 		/// </summary>
-		protected virtual void PlayAbilityStartFeedbacks()
+		public virtual void PlayAbilityStartFeedbacks()
 		{
 			AbilityStartFeedbacks?.PlayFeedbacks(this.transform.position);
 			_startFeedbackIsPlaying = true;
@@ -274,7 +297,7 @@ namespace MoreMountains.CorgiEngine
 		/// <summary>
 		/// Plays the ability stop sound effect
 		/// </summary>
-		protected virtual void PlayAbilityStopFeedbacks()
+		public virtual void PlayAbilityStopFeedbacks()
 		{
 			AbilityStopFeedbacks?.PlayFeedbacks();
 		}

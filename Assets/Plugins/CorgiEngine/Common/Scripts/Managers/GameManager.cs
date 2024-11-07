@@ -37,7 +37,8 @@ namespace MoreMountains.CorgiEngine
 		CharacterSwitch,
 		CharacterSwap,
 		TogglePause,
-		LoadNextScene
+		LoadNextScene,
+		PauseNoMenu
 	}
 
 	/// <summary>
@@ -227,7 +228,7 @@ namespace MoreMountains.CorgiEngine
 			MMTimeScaleEvent.Trigger(MMTimeScaleMethods.For, 1f, 0f, false, 0f, true);
 			Paused = false;
 			GUIManager.Instance.RefreshPoints ();
-			PointsOfEntry.Clear ();
+			PointsOfEntry?.Clear ();
 		}	
 
 		/// <summary>
@@ -528,6 +529,10 @@ namespace MoreMountains.CorgiEngine
 				
 				case CorgiEngineEventTypes.UnPause:
 					UnPause ();
+					break;
+				
+				case CorgiEngineEventTypes.PauseNoMenu:
+					Pause(PauseMethods.NoPauseMenu);
 					break;
 			}
 		}

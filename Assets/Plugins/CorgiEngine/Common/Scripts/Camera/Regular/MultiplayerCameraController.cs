@@ -10,7 +10,7 @@ namespace MoreMountains.CorgiEngine
 	/// </summary>
 	[RequireComponent(typeof(Camera))]
 	[AddComponentMenu("Corgi Engine/Camera/Multiplayer Camera Controller")]
-	public class MultiplayerCameraController : MonoBehaviour, MMEventListener<CorgiEngineEvent>
+	public class MultiplayerCameraController : CorgiMonoBehaviour, MMEventListener<CorgiEngineEvent>
 	{
 		[Header("Camera Controls")]
 		[MMInformation("Add this component to a camera in a multiplayer level, and it'll try and keep all players on screen. Works with orthographic and perspective cameras Here you can tweak the DampTime, which is how fast the camera moves (lower value, faster camera).",MoreMountains.Tools.MMInformationAttribute.InformationType.Info,false)]

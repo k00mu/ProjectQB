@@ -16,38 +16,41 @@ namespace MoreMountains.CorgiEngine
 		public override string HelpBoxText() { return "Add this component to your character and it'll be able to cling to walls, slowing down its fall. Here you can define the slow factor (close to 0 : super slow, 1 : normal fall) and the tolerance (to account for tiny holes in the wall."; }
 
 		[Header("Wall Clinging")]
-
 		/// the slow factor when wall clinging
 		[Tooltip("the slow factor when wall clinging")]
 		[Range(0.01f, 1)]
-		public float WallClingingSlowFactor = 0.6f;
+		public float WallClingingSlowFactor = 0.2f;
 		/// the vertical offset to apply to raycasts for wall clinging
 		[Tooltip("the vertical offset to apply to raycasts for wall clinging")]
 		public float RaycastVerticalOffset = 0f;
 		/// the tolerance applied to compensate for tiny irregularities in the wall (slightly misplaced tiles for example)
 		[Tooltip("the tolerance applied to compensate for tiny irregularities in the wall (slightly misplaced tiles for example)")]
 		public float WallClingingTolerance = 0.3f;
+		/// if this is true, vertical forces will be reset on entry
+		[Tooltip("if this is true, vertical forces will be reset on entry")]
+		public bool ResetVerticalForceOnEntry = true;
 
 		[Header("Automation")]
-
 		/// if this is set to true, you won't need to press the opposite direction to wall cling, it'll be automatic anytime the character faces a wall
 		[Tooltip("if this is set to true, you won't need to press the opposite direction to wall cling, it'll be automatic anytime the character faces a wall")]
-		public bool InputIndependent = false;        
+		public bool InputIndependent = false;
+
+		public bool IsFacingRightWhileWallClinging { get; set; }
+		public bool HasTouchedGround { get; set; }
 
 		protected CharacterStates.MovementStates _stateLastFrame;
 		protected RaycastHit2D _raycast;
 		protected WallClingingOverride _wallClingingOverride;
+		protected bool _inputManagerNotNull;
 
 		// animation parameters
 		protected const string _wallClingingAnimationParameterName = "WallClinging";
 		protected int _wallClingingAnimationParameter;
 
-		/// <summary>
-		/// Checks the input to see if we should enter the WallClinging state
-		/// </summary>
-		protected override void HandleInput()
+		protected override void Initialization()
 		{
-			WallClinging();
+			base.Initialization();
+			_inputManagerNotNull = _inputManager != null;
 		}
 
 		/// <summary>
@@ -57,8 +60,18 @@ namespace MoreMountains.CorgiEngine
 		{
 			base.ProcessAbility();
 
+			WallClinging();
 			ExitWallClinging();
 			WallClingingLastFrame ();
+		}
+
+		/// <summary>
+		/// At the end of the frame, we store the current state for comparison use in the next frame
+		/// </summary>
+		public override void LateProcessAbility()
+		{
+			base.LateProcessAbility();
+			_stateLastFrame = _movement.CurrentState;
 		}
 
 		/// <summary>
@@ -84,10 +97,22 @@ namespace MoreMountains.CorgiEngine
 			}
 			else
 			{
-				if (((_controller.State.IsCollidingLeft) && (_horizontalInput <= -_inputManager.Threshold.x))
-				    || ((_controller.State.IsCollidingRight) && (_horizontalInput >= _inputManager.Threshold.x)))
+				if (_inputManagerNotNull)
 				{
-					EnterWallClinging();
+					if (_horizontalInput <= -_inputManager.Threshold.x)
+					{
+						if (TestForWall(-1))
+						{
+							EnterWallClinging();
+						}
+					}
+					else if (_horizontalInput >= _inputManager.Threshold.x)
+					{
+						if (TestForWall(1))
+						{
+							EnterWallClinging();
+						}
+					}	
 				}
 			}            
 		}
@@ -98,12 +123,24 @@ namespace MoreMountains.CorgiEngine
 		/// <returns></returns>
 		protected virtual bool TestForWall()
 		{
+			if (_character.IsFacingRight)
+			{
+				return TestForWall(1);
+			}
+			else
+			{
+				return TestForWall(-1);
+			}
+		}
+
+		protected virtual bool TestForWall(int direction)
+		{
 			// we then cast a ray to the direction's the character is facing, in a down diagonal.
 			// we could use the controller's IsCollidingLeft/Right for that, but this technique 
 			// compensates for walls that have small holes or are not perfectly flat
 			Vector3 raycastOrigin = _characterTransform.position;
 			Vector3 raycastDirection;
-			if (_character.IsFacingRight)
+			if (direction > 0)
 			{
 				raycastOrigin = raycastOrigin + _characterTransform.right * _controller.Width() / 2 + _characterTransform.up * RaycastVerticalOffset;
 				raycastDirection = _characterTransform.right - _characterTransform.up;
@@ -154,12 +191,18 @@ namespace MoreMountains.CorgiEngine
 			// if we weren't wallclinging before this frame, we start our sounds
 			if ((_movement.CurrentState != CharacterStates.MovementStates.WallClinging) && !_startFeedbackIsPlaying)
 			{
+				if (ResetVerticalForceOnEntry)
+				{
+					_controller.SetVerticalForce(0f);	
+				}
 				// we start our feedbacks
 				PlayAbilityStartFeedbacks();
 				MMCharacterEvent.Trigger(_character, MMCharacterEventTypes.WallCling, MMCharacterEvent.Moments.Start);
 			}
 
 			_movement.ChangeState(CharacterStates.MovementStates.WallClinging);
+			IsFacingRightWhileWallClinging = _character.IsFacingRight;
+			HasTouchedGround = false;
 		}
 
 		/// <summary>
@@ -167,12 +210,17 @@ namespace MoreMountains.CorgiEngine
 		/// </summary>
 		protected virtual void ExitWallClinging()
 		{
+			if (_controller.State.IsGrounded)
+			{
+				HasTouchedGround = true;
+			}
+			
 			if (_movement.CurrentState == CharacterStates.MovementStates.WallClinging)
 			{
 				// we prepare a boolean to store our exit condition value
 				bool shouldExit = false;
 				if ((_controller.State.IsGrounded) // if the character is grounded
-				    || (_controller.Speed.y >= 0))  // or if it's moving up
+				    || (_controller.Speed.y > 0))  // or if it's moving up
 				{
 					// then we should exit
 					shouldExit = true;
@@ -238,8 +286,6 @@ namespace MoreMountains.CorgiEngine
 				PlayAbilityStopFeedbacks();
 				MMCharacterEvent.Trigger(_character, MMCharacterEventTypes.WallCling, MMCharacterEvent.Moments.End);
 			}
-
-			_stateLastFrame = _movement.CurrentState;
 		}
 
 		protected virtual void ProcessExit()
