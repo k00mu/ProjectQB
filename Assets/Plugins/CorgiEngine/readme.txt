@@ -1,4 +1,4 @@
-Corgi Engine v8.0
+Corgi Engine v9.0
 
 ----
 
@@ -41,6 +41,13 @@ DOCUMENTATION
 -------------
 
 A complete documentation is available for this asset, go to http://corgi-engine-docs.moremountains.com/API/ for a complete API documentation, or http://corgi-engine-docs.moremountains.com/ for a functional one
+
+
+2D EXTRAS
+---------
+
+Some of the demos in the engine use tilemaps and rely on Unity's 2D extras. If you want to enjoy these demos, make sure you install them.
+You can learn more about how to do that at https://corgi-engine-docs.moremountains.com/how-to-install.html#tilemaps-and-2d-extras
 
 SOUNDS
 ------

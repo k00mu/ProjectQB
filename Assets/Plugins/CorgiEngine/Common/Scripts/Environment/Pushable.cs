@@ -9,7 +9,7 @@ namespace MoreMountains.CorgiEngine
 	/// </summary>
 	[AddComponentMenu("Corgi Engine/Environment/Pushable")]
 	[RequireComponent(typeof(Rigidbody2D))]
-	public class Pushable : MonoBehaviour 
+	public class Pushable : CorgiMonoBehaviour 
 	{
 		/// the speed at which this object can be pushed
 		[Tooltip("the speed at which this object can be pushed")]

@@ -17,7 +17,7 @@ namespace MoreMountains.CorgiEngine
 	/// behave differently
 	/// </summary>
 	[AddComponentMenu("Corgi Engine/Character/Core/Character")] 
-	public class Character : MonoBehaviour
+	public class Character : CorgiMonoBehaviour
 	{		
 		/// the possible character types : player controller or AI (controlled by the computer)
 		public enum CharacterTypes { Player, AI }
@@ -131,7 +131,7 @@ namespace MoreMountains.CorgiEngine
 		[Tooltip("The time (in seconds) to consider the character airborne, used to reset Jumping state")]
 		public float AirborneMinimumTime = 0.1f;
 		/// Whether or not the character is airborne this frame
-		public bool Airborne { get { return ((_controller.DistanceToTheGround > AirborneDistance) || (_controller.DistanceToTheGround == -1)); } }
+		public virtual bool Airborne { get { return ((_controller.DistanceToTheGround > AirborneDistance) || (_controller.DistanceToTheGround == -1)); } }
 
 		[Header("AI")]
 		/// The brain currently associated with this character, if it's an Advanced AI. By default the engine will pick the one on this object, but you can attach another one if you'd like
@@ -157,9 +157,12 @@ namespace MoreMountains.CorgiEngine
 
 		// animation parameters
 		protected const string _groundedAnimationParameterName = "Grounded";
+		protected const string _fallingAnimationParameterName = "Falling";
 		protected const string _airborneAnimationParameterName = "Airborne";
 		protected const string _xSpeedAnimationParameterName = "xSpeed";
 		protected const string _ySpeedAnimationParameterName = "ySpeed";
+		protected const string _xSpeedAbsoluteAnimationParameterName = "xSpeedAbsolute";
+		protected const string _ySpeedAbsoluteAnimationParameterName = "ySpeedAbsolute";
 		protected const string _worldXSpeedAnimationParameterName = "WorldXSpeed";
 		protected const string _worldYSpeedAnimationParameterName = "WorldYSpeed";
 		protected const string _collidingLeftAnimationParameterName = "CollidingLeft";
@@ -174,11 +177,14 @@ namespace MoreMountains.CorgiEngine
 		protected const string _flipAnimationParameterName = "Flip";
 
 		protected int _groundedAnimationParameter;
+		protected int _fallingAnimationParameter;
 		protected int _airborneSpeedAnimationParameter;
-		protected int _xSpeedSpeedAnimationParameter;
-		protected int _ySpeedSpeedAnimationParameter;
-		protected int _worldXSpeedSpeedAnimationParameter;
-		protected int _worldYSpeedSpeedAnimationParameter;
+		protected int _xSpeedAnimationParameter;
+		protected int _ySpeedAnimationParameter;
+		protected int _xSpeedAbsoluteAnimationParameter;
+		protected int _ySpeedAbsoluteAnimationParameter;
+		protected int _worldXSpeedAnimationParameter;
+		protected int _worldYSpeedAnimationParameter;
 		protected int _collidingLeftAnimationParameter;
 		protected int _collidingRightAnimationParameter;
 		protected int _collidingBelowAnimationParameter;
@@ -356,6 +362,29 @@ namespace MoreMountains.CorgiEngine
 			}
 
 			return null;
+		}
+
+		/// <summary>
+		/// A method to check whether a Character has a certain ability or not
+		/// </summary>
+		/// <typeparam name="T"></typeparam>
+		/// <returns></returns>
+		public List<T> FindAbilities<T>() where T:CharacterAbility
+		{
+			CacheAbilitiesAtInit();
+
+			List<T> resultList = new List<T>();
+			Type searchedAbilityType = typeof(T);
+            
+			foreach (CharacterAbility ability in _characterAbilities)
+			{
+				if (ability is T characterAbility)
+				{
+					resultList.Add(characterAbility);
+				}
+			}
+
+			return resultList;
 		}
 
 		/// <summary>
@@ -577,11 +606,14 @@ namespace MoreMountains.CorgiEngine
 			_animatorParameters = new HashSet<int>();
 
 			MMAnimatorExtensions.AddAnimatorParameterIfExists(_animator, _groundedAnimationParameterName, out _groundedAnimationParameter, AnimatorControllerParameterType.Bool, _animatorParameters);
+			MMAnimatorExtensions.AddAnimatorParameterIfExists(_animator, _fallingAnimationParameterName, out _fallingAnimationParameter, AnimatorControllerParameterType.Bool, _animatorParameters);
 			MMAnimatorExtensions.AddAnimatorParameterIfExists(_animator, _airborneAnimationParameterName, out _airborneSpeedAnimationParameter, AnimatorControllerParameterType.Bool, _animatorParameters);
-			MMAnimatorExtensions.AddAnimatorParameterIfExists(_animator, _xSpeedAnimationParameterName, out _xSpeedSpeedAnimationParameter, AnimatorControllerParameterType.Float, _animatorParameters);
-			MMAnimatorExtensions.AddAnimatorParameterIfExists(_animator, _ySpeedAnimationParameterName, out _ySpeedSpeedAnimationParameter, AnimatorControllerParameterType.Float, _animatorParameters);
-			MMAnimatorExtensions.AddAnimatorParameterIfExists(_animator, _worldXSpeedAnimationParameterName, out _worldXSpeedSpeedAnimationParameter, AnimatorControllerParameterType.Float, _animatorParameters);
-			MMAnimatorExtensions.AddAnimatorParameterIfExists(_animator, _worldYSpeedAnimationParameterName, out _worldYSpeedSpeedAnimationParameter, AnimatorControllerParameterType.Float, _animatorParameters);
+			MMAnimatorExtensions.AddAnimatorParameterIfExists(_animator, _xSpeedAnimationParameterName, out _xSpeedAnimationParameter, AnimatorControllerParameterType.Float, _animatorParameters);
+			MMAnimatorExtensions.AddAnimatorParameterIfExists(_animator, _ySpeedAnimationParameterName, out _ySpeedAnimationParameter, AnimatorControllerParameterType.Float, _animatorParameters);
+			MMAnimatorExtensions.AddAnimatorParameterIfExists(_animator, _xSpeedAbsoluteAnimationParameterName, out _xSpeedAbsoluteAnimationParameter, AnimatorControllerParameterType.Float, _animatorParameters);
+			MMAnimatorExtensions.AddAnimatorParameterIfExists(_animator, _ySpeedAbsoluteAnimationParameterName, out _ySpeedAbsoluteAnimationParameter, AnimatorControllerParameterType.Float, _animatorParameters);
+			MMAnimatorExtensions.AddAnimatorParameterIfExists(_animator, _worldXSpeedAnimationParameterName, out _worldXSpeedAnimationParameter, AnimatorControllerParameterType.Float, _animatorParameters);
+			MMAnimatorExtensions.AddAnimatorParameterIfExists(_animator, _worldYSpeedAnimationParameterName, out _worldYSpeedAnimationParameter, AnimatorControllerParameterType.Float, _animatorParameters);
 			MMAnimatorExtensions.AddAnimatorParameterIfExists(_animator, _collidingLeftAnimationParameterName, out _collidingLeftAnimationParameter, AnimatorControllerParameterType.Bool, _animatorParameters);
 			MMAnimatorExtensions.AddAnimatorParameterIfExists(_animator, _collidingRightAnimationParameterName, out _collidingRightAnimationParameter, AnimatorControllerParameterType.Bool, _animatorParameters);
 			MMAnimatorExtensions.AddAnimatorParameterIfExists(_animator, _collidingBelowAnimationParameterName, out _collidingBelowAnimationParameter, AnimatorControllerParameterType.Bool, _animatorParameters);
@@ -606,12 +638,15 @@ namespace MoreMountains.CorgiEngine
 			if ((UseDefaultMecanim) && (_animator != null))
 			{
 				MMAnimatorExtensions.UpdateAnimatorBool(_animator, _groundedAnimationParameter, _controller.State.IsGrounded, _animatorParameters, PerformAnimatorSanityChecks);
+				MMAnimatorExtensions.UpdateAnimatorBool(_animator, _fallingAnimationParameter, MovementState.CurrentState == CharacterStates.MovementStates.Falling, _animatorParameters, PerformAnimatorSanityChecks);
 				MMAnimatorExtensions.UpdateAnimatorBool(_animator, _airborneSpeedAnimationParameter, Airborne, _animatorParameters, PerformAnimatorSanityChecks);
 				MMAnimatorExtensions.UpdateAnimatorBool(_animator, _aliveAnimationParameter, (ConditionState.CurrentState != CharacterStates.CharacterConditions.Dead),_animatorParameters, PerformAnimatorSanityChecks);
-				MMAnimatorExtensions.UpdateAnimatorFloat(_animator, _xSpeedSpeedAnimationParameter, _controller.Speed.x, _animatorParameters, PerformAnimatorSanityChecks);
-				MMAnimatorExtensions.UpdateAnimatorFloat(_animator, _ySpeedSpeedAnimationParameter, _controller.Speed.y, _animatorParameters, PerformAnimatorSanityChecks);
-				MMAnimatorExtensions.UpdateAnimatorFloat(_animator, _worldXSpeedSpeedAnimationParameter, _controller.WorldSpeed.x, _animatorParameters, PerformAnimatorSanityChecks);
-				MMAnimatorExtensions.UpdateAnimatorFloat(_animator, _worldYSpeedSpeedAnimationParameter, _controller.WorldSpeed.y, _animatorParameters, PerformAnimatorSanityChecks);
+				MMAnimatorExtensions.UpdateAnimatorFloat(_animator, _xSpeedAnimationParameter, _controller.Speed.x, _animatorParameters, PerformAnimatorSanityChecks);
+				MMAnimatorExtensions.UpdateAnimatorFloat(_animator, _ySpeedAnimationParameter, _controller.Speed.y, _animatorParameters, PerformAnimatorSanityChecks);
+				MMAnimatorExtensions.UpdateAnimatorFloat(_animator, _xSpeedAbsoluteAnimationParameter, Mathf.Abs(_controller.Speed.x), _animatorParameters, PerformAnimatorSanityChecks);
+				MMAnimatorExtensions.UpdateAnimatorFloat(_animator, _ySpeedAbsoluteAnimationParameter, Mathf.Abs(_controller.Speed.y), _animatorParameters, PerformAnimatorSanityChecks);
+				MMAnimatorExtensions.UpdateAnimatorFloat(_animator, _worldXSpeedAnimationParameter, _controller.WorldSpeed.x, _animatorParameters, PerformAnimatorSanityChecks);
+				MMAnimatorExtensions.UpdateAnimatorFloat(_animator, _worldYSpeedAnimationParameter, _controller.WorldSpeed.y, _animatorParameters, PerformAnimatorSanityChecks);
 				MMAnimatorExtensions.UpdateAnimatorBool(_animator, _collidingLeftAnimationParameter, _controller.State.IsCollidingLeft, _animatorParameters, PerformAnimatorSanityChecks);
 				MMAnimatorExtensions.UpdateAnimatorBool(_animator, _collidingRightAnimationParameter, _controller.State.IsCollidingRight, _animatorParameters, PerformAnimatorSanityChecks);
 				MMAnimatorExtensions.UpdateAnimatorBool(_animator, _collidingBelowAnimationParameter, _controller.State.IsCollidingBelow, _animatorParameters, PerformAnimatorSanityChecks);

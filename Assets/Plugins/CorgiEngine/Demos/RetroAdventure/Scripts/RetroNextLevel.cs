@@ -8,7 +8,7 @@ namespace MoreMountains.CorgiEngine
 	/// <summary>
 	/// A class with a simple method to load the next level
 	/// </summary>
-	public class RetroNextLevel : MonoBehaviour 
+	public class RetroNextLevel : CorgiMonoBehaviour 
 	{
 		/// <summary>
 		/// Asks the level manager to load the next level

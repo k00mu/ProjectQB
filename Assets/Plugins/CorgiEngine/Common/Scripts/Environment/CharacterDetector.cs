@@ -12,7 +12,7 @@ namespace MoreMountains.CorgiEngine
 	/// </summary>
 	[AddComponentMenu("Corgi Engine/Environment/Character Detector")]
 	[RequireComponent(typeof(Collider2D))]
-	public class CharacterDetector : MonoBehaviour
+	public class CharacterDetector : CorgiMonoBehaviour
 	{
 		/// It this is true, the character will have to be tagged Player for this to work
 		[Tooltip("It this is true, the character will have to be tagged Player for this to work")]

@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 using MoreMountains.Tools;
 
 namespace MoreMountains.CorgiEngine
@@ -9,7 +10,7 @@ namespace MoreMountains.CorgiEngine
 	/// How much damage that is will be remapped between the specified min and max damage values.
 	/// Animation parameter : FallDamage, bool, true the frame the character takes fall damage
 	/// </summary>
-	[MMHiddenProperties("AbilityStartFeedbacks")]
+	[MMHiddenProperties("AbilityStopFeedbacks")]
 	[AddComponentMenu("Corgi Engine/Character/Abilities/Character Fall Damage")]
 	public class CharacterFallDamage : CharacterAbility
 	{
@@ -18,60 +19,139 @@ namespace MoreMountains.CorgiEngine
 		                                              "Use the min and max damage fall heights to define the remap rules." +
 		                                              "You can also decide to clamp damage to the max damage, or just have it proportional."; }
 
+		[Header("Fall Height")]
 		/// the minimum height at which a character has to fall for damage to be applied
 		[Tooltip("the minimum height at which a character has to fall for damage to be applied")]
 		public float MinimumDamageFallHeight = 5f;
 		/// the height at which you'd have to fall to apply the highest damage
 		[Tooltip("the height at which you'd have to fall to apply the highest damage")]
 		public float MaximumDamageFallHeight = 10f;
+		
+		[Header("Fall Damage")]
 		/// the damage to apply when falling from the min height
 		[Tooltip("the damage to apply when falling from the min height")]
-		public int MinimumDamage = 10;
+		public float MinimumDamage = 10f;
 		/// the damage to apply when falling from the max height
 		[Tooltip("the damage to apply when falling from the max height")]
-		public int MaximumDamage = 50;
+		public float MaximumDamage = 50f;
 		/// whether or not to clamp the damage to MaximumDamage. If not clamped, falling from an even higher height will apply even more damage.
 		[Tooltip("whether or not to clamp the damage to MaximumDamage. If not clamped, falling from an even higher height will apply even more damage.")]
 		public bool ClampedDamage = true;
+		
+		[Header("Damage Types")]
+		/// an optional list of damage types to apply when fall damage kicks in  
+		[Tooltip("an optional list of damage types to apply when fall damage kicks in")]
+		public List<TypedDamage> FallDamageTypes;
 
+		[Header("Velocity")] 
+		/// the minimum (absolute) velocity the character has to hit the ground at for damage to apply  
+		[Tooltip("the minimum (absolute) velocity the character has to hit the ground at for damage to apply")]
+		public float DamageVelocityThreshold = 5f;
+		
 		protected bool _airborneLastFrame = false;
-		protected float _takeOffAltitude;
 		protected bool _damageThisFrame = false;
-
+		protected float _highestAltitudeY = 0f;
+		protected float _verticalVelocityLastFrame = 0f;
+		protected float _altitudeDelta;
+		
 		// animation parameters
 		protected const string _fallDamageAnimationParameterName = "FallDamage";
 		protected int _fallDamageAnimationParameter;
 
 		/// <summary>
-		/// On Update, we check if we're taking flight, and if we should take damage
+		/// On init we initialize our altitude
+		/// </summary>
+		protected override void Initialization()
+		{
+			base.Initialization();
+			StoreCurrentAltitudeAsHighest();
+		}
+		
+		/// <summary>
+		/// On Update, we check our altitude
 		/// </summary>
 		public override void ProcessAbility()
 		{
 			base.ProcessAbility();
-
 			_damageThisFrame = false;
-
-			// if we were not airborne last frame and are now, we're taking off, we log that altitude
-			if (!_airborneLastFrame && _character.Airborne)
-			{
-				_takeOffAltitude = this.transform.position.y;
-			}
-
+			ProcessAirborne();
 			ResetTakeOffAltitude();
-
 			// if we were airborne and are not anymore, we just touched the ground
-			if (_airborneLastFrame && !_character.Airborne && CanTakeDamage())
+			if (CanTakeDamage())
 			{
-				float distance = _takeOffAltitude - this.transform.position.y;
-
-				// if we're above the minimum fall height to apply damage, we apply damage
-				if (distance > MinimumDamageFallHeight)
-				{
-					ApplyDamage(distance);
-				}
+				ApplyDamage(_altitudeDelta);
 			}
-
+			_verticalVelocityLastFrame = _controller.Speed.y;
 			_airborneLastFrame = _character.Airborne;
+		}
+
+		/// <summary>
+		/// Goes through various conditions that could prevent damage
+		/// </summary>
+		/// <returns></returns>
+		public virtual bool CanTakeDamage()
+		{
+			if (!InDamageableState())
+			{
+				return false;
+			}
+			if (_character.Airborne || !_airborneLastFrame)
+			{
+				return false;
+			}
+			
+			if (!HighEnoughToGetDamaged())
+			{
+				return false;
+			}
+			
+			if (!FastEnoughToGetDamaged())
+			{
+				return false;
+			}
+			
+			if (!OtherConditions())
+			{
+				return false;
+			}
+			
+			return true;
+		}
+
+		/// <summary>
+		/// Returns true if the character is falling from high enough to take damage
+		/// </summary>
+		/// <returns></returns>
+		public virtual bool HighEnoughToGetDamaged()
+		{
+			 _altitudeDelta = _highestAltitudeY - this.transform.position.y;
+			 return (_altitudeDelta > MinimumDamageFallHeight);
+		}
+
+		/// <summary>
+		/// Returns true if the character is hitting the ground fast enough to take damage, false otherwise
+		/// </summary>
+		/// <returns></returns>
+		public virtual bool FastEnoughToGetDamaged()
+		{
+			return (Mathf.Abs(_verticalVelocityLastFrame) > DamageVelocityThreshold);
+		}
+
+		/// <summary>
+		/// Override this to implement other conditions that could prevent damage from being applied
+		/// </summary>
+		/// <returns></returns>
+		protected virtual bool OtherConditions()
+		{
+			return true;
+		}
+
+		/// <summary>
+		/// Call this method to force an altitude reset
+		/// </summary>
+		public virtual void StoreCurrentAltitudeAsHighest()
+		{
+			_highestAltitudeY = this.transform.position.y;	
 		}
 
 		/// <summary>
@@ -79,9 +159,31 @@ namespace MoreMountains.CorgiEngine
 		/// </summary>
 		public virtual void ResetTakeOffAltitude()
 		{
-			if (!CanTakeDamage())
+			if (!InDamageableState())
 			{
-				_takeOffAltitude = this.transform.position.y;
+				StoreCurrentAltitudeAsHighest();
+			}
+		}
+
+		/// <summary>
+		/// Processes airborne state and stores altitude if needed
+		/// </summary>
+		protected virtual void ProcessAirborne()
+		{
+			// if we were not airborne last frame and are now, we're taking off, we log that altitude
+			if (_character.Airborne)
+			{
+				if (this.transform.position.y > _highestAltitudeY)
+				{
+					StoreCurrentAltitudeAsHighest();
+				}
+			}
+			else
+			{
+				if (!_airborneLastFrame)
+				{
+					StoreCurrentAltitudeAsHighest();
+				}
 			}
 		}
 
@@ -90,7 +192,7 @@ namespace MoreMountains.CorgiEngine
 		/// Don't hesitate to extend and override this method to specify your own rules
 		/// </summary>
 		/// <returns></returns>
-		protected virtual bool CanTakeDamage()
+		protected virtual bool InDamageableState()
 		{
 			return (_character.MovementState.CurrentState != CharacterStates.MovementStates.LadderClimbing
 			        && _character.MovementState.CurrentState != CharacterStates.MovementStates.SwimmingIdle
@@ -98,7 +200,10 @@ namespace MoreMountains.CorgiEngine
 			        && _character.MovementState.CurrentState != CharacterStates.MovementStates.Flying
 			        && _character.MovementState.CurrentState != CharacterStates.MovementStates.Gliding
 			        && _character.MovementState.CurrentState != CharacterStates.MovementStates.WallClinging
-			        && _character.MovementState.CurrentState != CharacterStates.MovementStates.Jetpacking);
+			        && _character.MovementState.CurrentState != CharacterStates.MovementStates.Jetpacking
+			        && _character.ConditionState.CurrentState != CharacterStates.CharacterConditions.Frozen
+			        && _character.ConditionState.CurrentState != CharacterStates.CharacterConditions.Dead
+			        && _character.ConditionState.CurrentState != CharacterStates.CharacterConditions.ControlledMovement);
 		}
 
 		/// <summary>
@@ -108,10 +213,10 @@ namespace MoreMountains.CorgiEngine
 		protected virtual void ApplyDamage(float distance)
 		{
 			int damageToApply = (int)Mathf.Round(MMMaths.Remap(distance, MinimumDamageFallHeight, MaximumDamageFallHeight,
-				(float)MinimumDamage, (float)MaximumDamage));
+				MinimumDamage, MaximumDamage));
 			if (ClampedDamage)
 			{
-				damageToApply = (int)Mathf.Clamp(damageToApply, (float)MinimumDamage, (float)MaximumDamage);
+				damageToApply = (int)Mathf.Clamp(damageToApply, MinimumDamage, MaximumDamage);
 			}
 
 			if (!_startFeedbackIsPlaying)
@@ -119,8 +224,17 @@ namespace MoreMountains.CorgiEngine
 				PlayAbilityStartFeedbacks();
 				MMCharacterEvent.Trigger(_character, MMCharacterEventTypes.FallDamage);
 			}
-			_health.Damage(damageToApply, this.gameObject, 0.2f, 0.2f, Vector3.up);
+			_health.Damage(damageToApply, this.gameObject, 0.2f, 0.2f, Vector3.up, FallDamageTypes);
 			_damageThisFrame = true;
+		}
+
+		/// <summary>
+		/// On respawn we reset our take off altitude
+		/// </summary>
+		protected override void OnRespawn()
+		{
+			base.OnDeath();
+			StoreCurrentAltitudeAsHighest();
 		}
         
 		/// <summary>

@@ -10,11 +10,19 @@ namespace MoreMountains.CorgiEngine
 	/// Typically used for grenades.
 	/// </summary>
 	[AddComponentMenu("Corgi Engine/Weapons/Bomb")]
-	public class Bomb : MonoBehaviour 
+	public class Bomb : CorgiMonoBehaviour 
 	{
 		/// the possible types of shapes for damage areas
 		public enum DamageAreaShapes { Rectangle, Circle }
 
+		[Header("Bindings")] 
+		/// the renderer this script will pilot - if left empty, will try to grab this component on itself
+		[Tooltip("the renderer this script will pilot - if left empty, will try to grab this component on itself")]
+		public Renderer TargetRenderer; 
+		/// the poolable object component this script will pilot - if left empty, will try to grab this component on itself
+		[Tooltip("the poolable object component this script will pilot - if left empty, will try to grab this component on itself")]
+		public MMPoolableObject TargetPoolableObject;
+		
 		[Header("Explosion")]
 
 		/// the duration(in seconds) before the explosion
@@ -23,6 +31,19 @@ namespace MoreMountains.CorgiEngine
 		/// the MMFeedbacks to trigger on explosion
 		[Tooltip("the MMFeedbacks to trigger on explosion")]
 		public MMFeedbacks ExplosionFeedback;
+		
+		[Header("Explosion On Contact")]
+		/// if this is true, the bomb will explode when entering in contact with a collider on a layer that is part of the ExplosionOnContactLayerMask 
+		[Tooltip("if this is true, the bomb will explode when entering in contact with a collider on a layer that is part of the ExplosionOnContactLayerMask")]
+		public bool ExplodeOnContact = false;
+		/// the radius (from this object) within which we'll check for colliders on the ExplosionOnContactLayerMask 
+		[Tooltip("the radius (from this object) within which we'll check for colliders on the ExplosionOnContactLayerMask")]
+		[MMCondition("ExplodeOnContact", true)]
+		public float ExplodeOnContactDetectionRadius = 1f;
+		/// the layer, or layers, this bomb should explode on contact with 
+		[Tooltip("the layer, or layers, this bomb should explode on contact with")]
+		[MMCondition("ExplodeOnContact", true)]
+		public LayerMask ExplosionOnContactLayerMask;
 
 		[Header("Flicker")]
 
@@ -43,12 +64,14 @@ namespace MoreMountains.CorgiEngine
 		public float DamageAreaActiveDuration = 1f;
 
 		protected float _timeSinceStart;
-		protected Renderer _renderer;
-		protected MMPoolableObject _poolableObject;
 		protected bool _flickering;
 		protected bool _damageAreaActive;
 		protected Color _initialColor;
-		protected Color _flickerColor = new Color32(255, 20, 20, 255); 
+		protected Color _flickerColor = new Color32(255, 20, 20, 255);
+		protected bool _rendererIsNotNull;
+		protected float _timeSinceExplosion;
+		protected bool _exploded;
+		protected RaycastHit2D _hit;
 
 		/// <summary>
 		/// On enable we initialize our bomb
@@ -71,22 +94,34 @@ namespace MoreMountains.CorgiEngine
 			DamageAreaCollider.isTrigger = true;
 			DisableDamageArea ();
 
-			_renderer = gameObject.MMGetComponentNoAlloc<Renderer> ();
-			if (_renderer != null)
+			if (TargetRenderer == null)
 			{
-				if (_renderer.material.HasProperty("_Color"))
+				TargetRenderer = gameObject.MMGetComponentNoAlloc<Renderer> ();	
+			}
+			
+			_rendererIsNotNull = TargetRenderer != null;
+			
+			if (_rendererIsNotNull)
+			{
+				if (TargetRenderer.material.HasProperty("_Color"))
 				{
-					_initialColor = _renderer.material.color;
+					_initialColor = TargetRenderer.material.color;
 				}
 			}
 
-			_poolableObject = gameObject.MMGetComponentNoAlloc<MMPoolableObject> ();
-			if (_poolableObject != null)
+			if (TargetPoolableObject == null)
 			{
-				_poolableObject.LifeTime = 0;
+				TargetPoolableObject = gameObject.MMGetComponentNoAlloc<MMPoolableObject> ();	
+			}
+			
+			if (TargetPoolableObject != null)
+			{
+				TargetPoolableObject.LifeTime = 0;
 			}
 
 			_timeSinceStart = 0;
+			_exploded = false;
+			_timeSinceExplosion = 0f;
 			_flickering = false;
 			_damageAreaActive = false;
 		}
@@ -97,15 +132,18 @@ namespace MoreMountains.CorgiEngine
 		protected virtual void Update()
 		{
 			_timeSinceStart += Time.deltaTime;
+
+			TestExplodeOnContact();
+			
 			// flickering
 			if (_timeSinceStart >= TimeBeforeFlicker)
 			{
 				if (!_flickering && FlickerSprite)
 				{
 					// We make the bomb's sprite flicker
-					if (_renderer != null)
+					if (TargetRenderer != null)
 					{
-						StartCoroutine(MMImage.Flicker(_renderer,_initialColor,_flickerColor,0.05f,(TimeBeforeExplosion - TimeBeforeFlicker)));	
+						StartCoroutine(MMImage.Flicker(TargetRenderer,_initialColor,_flickerColor,0.05f,(TimeBeforeExplosion - TimeBeforeFlicker)));	
 					}
 				}
 			}
@@ -113,34 +151,78 @@ namespace MoreMountains.CorgiEngine
 			// activate damage area
 			if (_timeSinceStart >= TimeBeforeExplosion && !_damageAreaActive)
 			{
-				EnableDamageArea ();
-				_renderer.enabled = false;
-				ExplosionFeedback?.PlayFeedbacks();
-				_damageAreaActive = true;
+				Explode();
 			}
 
-			if (_timeSinceStart >= TimeBeforeExplosion + DamageAreaActiveDuration)
+			if (_exploded)
 			{
-				Destroy ();
+				if (Time.time - _timeSinceExplosion >= DamageAreaActiveDuration)
+				{
+					DestroyBomb();
+				}
 			}
+		}
+
+		/// <summary>
+		/// Makes the bomb explode, enabling feedbacks and damage area
+		/// </summary>
+		public virtual void Explode()
+		{
+			if (_exploded)
+			{
+				return;
+			}
+			
+			EnableDamageArea ();
+			if (_rendererIsNotNull)
+			{
+				TargetRenderer.enabled = false;	
+			}
+			ExplosionFeedback?.PlayFeedbacks();
+			_damageAreaActive = true;
+			_exploded = true;
+			_timeSinceExplosion = Time.time;
+		}
+
+		/// <summary>
+		/// Check if we should explode on contact 
+		/// </summary>
+		protected virtual void TestExplodeOnContact()
+		{
+			if (!ExplodeOnContact)
+			{
+				return;
+			}
+			
+			// we do a circle cast against the ExplosionOnContactLayerMask and if we hit something, we explode
+			_hit = Physics2D.CircleCast(this.transform.position, ExplodeOnContactDetectionRadius,
+				Vector2.zero, 0f, ExplosionOnContactLayerMask);
+			if (_hit)
+			{
+				Explode();
+			}
+
 		}
 
 		/// <summary>
 		/// On destroy we disable our object and handle pools
 		/// </summary>
-		protected virtual void Destroy()
+		protected virtual void DestroyBomb()
 		{
-			_renderer.enabled = true;
-			_renderer.material.color = _initialColor;
-			if (_poolableObject != null)
+			if (_rendererIsNotNull)
 			{
-				_poolableObject.Destroy ();	
+				TargetRenderer.enabled = true;
+				TargetRenderer.material.color = _initialColor;	
+			}
+			
+			if (TargetPoolableObject != null)
+			{
+				TargetPoolableObject.Destroy ();	
 			}
 			else
 			{
-				Destroy ();
+				Destroy(this.gameObject);
 			}
-
 		}
 
 		/// <summary>

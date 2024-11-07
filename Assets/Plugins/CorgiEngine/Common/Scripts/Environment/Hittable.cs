@@ -11,7 +11,7 @@ namespace MoreMountains.CorgiEngine
 	/// </summary>
 	[AddComponentMenu("Corgi Engine/Environment/Hittable")]
 	[RequireComponent(typeof(Health))]
-	public class Hittable : MonoBehaviour
+	public class Hittable : CorgiMonoBehaviour
 	{
 		/// an event that will get triggered when taking damage
 		[Tooltip("an event that will get triggered when taking damage")]

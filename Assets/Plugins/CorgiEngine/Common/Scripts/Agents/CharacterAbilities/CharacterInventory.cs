@@ -61,6 +61,8 @@ namespace MoreMountains.CorgiEngine
 		public List<InventoryItemsToAdd> AutoAddItemsHotbar;
 		/// a weapon to automatically add to the inventory and equip on init
 		public InventoryEngineWeapon AutoEquipWeapon;
+		
+		public List<string> AvailableWeaponsIDs => _availableWeaponsIDs;
 
 		/// the reference to the main inventory
 		public Inventory MainInventory { get; set; }

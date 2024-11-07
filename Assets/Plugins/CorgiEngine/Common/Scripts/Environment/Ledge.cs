@@ -32,7 +32,7 @@ namespace MoreMountains.CorgiEngine
 	/// </summary>
 	[AddComponentMenu("Corgi Engine/Environment/Ledge")]
 	[RequireComponent(typeof(Collider2D))]
-	public class Ledge : MonoBehaviour
+	public class Ledge : CorgiMonoBehaviour
 	{
 		/// the direction ledges can be grabbed from (left means it can be grabbed by a character facing left)
 		public enum LedgeGrabDirections { Left, Right }

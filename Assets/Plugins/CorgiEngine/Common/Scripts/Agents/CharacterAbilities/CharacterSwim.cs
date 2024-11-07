@@ -2,6 +2,7 @@
 using System.Collections;
 using MoreMountains.Tools;
 using System.Collections.Generic;
+using MoreMountains.Feedbacks;
 
 namespace MoreMountains.CorgiEngine
 {
@@ -28,6 +29,9 @@ namespace MoreMountains.CorgiEngine
 		/// the duration (in seconds) of the swim animation before it reverts back to swim idle
 		[Tooltip("the duration (in seconds) of the swim animation before it reverts back to swim idle")]
 		public float SwimAnimationDuration = 0.8f;
+		/// a hook to play a feedback everytime the player swims
+		[Tooltip("a hook to play a feedback everytime the player swims")]
+		public MMFeedbacks OnSwimFeedback;
 
 		[Header("Splash Effects")]
 
@@ -42,6 +46,14 @@ namespace MoreMountains.CorgiEngine
 		public Vector2 WaterExitForce = new Vector2(0f, 12f);
 
 		protected float _swimDurationLeft = 0f;
+
+		// animation parameters
+		protected const string _inWaterAnimationParameterName = "InWater";
+		protected const string _swimmingAnimationParameterName = "Swimming";
+		protected const string _swimmingIdleAnimationParameterName = "SwimmingIdle";
+		protected int _inWaterAnimationParameter;
+		protected int _swimmingAnimationParameter;
+		protected int _swimmingIdleAnimationParameter;
 
 		/// <summary>
 		/// On Update we decrease our counter
@@ -76,6 +88,7 @@ namespace MoreMountains.CorgiEngine
 			_movement.ChangeState(CharacterStates.MovementStates.SwimmingIdle);
 			_controller.SetVerticalForce(Mathf.Sqrt(2f * SwimHeight * Mathf.Abs(_controller.Parameters.Gravity)));
 			_swimDurationLeft = SwimAnimationDuration;
+			OnSwimFeedback?.PlayFeedbacks();
 		}
 
 		/// <summary>
@@ -109,17 +122,12 @@ namespace MoreMountains.CorgiEngine
 			}            
 		}
 
-		// animation parameters
-		protected const string _swimmingAnimationParameterName = "Swimming";
-		protected const string _swimmingIdleAnimationParameterName = "SwimmingIdle";
-		protected int _swimmingAnimationParameter;
-		protected int _swimmingIdleAnimationParameter;
-
 		/// <summary>
 		/// Adds required animator parameters to the animator parameters list if they exist
 		/// </summary>
 		protected override void InitializeAnimatorParameters()
 		{
+			RegisterAnimatorParameter(_inWaterAnimationParameterName, AnimatorControllerParameterType.Bool, out _inWaterAnimationParameter);
 			RegisterAnimatorParameter(_swimmingAnimationParameterName, AnimatorControllerParameterType.Bool, out _swimmingAnimationParameter);
 			RegisterAnimatorParameter(_swimmingIdleAnimationParameterName, AnimatorControllerParameterType.Bool, out _swimmingIdleAnimationParameter);
 		}
@@ -129,7 +137,8 @@ namespace MoreMountains.CorgiEngine
 		/// </summary>
 		public override void UpdateAnimator()
 		{
-			MMAnimatorExtensions.UpdateAnimatorBool(_animator, _swimmingAnimationParameter, (_swimDurationLeft > 0f), _character._animatorParameters);
+			MMAnimatorExtensions.UpdateAnimatorBool(_animator, _inWaterAnimationParameter, InWater, _character._animatorParameters, _character.PerformAnimatorSanityChecks);
+			MMAnimatorExtensions.UpdateAnimatorBool(_animator, _swimmingAnimationParameter, (_swimDurationLeft > 0f), _character._animatorParameters, _character.PerformAnimatorSanityChecks);
 			MMAnimatorExtensions.UpdateAnimatorBool(_animator, _swimmingIdleAnimationParameter, (_movement.CurrentState == CharacterStates.MovementStates.SwimmingIdle), _character._animatorParameters, _character.PerformAnimatorSanityChecks);
 		}
 
@@ -146,8 +155,10 @@ namespace MoreMountains.CorgiEngine
 		public override void ResetAbility()
 		{
 			base.ResetAbility();
+			InWater = false;
 			if (_animator != null)
 			{
+				MMAnimatorExtensions.UpdateAnimatorBool(_animator, _inWaterAnimationParameter, false, _character._animatorParameters, _character.PerformAnimatorSanityChecks);
 				MMAnimatorExtensions.UpdateAnimatorBool(_animator, _swimmingAnimationParameter, false, _character._animatorParameters, _character.PerformAnimatorSanityChecks);
 				MMAnimatorExtensions.UpdateAnimatorBool(_animator, _swimmingIdleAnimationParameter, false, _character._animatorParameters, _character.PerformAnimatorSanityChecks);    
 			}

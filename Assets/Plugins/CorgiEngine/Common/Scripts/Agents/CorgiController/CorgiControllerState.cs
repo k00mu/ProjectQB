@@ -18,7 +18,7 @@ namespace MoreMountains.CorgiEngine
 		/// is the character colliding with something above it ?
 		public bool IsCollidingBelow { get; set; }
 		/// is the character colliding with anything ?
-		public bool HasCollisions { get { return IsCollidingRight || IsCollidingLeft || IsCollidingAbove || IsCollidingBelow; }}
+		public virtual bool HasCollisions { get { return IsCollidingRight || IsCollidingLeft || IsCollidingAbove || IsCollidingBelow; }}
 
 		/// returns the distance to the left collider, equals -1 if not colliding left
 		public float DistanceToLeftCollider;
@@ -29,6 +29,8 @@ namespace MoreMountains.CorgiEngine
 		public float LateralSlopeAngle { get; set; }
 		/// returns the slope the character is moving on angle
 		public float BelowSlopeAngle { get; set; }
+		/// returns the normal of the slope the character is currently on
+		public Vector2 BlowSlopeNormal { get; set; }
 		/// returns the slope the character is moving on angle, relative to Vector2.Up, from 0 to 360
 		public float BelowSlopeAngleAbsolute { get; set; }
 		/// returns true if the slope angle is ok to walk on
@@ -37,7 +39,7 @@ namespace MoreMountains.CorgiEngine
 		public bool OnAMovingPlatform { get; set; }
 		
 		/// Is the character grounded ? 
-		public bool IsGrounded { get { return IsCollidingBelow; } }
+		public virtual bool IsGrounded { get { return IsCollidingBelow; } }
 		/// is the character falling right now ?
 		public bool IsFalling { get; set; }
 		/// is the character falling right now ?

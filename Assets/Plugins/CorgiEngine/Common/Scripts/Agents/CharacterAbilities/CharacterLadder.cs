@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using System.Collections;
 using MoreMountains.Tools;
 using System.Collections.Generic;
@@ -22,6 +23,18 @@ namespace MoreMountains.CorgiEngine
 		/// forces the character to teleport to the ladder platform when reaching the ladder's top
 		[Tooltip("forces the chaForceTeleportOnExitracter to teleport to the ladder platform when reaching the ladder's top")]
 		public bool ForceAnchorToGroundOnExit = false;
+		/// the time (in seconds) between jumping from a ladder and being able to climb another one (or the same one)
+		[Tooltip("the time (in seconds) between jumping from a ladder and being able to climb another one (or the same one)")]
+		public float MinimumTimeAfterLadderJump = 0.5f;
+		
+		[Header("Input")]
+		/// if this is true, the Player won't have to press up to climb a ladder, simply colliding with one will cause the climb
+		[Tooltip("if this is true, the Player won't have to press up to climb a ladder, simply colliding with one will cause the climb")]
+		public bool NoInputClimb = false;
+		/// if this is true, the character will have to be in the air for NoInputClimb to activate
+		[Tooltip("if this is true, the character will have to be in the air for NoInputClimb to activate")]
+		[MMCondition("NoInputClimb", true)]
+		public bool NoInputClimbAirOnly = false;
 		
 		/// the current ladder climbing speed of the character
 		public Vector2 CurrentLadderClimbingSpeed{get; set;}
@@ -54,6 +67,7 @@ namespace MoreMountains.CorgiEngine
 		protected int _ladderClimbingUpAnimationParameter;
 		protected int _ladderClimbingSpeedXAnimationParameter;
 		protected int _ladderClimbingSpeedYAnimationParameter;
+		protected float _lastJumpFromLadderAt = -float.MaxValue;
 
 		/// <summary>
 		/// On Start(), we initialize our various flags
@@ -174,10 +188,22 @@ namespace MoreMountains.CorgiEngine
 					return;
 				}
 
-				if (_verticalInput > _inputManager.Threshold.y// if the player is pressing up
+				bool inputConditionsMet = false;
+				if (NoInputClimb)
+				{
+					inputConditionsMet = !NoInputClimbAirOnly || !_controller.State.IsGrounded;
+				}
+				else
+				{
+					// if the player is pressing up
+					inputConditionsMet = _verticalInput > _inputManager.Threshold.y;
+				}
+
+				if (inputConditionsMet
 				    && (_movement.CurrentState != CharacterStates.MovementStates.LadderClimbing) // and we're not climbing a ladder already
 				    && (_movement.CurrentState != CharacterStates.MovementStates.Gliding) // and we're not gliding
-				    && (_movement.CurrentState != CharacterStates.MovementStates.Jetpacking)) // and we're not jetpacking
+				    && (_movement.CurrentState != CharacterStates.MovementStates.Jetpacking)
+				    && (Time.time - _lastJumpFromLadderAt >= MinimumTimeAfterLadderJump)) // and we're not jetpacking
 				{			
 					// then the character starts climbing
 					StartClimbing();
@@ -472,6 +498,14 @@ namespace MoreMountains.CorgiEngine
 			{
 				return false;
 			}
+		}
+
+		/// <summary>
+		/// Called externally when jumping while on a ladder
+		/// </summary>
+		public virtual void JumpFromLadder()
+		{
+			_lastJumpFromLadderAt = Time.time;
 		}
 
 		/// <summary>

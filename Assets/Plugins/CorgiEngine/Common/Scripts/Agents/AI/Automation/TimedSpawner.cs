@@ -10,7 +10,7 @@ namespace MoreMountains.CorgiEngine
 	/// to spawn objects regularly, at a frequency randomly chosen between the min and max values set in its inspector
 	/// </summary>
 	[AddComponentMenu("Corgi Engine/Character/AI/Automation/Timed Spawner")]
-	public class TimedSpawner : MonoBehaviour 
+	public class TimedSpawner : CorgiMonoBehaviour 
 	{
 		/// the minimum frequency possible, in seconds
 		[Tooltip("the minimum frequency possible, in seconds")]

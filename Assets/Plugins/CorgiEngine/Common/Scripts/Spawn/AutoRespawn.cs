@@ -10,7 +10,7 @@ namespace MoreMountains.CorgiEngine
 	/// Add this script to an object and it will automatically be reactivated and revived when the player respawns.
 	/// </summary>
 	[AddComponentMenu("Corgi Engine/Spawn/Auto Respawn")]
-	public class AutoRespawn : MonoBehaviour, Respawnable 
+	public class AutoRespawn : CorgiMonoBehaviour, Respawnable 
 	{
 		[Header("Respawn when the player respawns")]
 
@@ -22,7 +22,10 @@ namespace MoreMountains.CorgiEngine
 		public bool RepositionToInitOnPlayerRespawn = false;
 		/// whether or not this auto respawn should disable its game object when Kill is called
 		[Tooltip("whether or not this auto respawn should disable its game object when Kill is called")]
-		public bool DisableOnKill = true;
+		public bool DisableOnKill = false;
+		/// whether or not this auto respawn should disable its character model when Kill is called
+		[Tooltip("whether or not this auto respawn should disable its character model when Kill is called")]
+		public bool DisableModelOnKill = true;
 
 		[Header("Auto respawn after X seconds")]
 		
@@ -100,10 +103,6 @@ namespace MoreMountains.CorgiEngine
 
 			if (RespawnOnPlayerRespawn)
 			{
-				if (_health != null)
-				{
-					_health.Revive();
-				}
 				Revive ();
 			}
 			
@@ -165,6 +164,14 @@ namespace MoreMountains.CorgiEngine
 				_reviving = true;
 				_timeOfDeath = Time.time;
 			}
+
+			if (DisableModelOnKill && (_character != null))
+			{
+				if (_character.CharacterModel != null)
+				{
+					_character.CharacterModel?.SetActive(false); 
+				}
+			}
 		}
 
 		/// <summary>
@@ -191,6 +198,14 @@ namespace MoreMountains.CorgiEngine
 				if (_renderer != null)	{ _renderer.enabled = true; }
 			}
 			RespawnFeedback?.PlayFeedbacks();
+
+			if (DisableModelOnKill && (_character != null))
+			{
+				if (_character.CharacterModel != null)
+				{
+					_character.CharacterModel.SetActive(true);	
+				}
+			}
 
 			if (_aiBrain != null)
 			{

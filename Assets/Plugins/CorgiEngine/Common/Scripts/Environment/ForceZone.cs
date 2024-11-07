@@ -8,7 +8,7 @@ namespace MoreMountains.CorgiEngine
 	/// <summary>
 	/// Add this zone to a trigger collider 2D and it'll let you apply the specified force to any Corgi Controller that enters it
 	/// </summary>
-	public class ForceZone : MonoBehaviour
+	public class ForceZone : CorgiMonoBehaviour
 	{
 		/// whether to add a force to controllers inside the zone, or to set the force
 		public enum ForceModes { AddForce, SetForce }

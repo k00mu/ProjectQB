@@ -8,7 +8,7 @@ namespace MoreMountains.CorgiEngine
 	/// Add this class to a block and it'll behave like these Super Mario blocks that spawn something when hit from below
 	/// </summary>
 	[AddComponentMenu("Corgi Engine/Environment/Bonus Block")]
-	public class BonusBlock : MonoBehaviour, Respawnable 
+	public class BonusBlock : CorgiMonoBehaviour, Respawnable 
 	{
 		/// the object this bonus block should spawn
 		[Tooltip("the object this bonus block should spawn")]

@@ -12,21 +12,27 @@ namespace MoreMountains.CorgiEngine
 	/// Add this component to an object and it will cause damage to objects that collide with it. 
 	/// </summary>
 	[AddComponentMenu("Corgi Engine/Character/Damage/DamageOnTouch")] 
-	public class DamageOnTouch : MonoBehaviour 
+	public class DamageOnTouch : CorgiMonoBehaviour 
 	{
 		/// the possible ways to add knockback : noKnockback, which won't do nothing, set force, or add force
 		public enum KnockbackStyles { NoKnockback, SetForce, AddForce }
 		/// the possible knockback directions when causing damage
-		public enum CausedKnockbackDirections { BasedOnOwnerPosition, BasedOnSpeed }
+		public enum CausedKnockbackDirections { BasedOnOwnerPosition, BasedOnSpeed, BasedOnDamageOnTouchPosition }
 		/// the possible knockback directions when taking damage
-		public enum TakenKnockbackDirections { BasedOnDamagerPosition, BasedOnSpeed }
+		public enum TakenKnockbackDirections { BasedOnDamagerPosition, BasedOnSpeed, BasedOnDamageOnTouchPosition }
 
 		[Header("Targets")]
-		[MMInformation("This component will make your object cause damage to objects that collide with it. Here you can define what layers will be affected by the damage (for a standard enemy, choose Player), how much damage to give, and how much force should be applied to the object that gets the damage on hit. You can also specify how long the post-hit invincibility should last (in seconds).",MoreMountains.Tools.MMInformationAttribute.InformationType.Info,false)]
+		[MMInformation("This component will make your object cause damage to objects that collide with it. Here you can define what layers will be affected by the damage (for a standard enemy, choose Player), how much damage to give, and how much force should be applied to the object that gets the damage on hit. Note that this component will MARK ITS ASSOCIATED COLLIDER AS TRIGGER.",MoreMountains.Tools.MMInformationAttribute.InformationType.Info,false)]
 
 		/// the layers that will be damaged by this object
 		[Tooltip("the layers that will be damaged by this object")]
 		public LayerMask TargetLayerMask;
+		/// if this is true, the damage will apply on trigger enter
+		[Tooltip("if this is true, the damage will apply on trigger enter")]
+		public bool ApplyDamageOnTriggerEnter = true;
+		/// if this is true, the damage will apply on trigger stay
+		[Tooltip("if this is true, the damage will apply on trigger stay")]
+		public bool ApplyDamageOnTriggerStay = true;
 
 		[Header("Damage Caused")]
 		/// The minimum amount of health to remove from the player's health
@@ -133,6 +139,7 @@ namespace MoreMountains.CorgiEngine
 		protected Health _colliderHealth;
 		protected CorgiController _corgiController;
 		protected CorgiController _colliderCorgiController;
+		protected CharacterJump _characterJump;
 		protected Health _health;
 		protected List<GameObject> _ignoredGameObjects;
 		protected Color _gizmosColor;
@@ -267,12 +274,20 @@ namespace MoreMountains.CorgiEngine
 		/// </summary>
 		/// <param name="collider">what's colliding with the object.</param>
 		public virtual void OnTriggerStay2D(Collider2D collider)
-		{			
+		{
+			if (!ApplyDamageOnTriggerStay)
+			{
+				return;
+			}
 			Colliding (collider);
 		}
 
 		public virtual void OnTriggerEnter2D(Collider2D collider)
-		{			
+		{	
+			if (!ApplyDamageOnTriggerEnter)
+			{
+				return;
+			}		
 			Colliding (collider);
 		}
 
@@ -321,40 +336,38 @@ namespace MoreMountains.CorgiEngine
 		/// <param name="health">Health.</param>
 		protected virtual void OnCollideWithDamageable(Health health)
 		{
-			if (!health.CanTakeDamageThisFrame())
-			{
-				return;
-			}
-			
-			// if what we're colliding with is a CorgiController, we apply a knockback force
-			_colliderCorgiController = health.gameObject.MMGetComponentNoAlloc<CorgiController>();
-
-			float randomDamage = UnityEngine.Random.Range(MinDamageCaused, Mathf.Max(MaxDamageCaused, MinDamageCaused));
-			
-			ApplyDamageCausedKnockback(randomDamage, TypedDamages);
-			
-			OnHitDamageable?.Invoke();
-
-			HitDamageableFeedback?.PlayFeedbacks(this.transform.position);
-
-			if ((FreezeFramesOnHitDuration > 0) && (Time.timeScale > 0))
-			{
-				MMFreezeFrameEvent.Trigger(Mathf.Abs(FreezeFramesOnHitDuration));
-			}
-
-			// we apply the damage to the thing we've collided with
-			if (RepeatDamageOverTime)
-			{
-				_colliderHealth.DamageOverTime(randomDamage, gameObject, InvincibilityDuration, InvincibilityDuration, _damageDirection, TypedDamages, AmountOfRepeats, DurationBetweenRepeats, DamageOverTimeInterruptible, RepeatedDamageType);	
-			}
-			else
-			{
-				_colliderHealth.Damage(randomDamage, gameObject, InvincibilityDuration, InvincibilityDuration, _damageDirection, TypedDamages);	
-			}
-
-			if (_colliderHealth.CurrentHealth <= 0)
-			{
-				OnKill?.Invoke();
+			if (health.CanTakeDamageThisFrame())
+			{			
+				// if what we're colliding with is a CorgiController, we apply a knockback force
+				_colliderCorgiController = health.AssociatedController;
+	
+				float randomDamage = UnityEngine.Random.Range(MinDamageCaused, Mathf.Max(MaxDamageCaused, MinDamageCaused));
+				
+				ApplyDamageCausedKnockback(randomDamage, TypedDamages);
+				
+				OnHitDamageable?.Invoke();
+	
+				HitDamageableFeedback?.PlayFeedbacks(this.transform.position);
+	
+				if ((FreezeFramesOnHitDuration > 0) && (Time.timeScale > 0))
+				{
+					MMFreezeFrameEvent.Trigger(Mathf.Abs(FreezeFramesOnHitDuration));
+				}
+	
+				// we apply the damage to the thing we've collided with
+				if (RepeatDamageOverTime)
+				{
+					_colliderHealth.DamageOverTime(randomDamage, gameObject, InvincibilityDuration, InvincibilityDuration, _damageDirection, TypedDamages, AmountOfRepeats, DurationBetweenRepeats, DamageOverTimeInterruptible, RepeatedDamageType);	
+				}
+				else
+				{
+					_colliderHealth.Damage(randomDamage, gameObject, InvincibilityDuration, InvincibilityDuration, _damageDirection, TypedDamages);	
+				}
+	
+				if (_colliderHealth.CurrentHealth <= 0)
+				{
+					OnKill?.Invoke();
+				}
 			}
 			
 			SelfDamage(DamageTakenEveryTime + DamageTakenDamageable);
@@ -368,29 +381,49 @@ namespace MoreMountains.CorgiEngine
 			}
 			
 			_knockbackForce.x = DamageCausedKnockbackForce.x;
-			if (DamageCausedKnockbackDirection == CausedKnockbackDirections.BasedOnSpeed)
+			switch (DamageCausedKnockbackDirection)
 			{
-				Vector2 totalVelocity = _colliderCorgiController.Speed + _velocity;
-				_knockbackForce.x *= -1 * Mathf.Sign(totalVelocity.x);
-			}
-			if (DamageCausedKnockbackDirection == CausedKnockbackDirections.BasedOnOwnerPosition)
-			{
-				if (Owner == null) { Owner = this.gameObject; }
-				Vector2 relativePosition = _colliderCorgiController.transform.position - Owner.transform.position;
-				_knockbackForce.x *= Mathf.Sign(relativePosition.x);
+				case CausedKnockbackDirections.BasedOnOwnerPosition:
+					if (Owner == null) { Owner = this.gameObject; }
+					Vector2 relativePosition = _colliderCorgiController.transform.position - Owner.transform.position;
+					_knockbackForce.x *= Mathf.Sign(relativePosition.x);
+					break;
+				case CausedKnockbackDirections.BasedOnSpeed:
+					Vector2 totalVelocity = _colliderCorgiController.Speed + _velocity;
+					_knockbackForce.x *= -1 * Mathf.Sign(totalVelocity.x);
+					break;
+				case CausedKnockbackDirections.BasedOnDamageOnTouchPosition:
+					Vector3 _colliderOffset =
+						(_boxCollider2D != null) ? _boxCollider2D.offset : _circleCollider2D.offset;
+					_knockbackForce.x *= Mathf.Sign((_colliderCorgiController.transform.position - (this.gameObject.transform.position + _colliderOffset)).x);
+					break;
 			}
 			
-			_knockbackForce.y = DamageCausedKnockbackForce.y;	
+			_knockbackForce.y = DamageCausedKnockbackForce.y;
 
-			if (DamageCausedKnockbackType == KnockbackStyles.SetForce)
-			{
-				_colliderCorgiController.SetForce(_knockbackForce);	
-			}
-			if (DamageCausedKnockbackType == KnockbackStyles.AddForce)
-			{
-				_colliderCorgiController.AddForce(_knockbackForce);	
-			}
+			_knockbackForce = _colliderHealth.ComputeKnockbackForce(_knockbackForce, typedDamages);
 			
+			switch (DamageCausedKnockbackType)
+			{
+				case KnockbackStyles.SetForce:
+					_colliderCorgiController.SetForce(_knockbackForce);
+					_characterJump = _colliderCorgiController.gameObject.MMGetComponentNoAlloc<Character>()?.FindAbility<CharacterJump>();
+					if (_characterJump != null)
+					{
+						_characterJump.SetCanJumpStop(false);
+						_characterJump.SetJumpFlags();
+					}
+					break;
+				case KnockbackStyles.AddForce:
+					_colliderCorgiController.AddForce(_knockbackForce);
+					_characterJump = _colliderCorgiController.gameObject.MMGetComponentNoAlloc<Character>()?.FindAbility<CharacterJump>();
+					if (_characterJump != null)
+					{
+						_characterJump.SetCanJumpStop(false);
+						_characterJump.SetJumpFlags();
+					}
+					break;
+			}
 		}
 		
 		/// <summary>
@@ -408,10 +441,11 @@ namespace MoreMountains.CorgiEngine
 			}
 			
 			return (_colliderCorgiController != null)
+			       && (DamageCausedKnockbackType != KnockbackStyles.NoKnockback)
 			       && (DamageCausedKnockbackForce != Vector2.zero)
 			       && !_colliderHealth.Invulnerable
 			       && !_colliderHealth.PostDamageInvulnerable
-			       && !_colliderHealth.ImmuneToKnockback;
+			       && _colliderHealth.CanGetKnockback(typedDamages);
 		}
 	    
 		protected virtual void ApplyDamageTakenKnockback()
@@ -419,26 +453,37 @@ namespace MoreMountains.CorgiEngine
 			if ((_corgiController != null) && (DamageTakenKnockbackForce != Vector2.zero) && (!_health.Invulnerable) && (!_health.PostDamageInvulnerable) && (!_health.ImmuneToKnockback))
 			{
 				_knockbackForce.x = DamageCausedKnockbackForce.x;
-				if (DamageTakenKnockbackDirection == TakenKnockbackDirections.BasedOnSpeed)
+				switch (DamageTakenKnockbackDirection)
 				{
-					Vector2 totalVelocity = _corgiController.Speed + _velocity;
-					_knockbackForce.x *= -1 * Mathf.Sign(totalVelocity.x);
+					case TakenKnockbackDirections.BasedOnSpeed:
+					{
+						Vector2 totalVelocity = _corgiController.Speed + _velocity;
+						_knockbackForce.x *= -1 * Mathf.Sign(totalVelocity.x);
+						break;
+					}
+					case TakenKnockbackDirections.BasedOnDamagerPosition:
+					{
+						Vector2 relativePosition = _corgiController.transform.position - _collidingCollider.bounds.center;
+						_knockbackForce.x *= Mathf.Sign(relativePosition.x);
+						break;
+					}
+					case TakenKnockbackDirections.BasedOnDamageOnTouchPosition:
+						Vector3 _colliderOffset =
+							(_boxCollider2D != null) ? _boxCollider2D.offset : _circleCollider2D.offset;
+						_knockbackForce.x *= Mathf.Sign((_colliderCorgiController.transform.position - (this.gameObject.transform.position + _colliderOffset)).x);
+						break;
 				}
-				if (DamageTakenKnockbackDirection == TakenKnockbackDirections.BasedOnDamagerPosition)
-				{
-					Vector2 relativePosition = _corgiController.transform.position - _collidingCollider.bounds.center;
-					_knockbackForce.x *= Mathf.Sign(relativePosition.x);
-				}
-				
-				_knockbackForce.y = DamageCausedKnockbackForce.y;	
 
-				if (DamageTakenKnockbackType == KnockbackStyles.SetForce)
+				_knockbackForce.y = DamageCausedKnockbackForce.y;
+
+				switch (DamageTakenKnockbackType)
 				{
-					_corgiController.SetForce(_knockbackForce);	
-				}
-				if (DamageTakenKnockbackType == KnockbackStyles.AddForce)
-				{
-					_corgiController.AddForce(_knockbackForce);	
+					case KnockbackStyles.SetForce:
+						_corgiController.SetForce(_knockbackForce);
+						break;
+					case KnockbackStyles.AddForce:
+						_corgiController.AddForce(_knockbackForce);
+						break;
 				}
 			}
 		}

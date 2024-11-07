@@ -74,8 +74,6 @@ namespace MoreMountains.CorgiEngine
 			else
 			{
 				// we kill the character
-				characterHealth.Kill ();
-
 				StartCoroutine (RemovePlayer (player));
 			}
 

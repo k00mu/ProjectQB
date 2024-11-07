@@ -11,7 +11,7 @@ namespace MoreMountains.CorgiEngine
 	/// Add this class to an enemy (or whatever you want), to be able to stomp on it
 	/// </summary>
 	[AddComponentMenu("Corgi Engine/Character/Damage/Stompable")] 
-	public class Stompable : MonoBehaviour 
+	public class Stompable : CorgiMonoBehaviour 
 	{
 		/// the possible ways to add knockback : noKnockback, which won't do nothing, set force, or add force
 		public enum KnockbackStyles { NoKnockback, SetForce, AddForce }

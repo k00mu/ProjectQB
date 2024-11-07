@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using MoreMountains.Tools;
 using System.Collections.Generic;
-#if ENABLE_INPUT_SYSTEM
+#if ENABLE_INPUT_SYSTEM && !ENABLE_LEGACY_INPUT_MANAGER
 	using UnityEngine.InputSystem;
 #endif
 
@@ -12,10 +12,10 @@ namespace MoreMountains.CorgiEngine
 	/// Each character in your scene will need to have a CharacterSwap class on it, and the corresponding PlayerID.
 	/// You can see an example of such a setup in the MinimalCharacterSwap demo scene
 	/// </summary>
-	public class CharacterSwapManager : MonoBehaviour, MMEventListener<CorgiEngineEvent>
+	public class CharacterSwapManager : CorgiMonoBehaviour, MMEventListener<CorgiEngineEvent>
 	{
 		[Header("Character Swap")]
-		#if ENABLE_INPUT_SYSTEM
+		#if ENABLE_INPUT_SYSTEM && !ENABLE_LEGACY_INPUT_MANAGER
 			/// the button to use to go up
 			public Key SwapKey = Key.P;
 		#else
@@ -28,7 +28,7 @@ namespace MoreMountains.CorgiEngine
 		public string PlayerID = "Player1";
         
 		protected CharacterSwap[] _characterSwapArray;
-		protected List<CharacterSwap> _characterSwapList; 
+		protected MMCircularList<CharacterSwap> _characterSwapList; 
 		protected CorgiEngineEvent _swapEvent = new CorgiEngineEvent(CorgiEngineEventTypes.CharacterSwap);
 
 		/// <summary>
@@ -37,7 +37,7 @@ namespace MoreMountains.CorgiEngine
 		public virtual void UpdateList()
 		{
 			_characterSwapArray = FindObjectsOfType<CharacterSwap>();
-			_characterSwapList = new List<CharacterSwap>();
+			_characterSwapList = new MMCircularList<CharacterSwap>();
 
 			// stores the array into the list if the PlayerID matches
 			for (int i = 0; i<_characterSwapArray.Length; i++)
@@ -81,7 +81,7 @@ namespace MoreMountains.CorgiEngine
 		/// </summary>
 		protected virtual void HandleInput()
 		{
-			#if ENABLE_INPUT_SYSTEM
+			#if ENABLE_INPUT_SYSTEM && !ENABLE_LEGACY_INPUT_MANAGER
 				if (Keyboard.current[SwapKey].wasPressedThisFrame)
 				{
 					SwapCharacter();
@@ -104,32 +104,53 @@ namespace MoreMountains.CorgiEngine
 				return;
 			}
 
-			int newIndex = -1;
+			int currentIndex = GetCurrentIndex();
+			_characterSwapList.CurrentIndex = currentIndex;
+			_characterSwapList.IncrementCurrentIndex();
+			int newIndex = currentIndex;
 
-			for (int i=0; i<_characterSwapList.Count; i++)
+			int i = 0;
+			while (i < _characterSwapList.Count)
 			{
-				if (_characterSwapList[i].Current())
+				if (_characterSwapList.Current.enabled)
 				{
-					newIndex = i + 1;
+					newIndex = _characterSwapList.CurrentIndex;
+					break;
 				}
-				_characterSwapList[i].ResetCharacterSwap();
-			}
 
-			if (newIndex >= _characterSwapList.Count)
-			{
-				newIndex = 0;
+				_characterSwapList.IncrementCurrentIndex();
+				i++;
 			}
+			
+			_characterSwapList[currentIndex].ResetCharacterSwap();
 			_characterSwapList[newIndex].SwapToThisCharacter();
 
 			LevelManager.Instance.Players[0] = _characterSwapList[newIndex].gameObject.GetComponentInParent<Character>();
 			MMEventManager.TriggerEvent(_swapEvent);
+		}
+
+		/// <summary>
+		/// Finds which character is currently active and considered the current one
+		/// </summary>
+		/// <returns></returns>
+		public virtual int GetCurrentIndex()
+		{
+			int currentIndex = -1;
+			for (int i=0; i<_characterSwapList.Count; i++)
+			{
+				if (_characterSwapList[i].Current())
+				{
+					return i;
+				}
+			}
+			return currentIndex;
 		}
 		
 		/// <summary>
 		/// On Level Start, we initialize our list
 		/// </summary>
 		/// <param name="eventType"></param>
-		public void OnMMEvent(CorgiEngineEvent engineEvent)
+		public virtual void OnMMEvent(CorgiEngineEvent engineEvent)
 		{
 			switch (engineEvent.EventType)
 			{

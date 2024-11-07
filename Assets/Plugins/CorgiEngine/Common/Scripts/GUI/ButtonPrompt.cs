@@ -7,7 +7,7 @@ using UnityEngine.UI;
 
 namespace MoreMountains.CorgiEngine
 {
-	public class ButtonPrompt : MonoBehaviour
+	public class ButtonPrompt : CorgiMonoBehaviour
 	{
 		[Header("Bindings")]
 

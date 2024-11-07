@@ -9,7 +9,7 @@ namespace MoreMountains.CorgiEngine
 	/// Add this component to a button (for example) to be able to store a selected character, and optionally to go to another scene
 	/// You can see an example of its use in the RetroAdventureCharacterSelection demo scene
 	/// </summary>
-	public class CharacterSelector : MonoBehaviour 
+	public class CharacterSelector : CorgiMonoBehaviour 
 	{
 		/// The name of the scene to go to when calling LoadNextScene()
 		[Tooltip("The name of the scene to go to when calling LoadNextScene()")]

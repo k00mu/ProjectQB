@@ -6,7 +6,7 @@ using MoreMountains.InventoryEngine;
 
 namespace MoreMountains.CorgiEngine
 {
-	public class SaveResetButton : MonoBehaviour
+	public class SaveResetButton : CorgiMonoBehaviour
 	{
 		public virtual void ResetAllSaves()
 		{

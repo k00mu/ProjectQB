@@ -8,7 +8,7 @@ namespace MoreMountains.CorgiEngine
 	/// Add this to a GameObject with a Collider2D set to Trigger to have it kill the player on touch.
 	/// </summary>
 	[AddComponentMenu("Corgi Engine/Character/Damage/Kill Player on Touch")] 
-	public class KillPlayerOnTouch : MonoBehaviour 
+	public class KillPlayerOnTouch : CorgiMonoBehaviour 
 	{
 		/// <summary>
 		/// When a collision is triggered, check if the thing colliding is actually the player. If yes, kill it.

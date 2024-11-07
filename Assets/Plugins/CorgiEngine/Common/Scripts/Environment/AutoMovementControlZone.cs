@@ -10,7 +10,7 @@ namespace MoreMountains.CorgiEngine
 	/// </summary>
 	[AddComponentMenu("Corgi Engine/Environment/AutoMovementControlZone")]
 	[RequireComponent(typeof(Collider2D))]
-	public class AutoMovementControlZone : MonoBehaviour
+	public class AutoMovementControlZone : CorgiMonoBehaviour
 	{
 		/// the possible modes you can control direction with
 		public enum DirectionModes { None, Toggle, ForceLeft, ForceRight, ForceStop }
