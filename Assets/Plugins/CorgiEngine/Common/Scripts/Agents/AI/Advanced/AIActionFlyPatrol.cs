@@ -47,7 +47,6 @@ namespace MoreMountains.CorgiEngine
 		/// </summary>
 		public override void Initialization()
 		{
-			if(!ShouldInitialize) return;
 			// we get the CorgiController2D component
 			_controller = this.gameObject.GetComponentInParent<CorgiController>();
 			_character = this.gameObject.GetComponentInParent<Character>();

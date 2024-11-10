@@ -22,5 +22,7 @@ namespace MoreMountains.InventoryEngine
 			MMSaveLoadManager.DeleteSaveFolder (_saveFolderName);
 			Debug.LogFormat ("Inventories Save Files Reset");
 		}
+
+
 	}
 }

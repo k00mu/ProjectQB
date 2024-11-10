@@ -10,7 +10,7 @@ namespace MoreMountains.CorgiEngine
 	/// <summary>
 	/// A controller for the level map's main character
 	/// </summary>
-	public class LevelMapCharacter : CorgiMonoBehaviour//, MMEventListener<MMStateChangeEvent<>>
+	public class LevelMapCharacter : MonoBehaviour//, MMEventListener<MMStateChangeEvent<>>
 	{
 		/// the player ID (for input manager)
 		[Tooltip("the player ID (for input manager)")]

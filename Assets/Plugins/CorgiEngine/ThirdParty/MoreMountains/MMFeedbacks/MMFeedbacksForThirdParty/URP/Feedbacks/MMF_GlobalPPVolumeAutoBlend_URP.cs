@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 using MoreMountains.Feedbacks;
-using UnityEngine.Scripting.APIUpdating;
 
 namespace MoreMountains.FeedbacksForThirdParty
 {
@@ -14,7 +13,6 @@ namespace MoreMountains.FeedbacksForThirdParty
 	#if MM_URP
 	[FeedbackPath("PostProcess/Global PP Volume Auto Blend URP")]
 	#endif
-	[MovedFrom(false, null, "MoreMountains.Feedbacks.URP")]
 	public class MMF_GlobalPPVolumeAutoBlend_URP : MMF_Feedback
 	{
 		/// a static bool used to disable all feedbacks of this type at once
@@ -33,9 +31,6 @@ namespace MoreMountains.FeedbacksForThirdParty
 		public override string RequiredTargetText { get { return TargetAutoBlend != null ? TargetAutoBlend.name : "";  } }
 		public override string RequiresSetupText { get { return "This feedback requires that a TargetCanvasGroup be set to be able to work properly. You can set one below."; } }
 		#endif
-		public override bool HasAutomatedTargetAcquisition => true;
-		protected override void AutomateTargetAcquisition() => TargetAutoBlend = FindAutomatedTarget<MMGlobalPostProcessingVolumeAutoBlend_URP>();
-
 		/// defines the duration of the feedback
 		public override float FeedbackDuration
 		{
@@ -120,7 +115,6 @@ namespace MoreMountains.FeedbacksForThirdParty
 			}
 			else
 			{
-				TargetAutoBlend.TimeScale = (ComputedTimescaleMode == TimescaleModes.Scaled) ? MMGlobalPostProcessingVolumeAutoBlend_URP.TimeScales.Scaled : MMGlobalPostProcessingVolumeAutoBlend_URP.TimeScales.Unscaled;
 				TargetAutoBlend.BlendDuration = FeedbackDuration;
 				TargetAutoBlend.Curve = BlendCurve;
 				TargetAutoBlend.InitialWeight = InitialWeight;
@@ -148,18 +142,6 @@ namespace MoreMountains.FeedbacksForThirdParty
 			{
 				TargetAutoBlend.StopBlending();
 			}
-		}
-
-		/// <summary>
-		/// On restore, we put our object back at its initial position
-		/// </summary>
-		protected override void CustomRestoreInitialValues()
-		{
-			if (!Active || !FeedbackTypeAuthorized)
-			{
-				return;
-			}
-			TargetAutoBlend.RestoreInitialValues();
 		}
 	}
 }

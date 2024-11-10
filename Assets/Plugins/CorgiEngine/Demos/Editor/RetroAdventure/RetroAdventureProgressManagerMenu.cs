@@ -9,7 +9,7 @@ namespace MoreMountains.CorgiEngine
 	{
 		[MenuItem("Tools/More Mountains/Reset all progress",false,21)]
 		/// <summary>
-		/// Adds a menu item to reset all progress
+		/// Adds a menu item to enable help
 		/// </summary>
 		private static void ResetProgress()
 		{

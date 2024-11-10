@@ -3,7 +3,6 @@ using System.Collections;
 using MoreMountains.Feedbacks;
 using System;
 using System.Collections.Generic;
-using MoreMountains.Tools;
 
 namespace MoreMountains.Feedbacks
 {
@@ -30,25 +29,18 @@ namespace MoreMountains.Feedbacks
 		public float OnLerpDuration = 0.05f;
 	}
 
-	[Serializable]
-	public class BlinkTargetRenderer
-	{
-		public Renderer TargetRenderer;
-		public int TargetMaterialIndex;
-	}
-
 	/// <summary>
 	/// Add this class to a GameObject to make it blink, either by enabling/disabling a gameobject, changing its alpha, emission intensity, or a value on a shader)
 	/// </summary>
 	[AddComponentMenu("More Mountains/Feedbacks/Shakers/Various/MMBlink")]
-	public class MMBlink : MMMonoBehaviour
+	public class MMBlink : MonoBehaviour
 	{
 		/// the possible states of the blinking object
 		public enum States { On, Off }
 		/// the possible methods to blink an object
 		public enum Methods { SetGameObjectActive, MaterialAlpha, MaterialEmissionIntensity, ShaderFloatValue }
         
-		[MMInspectorGroup("Blink Method", true, 17)] 
+		[Header("Blink Method")]
 		/// the selected method to blink the target object
 		[Tooltip("the selected method to blink the target object")]
 		public Methods Method = Methods.SetGameObjectActive;
@@ -60,10 +52,6 @@ namespace MoreMountains.Feedbacks
 		[Tooltip("the target renderer to work with")]
 		[MMFEnumCondition("Method", (int)Methods.MaterialAlpha, (int)Methods.MaterialEmissionIntensity, (int)Methods.ShaderFloatValue)]
 		public Renderer TargetRenderer;
-		/// the material index to target
-		[Tooltip("the material index to target")]
-		[MMFEnumCondition("Method", (int)Methods.MaterialAlpha, (int)Methods.MaterialEmissionIntensity, (int)Methods.ShaderFloatValue)]
-		public int MaterialIndex = 0;
 		/// the shader property to alter a float on
 		[Tooltip("the shader property to alter a float on")]
 		[MMFEnumCondition("Method", (int)Methods.MaterialAlpha, (int)Methods.MaterialEmissionIntensity, (int)Methods.ShaderFloatValue)]
@@ -87,16 +75,8 @@ namespace MoreMountains.Feedbacks
 		/// if this is true, this component will use material property blocks instead of working on an instance of the material.
 		[Tooltip("if this is true, this component will use material property blocks instead of working on an instance of the material.")] 
 		public bool UseMaterialPropertyBlocks = false;
-		
-		[MMInspectorGroup("Extra Targets", true, 12)] 
-		/// a list of optional extra renderers and their material index to target
-		[Tooltip("a list of optional extra renderers and their material index to target")]
-		public List<BlinkTargetRenderer> ExtraRenderers;
-		/// a list of optional extra game objects to target
-		[Tooltip("a list of optional extra game objects to target")]
-		public List<GameObject> ExtraGameObjects;
 
-		[MMInspectorGroup("State", true, 18)] 
+		[Header("State")]
 		/// whether the object should blink or not
 		[Tooltip("whether the object should blink or not")]
 		public bool Blinking = true;
@@ -108,12 +88,12 @@ namespace MoreMountains.Feedbacks
 		[MMFCondition("ForceStateOnExit", true)]
 		public States StateOnExit = States.On;
 
-		[MMInspectorGroup("TimeScale", true, 120)] 
+		[Header("Timescale")] 
 		/// whether or not this MMBlink should operate on unscaled time 
 		[Tooltip("whether or not this MMBlink should operate on unscaled time")]
 		public TimescaleModes TimescaleMode = TimescaleModes.Scaled;
         
-		[MMInspectorGroup("Sequence", true, 121)] 
+		[Header("Sequence")]
 		/// how many times the sequence should repeat (-1 : infinite)
 		[Tooltip("how many times the sequence should repeat (-1 : infinite)")]
 		public int RepeatCount = 0;
@@ -121,14 +101,19 @@ namespace MoreMountains.Feedbacks
 		[Tooltip("The list of phases to apply blinking with")]
 		public List<BlinkPhase> Phases;
         
-		[MMInspectorGroup("Debug", true, 122)] 
-		
-		[MMInspectorButtonBar(new string[] { "ToggleBlinking", "StartBlinking", "StopBlinking" }, 
-			new string[] { "ToggleBlinking", "StartBlinking", "StopBlinking" }, 
-			new bool[] { true, true, true },
-			new string[] { "main-call-to-action", "", "" })]
-		public bool DebugToolbar;
-		
+		[Header("Debug")]
+		/// Test button
+		[Tooltip("Test button")]
+		[MMFInspectorButton("ToggleBlinking")]
+		public bool ToggleBlinkingButton;
+		/// Test button
+		[Tooltip("Test button")]
+		[MMFInspectorButton("StartBlinking")]
+		public bool StartBlinkingButton;
+		/// Test button
+		[Tooltip("Test button")]
+		[MMFInspectorButton("StopBlinking")]
+		public bool StopBlinkingButton;
 		/// is the blinking object in an active state right now?
 		[Tooltip("is the blinking object in an active state right now?")]
 		[MMFReadOnly]
@@ -152,8 +137,6 @@ namespace MoreMountains.Feedbacks
 		protected Color _currentColor;
 		protected int _repeatCount;
 		protected MaterialPropertyBlock _propertyBlock;
-		protected List<MaterialPropertyBlock> _extraPropertyBlocks;
-		protected List<Color> _extraInitialColors;
 
 		/// <summary>
 		/// Makes the object blink if it wasn't already blinking, stops it otherwise
@@ -254,98 +237,51 @@ namespace MoreMountains.Feedbacks
 			ApplyBlink(Active, newValue);
 		}
 
-		/// <summary>
-		/// The duration of the blink is the sum of its phases' durations, plus the time it takes to repeat them all
-		/// </summary>
-		public virtual float Duration
-		{
-			get
-			{
-				if ((RepeatCount < 0)
-				    || (Phases.Count == 0))
-				{
-					return 0f;
-				}
-
-				float totalDuration = 0f;
-				foreach (BlinkPhase phase in Phases)
-				{
-					totalDuration += phase.PhaseDuration;
-				}
-				return totalDuration + totalDuration * RepeatCount;
-			}
-		}
-
-		/// <summary>
-		/// Applies the blink to the object based on its type
-		/// </summary>
-		/// <param name="active"></param>
-		/// <param name="value"></param>
 		protected virtual void ApplyBlink(bool active, float value)
 		{
 			switch (Method)
 			{
 				case Methods.SetGameObjectActive:
 					TargetGameObject.SetActive(active);
-					foreach (GameObject go in ExtraGameObjects)
-					{
-						go.SetActive(active);
-					}
 					break;
 				case Methods.MaterialAlpha:
 					_currentColor.a = value;
-					ApplyCurrentColor(TargetRenderer);
-					for (var index = 0; index < ExtraRenderers.Count; index++)
+					if (UseMaterialPropertyBlocks)
 					{
-						var blinkRenderer = ExtraRenderers[index];
-						ApplyCurrentColor(blinkRenderer.TargetRenderer);
+						TargetRenderer.GetPropertyBlock(_propertyBlock);
+						_propertyBlock.SetColor(_propertyID, _currentColor);
+						TargetRenderer.SetPropertyBlock(_propertyBlock);
+					}
+					else
+					{
+						TargetRenderer.material.SetColor(_propertyID, _currentColor);    
 					}
 					break;
 				case Methods.MaterialEmissionIntensity:
 					_currentColor = _initialColor * value;
-					ApplyCurrentColor(TargetRenderer);
-					for (var index = 0; index < ExtraRenderers.Count; index++)
+					if (UseMaterialPropertyBlocks)
 					{
-						var blinkRenderer = ExtraRenderers[index];
-						ApplyCurrentColor(blinkRenderer.TargetRenderer);
+						TargetRenderer.GetPropertyBlock(_propertyBlock);
+						_propertyBlock.SetColor(_propertyID, _currentColor);
+						TargetRenderer.SetPropertyBlock(_propertyBlock);
+					}
+					else
+					{
+						TargetRenderer.material.SetColor(_propertyID, _currentColor);    
 					}
 					break;
 				case Methods.ShaderFloatValue:
-					ApplyFloatValue(TargetRenderer, value);
-					for (var index = 0; index < ExtraRenderers.Count; index++)
+					if (UseMaterialPropertyBlocks)
 					{
-						var blinkRenderer = ExtraRenderers[index];
-						ApplyFloatValue(blinkRenderer.TargetRenderer, value);
+						TargetRenderer.GetPropertyBlock(_propertyBlock);
+						_propertyBlock.SetFloat(_propertyID, value);
+						TargetRenderer.SetPropertyBlock(_propertyBlock);
+					}
+					else
+					{
+						TargetRenderer.material.SetFloat(_propertyID, value); 
 					}
 					break;
-			}
-		}
-
-		protected virtual void ApplyFloatValue(Renderer targetRenderer, float value)
-		{
-			if (UseMaterialPropertyBlocks)
-			{
-				targetRenderer.GetPropertyBlock(_propertyBlock, MaterialIndex);
-				_propertyBlock.SetFloat(_propertyID, value);
-				targetRenderer.SetPropertyBlock(_propertyBlock);
-			}
-			else
-			{
-				targetRenderer.materials[MaterialIndex].SetFloat(_propertyID, value); 
-			}
-		}
-
-		protected virtual void ApplyCurrentColor(Renderer targetRenderer)
-		{
-			if (UseMaterialPropertyBlocks)
-			{
-				targetRenderer.GetPropertyBlock(_propertyBlock, MaterialIndex);
-				_propertyBlock.SetColor(_propertyID, _currentColor);
-				targetRenderer.SetPropertyBlock(_propertyBlock);
-			}
-			else
-			{
-				targetRenderer.materials[MaterialIndex].SetColor(_propertyID, _currentColor);    
 			}
 		}
 
@@ -421,32 +357,25 @@ namespace MoreMountains.Feedbacks
 			switch (Method)
 			{
 				case Methods.MaterialAlpha:
-					GetInitialColor();
+					TargetRenderer.GetPropertyBlock(_propertyBlock);
+					_propertyID = Shader.PropertyToID(ShaderPropertyName);
+					_initialColor = UseMaterialPropertyBlocks ? TargetRenderer.sharedMaterial.GetColor(_propertyID) : TargetRenderer.material.GetColor(_propertyID);
+					_currentColor = _initialColor;
 					break;
 				case Methods.MaterialEmissionIntensity:
-					GetInitialColor();
+					TargetRenderer.GetPropertyBlock(_propertyBlock);
+					_propertyID = Shader.PropertyToID(ShaderPropertyName);
+					_initialColor = UseMaterialPropertyBlocks ? TargetRenderer.sharedMaterial.GetColor(_propertyID) : TargetRenderer.material.GetColor(_propertyID);
+					_currentColor = _initialColor;
 					break;
 				case Methods.ShaderFloatValue:
-					GetInitialFloatValue();
+					TargetRenderer.GetPropertyBlock(_propertyBlock);
+					_propertyID = Shader.PropertyToID(ShaderPropertyName);
+					_initialShaderFloatValue = UseMaterialPropertyBlocks ? TargetRenderer.sharedMaterial.GetFloat(_propertyID) : TargetRenderer.material.GetFloat(_propertyID);
 					break;
 			}
 		}
 
-		protected virtual void GetInitialColor()
-		{
-			TargetRenderer.GetPropertyBlock(_propertyBlock, MaterialIndex);
-			_propertyID = Shader.PropertyToID(ShaderPropertyName);
-			_initialColor = UseMaterialPropertyBlocks ? TargetRenderer.sharedMaterial.GetColor(_propertyID) : TargetRenderer.materials[MaterialIndex].GetColor(_propertyID);
-			_currentColor = _initialColor;
-		}
-
-		protected virtual void GetInitialFloatValue()
-		{
-			TargetRenderer.GetPropertyBlock(_propertyBlock, MaterialIndex);
-			_propertyID = Shader.PropertyToID(ShaderPropertyName);
-			_initialShaderFloatValue = UseMaterialPropertyBlocks ? TargetRenderer.sharedMaterial.GetFloat(_propertyID) : TargetRenderer.materials[MaterialIndex].GetFloat(_propertyID);
-		}
-		
 		/// <summary>
 		/// Resets blinking properties to original values
 		/// </summary>
@@ -459,24 +388,10 @@ namespace MoreMountains.Feedbacks
 			float value = 1f;
 			if (Method == Methods.ShaderFloatValue)
 			{
-				value = _initialShaderFloatValue; 
+				value = _initialShaderFloatValue;
 			}
+            
 			ApplyBlink(false, value);
-		}
-
-		protected void OnDisable()
-		{
-			if (ForceStateOnExit)
-			{
-				if (StateOnExit == States.Off)
-				{
-					ApplyBlink(false, 0f);
-				}
-				else
-				{
-					ApplyBlink(true, 1f);
-				}
-			}
 		}
 	}
 }

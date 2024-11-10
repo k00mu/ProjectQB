@@ -4,7 +4,7 @@ using MoreMountains.Tools;
 using MoreMountains.Feedbacks;
 using System.Collections.Generic;
 using UnityEngine.Events;
-#if ENABLE_INPUT_SYSTEM && !ENABLE_LEGACY_INPUT_MANAGER
+#if ENABLE_INPUT_SYSTEM
 using UnityEngine.InputSystem;
 #endif
 
@@ -61,9 +61,6 @@ namespace MoreMountains.CorgiEngine
 		/// if this is true, extra enter checks will be performed on TriggerStay, to handle edge cases like a zone that'd prevent activation when not grounded, and a character enters it airborne, but then lands
 		[Tooltip("if this is true, extra enter checks will be performed on TriggerStay, to handle edge cases like a zone that'd prevent activation when not grounded, and a character enters it airborne, but then lands")]
 		public bool AlsoPerformChecksOnStay = false;
-		/// a layermask with all the layers that can interact with this specific button activated zone
-		[Tooltip("a layermask with all the layers that can interact with this specific button activated zone")]
-		public LayerMask TargetLayerMask = ~0;
 
 		[MMInspectorGroup("Number of Activations", true, 12)]
 		[MMInformation("You can decide to have that zone be interactable forever, or just a limited number of times, and can specify a delay between uses (in seconds).", MoreMountains.Tools.MMInformationAttribute.InformationType.Info, false)]
@@ -88,7 +85,7 @@ namespace MoreMountains.CorgiEngine
 		public InputTypes InputType = InputTypes.Default;
 		
 		
-		#if ENABLE_INPUT_SYSTEM && !ENABLE_LEGACY_INPUT_MANAGER
+		#if ENABLE_INPUT_SYSTEM
 			/// the input action to use for this button activated object
 			public InputAction InputSystemAction;
 		#else
@@ -192,7 +189,7 @@ namespace MoreMountains.CorgiEngine
 		{
 			get
 			{
-				#if ENABLE_INPUT_SYSTEM && !ENABLE_LEGACY_INPUT_MANAGER
+				#if ENABLE_INPUT_SYSTEM
 					return InputSystemAction.WasPerformedThisFrame();
 				#else
 					return false;
@@ -229,7 +226,7 @@ namespace MoreMountains.CorgiEngine
 			EnterFeedback?.Initialization(this.gameObject);
 			ExitFeedback?.Initialization(this.gameObject);
 			
-			#if ENABLE_INPUT_SYSTEM && !ENABLE_LEGACY_INPUT_MANAGER
+			#if ENABLE_INPUT_SYSTEM
 				InputSystemAction.Enable();
 			#endif
 		}
@@ -237,9 +234,9 @@ namespace MoreMountains.CorgiEngine
 		/// <summary>
 		/// On disable we disable our input action if needed
 		/// </summary>
-		protected virtual void OnDisable()
+		protected void OnDisable()
 		{
-			#if ENABLE_INPUT_SYSTEM && !ENABLE_LEGACY_INPUT_MANAGER
+			#if ENABLE_INPUT_SYSTEM
 				InputSystemAction.Disable();
 			#endif
 		}
@@ -396,7 +393,7 @@ namespace MoreMountains.CorgiEngine
 		}
 
 		/// <summary>
-		/// Enables the button activated zone
+		/// Disables the button activated zone
 		/// </summary>
 		public virtual void EnableZone()
 		{
@@ -612,11 +609,6 @@ namespace MoreMountains.CorgiEngine
 		/// <param name="characterButtonActivation">Character button activation.</param>
 		protected virtual bool CheckConditions(GameObject collider)
 		{
-			if (!MMLayers.LayerInLayerMask(collider.layer, TargetLayerMask))
-			{
-				return false;
-			}
-			
 			Character character = collider.gameObject.MMGetComponentNoAlloc<Character>();
 
 			switch (ButtonActivatedRequirement)

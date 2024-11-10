@@ -24,9 +24,6 @@ namespace MoreMountains.CorgiEngine
 		/// the speed of the character when it's walking
 		[Tooltip("the speed of the character when it's walking")]
 		public float WalkSpeed = 6f;
-		/// press this debug button if you decide to change the WalkSpeed at runtime, to reset its cache and have it impact your character in real time
-		[MMInspectorButton("ResetHorizontalSpeed")]
-		public bool ResetHorizontalSpeedBtn;
 		/// the multiplier to apply to the horizontal movement
 		[MMReadOnly]
 		[Tooltip("the multiplier to apply to the horizontal movement")]
@@ -49,9 +46,9 @@ namespace MoreMountains.CorgiEngine
 
 
 		/// the current horizontal movement force
-		public virtual float HorizontalMovementForce { get { return _horizontalMovementForce; }}
+		public float HorizontalMovementForce { get { return _horizontalMovementForce; }}
 		/// if this is true, movement will be forbidden (as well as flip)
-		public virtual bool MovementForbidden { get; set; }
+		public bool MovementForbidden { get; set; }
 
 		[Header("Input")]
 
@@ -100,11 +97,9 @@ namespace MoreMountains.CorgiEngine
 
 		// animation parameters
 		protected const string _speedAnimationParameterName = "Speed";
-		protected const string _relativeSpeedAnimationParameterName = "xSpeedFacing";
 		protected const string _walkingAnimationParameterName = "Walking";
 		protected int _speedAnimationParameter;
 		protected int _walkingAnimationParameter;
-		protected int _relativeSpeedAnimationParameter;
 
 		/// <summary>
 		/// On Initialization, we set our movement speed to WalkSpeed.
@@ -127,7 +122,7 @@ namespace MoreMountains.CorgiEngine
 			base.ProcessAbility();
 
 			HandleHorizontalMovement();
-			DetectWalls(true);
+			DetectWalls();
 		}
 
 		/// <summary>
@@ -143,9 +138,7 @@ namespace MoreMountains.CorgiEngine
 
 			_horizontalMovement = _horizontalInput;
 
-			if ((AirControl < 1f) 
-			    && !_controller.State.IsGrounded
-			    && (_character.MovementState.CurrentState != CharacterStates.MovementStates.WallClinging))
+			if ((AirControl < 1f) && !_controller.State.IsGrounded)
 			{
 				_horizontalMovement = Mathf.Lerp(_lastGroundedHorizontalMovement, _horizontalInput, AirControl);
 			}
@@ -180,6 +173,7 @@ namespace MoreMountains.CorgiEngine
 				StopStartFeedbacks();
 			}
 
+                        
 			// if movement is prevented, or if the character is dead/frozen/can't move, we exit and do nothing
 			if (!ActiveAfterDeath)
 			{
@@ -245,11 +239,7 @@ namespace MoreMountains.CorgiEngine
 			          || (_movement.CurrentState == CharacterStates.MovementStates.Falling)))
 			{				
 				_movement.ChangeState(CharacterStates.MovementStates.Walking);
-				
-				if (!DetectWalls(false))
-				{
-					PlayAbilityStartFeedbacks();
-				}
+				PlayAbilityStartFeedbacks();	
 			}
 
 			// if we're grounded, jumping but not moving up, we become idle
@@ -330,28 +320,20 @@ namespace MoreMountains.CorgiEngine
 			}            
 		}
 
-		/// <summary>
-		/// This method will return true if a wall is detected in front of the character, false otherwise
-		/// </summary>
-		/// <param name="changeState">Whether or not this method should change state to idle if a wall is found</param>
-		/// <returns></returns>
-		protected virtual bool DetectWalls(bool changeState)
+		protected virtual void DetectWalls()
 		{
 			if (!StopWalkingWhenCollidingWithAWall)
 			{
-				return false;
+				return;
 			}
 
 			if ((_movement.CurrentState == CharacterStates.MovementStates.Walking) || (_movement.CurrentState == CharacterStates.MovementStates.Running))
 			{
 				if ((_controller.State.IsCollidingLeft) || (_controller.State.IsCollidingRight))
 				{
-					if (changeState) { _movement.ChangeState(CharacterStates.MovementStates.Idle); }
-					return true;
+					_movement.ChangeState(CharacterStates.MovementStates.Idle);
 				}
 			}
-
-			return false;
 		}
 
 		/// <summary>
@@ -493,7 +475,6 @@ namespace MoreMountains.CorgiEngine
 		{
 			RegisterAnimatorParameter (_speedAnimationParameterName, AnimatorControllerParameterType.Float, out _speedAnimationParameter);
 			RegisterAnimatorParameter (_walkingAnimationParameterName, AnimatorControllerParameterType.Bool, out _walkingAnimationParameter);
-			RegisterAnimatorParameter(_relativeSpeedAnimationParameterName, AnimatorControllerParameterType.Float, out _relativeSpeedAnimationParameter);
 		}
 
 		/// <summary>
@@ -503,7 +484,6 @@ namespace MoreMountains.CorgiEngine
 		{
 			MMAnimatorExtensions.UpdateAnimatorFloat(_animator, _speedAnimationParameter, Mathf.Abs(_normalizedHorizontalSpeed), _character._animatorParameters, _character.PerformAnimatorSanityChecks);
 			MMAnimatorExtensions.UpdateAnimatorBool(_animator, _walkingAnimationParameter, (_movement.CurrentState == CharacterStates.MovementStates.Walking), _character._animatorParameters, _character.PerformAnimatorSanityChecks);
-			MMAnimatorExtensions.UpdateAnimatorFloat(_animator, _relativeSpeedAnimationParameter, _character.IsFacingRight ? _controller.Speed.x : -_controller.Speed.x, _character._animatorParameters, _character.PerformAnimatorSanityChecks);
 		}
         
 		/// <summary>

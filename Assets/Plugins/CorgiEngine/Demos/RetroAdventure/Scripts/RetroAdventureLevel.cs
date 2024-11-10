@@ -10,7 +10,7 @@ namespace MoreMountains.CorgiEngine
 	/// <summary>
 	/// A class to handle the display of retro adventure levels in the retro adventure level selector
 	/// </summary>
-	public class RetroAdventureLevel : CorgiMonoBehaviour 
+	public class RetroAdventureLevel : MonoBehaviour 
 	{
 		/// the name of the scene to bind to this element
 		[Tooltip("the name of the scene to bind to this element")]

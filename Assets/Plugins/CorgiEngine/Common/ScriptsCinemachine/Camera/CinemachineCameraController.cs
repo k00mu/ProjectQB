@@ -9,7 +9,7 @@ namespace MoreMountains.CorgiEngine
 	/// <summary>
 	/// A class that handles camera follow for Cinemachine powered cameras
 	/// </summary>
-	public class CinemachineCameraController : CorgiMonoBehaviour, MMEventListener<MMCameraEvent>, MMEventListener<CorgiEngineEvent>
+	public class CinemachineCameraController : MonoBehaviour, MMEventListener<MMCameraEvent>, MMEventListener<CorgiEngineEvent>
 	{
 		public enum PerspectiveZoomMethods { FieldOfView, FramingTransposerDistance }
 
@@ -92,9 +92,6 @@ namespace MoreMountains.CorgiEngine
 		/// if this is true, the camera will teleport to the player's location on respawn, otherwise it'll move there at its regular speed
 		[Tooltip("if this is true, the camera will teleport to the player's location on respawn, otherwise it'll move there at its regular speed")]
 		public bool InstantRepositionCameraOnRespawn = false;
-		/// if this is true, the controller will disable the virtual camera on stop follow. It will be re-enabled on start follow orders
-		[Tooltip("if this is true, the controller will disable the virtual camera on stop follow. It will be re-enabled on start follow orders")]
-		public bool DisableVirtualCameraOnStopFollow = true;
 
 		[Header("Debug")] 
 		[MMInspectorButton("StartFollowing")]
@@ -194,11 +191,7 @@ namespace MoreMountains.CorgiEngine
 			if (!FollowsAPlayer) { return; }
 			FollowsPlayer = false;
 			_virtualCamera.Follow = null;
-			if (DisableVirtualCameraOnStopFollow)
-			{
-				_virtualCamera.enabled = false;	
-			}
-			
+			_virtualCamera.enabled = false;
 		}
 
 		/// <summary>

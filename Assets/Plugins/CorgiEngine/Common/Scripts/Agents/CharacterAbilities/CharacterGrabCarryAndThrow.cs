@@ -68,9 +68,6 @@ namespace MoreMountains.CorgiEngine
 		[MMReadOnly]
 		[Tooltip("whether or not this Character is throwing something this frame")]
 		public bool Throwing = false;
-		/// whether or not to allow the character to throw if next to a grabbable object
-		[Tooltip("whether or not to allow the character to throw if next to a grabbable object")]
-		public bool PreventThrowIfCarryingOnGrab = false; 
 
 		protected Vector2 _raycastOrigin;
 		protected Vector2 _recoilVector;
@@ -85,7 +82,7 @@ namespace MoreMountains.CorgiEngine
 		protected const string _throwingAnimationParameterName = "Throwing";
 		protected int _throwingAnimationParameter;
 		protected Vector3 _actualRaycastDirection;
-		
+
 		/// <summary>
 		/// On init we set our CarryParent to the character transform if null
 		/// </summary>
@@ -107,10 +104,6 @@ namespace MoreMountains.CorgiEngine
 			{
 				if (Carrying)
 				{
-					if (PreventThrowIfCarryingOnGrab && (GetGrababbleObject() != null))
-					{
-						return;
-					}
 					Throw();
 				}
 			}
@@ -128,21 +121,11 @@ namespace MoreMountains.CorgiEngine
 		/// </summary>
 		protected virtual void GrabAttempt()
 		{
-			if (!AbilityAuthorized
-			    || ((_condition.CurrentState != CharacterStates.CharacterConditions.Normal) && (_condition.CurrentState != CharacterStates.CharacterConditions.ControlledMovement)))
+			if (!AbilityAuthorized)
 			{
 				return;
 			}
             
-			CarriedObject = GetGrababbleObject();    
-			if (CarriedObject != null)
-			{
-				Grab();
-			}
-		}
-
-		protected virtual GrabCarryAndThrowObject GetGrababbleObject()
-		{
 			_raycastOrigin = this.transform.position;
 			_actualRaycastDirection = RaycastDirection;
 			if (!_character.IsFacingRight)
@@ -153,10 +136,12 @@ namespace MoreMountains.CorgiEngine
 			if (hit)
 			{
 				// we make sure we have an object that can be carried
-				return hit.collider.gameObject.MMGetComponentNoAlloc<GrabCarryAndThrowObject>();                
+				CarriedObject = hit.collider.gameObject.MMGetComponentNoAlloc<GrabCarryAndThrowObject>();                
 			}
-
-			return null;
+			if (CarriedObject != null)
+			{
+				Grab();
+			}
 		}
 
 		/// <summary>
@@ -261,12 +246,9 @@ namespace MoreMountains.CorgiEngine
 		{
 			base.ResetAbility();
 			Throw();
-			if (_animator != null)
-			{
-				MMAnimatorExtensions.UpdateAnimatorBool(_animator, _grabbingAnimationParameter, false, _character._animatorParameters, _character.PerformAnimatorSanityChecks);
-				MMAnimatorExtensions.UpdateAnimatorBool(_animator, _throwingAnimationParameter, false, _character._animatorParameters, _character.PerformAnimatorSanityChecks);
-				MMAnimatorExtensions.UpdateAnimatorBool(_animator, _carryingAnimationParameter, false, _character._animatorParameters, _character.PerformAnimatorSanityChecks);
-			}
+			MMAnimatorExtensions.UpdateAnimatorBool(_animator, _grabbingAnimationParameter, false, _character._animatorParameters, _character.PerformAnimatorSanityChecks);
+			MMAnimatorExtensions.UpdateAnimatorBool(_animator, _throwingAnimationParameter, false, _character._animatorParameters, _character.PerformAnimatorSanityChecks);
+			MMAnimatorExtensions.UpdateAnimatorBool(_animator, _carryingAnimationParameter, false, _character._animatorParameters, _character.PerformAnimatorSanityChecks);
 		}
 	}
 }

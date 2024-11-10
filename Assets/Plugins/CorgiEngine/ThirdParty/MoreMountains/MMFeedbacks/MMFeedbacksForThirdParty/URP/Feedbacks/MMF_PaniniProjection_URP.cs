@@ -1,9 +1,7 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 using MoreMountains.Feedbacks;
-using UnityEngine.Scripting.APIUpdating;
-#if MM_URP
-using UnityEngine.Rendering.Universal;
-#endif
 
 namespace MoreMountains.FeedbacksForThirdParty
 {
@@ -18,7 +16,6 @@ namespace MoreMountains.FeedbacksForThirdParty
 	#if MM_URP
 	[FeedbackPath("PostProcess/Panini Projection URP")]
 	#endif
-	[MovedFrom(false, null, "MoreMountains.Feedbacks.URP")]
 	public class MMF_PaniniProjection_URP : MMF_Feedback
 	{
 		/// a static bool used to disable all feedbacks of this type at once
@@ -26,14 +23,11 @@ namespace MoreMountains.FeedbacksForThirdParty
 		/// sets the inspector color for this feedback
 		#if UNITY_EDITOR
 		public override Color FeedbackColor { get { return MMFeedbacksInspectorColors.PostProcessColor; } }
-		public override bool HasCustomInspectors => true;
-		public override bool HasAutomaticShakerSetup => true;
 		#endif
 
 		/// the duration of this feedback is the duration of the shake
 		public override float FeedbackDuration { get { return ApplyTimeMultiplier(Duration); } set { Duration = value; } }
 		public override bool HasChannel => true;
-		public override bool HasRandomness => true;
 
 		[MMFInspectorGroup("Panini Projection", true, 28)]
 		/// the duration of the shake, in seconds
@@ -74,9 +68,9 @@ namespace MoreMountains.FeedbacksForThirdParty
 				return;
 			}
             
-			float intensityMultiplier = ComputeIntensity(feedbacksIntensity, position);
-			MMPaniniProjectionShakeEvent_URP.Trigger(ShakeDistance, FeedbackDuration, RemapDistanceZero, RemapDistanceOne, RelativeDistance, intensityMultiplier, ChannelData, 
-				ResetShakerValuesAfterShake, ResetTargetValuesAfterShake, NormalPlayDirection, ComputedTimescaleMode);
+			float intensityMultiplier = Timing.ConstantIntensity ? 1f : feedbacksIntensity;
+			MMPaniniProjectionShakeEvent_URP.Trigger(ShakeDistance, FeedbackDuration, RemapDistanceZero, RemapDistanceOne, RelativeDistance, intensityMultiplier, Channel, 
+				ResetShakerValuesAfterShake, ResetTargetValuesAfterShake, NormalPlayDirection, Timing.TimescaleMode);
             
 		}
         
@@ -92,30 +86,9 @@ namespace MoreMountains.FeedbacksForThirdParty
 				return;
 			}
 			base.CustomStopFeedback(position, feedbacksIntensity);
-			MMPaniniProjectionShakeEvent_URP.Trigger(ShakeDistance, FeedbackDuration, RemapDistanceZero, RemapDistanceOne, RelativeDistance, channelData: ChannelData, stop: true);
-		}
-
-		/// <summary>
-		/// On restore, we put our object back at its initial position
-		/// </summary>
-		protected override void CustomRestoreInitialValues()
-		{
-			if (!Active || !FeedbackTypeAuthorized)
-			{
-				return;
-			}
-			
-			MMPaniniProjectionShakeEvent_URP.Trigger(ShakeDistance, FeedbackDuration, RemapDistanceZero, RemapDistanceOne, RelativeDistance, channelData: ChannelData, restore: true);
-		}
-		
-		/// <summary>
-		/// Automaticall sets up the post processing profile and shaker
-		/// </summary>
-		public override void AutomaticShakerSetup()
-		{
-			#if MM_URP && UNITY_EDITOR
-			MMURPHelpers.GetOrCreateVolume<PaniniProjection, MMPaniniProjectionShaker_URP>(Owner, "PaniniProjection");
-			#endif
+            
+			MMPaniniProjectionShakeEvent_URP.Trigger(ShakeDistance, FeedbackDuration, RemapDistanceZero, RemapDistanceOne, RelativeDistance, channel: Channel, stop: true);
+            
 		}
 	}
 }

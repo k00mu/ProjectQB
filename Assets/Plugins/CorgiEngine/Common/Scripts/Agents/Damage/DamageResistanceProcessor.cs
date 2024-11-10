@@ -9,7 +9,7 @@ namespace MoreMountains.CorgiEngine
 	/// Link this component to a Health component, and it'll be able to process incoming damage through resistances, handling damage reduction/increase, condition changes, movement multipliers, feedbacks and more.
 	/// </summary>
 	[AddComponentMenu("Corgi Engine/Character/Health/DamageResistanceProcessor")]
-	public class DamageResistanceProcessor : CorgiMonoBehaviour
+	public class DamageResistanceProcessor : MonoBehaviour
 	{
 		[Header("Damage Resistance List")]
 		
@@ -19,13 +19,10 @@ namespace MoreMountains.CorgiEngine
 		/// If this is true, disabled resistances will be ignored by the auto fill 
 		[Tooltip("If this is true, disabled resistances will be ignored by the auto fill")]
 		public bool IgnoreDisabledResistances = true;
-		/// If this is true, damage from damage types that this processor has no resistance for will be ignored
-		[Tooltip("If this is true, damage from damage types that this processor has no resistance for will be ignored")]
-		public bool IgnoreUnknownDamageTypes = false;
 		
 		/// the list of damage resistances this processor will handle. Auto filled if AutoFillDamageResistanceList is true
 		[Tooltip("the list of damage resistances this processor will handle. Auto filled if AutoFillDamageResistanceList is true")]
-		public List<DamageResistance> DamageResistanceList;
+		public List<DamageResistance> DamageResitanceList;
 
 		/// <summary>
 		/// On awake we initialize our processor
@@ -47,7 +44,7 @@ namespace MoreMountains.CorgiEngine
 						includeInactive: !IgnoreDisabledResistances);
 				if (foundResistances.Length > 0)
 				{
-					DamageResistanceList = foundResistances.ToList();	
+					DamageResitanceList = foundResistances.ToList();	
 				}
 			}
 			SortDamageResistanceList();
@@ -60,7 +57,7 @@ namespace MoreMountains.CorgiEngine
 		public virtual void SortDamageResistanceList()
 		{
 			// we sort the list by priority
-			DamageResistanceList.Sort((p1,p2)=>p1.Priority.CompareTo(p2.Priority));
+			DamageResitanceList.Sort((p1,p2)=>p1.Priority.CompareTo(p2.Priority));
 		}
 		
 		/// <summary>
@@ -73,7 +70,7 @@ namespace MoreMountains.CorgiEngine
 		public virtual float ProcessDamage(float damage, List<TypedDamage> typedDamages, bool damageApplied)
 		{
 			float totalDamage = 0f;
-			if (DamageResistanceList.Count == 0) // if we don't have resistances, we output raw damage
+			if (DamageResitanceList.Count == 0) // if we don't have resistances, we output raw damage
 			{
 				totalDamage = damage;
 				if (typedDamages != null)
@@ -83,64 +80,37 @@ namespace MoreMountains.CorgiEngine
 						totalDamage += typedDamage.DamageCaused;
 					}
 				}
-				if (IgnoreUnknownDamageTypes)
-				{
-					totalDamage = damage;
-				}
 				return totalDamage;
 			}
 			else // if we do have resistances
 			{
 				totalDamage = damage;
 				
-				foreach (DamageResistance resistance in DamageResistanceList)
+				foreach (DamageResistance resistance in DamageResitanceList)
 				{
 					totalDamage = resistance.ProcessDamage(totalDamage, null, damageApplied);
 				}
-
-				if (typedDamages != null)
+				
+				if (typedDamages != null) 
 				{
 					foreach (TypedDamage typedDamage in typedDamages)
 					{
 						float currentDamage = typedDamage.DamageCaused;
 						
-						bool atLeastOneResistanceFound = false;
-						foreach (DamageResistance resistance in DamageResistanceList)
+						foreach (DamageResistance resistance in DamageResitanceList)
 						{
-							if (IgnoreDisabledResistances && !resistance.isActiveAndEnabled)
-							{
-								continue;
-							}
-							if (resistance.TypeResistance == typedDamage.AssociatedDamageType)
-							{
-								atLeastOneResistanceFound = true;
-							}
 							currentDamage = resistance.ProcessDamage(currentDamage, typedDamage.AssociatedDamageType, damageApplied);
 						}
-						if (IgnoreUnknownDamageTypes && !atLeastOneResistanceFound)
-						{
-							// we don't add to the total
-						}
-						else
-						{
-							totalDamage += currentDamage;	
-						}
-						
+						totalDamage += currentDamage;
 					}
 				}
-				
 				return totalDamage;
 			}
 		}
 
-		/// <summary>
-		/// Enables or disables a resistance matching the searched label
-		/// </summary>
-		/// <param name="searchedLabel"></param>
-		/// <param name="active"></param>
 		public virtual void SetResistanceByLabel(string searchedLabel, bool active)
 		{
-			foreach (DamageResistance resistance in DamageResistanceList)
+			foreach (DamageResistance resistance in DamageResitanceList)
 			{
 				if (resistance.Label == searchedLabel)
 				{
@@ -155,7 +125,7 @@ namespace MoreMountains.CorgiEngine
 		/// <param name="damageType"></param>
 		public virtual void InterruptDamageOverTime(DamageType damageType)
 		{
-			foreach (DamageResistance resistance in DamageResistanceList)
+			foreach (DamageResistance resistance in DamageResitanceList)
 			{
 				if ( resistance.gameObject.activeInHierarchy &&
 					((resistance.DamageTypeMode == DamageTypeModes.BaseDamage) ||
@@ -174,7 +144,7 @@ namespace MoreMountains.CorgiEngine
 		/// <returns></returns>
 		public virtual bool CheckPreventCharacterConditionChange(DamageType typedDamage)
 		{
-			foreach (DamageResistance resistance in DamageResistanceList)
+			foreach (DamageResistance resistance in DamageResitanceList)
 			{
 				if (!resistance.gameObject.activeInHierarchy)
 				{
@@ -202,108 +172,13 @@ namespace MoreMountains.CorgiEngine
 		}
 
 		/// <summary>
-		/// Returns true if the resistances on this processor make it immune to knockback, false otherwise
-		/// </summary>
-		/// <param name="typedDamage"></param>
-		/// <returns></returns>
-		public virtual bool CheckPreventKnockback(List<TypedDamage> typedDamages)
-		{
-			if ((typedDamages == null) || (typedDamages.Count == 0))
-			{
-				foreach (DamageResistance resistance in DamageResistanceList)
-				{
-					if (!resistance.gameObject.activeInHierarchy)
-					{
-						continue;
-					}
-				
-					if ((resistance.DamageTypeMode == DamageTypeModes.BaseDamage) &&
-					    (resistance.ImmuneToKnockback))
-					{
-						return true;	
-					}
-				}
-
-				return false;
-			}
-
-			foreach (TypedDamage typedDamage in typedDamages)
-			{
-				foreach (DamageResistance resistance in DamageResistanceList)
-				{
-					if (!resistance.gameObject.activeInHierarchy)
-					{
-						continue;
-					}
-				
-					if (typedDamage == null)
-					{
-						if ((resistance.DamageTypeMode == DamageTypeModes.BaseDamage) &&
-						    (resistance.ImmuneToKnockback))
-						{
-							return true;	
-						}
-					}
-					else
-					{
-						if ((resistance.TypeResistance == typedDamage.AssociatedDamageType) &&
-						    (resistance.ImmuneToKnockback))
-						{
-							return true;
-						}
-					}
-				}
-			}
-			
-			return false;
-		}
-		
-		/// <summary>
-		/// Processes the input knockback force through the various resistances
-		/// </summary>
-		/// <param name="knockback"></param>
-		/// <param name="typedDamages"></param>
-		/// <returns></returns>
-		public virtual Vector2 ProcessKnockbackForce(Vector2 knockback, List<TypedDamage> typedDamages)
-		{
-			if (DamageResistanceList.Count == 0) // if we don't have resistances, we output raw knockback value
-			{
-				return knockback;
-			}
-			else // if we do have resistances
-			{
-				foreach (DamageResistance resistance in DamageResistanceList)
-				{
-					knockback = resistance.ProcessKnockback(knockback, null);
-				}
-
-				if (typedDamages != null)
-				{
-					foreach (TypedDamage typedDamage in typedDamages)
-					{
-						foreach (DamageResistance resistance in DamageResistanceList)
-						{
-							if (IgnoreDisabledResistances && !resistance.isActiveAndEnabled)
-							{
-								continue;
-							}
-							knockback = resistance.ProcessKnockback(knockback, typedDamage.AssociatedDamageType);
-						}
-					}
-				}
-				
-				return knockback;
-			}
-		}
-
-		/// <summary>
 		/// Checks if any of the resistances prevents the character from changing condition, and returns true if that's the case, false otherwise
 		/// </summary>
 		/// <param name="typedDamage"></param>
 		/// <returns></returns>
 		public virtual bool CheckPreventMovementModifier(DamageType typedDamage)
 		{
-			foreach (DamageResistance resistance in DamageResistanceList)
+			foreach (DamageResistance resistance in DamageResitanceList)
 			{
 				if (!resistance.gameObject.activeInHierarchy)
 				{

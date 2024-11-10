@@ -1,7 +1,11 @@
 ﻿using UnityEngine;
+using System.Collections;
 using MoreMountains.Tools;
 using System.Collections.Generic;
+using UnityEngine.UI;
 using System;
+using System.IO;
+using System.Runtime.Serialization.Formatters.Binary;
 
 namespace MoreMountains.InventoryEngine
 {
@@ -13,12 +17,6 @@ namespace MoreMountains.InventoryEngine
 	public class Inventory : MonoBehaviour, MMEventListener<MMInventoryEvent>, MMEventListener<MMGameEvent>
 	{
 		public static List<Inventory> RegisteredInventories;
-		
-		[RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]
-		protected static void InitializeStatics()
-		{
-			RegisteredInventories = null;
-		}
         
 		/// The different possible inventory types, main are regular, equipment will have special behaviours (use them for slots where you put the equipped weapon/armor/etc).
 		public enum InventoryTypes { Main, Equipment }
@@ -30,7 +28,6 @@ namespace MoreMountains.InventoryEngine
 
 		/// the complete list of inventory items in this inventory
 		[Tooltip("This is a realtime view of your Inventory's contents. Don't modify this list via the inspector, it's visible for control purposes only.")]
-		[MMReadOnly]
 		public InventoryItem[] Content;
 
 		[Header("Inventory Type")]
@@ -43,7 +40,7 @@ namespace MoreMountains.InventoryEngine
 		/// the transform at which objects will be spawned when dropped
 		public Transform TargetTransform;
 
-		[Header("Persistence")]
+		[Header("Persistency")]
 		[Tooltip("Here you can define whether or not this inventory should respond to Load and Save events. If you don't want to have your inventory saved to disk, set this to false. You can also have it reset on start, to make sure it's always empty at the start of this level.")]
 		/// whether this inventory will be saved and loaded
 		public bool Persistent = true;
@@ -56,13 +53,10 @@ namespace MoreMountains.InventoryEngine
 		public bool DrawContentInInspector = false;
 
 		/// the owner of the inventory (for games where you have multiple characters)
-		public virtual GameObject Owner { get; set; }
+		public GameObject Owner { get; set; }
 
 		/// The number of free slots in this inventory
-		public virtual int NumberOfFreeSlots => Content.Length - NumberOfFilledSlots;
-
-		/// whether or not the inventory is full (doesn't have any remaining free slots)
-		public virtual bool IsFull => NumberOfFreeSlots <= 0;
+		public int NumberOfFreeSlots { get { return Content.Length - NumberOfFilledSlots; } }
 
 		/// The number of filled slots 
 		public int NumberOfFilledSlots
@@ -105,9 +99,9 @@ namespace MoreMountains.InventoryEngine
 			return numberOfStackableSlots;
 		}
 
-		public static string _resourceItemPath = "Items/";
-		public static string _saveFolderName = "InventoryEngine/";
-		public static string _saveFileExtension = ".inventory";
+		public const string _resourceItemPath = "Items/";
+		protected const string _saveFolderName = "InventoryEngine/";
+		protected const string _saveFileExtension = ".inventory";
 
 		/// <summary>
 		/// Returns (if found) an inventory matching the searched name and playerID
@@ -186,9 +180,6 @@ namespace MoreMountains.InventoryEngine
 			}
 
 			List<int> list = InventoryContains(itemToAdd.ItemID);
-;
-			quantity = CapMaxQuantity(itemToAdd, quantity);
-			
 			// if there's at least one item like this already in the inventory and it's stackable
 			if (list.Count > 0 && itemToAdd.MaximumStack > 1)
 			{
@@ -246,22 +237,12 @@ namespace MoreMountains.InventoryEngine
 		/// <returns></returns>
 		public virtual bool AddItemAt(InventoryItem itemToAdd, int quantity, int destinationIndex)
 		{
-			int tempQuantity = quantity;
-
-			tempQuantity = CapMaxQuantity(itemToAdd, quantity);
-			
 			if (!InventoryItem.IsNull(Content[destinationIndex]))
 			{
-				if ((Content[destinationIndex].ItemID != itemToAdd.ItemID) || (Content[destinationIndex].MaximumStack <= 1))
-				{
-					return false;
-				}
-				else
-				{
-					tempQuantity += Content[destinationIndex].Quantity;
-				}
+				return false;
 			}
-			
+
+			int tempQuantity = quantity;
 			if (tempQuantity > itemToAdd.MaximumStack)
 			{
 				tempQuantity = itemToAdd.MaximumStack;
@@ -427,7 +408,6 @@ namespace MoreMountains.InventoryEngine
 			}
 
 			int quantityLeftToRemove = quantity;
-			
             
 			List<int> list = InventoryContains(itemID);
 			foreach (int index in list)
@@ -440,8 +420,7 @@ namespace MoreMountains.InventoryEngine
 					return true;
 				}
 			}
-			
-			return false;
+			return true;
 		}
 
 		/// <summary>
@@ -465,17 +444,6 @@ namespace MoreMountains.InventoryEngine
 			Content = new InventoryItem[Content.Length];
 
 			MMInventoryEvent.Trigger(MMInventoryEventType.ContentChanged, null, this.name, null, 0, 0, PlayerID);
-		}
-
-		/// <summary>
-		/// Returns the max value of a specific item that can be added to this inventory  without exceeding the max quantity defined on the item
-		/// </summary>
-		/// <param name="itemToAdd"></param>
-		/// <param name="newQuantity"></param>
-		/// <returns></returns>
-		public virtual int CapMaxQuantity(InventoryItem itemToAdd, int newQuantity)
-		{
-			return Mathf.Min(newQuantity, itemToAdd.MaximumQuantity - GetQuantity(itemToAdd.ItemID));
 		}
 
 		/// <summary>
@@ -663,9 +631,9 @@ namespace MoreMountains.InventoryEngine
 					_loadedInventoryItem = Resources.Load<InventoryItem>(_resourceItemPath + serializedInventory.ContentType[i]);
 					if (_loadedInventoryItem == null)
 					{
-						Debug.LogError("InventoryEngine : Couldn't find any inventory item to load at Resources/"+_resourceItemPath
+						Debug.LogError("InventoryEngine : Couldn't find any inventory item to load at "+_resourceItemPath
 							+" named "+serializedInventory.ContentType[i] + ". Make sure all your items definitions names (the name of the InventoryItem scriptable " +
-							"objects) are exactly the same as their ItemID string in their inspector. Make sure they are in a  Resources/"+_resourceItemPath+" folder. " +
+							"objects) are exactly the same as their ItemID string in their inspector. " +
 							"Once that's done, also make sure you reset all saved inventories as the mismatched names and IDs may have " +
 							"corrupted them.");
 					}
@@ -693,7 +661,7 @@ namespace MoreMountains.InventoryEngine
 		public virtual void ResetSavedInventory()
 		{
 			MMSaveLoadManager.DeleteSave(DetermineSaveName(), _saveFolderName);
-			Debug.LogFormat("Inventory save file deleted");
+			Debug.LogFormat("save file deleted");
 		}
 
 		/// <summary>
@@ -716,11 +684,11 @@ namespace MoreMountains.InventoryEngine
 			if (item.Use(PlayerID))
 			{
 				// remove 1 from quantity
+				MMInventoryEvent.Trigger(MMInventoryEventType.ItemUsed, slot, this.name, item.Copy(), 0, index, PlayerID);
 				if (item.Consumable)
 				{
 					RemoveItem(index, item.ConsumeQuantity);    
 				}
-				MMInventoryEvent.Trigger(MMInventoryEventType.ItemUsed, slot, this.name, item.Copy(), 0, index, PlayerID);
 			}
 			return true;
 		}
@@ -777,13 +745,11 @@ namespace MoreMountains.InventoryEngine
 					MMInventoryEvent.Trigger(MMInventoryEventType.Error, slot, this.name, null, 0, index, PlayerID);
 					return;
 				}
-				// if the object can't be equipped if the inventory is full, and if it indeed is, we do nothing and exit
-				if (!item.EquippableIfInventoryIsFull)
+				// call the equip method of the item
+
+				if (!item.Equip(PlayerID))
 				{
-					if (item.TargetEquipmentInventory(PlayerID).IsFull)
-					{
-						return;
-					}
+					return;
 				}
 				// if this is a mono slot inventory, we prepare to swap
 				if (item.TargetEquipmentInventory(PlayerID).Content.Length == 1)
@@ -798,8 +764,6 @@ namespace MoreMountains.InventoryEngine
 						{
 							// we store the item in the equipment inventory
 							oldItem = item.TargetEquipmentInventory(PlayerID).Content[0].Copy();
-							oldItem.UnEquip(PlayerID);
-							MMInventoryEvent.Trigger(MMInventoryEventType.ItemUnEquipped, slot, this.name, oldItem, oldItem.Quantity, index, PlayerID);
 							item.TargetEquipmentInventory(PlayerID).EmptyInventory();
 						}
 					}
@@ -822,11 +786,6 @@ namespace MoreMountains.InventoryEngine
 					{
 						AddItem(oldItem, oldItem.Quantity);    
 					}
-				}
-				// call the equip method of the item
-				if (!item.Equip(PlayerID))
-				{
-					return;
 				}
 				MMInventoryEvent.Trigger(MMInventoryEventType.ItemEquipped, slot, this.name, item, item.Quantity, index, PlayerID);
 			}
@@ -894,22 +853,8 @@ namespace MoreMountains.InventoryEngine
 			// if there's a target inventory, we'll try to add the item back to it
 			if (item.TargetInventory(PlayerID) != null)
 			{
-				bool itemAdded = false;
-				if (item.ForceSlotIndex)
-				{
-					itemAdded = item.TargetInventory(PlayerID).AddItemAt(item, item.Quantity, item.TargetIndex);
-					if (!itemAdded)
-					{
-						itemAdded = item.TargetInventory(PlayerID).AddItem(item, item.Quantity);    	
-					}
-				}
-				else
-				{
-					itemAdded = item.TargetInventory(PlayerID).AddItem(item, item.Quantity);    
-				}
-				
 				// if we managed to add the item
-				if (itemAdded)
+				if (item.TargetInventory(PlayerID).AddItem(item, item.Quantity))
 				{
 					DestroyItem(index);
 				}

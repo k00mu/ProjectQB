@@ -54,7 +54,6 @@ namespace MoreMountains.CorgiEngine
             InputActions.PlayerControls.SwitchWeapon.performed += context => { BindButton(context, SwitchWeaponButton); };
             InputActions.PlayerControls.SwitchCharacter.performed += context => { BindButton(context, SwitchCharacterButton); };
             InputActions.PlayerControls.TimeControl.performed += context => { BindButton(context, TimeControlButton); };
-            InputActions.PlayerControls.Roll.performed += context => { BindButton(context, RollButton); };
 
             InputActions.PlayerControls.Swim.performed += context => { BindButton(context, SwimButton); };
             InputActions.PlayerControls.Glide.performed += context => { BindButton(context, GlideButton); };
@@ -82,7 +81,7 @@ namespace MoreMountains.CorgiEngine
                 {
                     imButton.TriggerButtonDown();
                 }
-                if ( button.wasReleasedThisFrame || (imButton.State.CurrentState == MMInput.ButtonStates.ButtonPressed && !button.isPressed) )
+                if (button.wasReleasedThisFrame)
                 {
                     imButton.TriggerButtonUp();
                 }

@@ -1,9 +1,8 @@
 ﻿using MoreMountains.Tools;
 using UnityEngine;
-#if (MM_TEXTMESHPRO || MM_UGUI2)
+#if MM_TEXTMESHPRO
 using TMPro;
 #endif
-using UnityEngine.Scripting.APIUpdating;
 
 namespace MoreMountains.Feedbacks
 {
@@ -12,10 +11,9 @@ namespace MoreMountains.Feedbacks
 	/// </summary>
 	[AddComponentMenu("")]
 	[FeedbackHelp("This feedback lets you control the font size of a target TMP over time.")]
-	#if (MM_TEXTMESHPRO || MM_UGUI2)
+	#if MM_TEXTMESHPRO
 	[FeedbackPath("TextMesh Pro/TMP Font Size")]
 	#endif
-	[MovedFrom(false, null, "MoreMountains.Feedbacks.TextMeshPro")]
 	public class MMF_TMPFontSize : MMF_FeedbackBase
 	{
 		/// sets the inspector color for this feedback
@@ -35,7 +33,7 @@ namespace MoreMountains.Feedbacks
 		}
 		#endif
 		
-		#if UNITY_EDITOR && (MM_TEXTMESHPRO || MM_UGUI2)
+		#if UNITY_EDITOR && MM_TEXTMESHPRO
 		public override bool EvaluateRequiresSetup()
 		{
 			return (TargetTMPText == null);
@@ -47,10 +45,7 @@ namespace MoreMountains.Feedbacks
 		}
 		#endif
 
-		#if (MM_TEXTMESHPRO || MM_UGUI2)
-		public override bool HasAutomatedTargetAcquisition => true;
-		protected override void AutomateTargetAcquisition() => TargetTMPText = FindAutomatedTarget<TMP_Text>();
-
+		#if MM_TEXTMESHPRO
 		[MMFInspectorGroup("Target", true, 12, true)]
 		/// the TMP_Text component to control
 		[Tooltip("the TMP_Text component to control")]
@@ -78,7 +73,7 @@ namespace MoreMountains.Feedbacks
 
 		protected override void FillTargets()
 		{
-			#if (MM_TEXTMESHPRO || MM_UGUI2)
+			#if MM_TEXTMESHPRO
 			if (TargetTMPText == null)
 			{
 				return;

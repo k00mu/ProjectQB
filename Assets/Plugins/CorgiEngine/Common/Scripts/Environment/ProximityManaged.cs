@@ -8,7 +8,7 @@ namespace MoreMountains.CorgiEngine
 	/// <summary>
 	/// A class to add to any object in your scene to mark it as managed by a proximity manager.
 	/// </summary>
-	public class ProximityManaged : CorgiMonoBehaviour
+	public class ProximityManaged : MonoBehaviour
 	{
 		[Header("Thresholds")]
 

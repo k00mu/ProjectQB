@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using System.Collections;
 using MoreMountains.Tools;
 
 namespace MoreMountains.InventoryEngine
@@ -8,16 +9,7 @@ namespace MoreMountains.InventoryEngine
 	/// </summary>
 	public class InventoryDemoGameManager : MMSingleton<InventoryDemoGameManager> 
 	{
-		public virtual InventoryDemoCharacter Player { get; protected set; }
-		
-		/// <summary>
-		/// Statics initialization to support enter play modes
-		/// </summary>
-		[RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]
-		protected static void InitializeStatics()
-		{
-			_instance = null;
-		}
+		public InventoryDemoCharacter Player { get; protected set; }
 
 		protected override void Awake () 
 		{

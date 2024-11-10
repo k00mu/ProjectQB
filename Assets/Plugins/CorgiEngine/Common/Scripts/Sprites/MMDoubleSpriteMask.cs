@@ -1,13 +1,13 @@
 ﻿using System.Collections;
-using MoreMountains.Tools;
+using System.Collections.Generic;
 using UnityEngine;
 
-namespace MoreMountains.CorgiEngine
+namespace MoreMountains.Tools
 {
 	/// <summary>
 	/// This setup uses two sprite masks, bound in the inspector, to enable one and then disable the other to mask specific parts of a level
 	/// </summary>
-	public class MMDoubleSpriteMask : CorgiMonoBehaviour, MMEventListener<MMSpriteMaskEvent>
+	public class MMDoubleSpriteMask : MonoBehaviour, MMEventListener<MMSpriteMaskEvent>
 	{
 		[Header("Masks")]
 

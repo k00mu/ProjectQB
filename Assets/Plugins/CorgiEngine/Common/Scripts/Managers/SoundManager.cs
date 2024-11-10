@@ -60,15 +60,6 @@ namespace MoreMountains.CorgiEngine
 		protected List<AudioSource> _loopingSounds;
 			
 		/// <summary>
-		/// Statics initialization to support enter play modes
-		/// </summary>
-		[RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]
-		protected static void InitializeStatics()
-		{
-			_instance = null;
-		}
-		
-		/// <summary>
 		/// Plays a background music.
 		/// Only one background music can be active at a time.
 		/// </summary>
@@ -306,7 +297,7 @@ namespace MoreMountains.CorgiEngine
 		/// When we grab a sfx event, we play the corresponding sound
 		/// </summary>
 		/// <param name="sfxEvent"></param>
-		public virtual void OnMMSfxEvent(AudioClip clipToPlay, AudioMixerGroup audioGroup = null, float volume = 1f, float pitch = 1f, int priority = 128)
+		public virtual void OnMMSfxEvent(AudioClip clipToPlay, AudioMixerGroup audioGroup = null, float volume = 1f, float pitch = 1f)
 		{
 			PlaySound(clipToPlay, this.transform.position, pitch, 0.0f, 0.0f, volume, false, audioGroup: audioGroup);
 		}

@@ -9,7 +9,7 @@ namespace MoreMountains.CorgiEngine
 	/// For each bound (above, below, left, right), you can define if the player will be killed, or if its movement will be constrained, or if nothing happens
 	/// </summary>
 	[AddComponentMenu("Corgi Engine/Character/Core/Character Level Bounds")] 
-	public class CharacterLevelBounds : CorgiMonoBehaviour 
+	public class CharacterLevelBounds : MonoBehaviour 
 	{
 		/// the possible consequences of touching the level bounds
 		public enum BoundsBehavior 
@@ -33,13 +33,11 @@ namespace MoreMountains.CorgiEngine
 		/// what to do to the player when it reaches the right level bound
 		[Tooltip("what to do to the player when it reaches the right level bound")]
 		public BoundsBehavior Right = BoundsBehavior.Constrain;
-		/// if this is true, controller forces will also be reset (on the appropriate axis) when constraining
-		[Tooltip("if this is true, controller forces will also be reset (on the appropriate axis) when constraining")]
-		public bool ResetForcesOnConstrain = true;
 
 		protected Bounds _bounds;
 		protected CorgiController _controller;
 		protected Character _character;
+		protected BoxCollider2D _boxCollider;
 		protected Vector2 _constrainedPosition;
 		protected OneWayLevelManager _oneWayLevelManager;
 		
@@ -50,6 +48,7 @@ namespace MoreMountains.CorgiEngine
 		{
 			_character = this.gameObject.GetComponentInParent<Character>();
 			_controller = this.gameObject.GetComponentInParent<CorgiController>();
+			_boxCollider = this.gameObject.GetComponentInParent<BoxCollider2D>();
 			if (LevelManager.HasInstance)
 			{
 				_bounds = LevelManager.Instance.LevelBounds;
@@ -78,32 +77,28 @@ namespace MoreMountains.CorgiEngine
 				if ((Top != BoundsBehavior.Nothing) && (_controller.ColliderTopPosition.y > _bounds.max.y))
 				{
 					_constrainedPosition.x = transform.position.x;
-					_constrainedPosition.y = _bounds.max.y - _controller.ColliderSize.y / 2 - _controller.ColliderOffset.y;
-					if (ResetForcesOnConstrain) { _controller.SetVerticalForce(0f); }
+					_constrainedPosition.y = _bounds.max.y - _controller.ColliderSize.y / 2;
 					ApplyBoundsBehavior(Top, _constrainedPosition);
 				}
 									
 				if ((Bottom != BoundsBehavior.Nothing) && (_controller.ColliderBottomPosition.y < _bounds.min.y))
 				{
 					_constrainedPosition.x = transform.position.x;
-					_constrainedPosition.y = _bounds.min.y + _controller.ColliderSize.y / 2 - _controller.ColliderOffset.y;
-					if (ResetForcesOnConstrain) { _controller.SetVerticalForce(0f); }
+					_constrainedPosition.y = _bounds.min.y + _controller.ColliderSize.y / 2;
 					ApplyBoundsBehavior(Bottom, _constrainedPosition);
 				}					
 				
 				if ((Right != BoundsBehavior.Nothing) && (_controller.ColliderRightPosition.x > _bounds.max.x))
 				{
-					_constrainedPosition.x = _bounds.max.x - _controller.ColliderSize.x / 2 - _controller.ColliderOffset.x;
+					_constrainedPosition.x = _bounds.max.x - _controller.ColliderSize.x / 2;
 					_constrainedPosition.y = transform.position.y;
-					if (ResetForcesOnConstrain) { _controller.SetHorizontalForce(0f); }
 					ApplyBoundsBehavior(Right, _constrainedPosition);		
 				}					
 				
 				if ((Left != BoundsBehavior.Nothing) && (_controller.ColliderLeftPosition.x < _bounds.min.x))
 				{
-					_constrainedPosition.x = _bounds.min.x + _controller.ColliderSize.x / 2 + _controller.ColliderOffset.x;
+					_constrainedPosition.x = _bounds.min.x + _controller.ColliderSize.x / 2;
 					_constrainedPosition.y = transform.position.y;
-					if (ResetForcesOnConstrain) { _controller.SetHorizontalForce(0f); }
 					ApplyBoundsBehavior(Left, _constrainedPosition);
 				}					
 			}	

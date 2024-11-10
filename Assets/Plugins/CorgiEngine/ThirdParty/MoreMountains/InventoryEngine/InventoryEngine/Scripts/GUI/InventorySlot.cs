@@ -1,4 +1,7 @@
 ﻿using UnityEngine;
+using System.Collections;
+using MoreMountains.Tools;
+using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
@@ -23,19 +26,7 @@ namespace MoreMountains.InventoryEngine
 		public RectTransform IconRectTransform;
 		public Image IconImage;
 		public Text QuantityText;
-
-		public InventoryItem CurrentItem
-		{
-			get
-			{
-				if (ParentInventoryDisplay != null)
-				{
-					return ParentInventoryDisplay.TargetInventory.Content[Index];
-				}
-
-				return null;
-			}
-		}
+		
 		
 		protected const float _disabledAlpha = 0.5f;
 		protected const float _enabledAlpha = 1.0f;
@@ -121,13 +112,9 @@ namespace MoreMountains.InventoryEngine
 		/// </summary>
 		public virtual void SlotClicked () 
 		{
-			if (ParentInventoryDisplay != null)
+			if (ParentInventoryDisplay!=null)
 			{
 				InventoryItem item = ParentInventoryDisplay.TargetInventory.Content[Index];
-				if (ParentInventoryDisplay.InEquipSelection)
-				{
-					MMInventoryEvent.Trigger(MMInventoryEventType.EquipRequest, this, ParentInventoryDisplay.TargetInventoryName, ParentInventoryDisplay.TargetInventory.Content[Index], 0, Index, ParentInventoryDisplay.PlayerID);
-				}
 				MMInventoryEvent.Trigger(MMInventoryEventType.Click, this, ParentInventoryDisplay.TargetInventoryName, item, 0, Index, ParentInventoryDisplay.PlayerID);
 				// if we're currently moving an object
 				if (InventoryDisplay.CurrentlyBeingMovedItemIndex != -1)

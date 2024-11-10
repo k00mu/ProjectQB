@@ -184,12 +184,5 @@ namespace MoreMountains.FeedbacksForThirdParty
 			}
 			#endif
 		}
-	
-		public virtual void RestoreInitialValues()
-		{
-			#if MM_URP
-			_volume.weight = _initial;
-			#endif
-		}
 	}
 }

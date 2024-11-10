@@ -8,7 +8,7 @@ namespace MoreMountains.CorgiEngine
 	/// Add this class to a camera to have it support parallax layers
 	/// </summary>
 	[AddComponentMenu("Corgi Engine/Camera/Parallax Camera")]
-	public class ParallaxCamera : CorgiMonoBehaviour 
+	public class ParallaxCamera : MonoBehaviour 
 	{
 		[Header("Parallax")]
 		[MMInformation("If you set MoveParallax to true, the camera movement will cause parallax elements to move accordingly.",MoreMountains.Tools.MMInformationAttribute.InformationType.Info,false)]

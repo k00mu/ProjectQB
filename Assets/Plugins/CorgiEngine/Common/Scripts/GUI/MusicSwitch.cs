@@ -8,7 +8,7 @@ using MoreMountains.Feedbacks;
 
 namespace MoreMountains.CorgiEngine
 {
-	public class MusicSwitch : CorgiMonoBehaviour
+	public class MusicSwitch : MonoBehaviour
 	{
 		public virtual void On()
 		{

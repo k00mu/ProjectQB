@@ -38,12 +38,6 @@ namespace MoreMountains.CorgiEngine
 		protected override void HandleInput()
 		{
 			base.HandleInput();
-
-			if (!AbilityAuthorized)
-			{
-				return;
-			}
-			
 			if (_inputManager.TimeControlButton.State.CurrentState == MMInput.ButtonStates.ButtonDown)
 			{
 				TimeControlStart();

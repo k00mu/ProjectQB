@@ -3,7 +3,6 @@ using MoreMountains.Feedbacks;
 #if MOREMOUNTAINS_NICEVIBRATIONS_INSTALLED
 using Lofelt.NiceVibrations;
 #endif
-using UnityEngine.Scripting.APIUpdating;
 
 namespace MoreMountains.FeedbacksForThirdParty
 {
@@ -14,7 +13,6 @@ namespace MoreMountains.FeedbacksForThirdParty
 	#if MOREMOUNTAINS_NICEVIBRATIONS_INSTALLED
 	[FeedbackPath("Haptics/Haptic Clip")]
 	#endif
-	[MovedFrom(false, null, "MoreMountains.Feedbacks.NiceVibrations")]
 	[FeedbackHelp("This feedback will let you play a haptic clip, and randomize its level and frequency.")]
 	public class MMF_NVClip : MMF_Feedback
 	{

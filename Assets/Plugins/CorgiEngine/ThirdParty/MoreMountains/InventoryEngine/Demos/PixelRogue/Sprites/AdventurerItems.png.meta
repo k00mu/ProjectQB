@@ -50,14 +50,11 @@ TextureImporter:
   - first:
       213: -1982627368618908731
     second: AdventurerItems_Chest
-  - first:
-      213: -8183379544815909166
-    second: AdventurerItems_Ball
   externalObjects: {}
-  serializedVersion: 12
+  serializedVersion: 13
   mipmaps:
     mipMapMode: 0
-    enableMipMap: 0
+    enableMipMap: 1
     sRGBTexture: 1
     linearTexture: 0
     fadeOut: 0
@@ -123,7 +120,7 @@ TextureImporter:
     maxTextureSize: 64
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -136,7 +133,7 @@ TextureImporter:
     maxTextureSize: 64
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -149,7 +146,7 @@ TextureImporter:
     maxTextureSize: 64
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -162,7 +159,7 @@ TextureImporter:
     maxTextureSize: 64
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -497,7 +494,7 @@ TextureImporter:
         width: 17
         height: 8
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -505,27 +502,6 @@ TextureImporter:
       bones: []
       spriteID: 5c3a083a9ea4c74e0800000000000000
       internalID: -1982627368618908731
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: AdventurerItems_Ball
-      rect:
-        serializedVersion: 2
-        x: 28
-        y: 28
-        width: 8
-        height: 8
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2d6cc0159abce6e80800000000000000
-      internalID: -8183379544815909166
       vertices: []
       indices: 
       edges: []
@@ -543,7 +519,6 @@ TextureImporter:
     nameFileIdTable:
       AdventurerItems_Apple: 21300000
       AdventurerItems_Axe: 21300014
-      AdventurerItems_Ball: -8183379544815909166
       AdventurerItems_BlueArmor: 21300012
       AdventurerItems_Bomb: 21300004
       AdventurerItems_Chest: -1982627368618908731

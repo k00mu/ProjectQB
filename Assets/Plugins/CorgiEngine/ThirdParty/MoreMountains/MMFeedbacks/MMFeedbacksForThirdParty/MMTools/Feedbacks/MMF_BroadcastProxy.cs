@@ -1,6 +1,5 @@
 ﻿using MoreMountains.Tools;
 using UnityEngine;
-using UnityEngine.Scripting.APIUpdating;
 
 namespace MoreMountains.Feedbacks
 {
@@ -22,7 +21,7 @@ namespace MoreMountains.Feedbacks
 		[MMReadOnly]
 		public bool BroadcastInProgress = false;
 
-		public virtual float ThisLevel { get; set; }
+		public float ThisLevel { get; set; }
 		protected float _levelLastFrame;
 
 		/// <summary>

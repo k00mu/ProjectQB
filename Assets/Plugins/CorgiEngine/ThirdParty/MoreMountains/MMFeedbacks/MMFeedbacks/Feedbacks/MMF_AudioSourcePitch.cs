@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
-using UnityEngine.Scripting.APIUpdating;
 
 namespace MoreMountains.Feedbacks
 {
@@ -10,7 +9,6 @@ namespace MoreMountains.Feedbacks
 	/// This feedback lets you control the pitch of an AudioSource over time
 	/// </summary>
 	[AddComponentMenu("")]
-	[MovedFrom(false, null, "MoreMountains.Feedbacks")]
 	[FeedbackPath("Audio/AudioSource Pitch")]
 	[FeedbackHelp("This feedback lets you control the pitch of a target AudioSource over time.")]
 	public class MMF_AudioSourcePitch : MMF_Feedback
@@ -20,12 +18,11 @@ namespace MoreMountains.Feedbacks
 		/// sets the inspector color for this feedback
 		#if UNITY_EDITOR
 		public override Color FeedbackColor { get { return MMFeedbacksInspectorColors.SoundsColor; } }
-		public override string RequiredTargetText => RequiredChannelText;
+		public override string RequiredTargetText { get { return "Channel "+Channel;  } }
 		#endif
 		/// returns the duration of the feedback
 		public override float FeedbackDuration { get { return ApplyTimeMultiplier(Duration); } set { Duration = value; } }
 		public override bool HasChannel => true;
-		public override bool HasRandomness => true;
 
 		[MMFInspectorGroup("AudioSource Pitch", true, 77)]
 		/// the duration of the shake, in seconds
@@ -63,9 +60,9 @@ namespace MoreMountains.Feedbacks
 			{
 				return;
 			}
-			float intensityMultiplier = ComputeIntensity(feedbacksIntensity, position);
+			float intensityMultiplier = Timing.ConstantIntensity ? 1f : feedbacksIntensity;
 			MMAudioSourcePitchShakeEvent.Trigger(PitchTween, FeedbackDuration, RemapPitchZero, RemapPitchOne, RelativePitch,
-				intensityMultiplier, ChannelData, ResetShakerValuesAfterShake, ResetTargetValuesAfterShake, NormalPlayDirection, ComputedTimescaleMode);
+				intensityMultiplier, Channel, ResetShakerValuesAfterShake, ResetTargetValuesAfterShake, NormalPlayDirection, Timing.TimescaleMode);
 		}
         
 		/// <summary>
@@ -81,18 +78,6 @@ namespace MoreMountains.Feedbacks
 			}
 			base.CustomStopFeedback(position, feedbacksIntensity);
 			MMAudioSourcePitchShakeEvent.Trigger(PitchTween, FeedbackDuration, RemapPitchZero, RemapPitchOne, RelativePitch, stop:true);
-		}
-		
-		/// <summary>
-		/// On restore, we restore our initial state
-		/// </summary>
-		protected override void CustomRestoreInitialValues()
-		{
-			if (!Active || !FeedbackTypeAuthorized)
-			{
-				return;
-			}
-			MMAudioSourcePitchShakeEvent.Trigger(PitchTween, FeedbackDuration, RemapPitchZero, RemapPitchOne, RelativePitch, restore:true);
 		}
 	}
 }

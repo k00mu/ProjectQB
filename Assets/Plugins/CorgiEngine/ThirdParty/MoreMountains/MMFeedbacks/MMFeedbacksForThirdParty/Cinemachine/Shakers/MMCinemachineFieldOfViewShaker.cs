@@ -1,8 +1,6 @@
 ﻿using UnityEngine;
 #if MM_CINEMACHINE
 using Cinemachine;
-#elif MM_CINEMACHINE3
-using Unity.Cinemachine;
 #endif
 using MoreMountains.Feedbacks;
 using MoreMountains.Tools;
@@ -15,8 +13,6 @@ namespace MoreMountains.FeedbacksForThirdParty
 	[AddComponentMenu("More Mountains/Feedbacks/Shakers/Cinemachine/MMCinemachineFieldOfViewShaker")]
 	#if MM_CINEMACHINE
 	[RequireComponent(typeof(CinemachineVirtualCamera))]
-	#elif MM_CINEMACHINE3
-	[RequireComponent(typeof(CinemachineCamera))]
 	#endif
 	public class MMCinemachineFieldOfViewShaker : MMShaker
 	{
@@ -38,9 +34,6 @@ namespace MoreMountains.FeedbacksForThirdParty
 
 		#if MM_CINEMACHINE
 		protected CinemachineVirtualCamera _targetCamera;
-		#elif  MM_CINEMACHINE3
-		protected CinemachineCamera _targetCamera;
-		#endif
 		protected float _initialFieldOfView;
 		protected float _originalShakeDuration;
 		protected bool _originalRelativeFieldOfView;
@@ -54,11 +47,7 @@ namespace MoreMountains.FeedbacksForThirdParty
 		protected override void Initialization()
 		{
 			base.Initialization();
-			#if MM_CINEMACHINE
 			_targetCamera = this.gameObject.GetComponent<CinemachineVirtualCamera>();
-			#elif  MM_CINEMACHINE3
-			_targetCamera = this.gameObject.GetComponent<CinemachineCamera>();
-			#endif
 		}
 
 		/// <summary>
@@ -75,16 +64,7 @@ namespace MoreMountains.FeedbacksForThirdParty
 		protected override void Shake()
 		{
 			float newFieldOfView = ShakeFloat(ShakeFieldOfView, RemapFieldOfViewZero, RemapFieldOfViewOne, RelativeFieldOfView, _initialFieldOfView);
-			SetFieldOfView(newFieldOfView);
-		}
-
-		protected virtual void SetFieldOfView(float newFieldOfView)
-		{
-			#if MM_CINEMACHINE
 			_targetCamera.m_Lens.FieldOfView = newFieldOfView;
-			#elif  MM_CINEMACHINE3
-			_targetCamera.Lens.FieldOfView = newFieldOfView;
-			#endif
 		}
 
 		/// <summary>
@@ -92,11 +72,7 @@ namespace MoreMountains.FeedbacksForThirdParty
 		/// </summary>
 		protected override void GrabInitialValues()
 		{
-			#if MM_CINEMACHINE
 			_initialFieldOfView = _targetCamera.m_Lens.FieldOfView;
-			#elif  MM_CINEMACHINE3
-			_initialFieldOfView = _targetCamera.Lens.FieldOfView;
-			#endif
 		}
 
 		/// <summary>
@@ -109,10 +85,9 @@ namespace MoreMountains.FeedbacksForThirdParty
 		/// <param name="feedbacksIntensity"></param>
 		/// <param name="channel"></param>
 		public virtual void OnMMCameraFieldOfViewShakeEvent(AnimationCurve distortionCurve, float duration, float remapMin, float remapMax, bool relativeDistortion = false,
-			float feedbacksIntensity = 1.0f, MMChannelData channelData = null, bool resetShakerValuesAfterShake = true, bool resetTargetValuesAfterShake = true, bool forwardDirection = true, 
-			TimescaleModes timescaleMode = TimescaleModes.Scaled, bool stop = false, bool restore = false)
+			float feedbacksIntensity = 1.0f, int channel = 0, bool resetShakerValuesAfterShake = true, bool resetTargetValuesAfterShake = true, bool forwardDirection = true, TimescaleModes timescaleMode = TimescaleModes.Scaled, bool stop = false)
 		{
-			if (!CheckEventAllowed(channelData))
+			if (!CheckEventAllowed(channel))
 			{
 				return;
 			}
@@ -120,12 +95,6 @@ namespace MoreMountains.FeedbacksForThirdParty
 			if (stop)
 			{
 				Stop();
-				return;
-			}
-
-			if (restore)
-			{
-				ResetTargetValues();
 				return;
 			}
             
@@ -146,16 +115,13 @@ namespace MoreMountains.FeedbacksForThirdParty
 				_originalRelativeFieldOfView = RelativeFieldOfView;
 			}
 
-			if (!OnlyUseShakerValues)
-			{
-				TimescaleMode = timescaleMode;
-				ShakeDuration = duration;
-				ShakeFieldOfView = distortionCurve;
-				RemapFieldOfViewZero = remapMin * feedbacksIntensity;
-				RemapFieldOfViewOne = remapMax * feedbacksIntensity;
-				RelativeFieldOfView = relativeDistortion;
-				ForwardDirection = forwardDirection;
-			}
+			TimescaleMode = timescaleMode;
+			ShakeDuration = duration;
+			ShakeFieldOfView = distortionCurve;
+			RemapFieldOfViewZero = remapMin * feedbacksIntensity;
+			RemapFieldOfViewOne = remapMax * feedbacksIntensity;
+			RelativeFieldOfView = relativeDistortion;
+			ForwardDirection = forwardDirection;
 
 			Play();
 		}
@@ -166,7 +132,7 @@ namespace MoreMountains.FeedbacksForThirdParty
 		protected override void ResetTargetValues()
 		{
 			base.ResetTargetValues();
-			SetFieldOfView(_initialFieldOfView);
+			_targetCamera.m_Lens.FieldOfView = _initialFieldOfView;
 		}
 
 		/// <summary>
@@ -199,5 +165,6 @@ namespace MoreMountains.FeedbacksForThirdParty
 			base.StopListening();
 			MMCameraFieldOfViewShakeEvent.Unregister(OnMMCameraFieldOfViewShakeEvent);
 		}
+		#endif
 	}
 }

@@ -1,8 +1,7 @@
 ﻿using UnityEngine;
-#if (MM_TEXTMESHPRO || MM_UGUI2)
+#if MM_TEXTMESHPRO
 using TMPro;
 #endif
-using UnityEngine.Scripting.APIUpdating;
 
 namespace MoreMountains.Feedbacks
 {
@@ -11,10 +10,9 @@ namespace MoreMountains.Feedbacks
 	/// </summary>
 	[AddComponentMenu("")]
 	[FeedbackHelp("This feedback will let you change the text of a target TMP text component")]
-	#if (MM_TEXTMESHPRO || MM_UGUI2)
+	#if MM_TEXTMESHPRO
 	[FeedbackPath("TextMesh Pro/TMP Text")]
 	#endif
-	[MovedFrom(false, null, "MoreMountains.Feedbacks.TextMeshPro")]
 	public class MMF_TMPText : MMF_Feedback
 	{
 		/// a static bool used to disable all feedbacks of this type at once
@@ -23,15 +21,12 @@ namespace MoreMountains.Feedbacks
 		public override Color FeedbackColor { get { return MMFeedbacksInspectorColors.TMPColor; } }
 		public override string RequiresSetupText { get { return "This feedback requires that a TargetTMPText be set to be able to work properly. You can set one below."; } }
 		#endif
-		#if UNITY_EDITOR && (MM_TEXTMESHPRO || MM_UGUI2)
+		#if UNITY_EDITOR && MM_TEXTMESHPRO
 		public override bool EvaluateRequiresSetup() { return (TargetTMPText == null); }
 		public override string RequiredTargetText { get { return TargetTMPText != null ? TargetTMPText.name : "";  } }
 		#endif
         
-		#if (MM_TEXTMESHPRO || MM_UGUI2)
-		public override bool HasAutomatedTargetAcquisition => true;
-		protected override void AutomateTargetAcquisition() => TargetTMPText = FindAutomatedTarget<TMP_Text>();
-
+		#if MM_TEXTMESHPRO
 		[MMFInspectorGroup("TextMeshPro Change Text", true, 12, true)]
 		/// the target TMP_Text component we want to change the text on
 		[Tooltip("the target TMP_Text component we want to change the text on")]
@@ -41,8 +36,6 @@ namespace MoreMountains.Feedbacks
 		[TextArea]
 		public string NewText = "Hello World";
 		#endif
-
-		protected string _initialText;
         
 		/// <summary>
 		/// On play we change the text of our target TMPText
@@ -51,7 +44,7 @@ namespace MoreMountains.Feedbacks
 		/// <param name="feedbacksIntensity"></param>
 		protected override void CustomPlayFeedback(Vector3 position, float feedbacksIntensity = 1.0f)
 		{
-			#if (MM_TEXTMESHPRO || MM_UGUI2)
+			#if MM_TEXTMESHPRO
 			if (!Active || !FeedbackTypeAuthorized)
 			{
 				return;
@@ -60,23 +53,7 @@ namespace MoreMountains.Feedbacks
 			{
 				return;
 			}
-
-			_initialText = TargetTMPText.text;
 			TargetTMPText.text = NewText;
-			#endif
-		}
-		
-		/// <summary>
-		/// On restore, we put our object back at its initial position
-		/// </summary>
-		protected override void CustomRestoreInitialValues()
-		{
-			if (!Active || !FeedbackTypeAuthorized)
-			{
-				return;
-			}
-			#if (MM_TEXTMESHPRO || MM_UGUI2)
-			TargetTMPText.text = _initialText;
 			#endif
 		}
 	}

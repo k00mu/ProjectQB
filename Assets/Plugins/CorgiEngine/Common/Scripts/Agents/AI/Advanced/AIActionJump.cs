@@ -24,7 +24,6 @@ namespace MoreMountains.CorgiEngine
 		/// </summary>
 		public override void Initialization()
 		{
-			if(!ShouldInitialize) return;
 			_characterJump = this.gameObject.GetComponentInParent<Character>()?.FindAbility<CharacterJump>();
 		}
 

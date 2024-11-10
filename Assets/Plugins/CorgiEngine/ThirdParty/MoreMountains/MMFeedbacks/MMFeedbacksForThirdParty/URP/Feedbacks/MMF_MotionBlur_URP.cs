@@ -1,9 +1,7 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 using MoreMountains.Feedbacks;
-using UnityEngine.Scripting.APIUpdating;
-#if MM_URP
-using UnityEngine.Rendering.Universal;
-#endif
 
 namespace MoreMountains.FeedbacksForThirdParty
 {
@@ -16,7 +14,6 @@ namespace MoreMountains.FeedbacksForThirdParty
 	#if MM_URP
 	[FeedbackPath("PostProcess/Motion Blur URP")]
 	#endif
-	[MovedFrom(false, null, "MoreMountains.Feedbacks.URP")]
 	[FeedbackHelp("This feedback allows you to control motion blur intensity over time. " +
 	              "It requires you have in your scene an object with a Volume " +
 	              "with MotionBlur active, and a MMMotionBlurShaker_URP component.")]
@@ -27,14 +24,11 @@ namespace MoreMountains.FeedbacksForThirdParty
 		/// sets the inspector color for this feedback
 		#if UNITY_EDITOR
 		public override Color FeedbackColor { get { return MMFeedbacksInspectorColors.PostProcessColor; } }
-		public override bool HasCustomInspectors => true;
-		public override bool HasAutomaticShakerSetup => true;
 		#endif
 
 		/// the duration of this feedback is the duration of the shake
 		public override float FeedbackDuration { get { return ApplyTimeMultiplier(Duration); } set { Duration = value; } }
 		public override bool HasChannel => true;
-		public override bool HasRandomness => true;
 
 		[MMFInspectorGroup("Motion Blur", true, 25)]
 		/// the duration of the shake, in seconds
@@ -75,9 +69,9 @@ namespace MoreMountains.FeedbacksForThirdParty
 				return;
 			}
             
-			float intensityMultiplier = ComputeIntensity(feedbacksIntensity, position);
+			float intensityMultiplier = Timing.ConstantIntensity ? 1f : feedbacksIntensity;
 			MMMotionBlurShakeEvent_URP.Trigger(Intensity, FeedbackDuration, RemapIntensityZero, RemapIntensityOne, RelativeIntensity, intensityMultiplier,
-				ChannelData, ResetShakerValuesAfterShake, ResetTargetValuesAfterShake, NormalPlayDirection, ComputedTimescaleMode);
+				Channel, ResetShakerValuesAfterShake, ResetTargetValuesAfterShake, NormalPlayDirection, Timing.TimescaleMode);
             
 		}
         
@@ -93,30 +87,9 @@ namespace MoreMountains.FeedbacksForThirdParty
 				return;
 			}
 			base.CustomStopFeedback(position, feedbacksIntensity);
-			MMMotionBlurShakeEvent_URP.Trigger(Intensity, FeedbackDuration, RemapIntensityZero, RemapIntensityOne, RelativeIntensity, stop: true, channelData: ChannelData);
-		}
-
-		/// <summary>
-		/// On restore, we put our object back at its initial position
-		/// </summary>
-		protected override void CustomRestoreInitialValues()
-		{
-			if (!Active || !FeedbackTypeAuthorized)
-			{
-				return;
-			}
-			
-			MMMotionBlurShakeEvent_URP.Trigger(Intensity, FeedbackDuration, RemapIntensityZero, RemapIntensityOne, RelativeIntensity, restore: true, channelData: ChannelData);
-		}
-		
-		/// <summary>
-		/// Automaticall sets up the post processing profile and shaker
-		/// </summary>
-		public override void AutomaticShakerSetup()
-		{
-			#if MM_URP && UNITY_EDITOR
-			MMURPHelpers.GetOrCreateVolume<MotionBlur, MMMotionBlurShaker_URP>(Owner, "MotionBlur");
-			#endif
+            
+			MMMotionBlurShakeEvent_URP.Trigger(Intensity, FeedbackDuration, RemapIntensityZero, RemapIntensityOne, RelativeIntensity, stop: true, channel: Channel);
+            
 		}
 	}
 }

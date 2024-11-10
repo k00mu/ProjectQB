@@ -1,9 +1,7 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 using MoreMountains.Feedbacks;
-using UnityEngine.Scripting.APIUpdating;
-#if MM_HDRP
-using UnityEngine.Rendering.HighDefinition;
-#endif
 
 namespace MoreMountains.FeedbacksForThirdParty
 {
@@ -16,7 +14,6 @@ namespace MoreMountains.FeedbacksForThirdParty
 	#if MM_HDRP
 	[FeedbackPath("PostProcess/Bloom HDRP")]
 	#endif
-	[MovedFrom(false, null, "MoreMountains.Feedbacks.HDRP")]
 	public class MMF_Bloom_HDRP : MMF_Feedback
 	{
 		/// a static bool used to disable all feedbacks of this type at once
@@ -24,14 +21,11 @@ namespace MoreMountains.FeedbacksForThirdParty
 		/// sets the inspector color for this feedback
 		#if UNITY_EDITOR
 		public override Color FeedbackColor { get { return MMFeedbacksInspectorColors.PostProcessColor; } }
-		public override bool HasCustomInspectors => true;
-		public override bool HasAutomaticShakerSetup => true;
 		#endif
 
 		/// the duration of this feedback is the duration of the shake
 		public override float FeedbackDuration { get { return ApplyTimeMultiplier(ShakeDuration); }  set { ShakeDuration = value;  } }
 		public override bool HasChannel => true;
-		public override bool HasRandomness => true;
 
 		[MMFInspectorGroup("Bloom", true, 3)]
 		/// the duration of the feedback, in seconds
@@ -80,11 +74,9 @@ namespace MoreMountains.FeedbacksForThirdParty
 			{
 				return;
 			}
-
-			attenuation = ComputeIntensity(attenuation, position);
             
 			MMBloomShakeEvent_HDRP.Trigger(ShakeIntensity, FeedbackDuration, RemapIntensityZero, RemapIntensityOne, ShakeThreshold, RemapThresholdZero, RemapThresholdOne,
-				RelativeValues, attenuation, ChannelData, ResetShakerValuesAfterShake, ResetTargetValuesAfterShake, NormalPlayDirection, ComputedTimescaleMode);
+				RelativeValues, attenuation, Channel, ResetShakerValuesAfterShake, ResetTargetValuesAfterShake, NormalPlayDirection, Timing.TimescaleMode);
             
 		}
         
@@ -102,31 +94,7 @@ namespace MoreMountains.FeedbacksForThirdParty
 			base.CustomStopFeedback(position, feedbacksIntensity);
             
 			MMBloomShakeEvent_HDRP.Trigger(ShakeIntensity, FeedbackDuration, RemapIntensityZero, RemapIntensityOne, ShakeThreshold, RemapThresholdZero, RemapThresholdOne,
-				RelativeValues, channelData:ChannelData, stop:true);
-		}
-		
-		/// <summary>
-		/// On restore, we put our object back at its initial position
-		/// </summary>
-		protected override void CustomRestoreInitialValues()
-		{
-			if (!Active || !FeedbackTypeAuthorized)
-			{
-				return;
-			}
-            
-			MMBloomShakeEvent_HDRP.Trigger(ShakeIntensity, FeedbackDuration, RemapIntensityZero, RemapIntensityOne, ShakeThreshold, RemapThresholdZero, RemapThresholdOne,
-				RelativeValues, channelData:ChannelData, restore:true);
-		}
-		
-		/// <summary>
-		/// Automaticall sets up the post processing profile and shaker
-		/// </summary>
-		public override void AutomaticShakerSetup()
-		{
-			#if MM_HDRP && UNITY_EDITOR
-			MMHDRPHelpers.GetOrCreateVolume<Bloom, MMBloomShaker_HDRP>(Owner, "Bloom");
-			#endif
+				RelativeValues, channel:Channel, stop:true);
 		}
 	}
 }

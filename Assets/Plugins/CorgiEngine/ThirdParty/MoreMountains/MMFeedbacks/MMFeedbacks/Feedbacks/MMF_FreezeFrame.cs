@@ -1,8 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using MoreMountains.Tools;
 using UnityEngine;
-using UnityEngine.Scripting.APIUpdating;
 
 namespace MoreMountains.Feedbacks
 {
@@ -11,7 +9,6 @@ namespace MoreMountains.Feedbacks
 	/// </summary>
 	[AddComponentMenu("")]
 	[FeedbackHelp("This feedback will freeze the timescale for the specified duration (in seconds). I usually go with 0.01s or 0.02s, but feel free to tweak it to your liking. It requires a MMTimeManager in your scene to work.")]
-	[MovedFrom(false, null, "MoreMountains.Feedbacks")]
 	[FeedbackPath("Time/Freeze Frame")]
 	public class MMF_FreezeFrame : MMF_Feedback
 	{
@@ -20,8 +17,6 @@ namespace MoreMountains.Feedbacks
 		/// sets the inspector color for this feedback
 		#if UNITY_EDITOR
 		public override Color FeedbackColor { get { return MMFeedbacksInspectorColors.TimeColor; } }
-		public override bool HasCustomInspectors => true;
-		public override bool HasAutomaticShakerSetup => true;
 		#endif
 
 		[MMFInspectorGroup("Freeze Frame", true, 63)]
@@ -53,18 +48,6 @@ namespace MoreMountains.Feedbacks
 			}
             
 			MMFreezeFrameEvent.Trigger(FeedbackDuration);
-		}
-		
-		/// <summary>
-		/// Automatically adds a MMTimeManager to the scene
-		/// </summary>
-		public override void AutomaticShakerSetup()
-		{
-			(MMTimeManager timeManager, bool createdNew) = Owner.gameObject.MMFindOrCreateObjectOfType<MMTimeManager>("MMTimeManager", null);
-			if (createdNew)
-			{
-				MMDebug.DebugLogInfo("Added a MMTimeManager to the scene. You're all set.");	
-			}
 		}
 	}
 }

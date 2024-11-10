@@ -11,7 +11,7 @@ namespace MoreMountains.CorgiEngine
 	/// away from the action to save on performance.
 	/// Note that there are many ways to do it, this one is simple and generic, there may be better choices for your specific use case.
 	/// </summary>
-	public class ProximityManager : CorgiMonoBehaviour, MMEventListener<CorgiEngineEvent>
+	public class ProximityManager : MonoBehaviour, MMEventListener<CorgiEngineEvent>
 	{
 		[Header("Target")]
 

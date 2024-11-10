@@ -1,9 +1,7 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 using MoreMountains.Feedbacks;
-using UnityEngine.Scripting.APIUpdating;
-#if MM_URP
-using UnityEngine.Rendering.Universal;
-#endif
 
 namespace MoreMountains.FeedbacksForThirdParty
 {
@@ -19,7 +17,6 @@ namespace MoreMountains.FeedbacksForThirdParty
 	#if MM_URP
 	[FeedbackPath("PostProcess/Depth Of Field URP")]
 	#endif
-	[MovedFrom(false, null, "MoreMountains.Feedbacks.URP")]
 	public class MMF_DepthOfField_URP : MMF_Feedback
 	{
 		/// a static bool used to disable all feedbacks of this type at once
@@ -27,14 +24,11 @@ namespace MoreMountains.FeedbacksForThirdParty
 		/// sets the inspector color for this feedback
 		#if UNITY_EDITOR
 		public override Color FeedbackColor { get { return MMFeedbacksInspectorColors.PostProcessColor; } }
-		public override bool HasCustomInspectors => true;
-		public override bool HasAutomaticShakerSetup => true;
 		#endif
 
 		/// the duration of this feedback is the duration of the shake
 		public override float FeedbackDuration { get { return ApplyTimeMultiplier(ShakeDuration); } set { ShakeDuration = value; } }
 		public override bool HasChannel => true;
-		public override bool HasRandomness => true;
 
 		[MMFInspectorGroup("Depth Of Field", true, 49)]
 		/// the duration of the shake, in seconds
@@ -98,11 +92,11 @@ namespace MoreMountains.FeedbacksForThirdParty
 			{
 				return;
 			}
-			float intensityMultiplier = ComputeIntensity(feedbacksIntensity, position);
+			float intensityMultiplier = Timing.ConstantIntensity ? 1f : feedbacksIntensity;
 			MMDepthOfFieldShakeEvent_URP.Trigger(ShakeFocusDistance, FeedbackDuration, RemapFocusDistanceZero, RemapFocusDistanceOne,
 				ShakeAperture, RemapApertureZero, RemapApertureOne,
 				ShakeFocalLength, RemapFocalLengthZero, RemapFocalLengthOne,
-				RelativeValues, intensityMultiplier, ChannelData, ResetShakerValuesAfterShake, ResetTargetValuesAfterShake, NormalPlayDirection, ComputedTimescaleMode);
+				RelativeValues, intensityMultiplier, Channel, ResetShakerValuesAfterShake, ResetTargetValuesAfterShake, NormalPlayDirection, Timing.TimescaleMode);
             
 		}
         
@@ -122,33 +116,8 @@ namespace MoreMountains.FeedbacksForThirdParty
 			MMDepthOfFieldShakeEvent_URP.Trigger(ShakeFocusDistance, FeedbackDuration, RemapFocusDistanceZero, RemapFocusDistanceOne,
 				ShakeAperture, RemapApertureZero, RemapApertureOne,
 				ShakeFocalLength, RemapFocalLengthZero, RemapFocalLengthOne,
-				RelativeValues, channelData: ChannelData, stop: true );
-		}
-
-		/// <summary>
-		/// On restore, we put our object back at its initial position
-		/// </summary>
-		protected override void CustomRestoreInitialValues()
-		{
-			if (!Active || !FeedbackTypeAuthorized)
-			{
-				return;
-			}
+				RelativeValues, channel: Channel, stop: true );
             
-			MMDepthOfFieldShakeEvent_URP.Trigger(ShakeFocusDistance, FeedbackDuration, RemapFocusDistanceZero, RemapFocusDistanceOne,
-				ShakeAperture, RemapApertureZero, RemapApertureOne,
-				ShakeFocalLength, RemapFocalLengthZero, RemapFocalLengthOne,
-				RelativeValues, channelData: ChannelData, restore: true );
-		}
-		
-		/// <summary>
-		/// Automaticall sets up the post processing profile and shaker
-		/// </summary>
-		public override void AutomaticShakerSetup()
-		{
-			#if MM_URP && UNITY_EDITOR
-			MMURPHelpers.GetOrCreateVolume<DepthOfField, MMDepthOfFieldShaker_URP>(Owner, "DepthOfField");
-			#endif
 		}
 	}
 }

@@ -8,7 +8,7 @@ namespace MoreMountains.CorgiEngine
 	/// Spawns pathed projectiles
 	/// </summary>
 	[AddComponentMenu("Corgi Engine/Character/AI/Automation/Pathed Projectile Spawner")]
-	public class PathedProjectileSpawner : CorgiMonoBehaviour 
+	public class PathedProjectileSpawner : MonoBehaviour 
 	{
 		[MMInformation("A GameObject with this component will spawn projectiles at the specified fire rate.",MoreMountains.Tools.MMInformationAttribute.InformationType.Info,false)]
 		/// the pathed projectile's destination

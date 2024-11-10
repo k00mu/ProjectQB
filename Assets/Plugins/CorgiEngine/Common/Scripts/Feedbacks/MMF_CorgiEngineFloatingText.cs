@@ -59,7 +59,7 @@ namespace MoreMountains.CorgiEngine
 				Value = TargetHealth.LastDamage.ToString(Formatting);
 
 				_playPosition = (PositionMode == PositionModes.FeedbackPosition) ? Owner.transform.position : TargetTransform.position;
-				MMFloatingTextSpawnEvent.Trigger(ChannelData, _playPosition, Value, Direction, Intensity, ForceLifetime, Lifetime, ForceColor, AnimateColorGradient);
+				MMFloatingTextSpawnEvent.Trigger(Channel, _playPosition, Value, Direction, Intensity, ForceLifetime, Lifetime, ForceColor, AnimateColorGradient);
 			}
 		}
 	}

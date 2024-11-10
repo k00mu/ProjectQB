@@ -7,7 +7,7 @@ namespace MoreMountains.CorgiEngine
 	/// <summary>
 	/// Level selector GUI.
 	/// </summary>
-	public class LevelSelectorGUI : CorgiMonoBehaviour 
+	public class LevelSelectorGUI : MonoBehaviour 
 	{
 		/// the panel object that contains the name of the level
 		[Tooltip("the panel object that contains the name of the level")]

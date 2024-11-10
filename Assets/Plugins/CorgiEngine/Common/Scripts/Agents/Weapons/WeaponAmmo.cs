@@ -8,7 +8,7 @@ namespace MoreMountains.CorgiEngine
 {	
 	[RequireComponent(typeof(Weapon))]
 	[AddComponentMenu("Corgi Engine/Weapons/Weapon Ammo")]
-	public class WeaponAmmo : CorgiMonoBehaviour, MMEventListener<MMStateChangeEvent<MoreMountains.CorgiEngine.Weapon.WeaponStates>>, MMEventListener<MMInventoryEvent>, MMEventListener<MMGameEvent>
+	public class WeaponAmmo : MonoBehaviour, MMEventListener<MMStateChangeEvent<MoreMountains.CorgiEngine.Weapon.WeaponStates>>, MMEventListener<MMInventoryEvent>, MMEventListener<MMGameEvent>
 	{
 		[Header("Ammo")]
 
@@ -227,16 +227,10 @@ namespace MoreMountains.CorgiEngine
 				case MMInventoryEventType.Pick:
 					if (inventoryEvent.EventItem.ItemClass == ItemClasses.Ammo)
 					{
-						StartCoroutine(DelayedRefreshCurrentAmmoAvailable());
+						RefreshCurrentAmmoAvailable ();
 					}
 					break;				
 			}
-		}
-
-		protected IEnumerator DelayedRefreshCurrentAmmoAvailable()
-		{
-			yield return null;
-			RefreshCurrentAmmoAvailable ();
 		}
 		
 		/// <summary>

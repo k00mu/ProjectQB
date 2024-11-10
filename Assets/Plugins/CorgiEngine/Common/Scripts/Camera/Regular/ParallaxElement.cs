@@ -12,7 +12,7 @@ namespace MoreMountains.CorgiEngine
 	// This script is based on David Dion-Paquet's great article on http://www.gamasutra.com/blogs/DavidDionPaquet/20140601/218766/Creating_a_parallax_system_in_Unity3D_is_harder_than_it_seems.php
 
 	[AddComponentMenu("Corgi Engine/Camera/Parallax Element")]
-	public class ParallaxElement : CorgiMonoBehaviour 
+	public class ParallaxElement : MonoBehaviour 
 	{
 		/// the possible ticks at which this parallax element can update at
 		public enum UpdateModes { Update, LateUpdate, FixedUpdate }

@@ -11,8 +11,7 @@
                     "id": "265ae792-b274-4758-9c3f-67c2f395c758",
                     "expectedControlType": "Vector2",
                     "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
+                    "interactions": ""
                 },
                 {
                     "name": "SecondaryMovement",
@@ -20,8 +19,7 @@
                     "id": "e4146e01-7578-46fe-b394-b240c2256b2c",
                     "expectedControlType": "Vector2",
                     "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
+                    "interactions": ""
                 },
                 {
                     "name": "Jump",
@@ -29,8 +27,7 @@
                     "id": "314ace32-fb21-4bab-a569-ebe4e48f2102",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
+                    "interactions": ""
                 },
                 {
                     "name": "Swim",
@@ -38,8 +35,7 @@
                     "id": "bb397b32-8d84-4aad-9fe6-92d359b0a49b",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
+                    "interactions": ""
                 },
                 {
                     "name": "Glide",
@@ -47,8 +43,7 @@
                     "id": "44f9f9bc-9a87-4ef7-9677-7acb02f39e5d",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
+                    "interactions": ""
                 },
                 {
                     "name": "Jetpack",
@@ -56,8 +51,7 @@
                     "id": "0daa39dc-3d97-4c43-98ea-dfa4a4a5104e",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
+                    "interactions": ""
                 },
                 {
                     "name": "Fly",
@@ -65,8 +59,7 @@
                     "id": "639199aa-bfdd-452d-9f7d-9476e5d54951",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
+                    "interactions": ""
                 },
                 {
                     "name": "Throw",
@@ -74,8 +67,7 @@
                     "id": "9868b1c7-76ad-40fd-a811-5e8dcbacf8d6",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
+                    "interactions": ""
                 },
                 {
                     "name": "Push",
@@ -83,8 +75,7 @@
                     "id": "f30d79d2-3ec6-4f11-8178-6bb248125162",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
+                    "interactions": ""
                 },
                 {
                     "name": "Grab",
@@ -92,8 +83,7 @@
                     "id": "d65c765f-b4fa-4999-b444-f89d2170ebbf",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
+                    "interactions": ""
                 },
                 {
                     "name": "Run",
@@ -101,8 +91,7 @@
                     "id": "6b5c4b16-7607-4f0a-ad5b-62efd798065d",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
+                    "interactions": ""
                 },
                 {
                     "name": "Dash",
@@ -110,8 +99,7 @@
                     "id": "56a37787-c3be-4789-a219-0509391dc113",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
+                    "interactions": ""
                 },
                 {
                     "name": "Shoot",
@@ -119,8 +107,7 @@
                     "id": "7016cc32-6ee0-4d53-b08c-02cbe6eb2c0e",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
+                    "interactions": ""
                 },
                 {
                     "name": "SecondaryShoot",
@@ -128,8 +115,7 @@
                     "id": "1b70a5ec-5da5-42ce-a7c0-8f54ff84052f",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
+                    "interactions": ""
                 },
                 {
                     "name": "Interact",
@@ -137,8 +123,7 @@
                     "id": "ae461515-11b0-4cc9-b221-92ed2df4118e",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
+                    "interactions": ""
                 },
                 {
                     "name": "Reload",
@@ -146,8 +131,7 @@
                     "id": "cf90ff3a-006b-4ae6-9594-cc2189d6f5f0",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
+                    "interactions": ""
                 },
                 {
                     "name": "Pause",
@@ -155,8 +139,7 @@
                     "id": "c01ffcc5-adff-4aa3-bb8d-e0139087e5ed",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
+                    "interactions": ""
                 },
                 {
                     "name": "SwitchWeapon",
@@ -164,8 +147,7 @@
                     "id": "6e3febaf-dba5-4b43-b4f8-3b720e7ad1be",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
+                    "interactions": ""
                 },
                 {
                     "name": "SwitchCharacter",
@@ -173,8 +155,7 @@
                     "id": "cde4a43f-3a08-47c8-afdf-2c5dca8d1241",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
+                    "interactions": ""
                 },
                 {
                     "name": "TimeControl",
@@ -182,17 +163,7 @@
                     "id": "c71e92f2-77ca-4de6-98ad-64b961ed706e",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "Roll",
-                    "type": "Button",
-                    "id": "f1006ee4-eeee-4d84-b426-0c1b853bd7b5",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
+                    "interactions": ""
                 }
             ],
             "bindings": [
@@ -655,17 +626,6 @@
                     "processors": "",
                     "groups": "Gamepad",
                     "action": "Push",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "af734551-2514-4a27-8b3e-be56fcdde29d",
-                    "path": "<Keyboard>/g",
-                    "interactions": "Press(behavior=2)",
-                    "processors": "",
-                    "groups": "Keyboard",
-                    "action": "Roll",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

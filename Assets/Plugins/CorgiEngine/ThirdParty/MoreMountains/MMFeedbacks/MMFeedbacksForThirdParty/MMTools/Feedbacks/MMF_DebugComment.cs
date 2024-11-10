@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 using MoreMountains.Tools;
-using UnityEngine.Scripting.APIUpdating;
 
 namespace MoreMountains.Feedbacks
 {
@@ -11,7 +10,6 @@ namespace MoreMountains.Feedbacks
 	/// </summary>
 	[AddComponentMenu("")]
 	[FeedbackHelp("This feedback doesn't do anything by default, it's just meant as a comment, you can store text in it for future reference, maybe to remember how you setup a particular MMFeedbacks. Optionally it can also output that comment to the console on Play.")]
-	[MovedFrom(false, null, "MoreMountains.Feedbacks.MMTools")]
 	[FeedbackPath("Debug/Comment")]
 	public class MMF_DebugComment : MMF_Feedback
 	{
@@ -48,7 +46,7 @@ namespace MoreMountains.Feedbacks
 				return;
 			}
             
-			MMDebug.DebugLogInfo(Comment);
+			Debug.Log(Comment);
 		}
 	}
 }

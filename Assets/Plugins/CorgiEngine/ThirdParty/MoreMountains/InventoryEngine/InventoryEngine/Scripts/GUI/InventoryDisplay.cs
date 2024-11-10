@@ -1,7 +1,11 @@
 ﻿using UnityEngine;
+using System.Collections;
 using MoreMountains.Tools;
 using System.Collections.Generic;
 using UnityEngine.UI;
+using System;
+using System.IO;
+using System.Runtime.Serialization.Formatters.Binary;
 using UnityEngine.EventSystems;
 #if UNITY_EDITOR
 using UnityEditor;
@@ -70,7 +74,7 @@ namespace MoreMountains.InventoryEngine
 		public int NumberOfColumns = 2;
 
 		/// the total number of slots in this inventory
-		public virtual int InventorySize { get { return NumberOfRows * NumberOfColumns; } set {} }		
+		public int InventorySize { get { return NumberOfRows * NumberOfColumns; } set {} }		
 
 		[Header("Equipment")]
 		[MMInformation("If this displays the contents of an Equipment Inventory, you should bind here a Choice Inventory. A Choice Inventory is the inventory in which you'll pick items for your equipment. Usually the Choice Inventory is the Main Inventory. Again, if this is an equipment inventory, you can specify what class of items you want to authorize.",MMInformationAttribute.InformationType.Info,false)]
@@ -166,31 +170,22 @@ namespace MoreMountains.InventoryEngine
 		public InventoryDisplay NextInventory;
 
 		/// the grid layout used to display the inventory in rows and columns
-		public virtual GridLayoutGroup InventoryGrid { get; protected set; }
+		public GridLayoutGroup InventoryGrid { get; protected set; }
 		/// the gameobject used to display the inventory's name
-		public virtual InventoryDisplayTitle InventoryTitle { get; protected set; }
+		public InventoryDisplayTitle InventoryTitle { get; protected set; }
 		/// the main panel
-		public virtual RectTransform InventoryRectTransform { get { return GetComponent<RectTransform>(); }}
+		public RectTransform InventoryRectTransform { get { return GetComponent<RectTransform>(); }}
 		/// an internal list of slots
-		public virtual List<InventorySlot> SlotContainer { get; protected set; }	
+		public List<InventorySlot> SlotContainer { get; protected set; }	
 		/// the inventory the focus should return to after an action
-		public virtual InventoryDisplay ReturnInventory { get; protected set; }	
+		public InventoryDisplay ReturnInventory { get; protected set; }	
 		/// whether this inventory display is open or not
-		public virtual bool IsOpen { get; protected set; }
-		
-		public virtual bool InEquipSelection { get; set; }
+		public bool IsOpen { get; protected set; }
 
 		/// the item currently being moved
 
 		public static InventoryDisplay CurrentlyBeingMovedFromInventoryDisplay;
 		public static int CurrentlyBeingMovedItemIndex = -1;
-		
-		[RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]
-		protected static void InitializeStatics()
-		{
-			CurrentlyBeingMovedFromInventoryDisplay = null;
-			CurrentlyBeingMovedItemIndex = -1;
-		}
 
 		protected List<ItemQuantity> _contentLastUpdate;	
 		protected List<int> _comparison;	
@@ -260,7 +255,6 @@ namespace MoreMountains.InventoryEngine
 		{
 			// we create a spriteState to specify our various button states
 			_spriteState.disabledSprite = DisabledSlotImage;
-			_spriteState.selectedSprite = HighlightedSlotImage;
 			_spriteState.highlightedSprite = HighlightedSlotImage;
 			_spriteState.pressedSprite = PressedSlotImage;
 		}
@@ -384,18 +378,13 @@ namespace MoreMountains.InventoryEngine
 				DrawSlot(i);
 			}
 
-			if (_slotPrefab != null)
+			if (Application.isPlaying)
 			{
-				if (Application.isPlaying)
-				{
-					Destroy(_slotPrefab.gameObject);
-					_slotPrefab = null;
-				}
-				else
-				{
-					DestroyImmediate(_slotPrefab.gameObject);
-					_slotPrefab = null;
-				}	
+				Destroy (_slotPrefab.gameObject);	
+			}
+			else
+			{
+				DestroyImmediate (_slotPrefab.gameObject);	
 			}
 
 			if (EnableNavigation)
@@ -423,10 +412,7 @@ namespace MoreMountains.InventoryEngine
 				{
 					DrawInventoryContent();
 				}
-				else
-				{
-					UpdateInventoryContent();	
-				}
+				UpdateInventoryContent();
 			}
 		}
 
@@ -603,15 +589,15 @@ namespace MoreMountains.InventoryEngine
 					return;
 				}
 			}
-			
-			if ((_slotPrefab == null) || (!_slotPrefab.isActiveAndEnabled))
+
+			if (_slotPrefab == null)
 			{
 				InitializeSlotPrefab ();
 			}
 
 			InventorySlot theSlot = Instantiate(_slotPrefab);
-
 			theSlot.transform.SetParent(InventoryGrid.transform);
+			theSlot.TargetRectTransform.localEulerAngles = Vector3.zero;
 			theSlot.TargetRectTransform.localScale = Vector3.one;
 			theSlot.transform.position = transform.position;
 			theSlot.name = "Slot "+i;
@@ -710,13 +696,9 @@ namespace MoreMountains.InventoryEngine
 				SlotContainer[0].Select();
 			}		
 
-			if (EventSystem.current.currentSelectedGameObject == null)
-			{
-				InventorySlot newSlot = transform.GetComponentInChildren<InventorySlot>();
-				if (newSlot != null)
-				{
-					EventSystem.current.SetSelectedGameObject (newSlot.gameObject);	
-				}
+			if (EventSystem.current.currentSelectedGameObject == null) 		
+			{	
+				EventSystem.current.SetSelectedGameObject (transform.GetComponentInChildren<InventorySlot> ().gameObject);	
 			}			
 		}
 
@@ -778,16 +760,15 @@ namespace MoreMountains.InventoryEngine
 		/// </summary>
 		public virtual void ReturnInventoryFocus()
 		{
-			if (ReturnInventory == null)
+			if (ReturnInventory==null)
 			{
 				return;
 			}
 			else
 			{
-				InEquipSelection = false;
 				ResetDisabledStates();
 				ReturnInventory.Focus();
-				ReturnInventory = null;
+				ReturnInventory=null;
 			}
 		}
 
@@ -872,7 +853,6 @@ namespace MoreMountains.InventoryEngine
 						TargetChoiceInventory.DisableAllBut (this.ItemClass);
 						// we set the focus on the target inventory
 						TargetChoiceInventory.Focus ();
-						TargetChoiceInventory.InEquipSelection = true;
 						// we set the return focus inventory
 						TargetChoiceInventory.SetReturnInventory (this);
 					}

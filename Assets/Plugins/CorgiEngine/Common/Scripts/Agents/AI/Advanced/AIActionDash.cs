@@ -19,7 +19,6 @@ namespace MoreMountains.CorgiEngine
 		/// </summary>
 		public override void Initialization()
 		{
-			if(!ShouldInitialize) return;
 			_characterDash = this.gameObject.GetComponentInParent<Character>()?.FindAbility<CharacterDash>();
 		}
 

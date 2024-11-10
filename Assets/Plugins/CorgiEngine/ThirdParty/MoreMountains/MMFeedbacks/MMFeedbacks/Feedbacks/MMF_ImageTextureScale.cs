@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using MoreMountains.Tools;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.Scripting.APIUpdating;
 
 namespace MoreMountains.Feedbacks
 {
@@ -13,7 +12,6 @@ namespace MoreMountains.Feedbacks
 	/// </summary>
 	[AddComponentMenu("")]
 	[FeedbackHelp("This feedback will let you control the texture scale of a target UI Image over time.")]
-	[MovedFrom(false, null, "MoreMountains.Feedbacks")]
 	[FeedbackPath("UI/Image Texture Scale")]
 	public class MMF_ImageTextureScale : MMF_Feedback
 	{
@@ -26,9 +24,6 @@ namespace MoreMountains.Feedbacks
 		public override string RequiredTargetText { get { return TargetImage != null ? TargetImage.name : "";  } }
 		public override string RequiresSetupText { get { return "This feedback requires that a TargetImage be set to be able to work properly. You can set one below."; } }
 		#endif
-		public override bool HasRandomness => true;
-		public override bool HasAutomatedTargetAcquisition => true;
-		protected override void AutomateTargetAcquisition() => TargetImage = FindAutomatedTarget<Image>();
 
 		/// the possible modes for this feedback
 		public enum Modes { OverTime, Instant }
@@ -119,7 +114,7 @@ namespace MoreMountains.Feedbacks
 				return;
 			}
             
-			float intensityMultiplier = ComputeIntensity(feedbacksIntensity, position);
+			float intensityMultiplier = Timing.ConstantIntensity ? 1f : feedbacksIntensity;
             
 			switch (Mode)
 			{
@@ -131,7 +126,6 @@ namespace MoreMountains.Feedbacks
 					{
 						return;
 					}
-					if (_coroutine != null) { Owner.StopCoroutine(_coroutine); }
 					_coroutine = Owner.StartCoroutine(TransitionCo(intensityMultiplier));
 					break;
 			}

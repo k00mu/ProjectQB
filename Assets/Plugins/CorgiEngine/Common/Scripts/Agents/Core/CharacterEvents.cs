@@ -76,7 +76,7 @@ namespace MoreMountains.CorgiEngine
 	/// </summary>
 	public struct MMDamageTakenEvent
 	{
-		public Health AffectedHealth;
+		public Character AffectedCharacter;
 		public GameObject Instigator;
 		public float CurrentHealth;
 		public float DamageCaused;
@@ -85,14 +85,14 @@ namespace MoreMountains.CorgiEngine
 		/// <summary>
 		/// Initializes a new instance of the <see cref="MoreMountains.CorgiEngine.MMDamageTakenEvent"/> struct.
 		/// </summary>
-		/// <param name="affectedHealth">Affected Health.</param>
+		/// <param name="affectedCharacter">Affected character.</param>
 		/// <param name="instigator">Instigator.</param>
 		/// <param name="currentHealth">Current health.</param>
 		/// <param name="damageCaused">Damage caused.</param>
 		/// <param name="previousHealth">Previous health.</param>
-		public MMDamageTakenEvent(Health affectedHealth, GameObject instigator, float currentHealth, float damageCaused, float previousHealth)
+		public MMDamageTakenEvent(Character affectedCharacter, GameObject instigator, float currentHealth, float damageCaused, float previousHealth)
 		{
-			AffectedHealth = affectedHealth;
+			AffectedCharacter = affectedCharacter;
 			Instigator = instigator;
 			CurrentHealth = currentHealth;
 			DamageCaused = damageCaused;
@@ -100,35 +100,13 @@ namespace MoreMountains.CorgiEngine
 		}
 
 		static MMDamageTakenEvent e;
-		public static void Trigger(Health affectedHealth, GameObject instigator, float currentHealth, float damageCaused, float previousHealth)
+		public static void Trigger(Character affectedCharacter, GameObject instigator, float currentHealth, float damageCaused, float previousHealth)
 		{
-			e.AffectedHealth = affectedHealth;
+			e.AffectedCharacter = affectedCharacter;
 			e.Instigator = instigator;
 			e.CurrentHealth = currentHealth;
 			e.DamageCaused = damageCaused;
 			e.PreviousHealth = previousHealth;
-			MMEventManager.TriggerEvent(e);
-		}
-	}
-	
-	public enum MMLifeCycleEventTypes { Death, Revive }
-
-	public struct MMLifeCycleEvent
-	{
-		public Health AffectedHealth;
-		public MMLifeCycleEventTypes MMLifeCycleEventType;
-		
-		public MMLifeCycleEvent(Health affectedHealth, MMLifeCycleEventTypes lifeCycleEventType)
-		{
-			AffectedHealth = affectedHealth;
-			MMLifeCycleEventType = lifeCycleEventType;
-		}
-
-		static MMLifeCycleEvent e;
-		public static void Trigger(Health affectedHealth, MMLifeCycleEventTypes lifeCycleEventType)
-		{
-			e.AffectedHealth = affectedHealth;
-			e.MMLifeCycleEventType = lifeCycleEventType;
 			MMEventManager.TriggerEvent(e);
 		}
 	}

@@ -29,50 +29,21 @@ namespace MoreMountains.CorgiEngine
 		}
 	}
 	
-	public struct HealthDeathEvent
-	{
-		public Health AffectedHealth;
-		
-		public HealthDeathEvent(Health affectedHealth)
-		{
-			AffectedHealth = affectedHealth;
-		}
-
-		static HealthDeathEvent e;
-		public static void Trigger(Health affectedHealth)
-		{
-			e.AffectedHealth = affectedHealth;
-			MMEventManager.TriggerEvent(e);
-		}
-	}
-	
 	/// <summary>
 	/// This class manages the health of an object, pilots its potential health bar, handles what happens when it takes damage,
 	/// and what happens when it dies.
 	/// </summary>
 	[AddComponentMenu("Corgi Engine/Character/Core/Health")]
-	public class Health : MMMonoBehaviour, MMEventListener<HealthDeathEvent>
+	public class Health : MonoBehaviour
 	{
-		[MMInspectorGroup("Status", true, 1)]
-		
 		/// the current health of the character
 		[MMReadOnly] [Tooltip("the current health of the character")]
 		public float CurrentHealth;
-		
-		/// If this is true, this object can't take damage at the moment
-		[MMReadOnly] [Tooltip("If this is true, this object can't take damage at the moment")]
-		public bool TemporarilyInvulnerable = false;
 
-		/// If this is true, this object is in post damage invulnerability state
-		[MMReadOnly] [Tooltip("If this is true, this object is in post damage invulnerability state")]
-		public bool PostDamageInvulnerable = false;
-		
+		[Header("Health")]
 		[MMInformation(
 			"Add this component to an object and it'll have health, will be able to get damaged and potentially die.",
 			MoreMountains.Tools.MMInformationAttribute.InformationType.Info, false)]
-		
-		[MMInspectorGroup("Health", true, 2)]
-		
 		/// the initial amount of health of the object
 		[Tooltip("the initial amount of health of the object")]
 		public float InitialHealth = 10;
@@ -85,8 +56,15 @@ namespace MoreMountains.CorgiEngine
 		[Tooltip("if this is true, this object can't take damage")]
 		public bool Invulnerable = false;
 
-		[MMInspectorGroup("Damage", true, 3)]
-		
+		/// If this is true, this object can't take damage at the moment
+		[MMReadOnly] [Tooltip("If this is true, this object can't take damage at the moment")]
+		public bool TemporarilyInvulnerable = false;
+
+		/// If this is true, this object is in post damage invulnerability state
+		[MMReadOnly] [Tooltip("If this is true, this object is in post damage invulnerability state")]
+		public bool PostDamageInvulnerable = false;
+
+		[Header("Damage")]
 		[MMInformation(
 			"Here you can specify an effect and a sound FX to instantiate when the object gets damaged, and also how long the object should flicker when hit (only works for sprites).",
 			MoreMountains.Tools.MMInformationAttribute.InformationType.Info, false)]
@@ -111,18 +89,14 @@ namespace MoreMountains.CorgiEngine
 		[Tooltip("the color the sprite should flicker to")] [MMCondition("FlickerSpriteOnHit", true)]
 		public Color FlickerColor = new Color32(255, 20, 20, 255);
 
-		[MMInspectorGroup("Knockback", true, 6)]
-		
 		/// whether or not this object can get knockback
 		[Tooltip("whether or not this object can get knockback")]
 		public bool ImmuneToKnockback = false;
-
 		/// whether or not this object is immune to damage knockback if the damage received is zero
 		[Tooltip("whether or not this object is immune to damage knockback if the damage received is zero")]
 		public bool ImmuneToKnockbackIfZeroDamage = false;
 
-		[MMInspectorGroup("Death", true, 7)]
-		
+		[Header("Death")]
 		[MMInformation(
 			"Here you can set an effect to instantiate when the object dies, a force to apply to it (corgi controller required), how many points to add to the game score, and where the character should respawn (for non-player characters only).",
 			MoreMountains.Tools.MMInformationAttribute.InformationType.Info, false)]
@@ -155,8 +129,7 @@ namespace MoreMountains.CorgiEngine
 			"if this is set to false, the character will respawn at the location of its death, otherwise it'll be moved to its initial position (when the scene started)")]
 		public bool RespawnAtInitialLocation = false;
 
-		[MMInspectorGroup("Death Forces", true, 10)]
-		
+		[Header("Death Forces")]
 		/// whether or not to apply a force on death
 		[Tooltip("whether or not to apply a force on death")]
 		public bool ApplyDeathForce = true;
@@ -179,33 +152,17 @@ namespace MoreMountains.CorgiEngine
 		/// if this is true, this component will use material property blocks instead of working on an instance of the material.
 		[Tooltip("if this is true, this component will use material property blocks instead of working on an instance of the material.")] 
 		public bool UseMaterialPropertyBlocks = false;
-
-		[MMInspectorGroup("Shared Health and Damage Resistance", true, 11)]
-
-		/// the Character this Health should impact, if left empty, will pick one on the same game object
-		[Tooltip("the Character this Health should impact, if left empty, will pick one on the same game object")]
-		public Character AssociatedCharacter;
 		
+		[Header("Shared Health and Damage Resistance")]
 		/// another Health component (usually on another character) towards which all health will be redirected
 		[Tooltip("another Health component (usually on another character) towards which all health will be redirected")]
 		public Health MasterHealth;
-
-		/// if this is true, when using a MasterHealth, this Health won't take damage, and all damage will be redirected. If this is false, this Health will be able to die when its own Health is consumed
-		[Tooltip("if this is true, when using a MasterHealth, this Health won't take damage, and all damage will be redirected. If this is false, this Health will be able to die when its own Health is consumed")]
-		public bool OnlyDamageMaster = true;
-
-		/// if this is true, when using a MasterHealth, if the MasterHealth dies, this Health will also die
-		[Tooltip("if this is true, when using a MasterHealth, if the MasterHealth dies, this Health will also die")]
-		public bool KillOnMasterHealthDeath = false;
-		
 		/// a DamageResistanceProcessor this Health will use to process damage when it's received
 		[Tooltip("a DamageResistanceProcessor this Health will use to process damage when it's received")]
 		public DamageResistanceProcessor TargetDamageResistanceProcessor;
 
 		public float LastDamage { get; set; }
 		public Vector3 LastDamageDirection { get; set; }
-		public bool Initialized => _initialized;
-		public CorgiController AssociatedController => _controller;
 
 		// respawn
 		public delegate void OnHitDelegate();
@@ -232,7 +189,6 @@ namespace MoreMountains.CorgiEngine
 		protected CharacterPersistence _characterPersistence = null;
 		protected MaterialPropertyBlock _propertyBlock;
 		protected bool _hasColorProperty = false;
-		protected GameObject _thisObject;
 		protected class InterruptiblesDamageOverTimeCoroutine
 		{
 			public Coroutine DamageOverTimeCoroutine;
@@ -240,16 +196,14 @@ namespace MoreMountains.CorgiEngine
 		}
 
 		protected List<InterruptiblesDamageOverTimeCoroutine> _interruptiblesDamageOverTimeCoroutines;
-		protected List<InterruptiblesDamageOverTimeCoroutine> _damageOverTimeCoroutines;
 
 		/// <summary>
-		/// On Awake, we initialize our health
+		/// On Start, we initialize our health
 		/// </summary>
 		protected virtual void Start()
 		{
 			Initialization();
 			InitializeSpriteColor();
-			InitializeCurrentHealth();
 		}
 
 		/// <summary>
@@ -257,17 +211,8 @@ namespace MoreMountains.CorgiEngine
 		/// </summary>
 		protected virtual void Initialization()
 		{
-			_character = (AssociatedCharacter == null) ? this.gameObject.GetComponent<Character>() : AssociatedCharacter;
-
-			if (_character != null)
-			{
-				_thisObject = _character.gameObject;
-				_characterPersistence = _character.FindAbility<CharacterPersistence>();	
-			}
-			else
-			{
-				_thisObject = this.gameObject;
-			}
+			_character = this.gameObject.GetComponent<Character>();
+			_characterPersistence = this.gameObject.GetComponent<CharacterPersistence>();
 
 			if (this.gameObject.MMGetComponentNoAlloc<SpriteRenderer>() != null)
 			{
@@ -305,47 +250,20 @@ namespace MoreMountains.CorgiEngine
 				_animator.logWarnings = false;
 			}
 
-			_autoRespawn = _thisObject.GetComponent<AutoRespawn>();
-			_controller = _thisObject.GetComponent<CorgiController>();
-			_healthBar = _thisObject.GetComponent<MMHealthBar>();
-			_collider2D = _thisObject.GetComponent<Collider2D>();
-			
+			_autoRespawn = this.gameObject.GetComponent<AutoRespawn>();
+			_controller = this.gameObject.GetComponent<CorgiController>();
+			_healthBar = this.gameObject.GetComponent<MMHealthBar>();
+			_collider2D = this.gameObject.GetComponent<Collider2D>();
 			_interruptiblesDamageOverTimeCoroutines = new List<InterruptiblesDamageOverTimeCoroutine>();
-			_damageOverTimeCoroutines = new List<InterruptiblesDamageOverTimeCoroutine>();
 
 			_propertyBlock = new MaterialPropertyBlock();
             
 			StoreInitialPosition();    
 			_initialized = true;
+			CurrentHealth = InitialHealth;
 			DamageEnabled();
 			DisablePostDamageInvulnerability();
 			UpdateHealthBar(false);
-			if (_healthBar != null)
-			{
-				_healthBar.SetInitialActiveState();
-			}
-		}
-		
-		/// <summary>
-		/// Initializes health to either initial or current values
-		/// </summary>
-		public virtual void InitializeCurrentHealth()
-		{
-			if ((MasterHealth == null) || (!OnlyDamageMaster))
-			{
-				SetHealth(InitialHealth, _thisObject);	
-			}
-			else
-			{
-				if (MasterHealth.Initialized)
-				{
-					SetHealth(MasterHealth.CurrentHealth, _thisObject);
-				}
-				else
-				{
-					SetHealth(MasterHealth.InitialHealth, _thisObject);
-				}
-			}
 		}
 
 		public virtual void StoreInitialPosition()
@@ -441,8 +359,9 @@ namespace MoreMountains.CorgiEngine
 		public virtual void Damage(float damage, GameObject instigator, float flickerDuration,
 			float invincibilityDuration, Vector3 damageDirection, List<TypedDamage> typedDamages = null)
 		{
-			if (!gameObject.activeInHierarchy)
+			if (damage <= 0)
 			{
+				OnHitZero?.Invoke();
 				return;
 			}
 
@@ -460,33 +379,9 @@ namespace MoreMountains.CorgiEngine
 
 			damage = ComputeDamageOutput(damage, typedDamages, true);
 			
-			// we process any condition state change
-			ComputeCharacterConditionStateChanges(typedDamages);
-			ComputeCharacterMovementMultipliers(typedDamages);
-			
-			if (damage <= 0)
-			{
-				OnHitZero?.Invoke();
-				return;
-			}
-			
 			// we decrease the character's health by the damage
 			float previousHealth = CurrentHealth;
-			if (MasterHealth != null)
-			{
-				previousHealth = MasterHealth.CurrentHealth;
-				MasterHealth.Damage(damage, instigator, flickerDuration, invincibilityDuration, damageDirection, typedDamages);
-
-				if (!OnlyDamageMaster)
-				{
-					previousHealth = CurrentHealth;
-					SetHealth(CurrentHealth - damage, instigator);	
-				}
-			}
-			else
-			{
-				SetHealth(CurrentHealth - damage, instigator);	
-			}
+			CurrentHealth -= damage;
 
 			LastDamage = damage;
 			LastDamageDirection = damageDirection;
@@ -498,14 +393,14 @@ namespace MoreMountains.CorgiEngine
 			}
 
 			// we prevent the character from colliding with Projectiles, Player and Enemies
-			if ((invincibilityDuration > 0) && gameObject.activeInHierarchy)
+			if (invincibilityDuration > 0)
 			{
 				EnablePostDamageInvulnerability();
 				StartCoroutine(DisablePostDamageInvulnerability(invincibilityDuration));
 			}
 
 			// we trigger a damage taken event
-			MMDamageTakenEvent.Trigger(this, instigator, CurrentHealth, damage, previousHealth);
+			MMDamageTakenEvent.Trigger(_character, instigator, CurrentHealth, damage, previousHealth);
 
 			if (_animator != null)
 			{
@@ -533,6 +428,11 @@ namespace MoreMountains.CorgiEngine
 
 			// we update the health bar
 			UpdateHealthBar(true);
+
+			
+			// we process any condition state change
+			ComputeCharacterConditionStateChanges(typedDamages);
+			ComputeCharacterMovementMultipliers(typedDamages);
 			
 			// if health has reached zero we set its health to zero (useful for the healthbar)
 			if (MasterHealth != null)
@@ -540,15 +440,7 @@ namespace MoreMountains.CorgiEngine
 				if (MasterHealth.CurrentHealth <= 0)
 				{
 					MasterHealth.CurrentHealth = 0;
-					Kill();
-				}
-				if (!OnlyDamageMaster)
-				{
-					if (CurrentHealth <= 0)
-					{
-						CurrentHealth = 0;
-						Kill();
-					}
+					MasterHealth.Kill();
 				}
 			}
 			else
@@ -582,12 +474,10 @@ namespace MoreMountains.CorgiEngine
 					CorgiEngineEvent.Trigger(CorgiEngineEventTypes.PlayerDeath, _character);
 				}
 			}
-			SetHealth(0f, _thisObject);
+			SetHealth(0f, this.gameObject);
             
 			// we prevent further damage
 			DamageDisabled();
-
-			StopAllDamageOverTime();
 
 			// instantiates the destroy effect
 			DeathFeedbacks?.PlayFeedbacks();
@@ -608,10 +498,6 @@ namespace MoreMountains.CorgiEngine
 			{
 				OnDeath();
 			}
-			
-			MMLifeCycleEvent.Trigger(this, MMLifeCycleEventTypes.Death);
-			
-			HealthDeathEvent.Trigger(this);
 
 			// if we have a controller, removes collisions, restores parameters for a potential respawn, and applies a death force
 			if (_controller != null)
@@ -716,22 +602,16 @@ namespace MoreMountains.CorgiEngine
 			}
 
 			Initialization();
-			InitializeCurrentHealth();
 			if (FlickerSpriteOnHit && ResetColorOnRevive)
 			{
 				ResetSpriteColor();
 			}
 
 			UpdateHealthBar(false);
-			if (_healthBar != null)
-			{
-				_healthBar.SetInitialActiveState();
-			}
 			if (OnRevive != null)
 			{
 				OnRevive.Invoke();
 			}
-			MMLifeCycleEvent.Trigger(this, MMLifeCycleEventTypes.Revive);
 		}
 
 		/// <summary>
@@ -764,19 +644,6 @@ namespace MoreMountains.CorgiEngine
 			{
 				StopCoroutine(coroutine.DamageOverTimeCoroutine);
 			}
-			_interruptiblesDamageOverTimeCoroutines.Clear();
-		}
-
-		/// <summary>
-		/// Interrupts all damage over time, even the non interruptible ones (usually on death)
-		/// </summary>
-		public virtual void StopAllDamageOverTime()
-		{
-			foreach (InterruptiblesDamageOverTimeCoroutine coroutine in _damageOverTimeCoroutines)
-			{
-				StopCoroutine(coroutine.DamageOverTimeCoroutine);
-			}
-			_damageOverTimeCoroutines.Clear();
 		}
 
 		/// <summary>
@@ -812,7 +679,7 @@ namespace MoreMountains.CorgiEngine
 			float invincibilityDuration, Vector3 damageDirection, List<TypedDamage> typedDamages = null,
 			int amountOfRepeats = 0, float durationBetweenRepeats = 1f, bool interruptible = true, DamageType damageType = null)
 		{
-			if (ComputeDamageOutput(damage, typedDamages, false) == 0)
+			if (damage == 0)
 			{
 				return;
 			}
@@ -822,8 +689,6 @@ namespace MoreMountains.CorgiEngine
 			damageOverTime.DamageOverTimeCoroutine = StartCoroutine(DamageOverTimeCo(damage, instigator, flickerDuration,
 				invincibilityDuration, damageDirection, typedDamages, amountOfRepeats, durationBetweenRepeats,
 				interruptible));
-			
-			_damageOverTimeCoroutines.Add(damageOverTime);
 
 			if (interruptible)
 			{
@@ -863,11 +728,6 @@ namespace MoreMountains.CorgiEngine
 		/// <returns></returns>
 		public virtual float ComputeDamageOutput(float damage, List<TypedDamage> typedDamages = null, bool damageApplied = false)
 		{
-			if (TemporarilyInvulnerable || Invulnerable || ImmuneToDamage || PostDamageInvulnerable)
-			{
-				return 0;
-			}
-			
 			float totalDamage = 0f;
 			// we process our damage through our potential resistances
 			if (TargetDamageResistanceProcessor != null)
@@ -889,43 +749,6 @@ namespace MoreMountains.CorgiEngine
 				}
 			}
 			return totalDamage;
-		}
-
-		/// <summary>
-		/// Determines a new knockback force by processing it through resistances
-		/// </summary>
-		/// <param name="knockbackForce"></param>
-		/// <param name="typedDamages"></param>
-		/// <returns></returns>
-		public virtual Vector2 ComputeKnockbackForce(Vector2 knockbackForce, List<TypedDamage> typedDamages = null)
-		{
-			return (TargetDamageResistanceProcessor == null) ? knockbackForce : TargetDamageResistanceProcessor.ProcessKnockbackForce(knockbackForce, typedDamages);;
-			
-		}
-
-		/// <summary>
-		/// Returns true if this Health can get knockbacked, false otherwise
-		/// </summary>
-		/// <param name="typedDamages"></param>
-		/// <returns></returns>
-		public virtual bool CanGetKnockback(List<TypedDamage> typedDamages) 
-		{
-			if (ImmuneToKnockback)
-			{
-				return false;
-			}
-			if (TargetDamageResistanceProcessor != null)
-			{
-				if (TargetDamageResistanceProcessor.isActiveAndEnabled)
-				{
-					bool checkResistance = TargetDamageResistanceProcessor.CheckPreventKnockback(typedDamages);
-					if (checkResistance)
-					{
-						return false;
-					}
-				}
-			}
-			return true;
 		}
 
 		/// <summary>
@@ -958,6 +781,7 @@ namespace MoreMountains.CorgiEngine
 					_character.ChangeCharacterConditionTemporarily(typedDamage.ForcedCondition, typedDamage.ForcedConditionDuration, typedDamage.ResetControllerForces, typedDamage.DisableGravity);	
 				}
 			}
+
 		}
 
 		/// <summary>
@@ -1003,14 +827,7 @@ namespace MoreMountains.CorgiEngine
 		public virtual void GetHealth(float health, GameObject instigator)
 		{
 			// this function adds health to the character's Health and prevents it to go above MaxHealth.
-			if (MasterHealth != null)
-			{
-				MasterHealth.SetHealth(Mathf.Min (CurrentHealth + health,MaximumHealth), instigator);	
-			}
-			else
-			{
-				SetHealth(Mathf.Min (CurrentHealth + health,MaximumHealth), instigator);	
-			}
+			CurrentHealth = Mathf.Min(CurrentHealth + health, MaximumHealth);
 			UpdateHealthBar(true);
 		}
 
@@ -1023,7 +840,6 @@ namespace MoreMountains.CorgiEngine
 		{
 			CurrentHealth = Mathf.Min(newHealth, MaximumHealth);
 			UpdateHealthBar(false);
-			HealthChangeEvent.Trigger(this, newHealth);
 		}
 
 		/// <summary>
@@ -1033,7 +849,6 @@ namespace MoreMountains.CorgiEngine
 		{
 			CurrentHealth = MaximumHealth;
 			UpdateHealthBar(false);
-			HealthChangeEvent.Trigger(this, CurrentHealth);
 		}
 
 		/// <summary>
@@ -1121,11 +936,10 @@ namespace MoreMountains.CorgiEngine
 				return;
 			}
 
-			InitializeCurrentHealth();
+			CurrentHealth = InitialHealth;
 			DamageEnabled();
 			DisablePostDamageInvulnerability();
 			UpdateHealthBar(false);
-			this.MMEventStartListening<HealthDeathEvent>();
 		}
 
 		/// <summary>
@@ -1134,15 +948,6 @@ namespace MoreMountains.CorgiEngine
 		protected virtual void OnDisable()
 		{
 			CancelInvoke();
-			this.MMEventStopListening<HealthDeathEvent>();
-		}
-
-		public void OnMMEvent(HealthDeathEvent deathEvent)
-		{
-			if (KillOnMasterHealthDeath && (deathEvent.AffectedHealth == MasterHealth))
-			{
-				Kill();
-			}
 		}
 	}
 }

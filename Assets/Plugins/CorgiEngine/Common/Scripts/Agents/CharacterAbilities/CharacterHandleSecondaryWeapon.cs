@@ -47,7 +47,6 @@ namespace MoreMountains.CorgiEngine
 			if ((_inputManager.SecondaryShootButton.State.CurrentState == MMInput.ButtonStates.ButtonUp) || (_inputManager.SecondaryShootAxis == MMInput.ButtonStates.ButtonUp))
 			{
 				ShootStop();
-				CurrentWeapon.WeaponInputReleased();
 			}
 
 			if (CurrentWeapon != null)

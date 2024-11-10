@@ -23,7 +23,6 @@ namespace MoreMountains.CorgiEngine
 		/// </summary>
 		public override void Initialization()
 		{
-			if(!ShouldInitialize) return;
 			_characterHorizontalMovement = this.gameObject.GetComponentInParent<Character>()?.FindAbility<CharacterHorizontalMovement>();
 		}
 

@@ -6,7 +6,7 @@ using UnityEngine;
 namespace MoreMountains.CorgiEngine
 {
 	// Add this component to an object, and it will try to follow a surface (as defined by colliders on the specified SurfaceLayerMask
-	public class SurfaceCrawler : CorgiMonoBehaviour
+	public class SurfaceCrawler : MonoBehaviour
 	{
 		/// the potential directions this object can move towards 
 		public enum Directions { Clockwise, CounterClockwise }

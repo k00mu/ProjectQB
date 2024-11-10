@@ -10,7 +10,7 @@ namespace MoreMountains.CorgiEngine
 	/// It will automatically push any character that touches it up in the air.
 	/// </summary>
 	[AddComponentMenu("Corgi Engine/Environment/Jumper")]
-	public class Jumper : CorgiMonoBehaviour 
+	public class Jumper : MonoBehaviour 
 	{
 		/// the force of the jump induced by the platform
 		[Tooltip("the force of the jump induced by the platform")]
@@ -18,9 +18,6 @@ namespace MoreMountains.CorgiEngine
 		/// whether or not this jumper should be allowed to make a character jump from below
 		[Tooltip("whether or not this jumper should be allowed to make a character jump from below")]
 		public bool CanBeActivatedFromBelow = false;
-		/// whether or not to let a character jump only if grounded
-		[Tooltip("whether or not to let a character jump only if grounded")]
-		public bool PreventJumpIfCharacterIsGrounded = false;
 
 		[Header("Feedbacks")]
 
@@ -43,19 +40,10 @@ namespace MoreMountains.CorgiEngine
 			}
 
 			_controller = collider.GetComponent<CorgiController>();
-			
 			if (_controller == null)
 			{
 				return;
-			}
-			else
-			{
-				if (PreventJumpIfCharacterIsGrounded && (_controller.State.IsGrounded) && (_controller.State.WasGroundedLastFrame))
-				{
-					_controller = null;
-					return;
-				}
-			}
+			}				
 		}
 
 		/// <summary>
@@ -70,7 +58,6 @@ namespace MoreMountains.CorgiEngine
 				if (_characterJump != null)
 				{
 					_characterJump.SetCanJumpStop(false);
-					_characterJump.SetJumpFlags();
 				}
 				ActivationFeedback?.PlayFeedbacks();
 				_controller = null;

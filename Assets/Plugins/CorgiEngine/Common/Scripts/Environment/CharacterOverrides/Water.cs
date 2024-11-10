@@ -8,7 +8,7 @@ namespace MoreMountains.CorgiEngine
 	/// Add this class to a body of water. It will handle splash effects on entering/exiting, and allow the player to jump out of it.
 	/// </summary>
 	[AddComponentMenu("Corgi Engine/Environment/Water")]
-	public class Water : CorgiMonoBehaviour 
+	public class Water : MonoBehaviour 
 	{
 		//storage
 		protected CharacterSwim _characterSwim;

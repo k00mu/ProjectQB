@@ -62,7 +62,6 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -91,7 +90,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Navigation:
     m_Mode: 4
-    m_WrapAround: 0
     m_SelectOnUp: {fileID: 114720295540252718}
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 114475389639131106}
@@ -126,12 +124,12 @@ MonoBehaviour:
   ParentInventoryDisplay: {fileID: 114281103620327144}
   Index: 22
   SlotEnabled: 1
-  TargetImage: {fileID: 114439180898941804}
-  TargetCanvasGroup: {fileID: 225348208885919234}
-  TargetRectTransform: {fileID: 224910057608935896}
-  IconRectTransform: {fileID: 0}
-  IconImage: {fileID: 0}
-  QuantityText: {fileID: 0}
+  _image: {fileID: 114439180898941804}
+  _canvasGroup: {fileID: 225348208885919234}
+  _rectTransform: {fileID: 224910057608935896}
+  _iconRectTransform: {fileID: 0}
+  _iconImage: {fileID: 0}
+  _quantityText: {fileID: 0}
 --- !u!225 &225348208885919234
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -204,7 +202,6 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 0.17647058, b: 0.17647058, a: 1}
   m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -360,7 +357,6 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -388,7 +384,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TargetInventoryName: RogueMainInventory
-  PlayerID: Player1
   Global: 0
   HideOnEmptySlot: 1
   DefaultTitle: ????
@@ -476,7 +471,6 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -505,7 +499,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Navigation:
     m_Mode: 0
-    m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
@@ -537,7 +530,6 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 114707463547079916}
-        m_TargetAssemblyTypeName: 
         m_MethodName: Drop
         m_Mode: 1
         m_Arguments:
@@ -610,7 +602,6 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -639,7 +630,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Navigation:
     m_Mode: 4
-    m_WrapAround: 0
     m_SelectOnUp: {fileID: 114973412897377934}
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 114037332828253710}
@@ -674,12 +664,12 @@ MonoBehaviour:
   ParentInventoryDisplay: {fileID: 114281103620327144}
   Index: 19
   SlotEnabled: 1
-  TargetImage: {fileID: 114800184786826960}
-  TargetCanvasGroup: {fileID: 225524950621661528}
-  TargetRectTransform: {fileID: 224868427591784908}
-  IconRectTransform: {fileID: 0}
-  IconImage: {fileID: 0}
-  QuantityText: {fileID: 0}
+  _image: {fileID: 114800184786826960}
+  _canvasGroup: {fileID: 225524950621661528}
+  _rectTransform: {fileID: 224868427591784908}
+  _iconRectTransform: {fileID: 0}
+  _iconImage: {fileID: 0}
+  _quantityText: {fileID: 0}
 --- !u!225 &225524950621661528
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -806,7 +796,6 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -835,7 +824,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Navigation:
     m_Mode: 4
-    m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 114119143640199822}
     m_SelectOnLeft: {fileID: 114249362911939220}
@@ -870,12 +858,12 @@ MonoBehaviour:
   ParentInventoryDisplay: {fileID: 114281103620327144}
   Index: 5
   SlotEnabled: 1
-  TargetImage: {fileID: 114044701617150628}
-  TargetCanvasGroup: {fileID: 225668698064254658}
-  TargetRectTransform: {fileID: 224263911224542954}
-  IconRectTransform: {fileID: 0}
-  IconImage: {fileID: 0}
-  QuantityText: {fileID: 0}
+  _image: {fileID: 114044701617150628}
+  _canvasGroup: {fileID: 225668698064254658}
+  _rectTransform: {fileID: 224263911224542954}
+  _iconRectTransform: {fileID: 0}
+  _iconImage: {fileID: 0}
+  _quantityText: {fileID: 0}
 --- !u!225 &225668698064254658
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -948,7 +936,6 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 0.8088235, g: 0.8088235, b: 0.8088235, a: 1}
   m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -1031,7 +1018,6 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -1060,7 +1046,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Navigation:
     m_Mode: 4
-    m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
@@ -1095,12 +1080,12 @@ MonoBehaviour:
   ParentInventoryDisplay: {fileID: 114479203475777052}
   Index: 0
   SlotEnabled: 1
-  TargetImage: {fileID: 114950837643595370}
-  TargetCanvasGroup: {fileID: 225675647782411698}
-  TargetRectTransform: {fileID: 224395427740495016}
-  IconRectTransform: {fileID: 0}
-  IconImage: {fileID: 0}
-  QuantityText: {fileID: 0}
+  _image: {fileID: 114950837643595370}
+  _canvasGroup: {fileID: 225675647782411698}
+  _rectTransform: {fileID: 224395427740495016}
+  _iconRectTransform: {fileID: 0}
+  _iconImage: {fileID: 0}
+  _quantityText: {fileID: 0}
 --- !u!225 &225675647782411698
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -1173,7 +1158,6 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -1254,7 +1238,6 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -1283,7 +1266,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Navigation:
     m_Mode: 4
-    m_WrapAround: 0
     m_SelectOnUp: {fileID: 114442460876261000}
     m_SelectOnDown: {fileID: 114579922345825992}
     m_SelectOnLeft: {fileID: 114197142380835018}
@@ -1318,12 +1300,12 @@ MonoBehaviour:
   ParentInventoryDisplay: {fileID: 114281103620327144}
   Index: 9
   SlotEnabled: 1
-  TargetImage: {fileID: 114673440062451532}
-  TargetCanvasGroup: {fileID: 225370680201210926}
-  TargetRectTransform: {fileID: 224722015964645154}
-  IconRectTransform: {fileID: 0}
-  IconImage: {fileID: 0}
-  QuantityText: {fileID: 0}
+  _image: {fileID: 114673440062451532}
+  _canvasGroup: {fileID: 225370680201210926}
+  _rectTransform: {fileID: 224722015964645154}
+  _iconRectTransform: {fileID: 0}
+  _iconImage: {fileID: 0}
+  _quantityText: {fileID: 0}
 --- !u!225 &225370680201210926
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -1396,7 +1378,6 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -1477,7 +1458,6 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -1506,7 +1486,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Navigation:
     m_Mode: 0
-    m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
@@ -1538,7 +1517,6 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 114707463547079916}
-        m_TargetAssemblyTypeName: 
         m_MethodName: Use
         m_Mode: 1
         m_Arguments:
@@ -1580,7 +1558,6 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 224784996110851390}
-  - {fileID: 2939958455336586929}
   m_Father: {fileID: 4604078063430832}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1632,7 +1609,6 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 3
-  m_PresetInfoIsWorld: 0
 --- !u!114 &114473702786292512
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1712,7 +1688,6 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -1741,7 +1716,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Navigation:
     m_Mode: 4
-    m_WrapAround: 0
     m_SelectOnUp: {fileID: 114559382189140510}
     m_SelectOnDown: {fileID: 114973412897377934}
     m_SelectOnLeft: {fileID: 114010095286479836}
@@ -1776,12 +1750,12 @@ MonoBehaviour:
   ParentInventoryDisplay: {fileID: 114281103620327144}
   Index: 7
   SlotEnabled: 1
-  TargetImage: {fileID: 114445609244328924}
-  TargetCanvasGroup: {fileID: 225956074187951032}
-  TargetRectTransform: {fileID: 224403469598568962}
-  IconRectTransform: {fileID: 0}
-  IconImage: {fileID: 0}
-  QuantityText: {fileID: 0}
+  _image: {fileID: 114445609244328924}
+  _canvasGroup: {fileID: 225956074187951032}
+  _rectTransform: {fileID: 224403469598568962}
+  _iconRectTransform: {fileID: 0}
+  _iconImage: {fileID: 0}
+  _quantityText: {fileID: 0}
 --- !u!225 &225956074187951032
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -1856,7 +1830,6 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -1885,7 +1858,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Navigation:
     m_Mode: 4
-    m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 114597561649482392}
     m_SelectOnLeft: {fileID: 114615612129717982}
@@ -1920,12 +1892,12 @@ MonoBehaviour:
   ParentInventoryDisplay: {fileID: 114281103620327144}
   Index: 3
   SlotEnabled: 1
-  TargetImage: {fileID: 114548615090088410}
-  TargetCanvasGroup: {fileID: 225510752697205162}
-  TargetRectTransform: {fileID: 224348237715750122}
-  IconRectTransform: {fileID: 0}
-  IconImage: {fileID: 0}
-  QuantityText: {fileID: 0}
+  _image: {fileID: 114548615090088410}
+  _canvasGroup: {fileID: 225510752697205162}
+  _rectTransform: {fileID: 224348237715750122}
+  _iconRectTransform: {fileID: 0}
+  _iconImage: {fileID: 0}
+  _quantityText: {fileID: 0}
 --- !u!225 &225510752697205162
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -1998,7 +1970,6 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 0
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -2079,7 +2050,6 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -2108,7 +2078,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Navigation:
     m_Mode: 4
-    m_WrapAround: 0
     m_SelectOnUp: {fileID: 114010095286479836}
     m_SelectOnDown: {fileID: 114037332828253710}
     m_SelectOnLeft: {fileID: 0}
@@ -2143,12 +2112,12 @@ MonoBehaviour:
   ParentInventoryDisplay: {fileID: 114281103620327144}
   Index: 12
   SlotEnabled: 1
-  TargetImage: {fileID: 114286197185170626}
-  TargetCanvasGroup: {fileID: 225286318541636392}
-  TargetRectTransform: {fileID: 224523487820277478}
-  IconRectTransform: {fileID: 0}
-  IconImage: {fileID: 0}
-  QuantityText: {fileID: 0}
+  _image: {fileID: 114286197185170626}
+  _canvasGroup: {fileID: 225286318541636392}
+  _rectTransform: {fileID: 224523487820277478}
+  _iconRectTransform: {fileID: 0}
+  _iconImage: {fileID: 0}
+  _quantityText: {fileID: 0}
 --- !u!225 &225286318541636392
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -2226,7 +2195,6 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -2260,7 +2228,6 @@ MonoBehaviour:
   TargetChoiceInventory: {fileID: 114281103620327144}
   ItemClass: 1
   DrawEmptySlots: 1
-  AllowMovingObjectsToThisInventory: 0
   PaddingTop: 32
   PaddingRight: 32
   PaddingBottom: 32
@@ -2293,6 +2260,7 @@ MonoBehaviour:
   QtyAlignment: 8
   PreviousInventory: {fileID: 114281103620327144}
   NextInventory: {fileID: 114819180651603204}
+  CurrentlyBeingMovedItemIndex: -1
 --- !u!114 &114147583209298072
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2473,7 +2441,6 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -2502,7 +2469,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Navigation:
     m_Mode: 4
-    m_WrapAround: 0
     m_SelectOnUp: {fileID: 114023576898943322}
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 114145062293576240}
@@ -2537,12 +2503,12 @@ MonoBehaviour:
   ParentInventoryDisplay: {fileID: 114281103620327144}
   Index: 20
   SlotEnabled: 1
-  TargetImage: {fileID: 114141807325791364}
-  TargetCanvasGroup: {fileID: 225391488007250716}
-  TargetRectTransform: {fileID: 224761359921708570}
-  IconRectTransform: {fileID: 0}
-  IconImage: {fileID: 0}
-  QuantityText: {fileID: 0}
+  _image: {fileID: 114141807325791364}
+  _canvasGroup: {fileID: 225391488007250716}
+  _rectTransform: {fileID: 224761359921708570}
+  _iconRectTransform: {fileID: 0}
+  _iconImage: {fileID: 0}
+  _quantityText: {fileID: 0}
 --- !u!225 &225391488007250716
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -2617,7 +2583,6 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -2646,7 +2611,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Navigation:
     m_Mode: 4
-    m_WrapAround: 0
     m_SelectOnUp: {fileID: 114706125049014352}
     m_SelectOnDown: {fileID: 114986106001106596}
     m_SelectOnLeft: {fileID: 0}
@@ -2681,12 +2645,12 @@ MonoBehaviour:
   ParentInventoryDisplay: {fileID: 114281103620327144}
   Index: 6
   SlotEnabled: 1
-  TargetImage: {fileID: 114811272697104422}
-  TargetCanvasGroup: {fileID: 225128115403420174}
-  TargetRectTransform: {fileID: 224997763306074346}
-  IconRectTransform: {fileID: 0}
-  IconImage: {fileID: 0}
-  QuantityText: {fileID: 0}
+  _image: {fileID: 114811272697104422}
+  _canvasGroup: {fileID: 225128115403420174}
+  _rectTransform: {fileID: 224997763306074346}
+  _iconRectTransform: {fileID: 0}
+  _iconImage: {fileID: 0}
+  _quantityText: {fileID: 0}
 --- !u!225 &225128115403420174
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -2761,7 +2725,6 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -2790,7 +2753,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Navigation:
     m_Mode: 4
-    m_WrapAround: 0
     m_SelectOnUp: {fileID: 114197142380835018}
     m_SelectOnDown: {fileID: 114740894052178926}
     m_SelectOnLeft: {fileID: 114973412897377934}
@@ -2825,12 +2787,12 @@ MonoBehaviour:
   ParentInventoryDisplay: {fileID: 114281103620327144}
   Index: 14
   SlotEnabled: 1
-  TargetImage: {fileID: 114034970890660344}
-  TargetCanvasGroup: {fileID: 225882923831705016}
-  TargetRectTransform: {fileID: 224809798206229604}
-  IconRectTransform: {fileID: 0}
-  IconImage: {fileID: 0}
-  QuantityText: {fileID: 0}
+  _image: {fileID: 114034970890660344}
+  _canvasGroup: {fileID: 225882923831705016}
+  _rectTransform: {fileID: 224809798206229604}
+  _iconRectTransform: {fileID: 0}
+  _iconImage: {fileID: 0}
+  _quantityText: {fileID: 0}
 --- !u!225 &225882923831705016
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -2904,7 +2866,6 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -2999,7 +2960,6 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -3028,7 +2988,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Navigation:
     m_Mode: 4
-    m_WrapAround: 0
     m_SelectOnUp: {fileID: 114986106001106596}
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
@@ -3063,12 +3022,12 @@ MonoBehaviour:
   ParentInventoryDisplay: {fileID: 114281103620327144}
   Index: 18
   SlotEnabled: 1
-  TargetImage: {fileID: 114612811462638866}
-  TargetCanvasGroup: {fileID: 225617589609684554}
-  TargetRectTransform: {fileID: 224945793892036016}
-  IconRectTransform: {fileID: 0}
-  IconImage: {fileID: 0}
-  QuantityText: {fileID: 0}
+  _image: {fileID: 114612811462638866}
+  _canvasGroup: {fileID: 225617589609684554}
+  _rectTransform: {fileID: 224945793892036016}
+  _iconRectTransform: {fileID: 0}
+  _iconImage: {fileID: 0}
+  _quantityText: {fileID: 0}
 --- !u!225 &225617589609684554
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -3143,7 +3102,6 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -3172,7 +3130,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Navigation:
     m_Mode: 4
-    m_WrapAround: 0
     m_SelectOnUp: {fileID: 114249362911939220}
     m_SelectOnDown: {fileID: 114720295540252718}
     m_SelectOnLeft: {fileID: 114597561649482392}
@@ -3207,12 +3164,12 @@ MonoBehaviour:
   ParentInventoryDisplay: {fileID: 114281103620327144}
   Index: 10
   SlotEnabled: 1
-  TargetImage: {fileID: 114041480000508356}
-  TargetCanvasGroup: {fileID: 225650106485198516}
-  TargetRectTransform: {fileID: 224019413170012476}
-  IconRectTransform: {fileID: 0}
-  IconImage: {fileID: 0}
-  QuantityText: {fileID: 0}
+  _image: {fileID: 114041480000508356}
+  _canvasGroup: {fileID: 225650106485198516}
+  _rectTransform: {fileID: 224019413170012476}
+  _iconRectTransform: {fileID: 0}
+  _iconImage: {fileID: 0}
+  _quantityText: {fileID: 0}
 --- !u!225 &225650106485198516
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -3285,7 +3242,6 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -3366,7 +3322,6 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -3395,7 +3350,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Navigation:
     m_Mode: 4
-    m_WrapAround: 0
     m_SelectOnUp: {fileID: 114579922345825992}
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 114740894052178926}
@@ -3430,12 +3384,12 @@ MonoBehaviour:
   ParentInventoryDisplay: {fileID: 114281103620327144}
   Index: 21
   SlotEnabled: 1
-  TargetImage: {fileID: 114888121295610346}
-  TargetCanvasGroup: {fileID: 225472494664658892}
-  TargetRectTransform: {fileID: 224331003257787998}
-  IconRectTransform: {fileID: 0}
-  IconImage: {fileID: 0}
-  QuantityText: {fileID: 0}
+  _image: {fileID: 114888121295610346}
+  _canvasGroup: {fileID: 225472494664658892}
+  _rectTransform: {fileID: 224331003257787998}
+  _iconRectTransform: {fileID: 0}
+  _iconImage: {fileID: 0}
+  _quantityText: {fileID: 0}
 --- !u!225 &225472494664658892
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -3582,7 +3536,6 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 0
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -3663,7 +3616,6 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -3692,7 +3644,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Navigation:
     m_Mode: 0
-    m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
@@ -3724,7 +3675,6 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 114707463547079916}
-        m_TargetAssemblyTypeName: 
         m_MethodName: Move
         m_Mode: 1
         m_Arguments:
@@ -3797,7 +3747,6 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -3826,7 +3775,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Navigation:
     m_Mode: 0
-    m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
@@ -3858,7 +3806,6 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 114707463547079916}
-        m_TargetAssemblyTypeName: 
         m_MethodName: UnEquip
         m_Mode: 1
         m_Arguments:
@@ -3929,7 +3876,6 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 0
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -4010,7 +3956,6 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -4039,7 +3984,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Navigation:
     m_Mode: 4
-    m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 114113775153729576}
     m_SelectOnLeft: {fileID: 114706125049014352}
@@ -4074,12 +4018,12 @@ MonoBehaviour:
   ParentInventoryDisplay: {fileID: 114281103620327144}
   Index: 1
   SlotEnabled: 1
-  TargetImage: {fileID: 114986855801111052}
-  TargetCanvasGroup: {fileID: 225343144650602570}
-  TargetRectTransform: {fileID: 224229437026297380}
-  IconRectTransform: {fileID: 0}
-  IconImage: {fileID: 0}
-  QuantityText: {fileID: 0}
+  _image: {fileID: 114986855801111052}
+  _canvasGroup: {fileID: 225343144650602570}
+  _rectTransform: {fileID: 224229437026297380}
+  _iconRectTransform: {fileID: 0}
+  _iconImage: {fileID: 0}
+  _quantityText: {fileID: 0}
 --- !u!225 &225343144650602570
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -4118,7 +4062,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1515502983337476}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -43.6, y: 2.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 224012917737618132}
@@ -4240,7 +4184,6 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -4269,7 +4212,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Navigation:
     m_Mode: 4
-    m_WrapAround: 0
     m_SelectOnUp: {fileID: 114615612129717982}
     m_SelectOnDown: {fileID: 114023576898943322}
     m_SelectOnLeft: {fileID: 114113775153729576}
@@ -4304,12 +4246,12 @@ MonoBehaviour:
   ParentInventoryDisplay: {fileID: 114281103620327144}
   Index: 8
   SlotEnabled: 1
-  TargetImage: {fileID: 114267641840901032}
-  TargetCanvasGroup: {fileID: 225926669122757134}
-  TargetRectTransform: {fileID: 224231141469163542}
-  IconRectTransform: {fileID: 0}
-  IconImage: {fileID: 0}
-  QuantityText: {fileID: 0}
+  _image: {fileID: 114267641840901032}
+  _canvasGroup: {fileID: 225926669122757134}
+  _rectTransform: {fileID: 224231141469163542}
+  _iconRectTransform: {fileID: 0}
+  _iconImage: {fileID: 0}
+  _quantityText: {fileID: 0}
 --- !u!225 &225926669122757134
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -4384,7 +4326,6 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -4413,7 +4354,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Navigation:
     m_Mode: 4
-    m_WrapAround: 0
     m_SelectOnUp: {fileID: 114119143640199822}
     m_SelectOnDown: {fileID: 114259342711527724}
     m_SelectOnLeft: {fileID: 114720295540252718}
@@ -4448,12 +4388,12 @@ MonoBehaviour:
   ParentInventoryDisplay: {fileID: 114281103620327144}
   Index: 17
   SlotEnabled: 1
-  TargetImage: {fileID: 114538130962435126}
-  TargetCanvasGroup: {fileID: 225990571526604212}
-  TargetRectTransform: {fileID: 224302727067411646}
-  IconRectTransform: {fileID: 0}
-  IconImage: {fileID: 0}
-  QuantityText: {fileID: 0}
+  _image: {fileID: 114538130962435126}
+  _canvasGroup: {fileID: 225990571526604212}
+  _rectTransform: {fileID: 224302727067411646}
+  _iconRectTransform: {fileID: 0}
+  _iconImage: {fileID: 0}
+  _quantityText: {fileID: 0}
 --- !u!225 &225990571526604212
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -4531,7 +4471,6 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -4565,7 +4504,6 @@ MonoBehaviour:
   TargetChoiceInventory: {fileID: 114281103620327144}
   ItemClass: 2
   DrawEmptySlots: 1
-  AllowMovingObjectsToThisInventory: 0
   PaddingTop: 32
   PaddingRight: 32
   PaddingBottom: 32
@@ -4598,6 +4536,7 @@ MonoBehaviour:
   QtyAlignment: 8
   PreviousInventory: {fileID: 114479203475777052}
   NextInventory: {fileID: 114460800597838916}
+  CurrentlyBeingMovedItemIndex: -1
 --- !u!114 &114403240089154674
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4778,7 +4717,6 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -4807,7 +4745,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Navigation:
     m_Mode: 4
-    m_WrapAround: 0
     m_SelectOnUp: {fileID: 114597561649482392}
     m_SelectOnDown: {fileID: 114475389639131106}
     m_SelectOnLeft: {fileID: 114023576898943322}
@@ -4842,12 +4779,12 @@ MonoBehaviour:
   ParentInventoryDisplay: {fileID: 114281103620327144}
   Index: 15
   SlotEnabled: 1
-  TargetImage: {fileID: 114595270349244226}
-  TargetCanvasGroup: {fileID: 225033840358039500}
-  TargetRectTransform: {fileID: 224138055763416106}
-  IconRectTransform: {fileID: 0}
-  IconImage: {fileID: 0}
-  QuantityText: {fileID: 0}
+  _image: {fileID: 114595270349244226}
+  _canvasGroup: {fileID: 225033840358039500}
+  _rectTransform: {fileID: 224138055763416106}
+  _iconRectTransform: {fileID: 0}
+  _iconImage: {fileID: 0}
+  _quantityText: {fileID: 0}
 --- !u!225 &225033840358039500
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -4923,7 +4860,6 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -4957,7 +4893,6 @@ MonoBehaviour:
   TargetChoiceInventory: {fileID: 0}
   ItemClass: 0
   DrawEmptySlots: 1
-  AllowMovingObjectsToThisInventory: 0
   PaddingTop: 32
   PaddingRight: 32
   PaddingBottom: 32
@@ -4990,6 +4925,7 @@ MonoBehaviour:
   QtyAlignment: 8
   PreviousInventory: {fileID: 114819180651603204}
   NextInventory: {fileID: 114281103620327144}
+  CurrentlyBeingMovedItemIndex: -1
   HotbarKey: k
   HotbarAltKey: joystick button 0
   ActionOnKey: 0
@@ -5055,7 +4991,6 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -5084,7 +5019,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Navigation:
     m_Mode: 4
-    m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 114197142380835018}
     m_SelectOnLeft: {fileID: 114559382189140510}
@@ -5119,12 +5053,12 @@ MonoBehaviour:
   ParentInventoryDisplay: {fileID: 114281103620327144}
   Index: 2
   SlotEnabled: 1
-  TargetImage: {fileID: 114017851133887492}
-  TargetCanvasGroup: {fileID: 225439016904366762}
-  TargetRectTransform: {fileID: 224843985942629778}
-  IconRectTransform: {fileID: 0}
-  IconImage: {fileID: 0}
-  QuantityText: {fileID: 0}
+  _image: {fileID: 114017851133887492}
+  _canvasGroup: {fileID: 225439016904366762}
+  _rectTransform: {fileID: 224843985942629778}
+  _iconRectTransform: {fileID: 0}
+  _iconImage: {fileID: 0}
+  _quantityText: {fileID: 0}
 --- !u!225 &225439016904366762
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -5199,7 +5133,6 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -5228,7 +5161,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Navigation:
     m_Mode: 4
-    m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 114084007395802514}
     m_SelectOnLeft: {fileID: 114442460876261000}
@@ -5263,12 +5195,12 @@ MonoBehaviour:
   ParentInventoryDisplay: {fileID: 114281103620327144}
   Index: 4
   SlotEnabled: 1
-  TargetImage: {fileID: 114281063701237388}
-  TargetCanvasGroup: {fileID: 225916218200160156}
-  TargetRectTransform: {fileID: 224797582170613322}
-  IconRectTransform: {fileID: 0}
-  IconImage: {fileID: 0}
-  QuantityText: {fileID: 0}
+  _image: {fileID: 114281063701237388}
+  _canvasGroup: {fileID: 225916218200160156}
+  _rectTransform: {fileID: 224797582170613322}
+  _iconRectTransform: {fileID: 0}
+  _iconImage: {fileID: 0}
+  _quantityText: {fileID: 0}
 --- !u!225 &225916218200160156
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -5343,7 +5275,6 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -5372,7 +5303,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Navigation:
     m_Mode: 0
-    m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
@@ -5404,7 +5334,6 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 114707463547079916}
-        m_TargetAssemblyTypeName: 
         m_MethodName: Equip
         m_Mode: 1
         m_Arguments:
@@ -5475,7 +5404,6 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -5653,7 +5581,6 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -5682,7 +5609,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Navigation:
     m_Mode: 4
-    m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
@@ -5717,12 +5643,12 @@ MonoBehaviour:
   ParentInventoryDisplay: {fileID: 114819180651603204}
   Index: 0
   SlotEnabled: 1
-  TargetImage: {fileID: 114090132702338136}
-  TargetCanvasGroup: {fileID: 225717137051179002}
-  TargetRectTransform: {fileID: 224562254630729726}
-  IconRectTransform: {fileID: 0}
-  IconImage: {fileID: 0}
-  QuantityText: {fileID: 0}
+  _image: {fileID: 114090132702338136}
+  _canvasGroup: {fileID: 225717137051179002}
+  _rectTransform: {fileID: 224562254630729726}
+  _iconRectTransform: {fileID: 0}
+  _iconImage: {fileID: 0}
+  _quantityText: {fileID: 0}
 --- !u!225 &225717137051179002
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -5773,7 +5699,6 @@ RectTransform:
   - {fileID: 224692287918330720}
   - {fileID: 224254379291155736}
   - {fileID: 3405107812832344190}
-  - {fileID: 2750602139739136250}
   m_Father: {fileID: 4604078063430832}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5825,7 +5750,6 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 3
-  m_PresetInfoIsWorld: 0
 --- !u!114 &114108356481901206
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5858,16 +5782,11 @@ MonoBehaviour:
   TargetInventoryContainer: {fileID: 225346564952366172}
   TargetInventoryDisplay: {fileID: 114281103620327144}
   Overlay: {fileID: 225037789285383300}
-  OverlayActiveOpacity: 0.85
-  OverlayInactiveOpacity: 0
   HideContainerOnStart: 1
   InputOnlyWhenOpen: 1
   ToggleInventoryKey: 105
   ToggleInventoryAltKey: 356
-  OpenInventoryKey: 0
-  CloseInventoryKey: 0
   CancelKey: 27
-  CancelKeyAlt: 357
   MoveKey: insert
   MoveAltKey: joystick button 2
   EquipKey: home
@@ -5966,7 +5885,6 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -5995,7 +5913,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Navigation:
     m_Mode: 4
-    m_WrapAround: 0
     m_SelectOnUp: {fileID: 114438113167827302}
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 114690520676146730}
@@ -6030,12 +5947,12 @@ MonoBehaviour:
   ParentInventoryDisplay: {fileID: 114281103620327144}
   Index: 23
   SlotEnabled: 1
-  TargetImage: {fileID: 114256153393302248}
-  TargetCanvasGroup: {fileID: 225390749052822092}
-  TargetRectTransform: {fileID: 224012538122005186}
-  IconRectTransform: {fileID: 0}
-  IconImage: {fileID: 0}
-  QuantityText: {fileID: 0}
+  _image: {fileID: 114256153393302248}
+  _canvasGroup: {fileID: 225390749052822092}
+  _rectTransform: {fileID: 224012538122005186}
+  _iconRectTransform: {fileID: 0}
+  _iconImage: {fileID: 0}
+  _quantityText: {fileID: 0}
 --- !u!225 &225390749052822092
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -6108,7 +6025,6 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 0.47794116, g: 0.47794116, b: 0.47794116, a: 1}
   m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -6189,7 +6105,6 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 0
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -6206,7 +6121,7 @@ MonoBehaviour:
   m_PixelsPerUnitMultiplier: 1
 --- !u!95 &95919832154432110
 Animator:
-  serializedVersion: 5
+  serializedVersion: 3
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -6219,12 +6134,10 @@ Animator:
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &114339365761940288
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6301,7 +6214,6 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -6330,7 +6242,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Navigation:
     m_Mode: 4
-    m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 114106495405813720}
@@ -6365,12 +6276,12 @@ MonoBehaviour:
   ParentInventoryDisplay: {fileID: 114460800597838916}
   Index: 1
   SlotEnabled: 1
-  TargetImage: {fileID: 114671710887796606}
-  TargetCanvasGroup: {fileID: 225927771356716698}
-  TargetRectTransform: {fileID: 224996949489609912}
-  IconRectTransform: {fileID: 0}
-  IconImage: {fileID: 0}
-  QuantityText: {fileID: 0}
+  _image: {fileID: 114671710887796606}
+  _canvasGroup: {fileID: 225927771356716698}
+  _rectTransform: {fileID: 224996949489609912}
+  _iconRectTransform: {fileID: 0}
+  _iconImage: {fileID: 0}
+  _quantityText: {fileID: 0}
 --- !u!225 &225927771356716698
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -6445,7 +6356,6 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -6474,7 +6384,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Navigation:
     m_Mode: 4
-    m_WrapAround: 0
     m_SelectOnUp: {fileID: 114178940557926722}
     m_SelectOnDown: {fileID: 114438113167827302}
     m_SelectOnLeft: {fileID: 114084007395802514}
@@ -6509,12 +6418,12 @@ MonoBehaviour:
   ParentInventoryDisplay: {fileID: 114281103620327144}
   Index: 11
   SlotEnabled: 1
-  TargetImage: {fileID: 114814328438591804}
-  TargetCanvasGroup: {fileID: 225167707880619678}
-  TargetRectTransform: {fileID: 224718354488553580}
-  IconRectTransform: {fileID: 0}
-  IconImage: {fileID: 0}
-  QuantityText: {fileID: 0}
+  _image: {fileID: 114814328438591804}
+  _canvasGroup: {fileID: 225167707880619678}
+  _rectTransform: {fileID: 224718354488553580}
+  _iconRectTransform: {fileID: 0}
+  _iconImage: {fileID: 0}
+  _quantityText: {fileID: 0}
 --- !u!225 &225167707880619678
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -6589,7 +6498,6 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -6618,7 +6526,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Navigation:
     m_Mode: 4
-    m_WrapAround: 0
     m_SelectOnUp: {fileID: 114113775153729576}
     m_SelectOnDown: {fileID: 114145062293576240}
     m_SelectOnLeft: {fileID: 114986106001106596}
@@ -6653,12 +6560,12 @@ MonoBehaviour:
   ParentInventoryDisplay: {fileID: 114281103620327144}
   Index: 13
   SlotEnabled: 1
-  TargetImage: {fileID: 114330111954915838}
-  TargetCanvasGroup: {fileID: 225013795391493060}
-  TargetRectTransform: {fileID: 224560587242414164}
-  IconRectTransform: {fileID: 0}
-  IconImage: {fileID: 0}
-  QuantityText: {fileID: 0}
+  _image: {fileID: 114330111954915838}
+  _canvasGroup: {fileID: 225013795391493060}
+  _rectTransform: {fileID: 224560587242414164}
+  _iconRectTransform: {fileID: 0}
+  _iconImage: {fileID: 0}
+  _quantityText: {fileID: 0}
 --- !u!225 &225013795391493060
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -6731,7 +6638,6 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -6785,7 +6691,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -8.099976, y: 0.9000244}
+  m_AnchoredPosition: {x: -8.099976, y: 0.8999939}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &222684140901723512
@@ -6811,7 +6717,6 @@ MonoBehaviour:
   m_Material: {fileID: 10301, guid: 0000000000000000f000000000000000, type: 0}
   m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -6974,7 +6879,6 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -7051,7 +6955,6 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -7080,7 +6983,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Navigation:
     m_Mode: 0
-    m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
@@ -7112,7 +7014,6 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 114707463547079916}
-        m_TargetAssemblyTypeName: 
         m_MethodName: EquipOrUse
         m_Mode: 1
         m_Arguments:
@@ -7264,7 +7165,6 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -7293,7 +7193,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Navigation:
     m_Mode: 4
-    m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 114010095286479836}
     m_SelectOnLeft: {fileID: 0}
@@ -7328,12 +7227,12 @@ MonoBehaviour:
   ParentInventoryDisplay: {fileID: 114281103620327144}
   Index: 0
   SlotEnabled: 1
-  TargetImage: {fileID: 114501856897142192}
-  TargetCanvasGroup: {fileID: 225107688371281320}
-  TargetRectTransform: {fileID: 224108949281540768}
-  IconRectTransform: {fileID: 0}
-  IconImage: {fileID: 0}
-  QuantityText: {fileID: 0}
+  _image: {fileID: 114501856897142192}
+  _canvasGroup: {fileID: 225107688371281320}
+  _rectTransform: {fileID: 224108949281540768}
+  _iconRectTransform: {fileID: 0}
+  _iconImage: {fileID: 0}
+  _quantityText: {fileID: 0}
 --- !u!225 &225107688371281320
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -7408,7 +7307,6 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -7437,7 +7335,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Navigation:
     m_Mode: 4
-    m_WrapAround: 0
     m_SelectOnUp: {fileID: 114084007395802514}
     m_SelectOnDown: {fileID: 114690520676146730}
     m_SelectOnLeft: {fileID: 114579922345825992}
@@ -7472,12 +7369,12 @@ MonoBehaviour:
   ParentInventoryDisplay: {fileID: 114281103620327144}
   Index: 16
   SlotEnabled: 1
-  TargetImage: {fileID: 114405523016322524}
-  TargetCanvasGroup: {fileID: 225215839124317550}
-  TargetRectTransform: {fileID: 224016724148986738}
-  IconRectTransform: {fileID: 0}
-  IconImage: {fileID: 0}
-  QuantityText: {fileID: 0}
+  _image: {fileID: 114405523016322524}
+  _canvasGroup: {fileID: 225215839124317550}
+  _rectTransform: {fileID: 224016724148986738}
+  _iconRectTransform: {fileID: 0}
+  _iconImage: {fileID: 0}
+  _quantityText: {fileID: 0}
 --- !u!225 &225215839124317550
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -7550,7 +7447,6 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -7630,7 +7526,6 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -7709,7 +7604,6 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -7793,7 +7687,6 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -7827,7 +7720,6 @@ MonoBehaviour:
   TargetChoiceInventory: {fileID: 0}
   ItemClass: 0
   DrawEmptySlots: 1
-  AllowMovingObjectsToThisInventory: 1
   PaddingTop: 32
   PaddingRight: 32
   PaddingBottom: 32
@@ -7860,6 +7752,7 @@ MonoBehaviour:
   QtyAlignment: 8
   PreviousInventory: {fileID: 0}
   NextInventory: {fileID: 114819180651603204}
+  CurrentlyBeingMovedItemIndex: -1
 --- !u!114 &114365627341114840
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8087,7 +7980,6 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 0
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -8168,7 +8060,6 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -8197,7 +8088,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Navigation:
     m_Mode: 4
-    m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 114102395411748344}
@@ -8232,12 +8122,12 @@ MonoBehaviour:
   ParentInventoryDisplay: {fileID: 114460800597838916}
   Index: 2
   SlotEnabled: 1
-  TargetImage: {fileID: 114930205779216186}
-  TargetCanvasGroup: {fileID: 225271356610605598}
-  TargetRectTransform: {fileID: 224036862403219982}
-  IconRectTransform: {fileID: 0}
-  IconImage: {fileID: 0}
-  QuantityText: {fileID: 0}
+  _image: {fileID: 114930205779216186}
+  _canvasGroup: {fileID: 225271356610605598}
+  _rectTransform: {fileID: 224036862403219982}
+  _iconRectTransform: {fileID: 0}
+  _iconImage: {fileID: 0}
+  _quantityText: {fileID: 0}
 --- !u!225 &225271356610605598
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -8312,7 +8202,6 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -8341,7 +8230,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Navigation:
     m_Mode: 4
-    m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
@@ -8376,12 +8264,12 @@ MonoBehaviour:
   ParentInventoryDisplay: {fileID: 114460800597838916}
   Index: 0
   SlotEnabled: 1
-  TargetImage: {fileID: 114749920428380762}
-  TargetCanvasGroup: {fileID: 225440617533052474}
-  TargetRectTransform: {fileID: 224914236659790444}
-  IconRectTransform: {fileID: 0}
-  IconImage: {fileID: 0}
-  QuantityText: {fileID: 0}
+  _image: {fileID: 114749920428380762}
+  _canvasGroup: {fileID: 225440617533052474}
+  _rectTransform: {fileID: 224914236659790444}
+  _iconRectTransform: {fileID: 0}
+  _iconImage: {fileID: 0}
+  _quantityText: {fileID: 0}
 --- !u!225 &225440617533052474
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -8394,81 +8282,6 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
---- !u!1 &187190326418660432
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 7613527837693137285}
-  - component: {fileID: 2857667374350418351}
-  - component: {fileID: 3611020651977519257}
-  m_Layer: 0
-  m_Name: CoinIcon
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &7613527837693137285
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 187190326418660432}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.99990004, y: 0.99990004, z: 0.99990004}
-  m_Children: []
-  m_Father: {fileID: 2750602139739136250}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 28, y: 77}
-  m_SizeDelta: {x: 16, y: 16}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!222 &2857667374350418351
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 187190326418660432}
-  m_CullTransparentMesh: 0
---- !u!114 &3611020651977519257
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 187190326418660432}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 21300002, guid: 678058abcbfe36f42902c11d9e5f64fc, type: 3}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
 --- !u!1 &1753847206447461798
 GameObject:
   m_ObjectHideFlags: 0
@@ -8529,7 +8342,6 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 0.24528301, g: 0.24528301, b: 0.24528301, a: 1}
   m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -8551,364 +8363,3 @@ MonoBehaviour:
 
     and
     notice your inventory persists.'
---- !u!1 &4701353052824064512
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 31095642213760318}
-  - component: {fileID: 5890977756073028580}
-  - component: {fileID: 2643862310896522374}
-  m_Layer: 0
-  m_Name: Counter
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &31095642213760318
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4701353052824064512}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.99990004, y: 0.99990004, z: 0.99990004}
-  m_Children: []
-  m_Father: {fileID: 2750602139739136250}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 78.5, y: 77.3}
-  m_SizeDelta: {x: 73.850006, y: 20.779999}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!222 &5890977756073028580
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4701353052824064512}
-  m_CullTransparentMesh: 0
---- !u!114 &2643862310896522374
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4701353052824064512}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_FontData:
-    m_Font: {fileID: 12800000, guid: 59e3f46809760144e8197c1e9e946f29, type: 3}
-    m_FontSize: 20
-    m_FontStyle: 0
-    m_BestFit: 0
-    m_MinSize: 2
-    m_MaxSize: 120
-    m_Alignment: 0
-    m_AlignByGeometry: 0
-    m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
-    m_LineSpacing: 1
-  m_Text: 0
---- !u!1 &4720785232767461612
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2939958455336586929}
-  - component: {fileID: 2677902728650050262}
-  - component: {fileID: 4187205527972539146}
-  - component: {fileID: 6560122039061362545}
-  - component: {fileID: 2918682067126751553}
-  m_Layer: 5
-  m_Name: ResetButton
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &2939958455336586929
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4720785232767461612}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0.00022888184}
-  m_LocalScale: {x: 0.99990004, y: 0.99990004, z: 0.99990004}
-  m_Children:
-  - {fileID: 2053361915622225311}
-  m_Father: {fileID: 224847479586249878}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 1}
-  m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -30}
-  m_SizeDelta: {x: 234.89, y: 30}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!222 &2677902728650050262
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4720785232767461612}
-  m_CullTransparentMesh: 0
---- !u!114 &4187205527972539146
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4720785232767461612}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 21300008, guid: 7c1ffec91c2f2d44bb5cd98a294de6ce, type: 3}
-  m_Type: 1
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!114 &6560122039061362545
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4720785232767461612}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Navigation:
-    m_Mode: 0
-    m_WrapAround: 0
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
-  m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.16981131, g: 0.16981131, b: 0.16981131, a: 1}
-    m_ColorMultiplier: 1
-    m_FadeDuration: 0.1
-  m_SpriteState:
-    m_HighlightedSprite: {fileID: 21300010, guid: 7c1ffec91c2f2d44bb5cd98a294de6ce,
-      type: 3}
-    m_PressedSprite: {fileID: 21300010, guid: 7c1ffec91c2f2d44bb5cd98a294de6ce, type: 3}
-    m_SelectedSprite: {fileID: 21300010, guid: 7c1ffec91c2f2d44bb5cd98a294de6ce, type: 3}
-    m_DisabledSprite: {fileID: 0}
-  m_AnimationTriggers:
-    m_NormalTrigger: Normal
-    m_HighlightedTrigger: Highlighted
-    m_PressedTrigger: Pressed
-    m_SelectedTrigger: Highlighted
-    m_DisabledTrigger: Disabled
-  m_Interactable: 1
-  m_TargetGraphic: {fileID: 4187205527972539146}
-  m_OnClick:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2918682067126751553}
-        m_TargetAssemblyTypeName: MoreMountains.InventoryEngine.PixelRogueDemoResetAll,
-          MoreMountains.InventoryEngine
-        m_MethodName: ResetAll
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!114 &2918682067126751553
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4720785232767461612}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 949d799c5960dce459b1c3e556c6f345, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!1 &4973574111930369443
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2053361915622225311}
-  - component: {fileID: 2264681600124915961}
-  - component: {fileID: 4925306771828434928}
-  m_Layer: 5
-  m_Name: Text
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &2053361915622225311
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4973574111930369443}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 2939958455336586929}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!222 &2264681600124915961
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4973574111930369443}
-  m_CullTransparentMesh: 0
---- !u!114 &4925306771828434928
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4973574111930369443}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_FontData:
-    m_Font: {fileID: 12800000, guid: 59e3f46809760144e8197c1e9e946f29, type: 3}
-    m_FontSize: 16
-    m_FontStyle: 0
-    m_BestFit: 0
-    m_MinSize: 1
-    m_MaxSize: 120
-    m_Alignment: 4
-    m_AlignByGeometry: 0
-    m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
-    m_LineSpacing: 1
-  m_Text: Reset Persistence & Inventories
---- !u!1 &7365816162421148413
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2750602139739136250}
-  - component: {fileID: 1707067089828962178}
-  m_Layer: 5
-  m_Name: CounterDisplay
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &2750602139739136250
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7365816162421148413}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 7613527837693137285}
-  - {fileID: 31095642213760318}
-  m_Father: {fileID: 224012917737618132}
-  m_RootOrder: 6
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 190.5, y: 61.130005}
-  m_SizeDelta: {x: 381.67, y: 120.45999}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1707067089828962178
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7365816162421148413}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 13f80461df19c054f94eb78823a8d046, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Item:
-  - {fileID: 11400000, guid: 2c96dc824a5c07d499919dd781334700, type: 2}
-  TargetInventories: []
-  TargetText: {fileID: 2643862310896522374}
-  DisplayFormat: 0

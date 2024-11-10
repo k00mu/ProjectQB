@@ -6,7 +6,7 @@ using UnityEngine;
 namespace MoreMountains.CorgiEngine
 {
 
-	[CustomEditor (typeof(CorgiController), true)]
+	[CustomEditor (typeof(CorgiController))]
 	[CanEditMultipleObjects]
 
 	/// <summary>

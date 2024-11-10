@@ -7,7 +7,7 @@ namespace MoreMountains.CorgiEngine
 	/// <summary>
 	/// A class designed to handle the automatic coloration of door parts in the Retro demo scenes
 	/// </summary>
-	public class RetroDoor : CorgiMonoBehaviour
+	public class RetroDoor : MonoBehaviour
 	{
 		/// the color to apply
 		[Tooltip("the color to apply")]

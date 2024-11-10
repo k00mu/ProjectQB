@@ -33,7 +33,7 @@ namespace MoreMountains.CorgiEngine
 	/// Coin manager
 	/// </summary>
 	[AddComponentMenu("Corgi Engine/Items/Pickable Item")]
-	public class PickableItem : CorgiMonoBehaviour
+	public class PickableItem : MonoBehaviour
 	{
 		[Header("Pickable Item")]
 

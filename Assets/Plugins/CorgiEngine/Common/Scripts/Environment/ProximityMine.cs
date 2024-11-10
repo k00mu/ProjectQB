@@ -1,5 +1,4 @@
-﻿using System;
-using MoreMountains.Feedbacks;
+﻿using MoreMountains.Feedbacks;
 using MoreMountains.Tools;
 using UnityEngine;
 
@@ -9,7 +8,7 @@ namespace MoreMountains.CorgiEngine
 	/// Add this class to a collider (2D or 3D) and it'll let you trigger things after a duration, like a mine would.
 	/// It also comes with options to interrupt or reset the timer on exit. 
 	/// </summary>
-	public class ProximityMine : CorgiMonoBehaviour
+	public class ProximityMine : MonoBehaviour
 	{
 		[Header("Proximity Mine")]
 		/// the layers that will trigger this mine
@@ -50,9 +49,6 @@ namespace MoreMountains.CorgiEngine
 		public MMFeedbacks OnMineTriggerFeedbacks;
         
 		protected bool _inside = false;
-		protected Collider2D _collider;
-		protected bool _canExplode = true;
-		protected AutoRespawn _autoRespawn;
         
 		/// <summary>
 		/// On Start we initialize our mine
@@ -67,22 +63,13 @@ namespace MoreMountains.CorgiEngine
 		/// </summary>
 		public virtual void Initialization()
 		{
-			_autoRespawn = this.gameObject.GetComponent<AutoRespawn>();
-			_collider = this.gameObject.GetComponent<Collider2D>();
 			OnWarningStartsFeedbacks?.Initialization();
 			OnWarningStopsFeedbacks?.Initialization();
 			OnWarningResetFeedbacks?.Initialization();
 			OnMineTriggerFeedbacks?.Initialization();
 			TimeLeftBeforeTrigger = WarningDuration;
 		}
-
-		protected void OnEnable()
-		{
-			TimeLeftBeforeTrigger = WarningDuration;
-			_canExplode = true;
-			_inside = false;
-		}
-
+        
 		/// <summary>
 		/// When colliding, we start our timer if needed
 		/// </summary>
@@ -131,16 +118,12 @@ namespace MoreMountains.CorgiEngine
 		/// </summary>
 		public virtual void TriggerMine()
 		{
-			_canExplode = false;
-			
 			OnMineTriggerFeedbacks?.PlayFeedbacks();
             
 			if (DisableMineOnTrigger)
 			{
-				_collider.enabled = false;
+				this.gameObject.SetActive(false);
 			}
-			
-			_autoRespawn?.Kill();
 		}
 
 		/// <summary>
@@ -153,7 +136,7 @@ namespace MoreMountains.CorgiEngine
 				TimeLeftBeforeTrigger -= Time.deltaTime;
 			}
 
-			if (_canExplode && TimeLeftBeforeTrigger <= 0)
+			if (TimeLeftBeforeTrigger <= 0)
 			{
 				TriggerMine();
 			}

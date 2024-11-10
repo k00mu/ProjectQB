@@ -131,10 +131,9 @@ namespace MoreMountains.FeedbacksForThirdParty
 			AnimationCurve aperture, float remapApertureMin, float remapApertureMax,
 			AnimationCurve focalLength, float remapFocalLengthMin, float remapFocalLengthMax,
 			bool relativeValues = false,
-			float attenuation = 1.0f, MMChannelData channelData = null, bool resetShakerValuesAfterShake = true, bool resetTargetValuesAfterShake = true, 
-			bool forwardDirection = true, TimescaleModes timescaleMode = TimescaleModes.Scaled, bool stop = false, bool restore = false)
+			float attenuation = 1.0f, int channel = 0, bool resetShakerValuesAfterShake = true, bool resetTargetValuesAfterShake = true, bool forwardDirection = true, TimescaleModes timescaleMode = TimescaleModes.Scaled, bool stop = false)
 		{
-			if (!CheckEventAllowed(channelData) || (!Interruptible && Shaking))
+			if (!CheckEventAllowed(channel) || (!Interruptible && Shaking))
 			{
 				return;
 			}
@@ -142,12 +141,6 @@ namespace MoreMountains.FeedbacksForThirdParty
 			if (stop)
 			{
 				Stop();
-				return;
-			}
-
-			if (restore)
-			{
-				ResetTargetValues();
 				return;
 			}
 
@@ -169,22 +162,19 @@ namespace MoreMountains.FeedbacksForThirdParty
 				_originalRemapFocalLengthOne = RemapFocalLengthOne;
 			}
 
-			if (!OnlyUseShakerValues)
-			{
-				TimescaleMode = timescaleMode;
-				ShakeDuration = duration;
-				RelativeValues = relativeValues;
-				ShakeFocusDistance = focusDistance;
-				RemapFocusDistanceZero = remapFocusDistanceMin;
-				RemapFocusDistanceOne = remapFocusDistanceMax;
-				ShakeAperture = aperture;
-				RemapApertureZero = remapApertureMin;
-				RemapApertureOne = remapApertureMax;
-				ShakeFocalLength = focalLength;
-				RemapFocalLengthZero = remapFocalLengthMin;
-				RemapFocalLengthOne = remapFocalLengthMax;
-				ForwardDirection = forwardDirection;
-			}
+			TimescaleMode = timescaleMode;
+			ShakeDuration = duration;
+			RelativeValues = relativeValues;
+			ShakeFocusDistance = focusDistance;
+			RemapFocusDistanceZero = remapFocusDistanceMin;
+			RemapFocusDistanceOne = remapFocusDistanceMax;
+			ShakeAperture = aperture;
+			RemapApertureZero = remapApertureMin;
+			RemapApertureOne = remapApertureMax;
+			ShakeFocalLength = focalLength;
+			RemapFocalLengthZero = remapFocalLengthMin;
+			RemapFocalLengthOne = remapFocalLengthMax;
+			ForwardDirection = forwardDirection;
 
 			Play();
 		}
@@ -244,29 +234,33 @@ namespace MoreMountains.FeedbacksForThirdParty
 	/// </summary>
 	public struct MMDepthOfFieldShakeEvent_URP
 	{
-		static private event Delegate OnEvent;
-		[RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)] private static void RuntimeInitialization() { OnEvent = null; }
-		static public void Register(Delegate callback) { OnEvent += callback; }
-		static public void Unregister(Delegate callback) { OnEvent -= callback; }
-
 		public delegate void Delegate(AnimationCurve focusDistance, float duration, float remapFocusDistanceMin, float remapFocusDistanceMax,
 			AnimationCurve aperture, float remapApertureMin, float remapApertureMax,
 			AnimationCurve focalLength, float remapFocalLengthMin, float remapFocalLengthMax,
 			bool relativeValues = false,
-			float attenuation = 1.0f, MMChannelData channelData = null, bool resetShakerValuesAfterShake = true, bool resetTargetValuesAfterShake = true, 
-			bool forwardDirection = true, TimescaleModes timescaleMode = TimescaleModes.Scaled, bool stop = false, bool restore = false);
+			float attenuation = 1.0f, int channel = 0, bool resetShakerValuesAfterShake = true, bool resetTargetValuesAfterShake = true, bool forwardDirection = true, TimescaleModes timescaleMode = TimescaleModes.Scaled, bool stop = false);
+		static private event Delegate OnEvent;
+
+		static public void Register(Delegate callback)
+		{
+			OnEvent += callback;
+		}
+
+		static public void Unregister(Delegate callback)
+		{
+			OnEvent -= callback;
+		}
 
 		static public void Trigger(AnimationCurve focusDistance, float duration, float remapFocusDistanceMin, float remapFocusDistanceMax,
 			AnimationCurve aperture, float remapApertureMin, float remapApertureMax,
 			AnimationCurve focalLength, float remapFocalLengthMin, float remapFocalLengthMax,
 			bool relativeValues = false,
-			float attenuation = 1.0f, MMChannelData channelData = null, bool resetShakerValuesAfterShake = true, bool resetTargetValuesAfterShake = true, 
-			bool forwardDirection = true, TimescaleModes timescaleMode = TimescaleModes.Scaled, bool stop = false, bool restore = false)
+			float attenuation = 1.0f, int channel = 0, bool resetShakerValuesAfterShake = true, bool resetTargetValuesAfterShake = true, bool forwardDirection = true, TimescaleModes timescaleMode = TimescaleModes.Scaled, bool stop = false)
 		{
 			OnEvent?.Invoke(focusDistance, duration, remapFocusDistanceMin, remapFocusDistanceMax,
 				aperture, remapApertureMin, remapApertureMax,
 				focalLength, remapFocalLengthMin, remapFocalLengthMax, relativeValues,
-				attenuation, channelData, resetShakerValuesAfterShake, resetTargetValuesAfterShake, forwardDirection, timescaleMode, stop, restore);
+				attenuation, channel, resetShakerValuesAfterShake, resetTargetValuesAfterShake, forwardDirection, timescaleMode, stop);
 		}
 	}
 }

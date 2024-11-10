@@ -104,10 +104,9 @@ namespace MoreMountains.FeedbacksForThirdParty
 		/// <param name="channel"></param>
 		public virtual void OnWhiteBalanceShakeEvent(AnimationCurve temperature, float duration, float remapTemperatureMin, float remapTemperatureMax,
 			AnimationCurve tint, float remapTintMin, float remapTintMax, bool relativeValues = false,
-			float attenuation = 1.0f, MMChannelData channelData = null, bool resetShakerValuesAfterShake = true, bool resetTargetValuesAfterShake = true, 
-			bool forwardDirection = true, TimescaleModes timescaleMode = TimescaleModes.Scaled, bool stop = false, bool restore = false)
+			float attenuation = 1.0f, int channel = 0, bool resetShakerValuesAfterShake = true, bool resetTargetValuesAfterShake = true, bool forwardDirection = true, TimescaleModes timescaleMode = TimescaleModes.Scaled, bool stop = false)
 		{
-			if (!CheckEventAllowed(channelData) || (!Interruptible && Shaking))
+			if (!CheckEventAllowed(channel) || (!Interruptible && Shaking))
 			{
 				return;
 			}
@@ -115,12 +114,6 @@ namespace MoreMountains.FeedbacksForThirdParty
 			if (stop)
 			{
 				Stop();
-				return;
-			}
-
-			if (restore)
-			{
-				ResetTargetValues();
 				return;
 			}
 	            
@@ -139,19 +132,16 @@ namespace MoreMountains.FeedbacksForThirdParty
 				_originalRemapTintOne = RemapTintOne;
 			}
 
-			if (!OnlyUseShakerValues)
-			{
-				TimescaleMode = timescaleMode;
-				ShakeDuration = duration;
-				ShakeTemperature = temperature;
-				RemapTemperatureZero = remapTemperatureMin * attenuation;
-				RemapTemperatureOne = remapTemperatureMax * attenuation;
-				RelativeValues = relativeValues;
-				ShakeTint = tint;
-				RemapTintZero = remapTintMin;
-				RemapTintOne = remapTintMax;
-				ForwardDirection = forwardDirection;
-			}
+			TimescaleMode = timescaleMode;
+			ShakeDuration = duration;
+			ShakeTemperature = temperature;
+			RemapTemperatureZero = remapTemperatureMin * attenuation;
+			RemapTemperatureOne = remapTemperatureMax * attenuation;
+			RelativeValues = relativeValues;
+			ShakeTint = tint;
+			RemapTintZero = remapTintMin;
+			RemapTintOne = remapTintMax;
+			ForwardDirection = forwardDirection;
 
 			Play();
 		}
@@ -207,24 +197,28 @@ namespace MoreMountains.FeedbacksForThirdParty
 	/// </summary>
 	public struct MMWhiteBalanceShakeEvent_URP
 	{
-		static private event Delegate OnEvent;
-		[RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)] private static void RuntimeInitialization() { OnEvent = null; }
-		static public void Register(Delegate callback) { OnEvent += callback; }
-		static public void Unregister(Delegate callback) { OnEvent -= callback; }
-
 		public delegate void Delegate(AnimationCurve temperature, float duration, float remapTemperatureMin, float remapTemperatureMax,
 			AnimationCurve tint, float remapTintMin, float remapTintMax, bool relativeValues = false,
-			float attenuation = 1.0f, MMChannelData channelData = null, bool resetShakerValuesAfterShake = true, bool resetTargetValuesAfterShake = true, 
-			bool forwardDirection = true, TimescaleModes timescaleMode = TimescaleModes.Scaled, bool stop = false, bool restore = false);
+			float attenuation = 1.0f, int channel = 0, bool resetShakerValuesAfterShake = true, bool resetTargetValuesAfterShake = true, bool forwardDirection = true, TimescaleModes timescaleMode = TimescaleModes.Scaled, bool stop = false);
+		static private event Delegate OnEvent;
+
+		static public void Register(Delegate callback)
+		{
+			OnEvent += callback;
+		}
+
+		static public void Unregister(Delegate callback)
+		{
+			OnEvent -= callback;
+		}
 
 		static public void Trigger(AnimationCurve temperature, float duration, float remapTemperatureMin, float remapTemperatureMax,
 			AnimationCurve tint, float remapTintMin, float remapTintMax, bool relativeValues = false,
-			float attenuation = 1.0f, MMChannelData channelData = null, bool resetShakerValuesAfterShake = true, bool resetTargetValuesAfterShake = true, 
-			bool forwardDirection = true, TimescaleModes timescaleMode = TimescaleModes.Scaled, bool stop = false, bool restore = false)
+			float attenuation = 1.0f, int channel = 0, bool resetShakerValuesAfterShake = true, bool resetTargetValuesAfterShake = true, bool forwardDirection = true, TimescaleModes timescaleMode = TimescaleModes.Scaled, bool stop = false)
 		{
 			OnEvent?.Invoke(temperature, duration, remapTemperatureMin, remapTemperatureMax,
 				tint, remapTintMin, remapTintMax, relativeValues,
-				attenuation, channelData, resetShakerValuesAfterShake, resetTargetValuesAfterShake, forwardDirection, timescaleMode, stop, restore);
+				attenuation, channel, resetShakerValuesAfterShake, resetTargetValuesAfterShake, forwardDirection, timescaleMode, stop);
 		}
 	}
 }

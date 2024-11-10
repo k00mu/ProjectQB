@@ -14,7 +14,7 @@ namespace MoreMountains.CorgiEngine
 	/// </summary>
 	[AddComponentMenu("Corgi Engine/Weapons/Weapon Auto Aim")]
 	[RequireComponent(typeof(Weapon))]
-	public class WeaponAutoAim : CorgiMonoBehaviour
+	public class WeaponAutoAim : MonoBehaviour
 	{
 		/// the possible origins to consider for the aim
 		public enum AimOrigins { Weapon, Owner }

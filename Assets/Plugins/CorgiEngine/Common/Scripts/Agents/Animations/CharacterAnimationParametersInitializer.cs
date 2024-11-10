@@ -28,7 +28,7 @@ namespace MoreMountains.CorgiEngine
 	/// <summary>
 	/// 
 	/// </summary>
-	public class CharacterAnimationParametersInitializer : CorgiMonoBehaviour
+	public class CharacterAnimationParametersInitializer : MonoBehaviour
 	{
 		[Header("Initialization")]
 		/// if this is true, this component will remove itself after adding the character parameters
@@ -64,7 +64,6 @@ namespace MoreMountains.CorgiEngine
 			new CorgiEngineCharacterAnimationParameter("Jetpacking", AnimatorControllerParameterType.Bool),
 			new CorgiEngineCharacterAnimationParameter("Jumping", AnimatorControllerParameterType.Bool),
 			new CorgiEngineCharacterAnimationParameter("DoubleJumping", AnimatorControllerParameterType.Bool),
-			new CorgiEngineCharacterAnimationParameter("NumberOfJumpsLeft", AnimatorControllerParameterType.Int),
 			new CorgiEngineCharacterAnimationParameter("HitTheGround", AnimatorControllerParameterType.Bool),
 			new CorgiEngineCharacterAnimationParameter("LadderClimbing", AnimatorControllerParameterType.Bool),
 			new CorgiEngineCharacterAnimationParameter("LadderClimbingSpeedX", AnimatorControllerParameterType.Float),
@@ -80,24 +79,13 @@ namespace MoreMountains.CorgiEngine
 			new CorgiEngineCharacterAnimationParameter("Speed", AnimatorControllerParameterType.Float),
 			new CorgiEngineCharacterAnimationParameter("xSpeed", AnimatorControllerParameterType.Float),
 			new CorgiEngineCharacterAnimationParameter("ySpeed", AnimatorControllerParameterType.Float),
-			new CorgiEngineCharacterAnimationParameter("xSpeedFacing", AnimatorControllerParameterType.Float),
-			new CorgiEngineCharacterAnimationParameter("xSpeedAbsolute", AnimatorControllerParameterType.Float),
-			new CorgiEngineCharacterAnimationParameter("ySpeedAbsolute", AnimatorControllerParameterType.Float),
 			new CorgiEngineCharacterAnimationParameter("Swimming", AnimatorControllerParameterType.Bool),
 			new CorgiEngineCharacterAnimationParameter("SwimmingIdle", AnimatorControllerParameterType.Bool),
 			new CorgiEngineCharacterAnimationParameter("Walking", AnimatorControllerParameterType.Bool),
 			new CorgiEngineCharacterAnimationParameter("WallClinging", AnimatorControllerParameterType.Bool),
 			new CorgiEngineCharacterAnimationParameter("WallJumping", AnimatorControllerParameterType.Bool),
 			new CorgiEngineCharacterAnimationParameter("WorldXSpeed", AnimatorControllerParameterType.Float),
-			new CorgiEngineCharacterAnimationParameter("WorldYSpeed", AnimatorControllerParameterType.Float),
-			new CorgiEngineCharacterAnimationParameter("Carrying", AnimatorControllerParameterType.Bool),
-			new CorgiEngineCharacterAnimationParameter("CarryingID", AnimatorControllerParameterType.Int),
-			new CorgiEngineCharacterAnimationParameter("Flip", AnimatorControllerParameterType.Trigger),
-			new CorgiEngineCharacterAnimationParameter("Grabbing", AnimatorControllerParameterType.Bool),
-			new CorgiEngineCharacterAnimationParameter("Rolling", AnimatorControllerParameterType.Bool),
-			new CorgiEngineCharacterAnimationParameter("StartedRolling", AnimatorControllerParameterType.Trigger),
-			new CorgiEngineCharacterAnimationParameter("Stunned", AnimatorControllerParameterType.Bool),
-			new CorgiEngineCharacterAnimationParameter("Throwing", AnimatorControllerParameterType.Bool)
+			new CorgiEngineCharacterAnimationParameter("WorldYSpeed", AnimatorControllerParameterType.Float)
 		};
 
 		protected Animator _animator;

@@ -1,10 +1,7 @@
-﻿using UnityEngine;	
+﻿using System.Collections;	
+using System.Collections.Generic;	
+using UnityEngine;	
 using MoreMountains.Feedbacks;	
-using UnityEngine.Scripting.APIUpdating;
-#if MM_HDRP
-using UnityEngine.Rendering.HighDefinition;
-#endif
-
 namespace MoreMountains.FeedbacksForThirdParty	
 {	
 	/// <summary>	
@@ -16,7 +13,6 @@ namespace MoreMountains.FeedbacksForThirdParty
 	#if MM_HDRP
 	[FeedbackPath("PostProcess/Channel Mixer HDRP")]
 	#endif
-	[MovedFrom(false, null, "MoreMountains.Feedbacks.HDRP")]
 	[FeedbackHelp("This feedback allows you to control channel mixer's red, green and blue over time." +
 	              "It requires you have in your scene an object with a Volume" +
 	              "with Channel Mixer active, and a MM Channel Mixer HDRP component.")]
@@ -27,13 +23,10 @@ namespace MoreMountains.FeedbacksForThirdParty
 		/// sets the inspector color for this feedback	
 		#if UNITY_EDITOR	
 		public override Color FeedbackColor { get { return MMFeedbacksInspectorColors.PostProcessColor; } }	
-		public override bool HasCustomInspectors => true;
-		public override bool HasAutomaticShakerSetup => true;
 		#endif	
 		/// the duration of this feedback is the duration of the shake	
 		public override float FeedbackDuration { get { return ApplyTimeMultiplier(ShakeDuration); } set { ShakeDuration = value;  } }	
-		public override bool HasChannel => true;
-		public override bool HasRandomness => true;
+		public override bool HasChannel => true;	
         
 		[MMFInspectorGroup("Color Grading", true, 10)]
 		/// the duration of the shake, in seconds
@@ -99,12 +92,12 @@ namespace MoreMountains.FeedbacksForThirdParty
 			{
 				return;
 			}
-			float intensityMultiplier = ComputeIntensity(feedbacksIntensity, position);
+			float intensityMultiplier = Timing.ConstantIntensity ? 1f : feedbacksIntensity;
 			MMChannelMixerShakeEvent_HDRP.Trigger(ShakeRed, RemapRedZero, RemapRedOne,
 				ShakeGreen, RemapGreenZero, RemapGreenOne,
 				ShakeBlue, RemapBlueZero, RemapBlueOne,
 				FeedbackDuration,
-				RelativeIntensity, intensityMultiplier, ChannelData, ResetShakerValuesAfterShake, ResetTargetValuesAfterShake, NormalPlayDirection, ComputedTimescaleMode);
+				RelativeIntensity, intensityMultiplier, Channel, ResetShakerValuesAfterShake, ResetTargetValuesAfterShake, NormalPlayDirection, Timing.TimescaleMode);
 		}
         
 		/// <summary>
@@ -124,34 +117,8 @@ namespace MoreMountains.FeedbacksForThirdParty
 				ShakeGreen, RemapGreenZero, RemapGreenOne,
 				ShakeBlue, RemapBlueZero, RemapBlueOne,
 				FeedbackDuration,
-				RelativeIntensity, channelData:ChannelData, stop:true);
-		}
-		
-		/// <summary>
-		/// On restore, we put our object back at its initial position
-		/// </summary>
-		protected override void CustomRestoreInitialValues()
-		{
-			if (!Active || !FeedbackTypeAuthorized)
-			{
-				return;
-			}
+				RelativeIntensity, channel:Channel, stop:true);
             
-			MMChannelMixerShakeEvent_HDRP.Trigger(ShakeRed, RemapRedZero, RemapRedOne,
-				ShakeGreen, RemapGreenZero, RemapGreenOne,
-				ShakeBlue, RemapBlueZero, RemapBlueOne,
-				FeedbackDuration,
-				RelativeIntensity, channelData:ChannelData, restore:true);
-		}
-		
-		/// <summary>
-		/// Automaticall sets up the post processing profile and shaker
-		/// </summary>
-		public override void AutomaticShakerSetup()
-		{
-			#if MM_HDRP && UNITY_EDITOR
-			MMHDRPHelpers.GetOrCreateVolume<ChannelMixer, MMChannelMixerShaker_HDRP>(Owner, "Channel Mixer");
-			#endif
 		}
 	}	
 }

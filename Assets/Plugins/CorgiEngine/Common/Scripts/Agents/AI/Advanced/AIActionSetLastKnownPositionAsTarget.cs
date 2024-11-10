@@ -18,7 +18,6 @@ namespace MoreMountains.CorgiEngine
 		/// </summary>
 		public override void Initialization()
 		{
-			if(!ShouldInitialize) return;
 			GameObject newGo = new GameObject();
 			newGo.name = "AIActionSetLastKnownPositionAsTarget_target";
 			newGo.transform.SetParent(null);

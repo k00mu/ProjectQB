@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 using MoreMountains.Tools;
-using UnityEngine.Scripting.APIUpdating;
 
 namespace MoreMountains.Feedbacks
 {
@@ -11,7 +10,6 @@ namespace MoreMountains.Feedbacks
 	/// </summary>
 	[AddComponentMenu("")]
 	[FeedbackHelp("This feedback will trigger a post processing moving filter event, meant to be caught by a MMPostProcessingMovableFilter object")]
-	[MovedFrom(false, null, "MoreMountains.Feedbacks.MMTools")]
 	[FeedbackPath("PostProcess/PPMovingFilter")]
 	public class MMF_PPMovingFilter : MMF_Feedback
 	{
@@ -21,7 +19,7 @@ namespace MoreMountains.Feedbacks
 		/// sets the inspector color for this feedback
 		#if UNITY_EDITOR
 		public override Color FeedbackColor { get { return MMFeedbacksInspectorColors.PostProcessColor; } }
-		public override string RequiredTargetText => RequiredChannelText;
+		public override string RequiredTargetText { get { return "Channel " + Channel;  } }
 		#endif
         
 		/// the duration of this feedback is the duration of the transition
@@ -77,19 +75,6 @@ namespace MoreMountains.Feedbacks
 			base.CustomStopFeedback(position, feedbacksIntensity);
             
 			MMPostProcessingMovingFilterEvent.Trigger(Curve, _active, _toggle, FeedbackDuration, stop:true);
-		}
-
-		/// <summary>
-		/// On restore, we put our object back at its initial position
-		/// </summary>
-		protected override void CustomRestoreInitialValues()
-		{
-			if (!Active || !FeedbackTypeAuthorized)
-			{
-				return;
-			}
-
-			MMPostProcessingMovingFilterEvent.Trigger(Curve, _active, _toggle, FeedbackDuration, restore:true);
 		}
 	}
 }

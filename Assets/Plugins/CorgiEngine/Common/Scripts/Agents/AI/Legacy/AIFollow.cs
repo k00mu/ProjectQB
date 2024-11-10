@@ -10,7 +10,7 @@ namespace MoreMountains.CorgiEngine
 	/// </summary>
 	[RequireComponent(typeof(CharacterHorizontalMovement))]
 	[AddComponentMenu("Corgi Engine/Character/AI/Legacy/AI Follow")] 
-	public class AIFollow : CorgiMonoBehaviour, MMEventListener<CorgiEngineEvent>
+	public class AIFollow : MonoBehaviour, MMEventListener<CorgiEngineEvent>
 	{
 		/// true if the agent should follow the player
 		public bool AgentFollowsPlayer{get;set;}
@@ -164,18 +164,11 @@ namespace MoreMountains.CorgiEngine
 		}
 
 		/// <summary>
-		/// On enable, we start listening for events, or initialize if needed
+		/// On enable, we start listening to events
 		/// </summary>
 		protected virtual void OnEnable()
 		{
-			if (LevelManager.HasInstance && LevelManager.Instance.Players != null)
-			{
-				Initialization();
-			}
-			else
-			{
-				this.MMEventStartListening ();
-			}
+			this.MMEventStartListening<CorgiEngineEvent> ();
 		}
 
 		/// <summary>

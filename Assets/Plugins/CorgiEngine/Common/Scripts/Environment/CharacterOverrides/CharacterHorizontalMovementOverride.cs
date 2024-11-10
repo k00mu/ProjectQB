@@ -7,7 +7,7 @@ namespace MoreMountains.CorgiEngine
 	/// <summary>
 	/// Add this component to a trigger zone, and it'll override the CharacterHorizontalMovement settings for all characters that cross it 
 	/// </summary>
-	public class CharacterHorizontalMovementOverride : CorgiMonoBehaviour 
+	public class CharacterHorizontalMovementOverride : MonoBehaviour 
 	{
 		/// basic movement speed
 		[Tooltip("basic movement speed")]

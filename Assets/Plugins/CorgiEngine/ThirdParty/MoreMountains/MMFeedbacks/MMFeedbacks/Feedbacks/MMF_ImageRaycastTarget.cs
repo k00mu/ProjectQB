@@ -1,6 +1,8 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using System.Collections.Generic;
+using System.Net.Mime;
+using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.Scripting.APIUpdating;
 
 namespace MoreMountains.Feedbacks
 {
@@ -9,7 +11,6 @@ namespace MoreMountains.Feedbacks
 	/// </summary>
 	[AddComponentMenu("")]
 	[FeedbackHelp("This feedback will let you control the RaycastTarget parameter of a target image, turning it on or off on play")]
-	[MovedFrom(false, null, "MoreMountains.Feedbacks")]
 	[FeedbackPath("UI/Image RaycastTarget")]
 	public class MMF_ImageRaycastTarget : MMF_Feedback
 	{
@@ -21,8 +22,6 @@ namespace MoreMountains.Feedbacks
 		public override string RequiredTargetText { get { return TargetImage != null ? TargetImage.name : "";  } }
 		public override string RequiresSetupText { get { return "This feedback requires that a TargetImage be set to be able to work properly. You can set one below."; } }
 		#endif
-		public override bool HasAutomatedTargetAcquisition => true;
-		protected override void AutomateTargetAcquisition() => TargetImage = FindAutomatedTarget<Image>();
         
 		[MMFInspectorGroup("Image", true, 12, true)]
 		/// the target Image we want to control the RaycastTarget parameter on
@@ -31,9 +30,7 @@ namespace MoreMountains.Feedbacks
 		/// if this is true, when played, the target image will become a raycast target
 		[Tooltip("if this is true, when played, the target image will become a raycast target")]
 		public bool ShouldBeRaycastTarget = true;
-
-		protected bool _initialState;
-		
+        
 		/// <summary>
 		/// On play we turn raycastTarget on or off
 		/// </summary>
@@ -51,20 +48,7 @@ namespace MoreMountains.Feedbacks
 				return;
 			}
 
-			_initialState = TargetImage.raycastTarget;
 			TargetImage.raycastTarget = NormalPlayDirection ? ShouldBeRaycastTarget : !ShouldBeRaycastTarget;
-		}
-		
-		/// <summary>
-		/// On restore, we restore our initial state
-		/// </summary>
-		protected override void CustomRestoreInitialValues()
-		{
-			if (!Active || !FeedbackTypeAuthorized)
-			{
-				return;
-			}
-			TargetImage.raycastTarget = _initialState;
 		}
 	}
 }

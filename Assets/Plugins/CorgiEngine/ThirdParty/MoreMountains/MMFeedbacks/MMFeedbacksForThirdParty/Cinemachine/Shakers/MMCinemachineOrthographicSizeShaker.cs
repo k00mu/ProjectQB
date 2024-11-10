@@ -1,8 +1,6 @@
 ﻿using UnityEngine;
 #if MM_CINEMACHINE
 using Cinemachine;
-#elif MM_CINEMACHINE3
-using Unity.Cinemachine;
 #endif
 using MoreMountains.Feedbacks;
 using MoreMountains.Tools;
@@ -15,8 +13,6 @@ namespace MoreMountains.FeedbacksForThirdParty
 	[AddComponentMenu("More Mountains/Feedbacks/Shakers/Cinemachine/MMCinemachineOrthographicSizeShaker")]
 	#if MM_CINEMACHINE
 	[RequireComponent(typeof(CinemachineVirtualCamera))]
-	#elif MM_CINEMACHINE3
-	[RequireComponent(typeof(CinemachineCamera))]
 	#endif
 	public class MMCinemachineOrthographicSizeShaker : MMShaker
 	{
@@ -36,9 +32,6 @@ namespace MoreMountains.FeedbacksForThirdParty
 
 		#if MM_CINEMACHINE
 		protected CinemachineVirtualCamera _targetCamera;
-		#elif  MM_CINEMACHINE3	
-		protected CinemachineCamera _targetCamera;
-		#endif
 		protected float _initialOrthographicSize;
 		protected float _originalShakeDuration;
 		protected bool _originalRelativeOrthographicSize;
@@ -52,11 +45,7 @@ namespace MoreMountains.FeedbacksForThirdParty
 		protected override void Initialization()
 		{
 			base.Initialization();
-			#if MM_CINEMACHINE
-				_targetCamera = this.gameObject.GetComponent<CinemachineVirtualCamera>();
-			#elif  MM_CINEMACHINE3	
-				_targetCamera = this.gameObject.GetComponent<CinemachineCamera>();
-			#endif
+			_targetCamera = this.gameObject.GetComponent<CinemachineVirtualCamera>();
 		}
 
 		/// <summary>
@@ -73,11 +62,7 @@ namespace MoreMountains.FeedbacksForThirdParty
 		protected override void Shake()
 		{
 			float newOrthographicSize = ShakeFloat(ShakeOrthographicSize, RemapOrthographicSizeZero, RemapOrthographicSizeOne, RelativeOrthographicSize, _initialOrthographicSize);
-			#if MM_CINEMACHINE
 			_targetCamera.m_Lens.OrthographicSize = newOrthographicSize;
-			#elif  MM_CINEMACHINE3	
-			_targetCamera.Lens.OrthographicSize = newOrthographicSize;
-			#endif
 		}
 
 		/// <summary>
@@ -85,11 +70,7 @@ namespace MoreMountains.FeedbacksForThirdParty
 		/// </summary>
 		protected override void GrabInitialValues()
 		{
-			#if MM_CINEMACHINE
 			_initialOrthographicSize = _targetCamera.m_Lens.OrthographicSize;
-			#elif  MM_CINEMACHINE3	
-			_initialOrthographicSize = _targetCamera.Lens.OrthographicSize;
-			#endif
 		}
 
 		/// <summary>
@@ -102,10 +83,9 @@ namespace MoreMountains.FeedbacksForThirdParty
 		/// <param name="feedbacksIntensity"></param>
 		/// <param name="channel"></param>
 		public virtual void OnMMCameraOrthographicSizeShakeEvent(AnimationCurve distortionCurve, float duration, float remapMin, float remapMax, bool relativeDistortion = false,
-			float feedbacksIntensity = 1.0f, MMChannelData channelData = null, bool resetShakerValuesAfterShake = true, bool resetTargetValuesAfterShake = true, bool forwardDirection = true, 
-			TimescaleModes timescaleMode = TimescaleModes.Scaled, bool stop = false, bool restore = false)
+			float feedbacksIntensity = 1.0f, int channel = 0, bool resetShakerValuesAfterShake = true, bool resetTargetValuesAfterShake = true, bool forwardDirection = true, bool stop = false)
 		{
-			if (!CheckEventAllowed(channelData))
+			if (!CheckEventAllowed(channel))
 			{
 				return;
 			}
@@ -113,12 +93,6 @@ namespace MoreMountains.FeedbacksForThirdParty
 			if (stop)
 			{
 				Stop();
-				return;
-			}
-            
-			if (restore)
-			{
-				ResetTargetValues();
 				return;
 			}
             
@@ -139,16 +113,12 @@ namespace MoreMountains.FeedbacksForThirdParty
 				_originalRelativeOrthographicSize = RelativeOrthographicSize;
 			}
 
-			if (!OnlyUseShakerValues)
-			{
-				TimescaleMode = timescaleMode;
-				ShakeDuration = duration;
-				ShakeOrthographicSize = distortionCurve;
-				RemapOrthographicSizeZero = remapMin * feedbacksIntensity;
-				RemapOrthographicSizeOne = remapMax * feedbacksIntensity;
-				RelativeOrthographicSize = relativeDistortion;
-				ForwardDirection = forwardDirection;
-			}
+			ShakeDuration = duration;
+			ShakeOrthographicSize = distortionCurve;
+			RemapOrthographicSizeZero = remapMin * feedbacksIntensity;
+			RemapOrthographicSizeOne = remapMax * feedbacksIntensity;
+			RelativeOrthographicSize = relativeDistortion;
+			ForwardDirection = forwardDirection;
 
 			Play();
 		}
@@ -159,11 +129,7 @@ namespace MoreMountains.FeedbacksForThirdParty
 		protected override void ResetTargetValues()
 		{
 			base.ResetTargetValues();
-			#if MM_CINEMACHINE
 			_targetCamera.m_Lens.OrthographicSize = _initialOrthographicSize;
-			#elif  MM_CINEMACHINE3	
-			_targetCamera.Lens.OrthographicSize = _initialOrthographicSize;
-			#endif
 		}
 
 		/// <summary>
@@ -196,5 +162,6 @@ namespace MoreMountains.FeedbacksForThirdParty
 			base.StopListening();
 			MMCameraOrthographicSizeShakeEvent.Unregister(OnMMCameraOrthographicSizeShakeEvent);
 		}
+		#endif
 	}
 }

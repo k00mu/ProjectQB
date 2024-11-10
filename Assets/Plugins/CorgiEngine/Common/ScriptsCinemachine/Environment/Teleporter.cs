@@ -103,9 +103,7 @@ namespace MoreMountains.CorgiEngine
 		public bool ResetMovementStateOnTeleport = false;
 
 		[MMInspectorGroup("Teleport Sequence", true, 28)]
-		/// whether to operate the teleport sequence on scaled or unscaled time
-		[Tooltip("whether to operate the teleport sequence on scaled or unscaled time")]
-		public TimescaleModes TimescaleMode = TimescaleModes.Scaled;
+        
 		/// the delay (in seconds) to apply before running the sequence
 		[Tooltip("the delay (in seconds) to apply before running the sequence")]
 		public float InitialDelay = 0.1f;
@@ -150,13 +148,6 @@ namespace MoreMountains.CorgiEngine
 		protected WaitForSecondsRealtime _halfDelayBetweenFadesWaitForSeconds;
 		protected WaitForSecondsRealtime _fadeInDurationWaitForSeconds;
 		protected WaitForSecondsRealtime _finalDelayyWaitForSeconds;
-
-		protected WaitForSeconds _initialDelayWaitForSecondsScaled;
-		protected WaitForSeconds _fadeOutDurationWaitForSecondsScaled;
-		protected WaitForSeconds _halfDelayBetweenFadesWaitForSecondsScaled;
-		protected WaitForSeconds _fadeInDurationWaitForSecondsScaled;
-		protected WaitForSeconds _finalDelayyWaitForSecondsScaled;
-		
 		protected Vector3 _entryPosition;
 		protected Vector3 _newPosition;
 
@@ -178,29 +169,11 @@ namespace MoreMountains.CorgiEngine
 			{
 				CurrentRoom = this.gameObject.GetComponentInParent<Room>();
 			}
-
-			if (TimescaleMode == TimescaleModes.Unscaled)
-			{
-				_initialDelayWaitForSeconds = new WaitForSecondsRealtime(InitialDelay);
-				_fadeOutDurationWaitForSeconds = new WaitForSecondsRealtime(FadeOutDuration);
-				_halfDelayBetweenFadesWaitForSeconds = new WaitForSecondsRealtime(DelayBetweenFades/2f);
-				_fadeInDurationWaitForSeconds = new WaitForSecondsRealtime(FadeInDuration);
-				_finalDelayyWaitForSeconds = new WaitForSecondsRealtime(FinalDelay);	
-			}
-			else
-			{
-				_initialDelayWaitForSecondsScaled = new WaitForSeconds(InitialDelay);
-				_fadeOutDurationWaitForSecondsScaled = new WaitForSeconds(FadeOutDuration);
-				_halfDelayBetweenFadesWaitForSecondsScaled = new WaitForSeconds(DelayBetweenFades/2f);
-				_fadeInDurationWaitForSecondsScaled = new WaitForSeconds(FadeInDuration);
-				_finalDelayyWaitForSecondsScaled = new WaitForSeconds(FinalDelay);	
-			}
-
-			// if we want the teleporter to freeze time, we need to work in unscaled timescale
-			if (FreezeTime)
-			{
-				TimescaleMode = TimescaleModes.Unscaled;
-			}
+			_initialDelayWaitForSeconds = new WaitForSecondsRealtime(InitialDelay);
+			_fadeOutDurationWaitForSeconds = new WaitForSecondsRealtime(FadeOutDuration);
+			_halfDelayBetweenFadesWaitForSeconds = new WaitForSecondsRealtime(DelayBetweenFades/2f);
+			_fadeInDurationWaitForSeconds = new WaitForSecondsRealtime(FadeInDuration);
+			_finalDelayyWaitForSeconds = new WaitForSecondsRealtime(FinalDelay);
 		}
 
 		/// <summary>
@@ -277,27 +250,27 @@ namespace MoreMountains.CorgiEngine
 		{
 			SequenceStart(collider);
 
-			if (TimescaleMode == TimescaleModes.Unscaled) yield return _initialDelayWaitForSeconds; else yield return _initialDelayWaitForSecondsScaled;
+			yield return _initialDelayWaitForSeconds;
 
 			AfterInitialDelay(collider);
 
-			if (TimescaleMode == TimescaleModes.Unscaled) yield return _fadeOutDurationWaitForSeconds; else yield return _fadeOutDurationWaitForSecondsScaled;
+			yield return _fadeOutDurationWaitForSeconds;
 
 			AfterFadeOut(collider);
             
-			if (TimescaleMode == TimescaleModes.Unscaled) yield return _halfDelayBetweenFadesWaitForSeconds; else yield return _halfDelayBetweenFadesWaitForSecondsScaled;
+			yield return _halfDelayBetweenFadesWaitForSeconds;
 
 			BetweenFades(collider);
 
-			if (TimescaleMode == TimescaleModes.Unscaled) yield return _halfDelayBetweenFadesWaitForSeconds; else yield return _halfDelayBetweenFadesWaitForSecondsScaled;
+			yield return _halfDelayBetweenFadesWaitForSeconds;
 
 			AfterDelayBetweenFades(collider);
 
-			if (TimescaleMode == TimescaleModes.Unscaled) yield return _fadeInDurationWaitForSeconds; else yield return _fadeInDurationWaitForSecondsScaled;
+			yield return _fadeInDurationWaitForSeconds;
 
 			AfterFadeIn(collider);
 
-			if (TimescaleMode == TimescaleModes.Unscaled) yield return _finalDelayyWaitForSeconds; else yield return _finalDelayyWaitForSecondsScaled;
+			yield return _finalDelayyWaitForSeconds;
 
 			SequenceEnd(collider);
 		}
@@ -377,10 +350,7 @@ namespace MoreMountains.CorgiEngine
 			if (TargetRoom != null)
 			{
 				TargetRoom.PlayerEntersRoom();
-				if (TargetRoom.VirtualCamera != null)
-				{
-					TargetRoom.VirtualCamera.Priority = 10;	
-				}
+				TargetRoom.VirtualCamera.Priority = 10;
 				MMSpriteMaskEvent.Trigger(MoveMaskMethod, (Vector2)TargetRoom.RoomCollider.bounds.center, TargetRoom.RoomCollider.bounds.size, MoveMaskDuration, MoveMaskCurve);
 			}
 

@@ -1,19 +1,17 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 using MoreMountains.Feedbacks;
 #if MM_CINEMACHINE
 using Cinemachine;
-#elif MM_CINEMACHINE3
-using Unity.Cinemachine;
 #endif
-using UnityEngine.Scripting.APIUpdating;
 
 namespace MoreMountains.FeedbacksForThirdParty
 {
 	[AddComponentMenu("")]
-	#if MM_CINEMACHINE || MM_CINEMACHINE3
+	#if MM_CINEMACHINE
 	[FeedbackPath("Camera/Cinemachine Impulse Clear")]
 	#endif
-	[MovedFrom(false, null, "MoreMountains.Feedbacks.Cinemachine")]
 	[FeedbackHelp("This feedback lets you trigger a Cinemachine Impulse clear, stopping instantly any impulse that may be playing.")]
 	public class MMF_CinemachineImpulseClear : MMF_Feedback
 	{
@@ -30,7 +28,7 @@ namespace MoreMountains.FeedbacksForThirdParty
 			{
 				return;
 			}
-			#if MM_CINEMACHINE || MM_CINEMACHINE3
+			#if MM_CINEMACHINE
 			CinemachineImpulseManager.Instance.Clear();
 			#endif
 		}

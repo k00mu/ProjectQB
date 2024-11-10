@@ -9,7 +9,7 @@ namespace MoreMountains.CorgiEngine
 	/// This class handles the movement of a pathed projectile
 	/// </summary>
 	[AddComponentMenu("Corgi Engine/Character/AI/Automation/Pathed Projectile")] 
-	public class PathedProjectile : CorgiMonoBehaviour
+	public class PathedProjectile : MonoBehaviour
 	{
 		[MMInformation("A GameObject with this component will move towards its target and get destroyed when it reaches it. Here you can define what object to instantiate on impact. Use the Initialize method to set its destination and speed.",MoreMountains.Tools.MMInformationAttribute.InformationType.Info,false)]
 		/// the MMFeedbacks to play when the object gets destroyed

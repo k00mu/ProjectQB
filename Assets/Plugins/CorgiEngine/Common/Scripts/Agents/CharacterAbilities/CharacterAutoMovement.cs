@@ -62,12 +62,6 @@ namespace MoreMountains.CorgiEngine
 		/// Test button for ChangeDirection
 		[MMInspectorButton("ChangeDirection")]
 		public bool ChangeDirectionButton;
-		/// Test button for ChangeDirection
-		[MMInspectorButton("PauseMovement")]
-		public bool PauseMovementButton;
-		/// Test button for ChangeDirection
-		[MMInspectorButton("ResumeMovement")]
-		public bool ResumeMovementButton;
 
 		protected CharacterRun _characterRun;
 		protected CharacterWalljump _characterWallJump;

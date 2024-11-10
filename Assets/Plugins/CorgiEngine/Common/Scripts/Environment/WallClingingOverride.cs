@@ -10,7 +10,7 @@ namespace MoreMountains.CorgiEngine
 	/// You'll be able to override the slow factor (close to 0 : very slow fall, 1 : normal fall, larger than 1 : faster fall than normal).
 	/// </summary>
 	[AddComponentMenu("Corgi Engine/Environment/Wallclinging Override")]
-	public class WallClingingOverride : CorgiMonoBehaviour 
+	public class WallClingingOverride : MonoBehaviour 
 	{
 		[MMInformation("Use this component on any platform or surface a Character could usually wallcling to. Here you can override the slow factor (close to 0 : very slow fall, 1 : normal fall, larger than 1 : faster fall than normal), and decide if wallclinging is possible or not.",MoreMountains.Tools.MMInformationAttribute.InformationType.Info,false)]
 

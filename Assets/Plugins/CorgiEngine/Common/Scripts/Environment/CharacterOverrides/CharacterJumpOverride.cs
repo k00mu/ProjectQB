@@ -8,7 +8,7 @@ namespace MoreMountains.CorgiEngine
 	/// <summary>
 	/// Add this component to a trigger zone, and it'll override the CharacterJump settings for all characters that cross it 
 	/// </summary>
-	public class CharacterJumpOverride : CorgiMonoBehaviour 
+	public class CharacterJumpOverride : MonoBehaviour 
 	{
 		[Header("Jumps")]
 

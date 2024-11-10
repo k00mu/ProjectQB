@@ -36,7 +36,7 @@ namespace MoreMountains.CorgiEngine
 			}
 		}
 
-		public virtual void InitiateDive()
+		protected virtual void InitiateDive()
 		{
 			if ( !AbilityAuthorized // if the ability is not permitted
 			     || (_controller.State.IsGrounded) // or if the character is grounded

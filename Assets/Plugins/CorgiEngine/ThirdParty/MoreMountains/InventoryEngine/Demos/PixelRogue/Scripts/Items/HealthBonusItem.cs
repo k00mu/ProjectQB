@@ -1,4 +1,6 @@
 ﻿using UnityEngine;
+using System.Collections;
+using MoreMountains.Tools;
 using System;
 
 namespace MoreMountains.InventoryEngine

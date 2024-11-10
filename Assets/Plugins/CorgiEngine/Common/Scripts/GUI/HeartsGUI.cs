@@ -9,7 +9,7 @@ namespace MoreMountains.CorgiEngine
 	/// Add this class to a GUI object, and it'll handle the instantiation and management of hearts based on the current lives of the player character
 	/// It's best used on a HorizontalLayoutGroup that will handle correct positioning natively
 	/// </summary>
-	public class HeartsGUI : CorgiMonoBehaviour 
+	public class HeartsGUI : MonoBehaviour 
 	{
 		/// the sprite to use when the heart is full
 		[Tooltip("the sprite to use when the heart is full")]

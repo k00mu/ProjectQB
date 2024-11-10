@@ -18,12 +18,11 @@ namespace MoreMountains.CorgiEngine
     public class InputSystemManagerEventsBased : InputManager
     {   
         public void OnPrimaryMovement(InputValue value) { _primaryMovement = value.Get<Vector2>(); }
-        public void OnSecondaryMovement(InputValue value) { _secondaryMovement = value.Get<Vector2>(); }
+        public void OnSecondaryMovement(InputValue value) { _primaryMovement = value.Get<Vector2>(); }
 
         public void OnJump(InputValue value) { BindButton(value, JumpButton); }
         public void OnRun(InputValue value) { BindButton(value, RunButton); }
         public void OnDash(InputValue value) { BindButton(value, DashButton); }
-        public void OnRoll(InputValue value) { BindButton(value, RollButton); }
         public void OnShoot(InputValue value) { BindButton(value, ShootButton); }
         public void OnSecondaryShoot(InputValue value) { BindButton(value, SecondaryShootButton); }
         public void OnInteract(InputValue value) { BindButton(value, InteractButton); }

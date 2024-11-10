@@ -1,9 +1,7 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 using MoreMountains.Feedbacks;
-using UnityEngine.Scripting.APIUpdating;
-#if MM_HDRP
-using UnityEngine.Rendering.HighDefinition;
-#endif
 
 namespace MoreMountains.FeedbacksForThirdParty
 {
@@ -16,7 +14,6 @@ namespace MoreMountains.FeedbacksForThirdParty
 	#if MM_HDRP
 	[FeedbackPath("PostProcess/Lens Distortion HDRP")]
 	#endif
-	[MovedFrom(false, null, "MoreMountains.Feedbacks.HDRP")]
 	[FeedbackHelp("This feedback allows you to control HDRP lens distortion intensity over time. " +
 	              "It requires you have in your scene an object with a Volume " +
 	              "with Lens Distortion active, and a MMLensDistortionShaker_HDRP component.")]
@@ -27,14 +24,11 @@ namespace MoreMountains.FeedbacksForThirdParty
 		/// sets the inspector color for this feedback
 		#if UNITY_EDITOR
 		public override Color FeedbackColor { get { return MMFeedbacksInspectorColors.PostProcessColor; } }
-		public override bool HasCustomInspectors => true;
-		public override bool HasAutomaticShakerSetup => true;
 		#endif
 
 		/// the duration of this feedback is the duration of the shake
 		public override float FeedbackDuration { get { return ApplyTimeMultiplier(Duration); } set { Duration = value; } }
 		public override bool HasChannel => true;
-		public override bool HasRandomness => true;
 
 		[MMFInspectorGroup("Lens Distortion", true, 22)]
 		/// the duration of the shake in seconds
@@ -65,11 +59,11 @@ namespace MoreMountains.FeedbacksForThirdParty
 			new Keyframe(1, 0));
 		/// the value to remap the curve's 0 to
 		[Tooltip("the value to remap the curve's 0 to")]
-		[Range(-1f, 1f)]
+		[Range(-100f, 100f)]
 		public float RemapIntensityZero = 0f;
 		/// the value to remap the curve's 1 to
 		[Tooltip("the value to remap the curve's 1 to")]
-		[Range(-1f, 1f)]
+		[Range(-100f, 100f)]
 		public float RemapIntensityOne = 0.5f;
 
 		/// <summary>
@@ -84,9 +78,9 @@ namespace MoreMountains.FeedbacksForThirdParty
 				return;
 			}
             
-			float intensityMultiplier = ComputeIntensity(feedbacksIntensity, position);
+			float intensityMultiplier = Timing.ConstantIntensity ? 1f : feedbacksIntensity;
 			MMLensDistortionShakeEvent_HDRP.Trigger(Intensity, FeedbackDuration, RemapIntensityZero, RemapIntensityOne, RelativeIntensity, intensityMultiplier,
-				ChannelData, ResetShakerValuesAfterShake, ResetTargetValuesAfterShake, NormalPlayDirection, ComputedTimescaleMode);
+				Channel, ResetShakerValuesAfterShake, ResetTargetValuesAfterShake, NormalPlayDirection, Timing.TimescaleMode);
 		}
         
 		/// <summary>
@@ -103,31 +97,7 @@ namespace MoreMountains.FeedbacksForThirdParty
 			base.CustomStopFeedback(position, feedbacksIntensity);
 
 			MMLensDistortionShakeEvent_HDRP.Trigger(Intensity, FeedbackDuration, RemapIntensityZero, RemapIntensityOne,
-				RelativeIntensity, channelData:ChannelData, stop: true);
-		}
-		
-		/// <summary>
-		/// On restore, we put our object back at its initial position
-		/// </summary>
-		protected override void CustomRestoreInitialValues()
-		{
-			if (!Active || !FeedbackTypeAuthorized)
-			{
-				return;
-			}
-			
-			MMLensDistortionShakeEvent_HDRP.Trigger(Intensity, FeedbackDuration, RemapIntensityZero, RemapIntensityOne,
-				RelativeIntensity, channelData:ChannelData, restore: true);
-		}
-		
-		/// <summary>
-		/// Automaticall sets up the post processing profile and shaker
-		/// </summary>
-		public override void AutomaticShakerSetup()
-		{
-			#if MM_HDRP && UNITY_EDITOR
-			MMHDRPHelpers.GetOrCreateVolume<LensDistortion, MMLensDistortionShaker_HDRP>(Owner, "LensDistortion");
-			#endif
+				RelativeIntensity, channel: Channel, stop: true);
 		}
 	}
 }

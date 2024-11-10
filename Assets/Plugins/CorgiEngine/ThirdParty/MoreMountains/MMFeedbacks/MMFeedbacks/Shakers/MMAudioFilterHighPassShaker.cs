@@ -81,10 +81,9 @@ namespace MoreMountains.Feedbacks
 		/// <param name="feedbacksIntensity"></param>
 		/// <param name="channel"></param>
 		public virtual void OnMMAudioFilterHighPassShakeEvent(AnimationCurve highPassCurve, float duration, float remapMin, float remapMax, bool relativeHighPass = false,
-			float feedbacksIntensity = 1.0f, MMChannelData channelData = null, bool resetShakerValuesAfterShake = true, bool resetTargetValuesAfterShake = true, bool forwardDirection = true, 
-			TimescaleModes timescaleMode = TimescaleModes.Scaled, bool stop = false, bool restore = false)
+			float feedbacksIntensity = 1.0f, int channel = 0, bool resetShakerValuesAfterShake = true, bool resetTargetValuesAfterShake = true, bool forwardDirection = true, TimescaleModes timescaleMode = TimescaleModes.Scaled, bool stop = false)
 		{
-			if (!CheckEventAllowed(channelData) || (!Interruptible && Shaking))
+			if (!CheckEventAllowed(channel) || (!Interruptible && Shaking))
 			{
 				return;
 			}
@@ -92,12 +91,6 @@ namespace MoreMountains.Feedbacks
 			if (stop)
 			{
 				Stop();
-				return;
-			}
-			
-			if (restore)
-			{
-				ResetTargetValues();
 				return;
 			}
             
@@ -113,16 +106,13 @@ namespace MoreMountains.Feedbacks
 				_originalRelativeHighPass = RelativeHighPass;
 			}
 
-			if (!OnlyUseShakerValues)
-			{
-				TimescaleMode = timescaleMode;
-				ShakeDuration = duration;
-				ShakeHighPass = highPassCurve;
-				RemapHighPassZero = remapMin * feedbacksIntensity;
-				RemapHighPassOne = remapMax * feedbacksIntensity;
-				RelativeHighPass = relativeHighPass;
-				ForwardDirection = forwardDirection;
-			}
+			TimescaleMode = timescaleMode;
+			ShakeDuration = duration;
+			ShakeHighPass = highPassCurve;
+			RemapHighPassZero = remapMin * feedbacksIntensity;
+			RemapHighPassOne = remapMax * feedbacksIntensity;
+			RelativeHighPass = relativeHighPass;
+			ForwardDirection = forwardDirection;
 
 			Play();
 		}
@@ -173,21 +163,25 @@ namespace MoreMountains.Feedbacks
 	/// </summary>
 	public struct MMAudioFilterHighPassShakeEvent
 	{
-		static private event Delegate OnEvent;
-		[RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)] private static void RuntimeInitialization() { OnEvent = null; }
-		static public void Register(Delegate callback) { OnEvent += callback; }
-		static public void Unregister(Delegate callback) { OnEvent -= callback; }
-
 		public delegate void Delegate(AnimationCurve highPassCurve, float duration, float remapMin, float remapMax, bool relativeHighPass = false,
-			float feedbacksIntensity = 1.0f, MMChannelData channelData = null, bool resetShakerValuesAfterShake = true, bool resetTargetValuesAfterShake = true, 
-			bool forwardDirection = true, TimescaleModes timescaleMode = TimescaleModes.Scaled, bool stop = false, bool restore = false);
+			float feedbacksIntensity = 1.0f, int channel = 0, bool resetShakerValuesAfterShake = true, bool resetTargetValuesAfterShake = true, bool forwardDirection = true, TimescaleModes timescaleMode = TimescaleModes.Scaled, bool stop = false);
+		static private event Delegate OnEvent;
+
+		static public void Register(Delegate callback)
+		{
+			OnEvent += callback;
+		}
+
+		static public void Unregister(Delegate callback)
+		{
+			OnEvent -= callback;
+		}
 
 		static public void Trigger(AnimationCurve highPassCurve, float duration, float remapMin, float remapMax, bool relativeHighPass = false,
-			float feedbacksIntensity = 1.0f, MMChannelData channelData = null, bool resetShakerValuesAfterShake = true, bool resetTargetValuesAfterShake = true, 
-			bool forwardDirection = true, TimescaleModes timescaleMode = TimescaleModes.Scaled, bool stop = false, bool restore = false)
+			float feedbacksIntensity = 1.0f, int channel = 0, bool resetShakerValuesAfterShake = true, bool resetTargetValuesAfterShake = true, bool forwardDirection = true, TimescaleModes timescaleMode = TimescaleModes.Scaled, bool stop = false)
 		{
 			OnEvent?.Invoke(highPassCurve, duration, remapMin, remapMax, relativeHighPass,
-				feedbacksIntensity, channelData, resetShakerValuesAfterShake, resetTargetValuesAfterShake, forwardDirection, timescaleMode, stop, restore);
+				feedbacksIntensity, channel, resetShakerValuesAfterShake, resetTargetValuesAfterShake, forwardDirection, timescaleMode, stop);
 		}
 	}
 }

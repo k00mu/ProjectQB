@@ -1,9 +1,8 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
-using UnityEngine;
-#if UNITY_EDITOR
+using MoreMountains.Tools;
 using UnityEditor;
-#endif
 
 namespace MoreMountains.CorgiEngine
 {
@@ -13,7 +12,7 @@ namespace MoreMountains.CorgiEngine
 		public string AbilityName;
 	}
     
-	[CustomEditor (typeof(PickableAbility), true)]
+	[CustomEditor (typeof(PickableAbility))]
 	[CanEditMultipleObjects]
 	public class PickableAbilityInspector : Editor
 	{
@@ -26,12 +25,6 @@ namespace MoreMountains.CorgiEngine
         
 		protected int _lastIndex = 0;
 		protected string _currentTypeAsString;
-		
-		[RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]
-		protected static void InitializeStatics()
-		{
-			_typesAndNames = new List<CharacterAbilityTypePair>();
-		}
         
 		protected virtual void OnEnable()
 		{

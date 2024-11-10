@@ -191,12 +191,6 @@ namespace MoreMountains.FeedbacksForThirdParty
 				}
 			}            
 		}
-	
-		public virtual void RestoreInitialValues()
-		{
-			_volume.weight = _initial;
-		}
-		
 		#endif
 	}
 }

@@ -2,7 +2,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Scripting.APIUpdating;
 
 namespace MoreMountains.Feedbacks
 {
@@ -11,7 +10,6 @@ namespace MoreMountains.Feedbacks
 	/// </summary>
 	[AddComponentMenu("")]
 	[FeedbackHelp("This feedback will let you change the color of a target sprite renderer over time, and flip it on X or Y. You can also use it to command one or many MMSpriteRendererShakers.")]
-	[MovedFrom(false, null, "MoreMountains.Feedbacks")]
 	[FeedbackPath("Renderer/SpriteRenderer")]
 	public class MMF_SpriteRenderer : MMF_Feedback
 	{
@@ -28,9 +26,6 @@ namespace MoreMountains.Feedbacks
 		/// the duration of this feedback is the duration of the sprite renderer, or 0 if instant
 		public override float FeedbackDuration { get { return (Mode == Modes.Instant) ? 0f : ApplyTimeMultiplier(Duration); } set { Duration = value; } }
 		public override bool HasChannel => true;
-		public override bool HasRandomness => true;
-		public override bool HasAutomatedTargetAcquisition => true;
-		protected override void AutomateTargetAcquisition() => BoundSpriteRenderer = FindAutomatedTarget<SpriteRenderer>();
 
 		/// the possible modes for this feedback
 		public enum Modes { OverTime, Instant, ShakerEvent, ToDestinationColor, ToDestinationColorAndBack }
@@ -62,7 +57,7 @@ namespace MoreMountains.Feedbacks
 		/// whether or not to broadcast a range to only affect certain shakers
 		[Tooltip("whether or not to broadcast a range to only affect certain shakers")]
 		[MMFEnumCondition("Mode", (int)Modes.ShakerEvent)]
-		public bool OnlyBroadcastInRange = false;
+		public bool UseRange = false;
 		/// the range of the event, in units
 		[Tooltip("the range of the event, in units")]
 		[MMFEnumCondition("Mode", (int)Modes.ShakerEvent)]
@@ -109,8 +104,6 @@ namespace MoreMountains.Feedbacks
 
 		protected Coroutine _coroutine;
 		protected Color _initialColor;
-		protected bool _initialFlipX;
-		protected bool _initialFlipY;
         
 		/// <summary>
 		/// On init we turn the sprite renderer off if needed
@@ -136,8 +129,6 @@ namespace MoreMountains.Feedbacks
 			if ((BoundSpriteRenderer != null) && (InitialColorMode == InitialColorModes.InitialColorOnInit))
 			{
 				_initialColor = BoundSpriteRenderer.color;
-				_initialFlipX = BoundSpriteRenderer.flipX;
-				_initialFlipY = BoundSpriteRenderer.flipY;
 			}
 		}
 
@@ -156,11 +147,9 @@ namespace MoreMountains.Feedbacks
 			if ((BoundSpriteRenderer != null) && (InitialColorMode == InitialColorModes.InitialColorOnPlay))
 			{
 				_initialColor = BoundSpriteRenderer.color;
-				_initialFlipX = BoundSpriteRenderer.flipX;
-				_initialFlipY = BoundSpriteRenderer.flipY;
 			}
             
-			float intensityMultiplier = ComputeIntensity(feedbacksIntensity, position);
+			float intensityMultiplier = Timing.ConstantIntensity ? 1f : feedbacksIntensity;
 			Turn(true);
 			switch (Mode)
 			{
@@ -176,22 +165,20 @@ namespace MoreMountains.Feedbacks
 					{
 						return;
 					}
-					if (_coroutine != null) { Owner.StopCoroutine(_coroutine); }
 					_coroutine = Owner.StartCoroutine(SpriteRendererSequence());
 					break;
 				case Modes.ShakerEvent:
 					MMSpriteRendererShakeEvent.Trigger(FeedbackDuration, ModifyColor, ColorOverTime, 
 						FlipX, FlipY,   
 						intensityMultiplier,
-						ChannelData, ResetShakerValuesAfterShake, ResetTargetValuesAfterShake,
-						OnlyBroadcastInRange, EventRange, EventOriginTransform.position);
+						Channel, ResetShakerValuesAfterShake, ResetTargetValuesAfterShake,
+						UseRange, EventRange, EventOriginTransform.position);
 					break;
 				case Modes.ToDestinationColor:
 					if (!AllowAdditivePlays && (_coroutine != null))
 					{
 						return;
 					}
-					if (_coroutine != null) { Owner.StopCoroutine(_coroutine); }
 					_coroutine = Owner.StartCoroutine(SpriteRendererToDestinationSequence(false));
 					break;
 				case Modes.ToDestinationColorAndBack:
@@ -199,7 +186,6 @@ namespace MoreMountains.Feedbacks
 					{
 						return;
 					}
-					if (_coroutine != null) { Owner.StopCoroutine(_coroutine); }
 					_coroutine = Owner.StartCoroutine(SpriteRendererToDestinationSequence(true));
 					break;
 			}
@@ -329,24 +315,6 @@ namespace MoreMountains.Feedbacks
 		{
 			BoundSpriteRenderer.gameObject.SetActive(status);
 			BoundSpriteRenderer.enabled = status;
-		}
-		
-		/// <summary>
-		/// On restore, we restore our initial state
-		/// </summary>
-		protected override void CustomRestoreInitialValues()
-		{
-			if (!Active || !FeedbackTypeAuthorized)
-			{
-				return;
-			}
-			
-			if (BoundSpriteRenderer != null)
-			{
-				BoundSpriteRenderer.color = _initialColor;
-				BoundSpriteRenderer.flipX = _initialFlipX;
-				BoundSpriteRenderer.flipY = _initialFlipY;
-			}
 		}
         
 		/// <summary>

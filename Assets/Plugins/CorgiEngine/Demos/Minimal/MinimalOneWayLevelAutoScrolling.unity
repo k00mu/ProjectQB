@@ -175,7 +175,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87a286771fa86194e979f187a1691a2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Interactable: 1
   ButtonPressedFirstTime:
     m_PersistentCalls:
       m_Calls:
@@ -1275,10 +1274,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88fcac034e6398d42ac254095d9b2d18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlayerPrefabs: []
+  PlayerPrefabs:
+  - {fileID: 11485350, guid: eaa0c32df7aae4121befb930bd401b9a, type: 3}
   AutoAttributePlayerIDs: 1
-  SceneCharacters:
-  - {fileID: 1484466165}
+  SceneCharacters: []
   DebugSpawn: {fileID: 0}
   CheckpointAttributionAxis: 0
   CheckpointAttributionDirection: 0
@@ -1314,9 +1313,7 @@ MonoBehaviour:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    Initialized: 0
   RespawnDelay: 2
-  ResetPointsOnRestart: 1
   BoundsMode: 1
   LevelBounds:
     m_Center: {x: -15.92, y: -2.66, z: 0}
@@ -1343,7 +1340,6 @@ MonoBehaviour:
         m_PreInfinity: 2
         m_PostInfinity: 2
         m_RotationOrder: 4
-      Initialized: 0
     ExitFadeTween:
       MMTweenDefinitionType: 0
       MMTweenCurve: 0
@@ -1353,11 +1349,8 @@ MonoBehaviour:
         m_PreInfinity: 2
         m_PostInfinity: 2
         m_RotationOrder: 4
-      Initialized: 0
     ProgressBarSpeed: 5
     FadeMode: 0
-    UnloadMethod: 2
-  SetPlayerAsFeedbackRangeCenter: 0
 --- !u!114 &213527047
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1654,7 +1647,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87a286771fa86194e979f187a1691a2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Interactable: 1
   ButtonPressedFirstTime:
     m_PersistentCalls:
       m_Calls:
@@ -2763,7 +2755,6 @@ MonoBehaviour:
   BumpOnDecrease: 0
   BumpDuration: 0.2
   ChangeColorWhenBumping: 1
-  StoreBarColorOnPlay: 1
   BumpColor: {r: 1, g: 1, b: 1, a: 1}
   BumpScaleAnimationCurve:
     serializedVersion: 2
@@ -3669,7 +3660,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87a286771fa86194e979f187a1691a2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Interactable: 1
   ButtonPressedFirstTime:
     m_PersistentCalls:
       m_Calls:
@@ -4728,7 +4718,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87a286771fa86194e979f187a1691a2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Interactable: 1
   ButtonPressedFirstTime:
     m_PersistentCalls:
       m_Calls:
@@ -6246,67 +6235,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 356935528}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &1227512026
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 119040, guid: eaa0c32df7aae4121befb930bd401b9a, type: 3}
-      propertyPath: m_Name
-      value: Rectangle
-      objectReference: {fileID: 0}
-    - target: {fileID: 425048, guid: eaa0c32df7aae4121befb930bd401b9a, type: 3}
-      propertyPath: m_RootOrder
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 425048, guid: eaa0c32df7aae4121befb930bd401b9a, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -70.76204
-      objectReference: {fileID: 0}
-    - target: {fileID: 425048, guid: eaa0c32df7aae4121befb930bd401b9a, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -3.675519
-      objectReference: {fileID: 0}
-    - target: {fileID: 425048, guid: eaa0c32df7aae4121befb930bd401b9a, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 425048, guid: eaa0c32df7aae4121befb930bd401b9a, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 425048, guid: eaa0c32df7aae4121befb930bd401b9a, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 425048, guid: eaa0c32df7aae4121befb930bd401b9a, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 425048, guid: eaa0c32df7aae4121befb930bd401b9a, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 425048, guid: eaa0c32df7aae4121befb930bd401b9a, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 425048, guid: eaa0c32df7aae4121befb930bd401b9a, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 425048, guid: eaa0c32df7aae4121befb930bd401b9a, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 11494318, guid: eaa0c32df7aae4121befb930bd401b9a, type: 3}
-      propertyPath: ResetForcesOnConstrain
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: eaa0c32df7aae4121befb930bd401b9a, type: 3}
 --- !u!1001 &1258011881
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6930,18 +6858,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1484466165 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 11485350, guid: eaa0c32df7aae4121befb930bd401b9a,
-    type: 3}
-  m_PrefabInstance: {fileID: 1227512026}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8b470d1b161b2454590386135b7fd64f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1494325978
 GameObject:
   m_ObjectHideFlags: 0
@@ -8128,7 +8044,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87a286771fa86194e979f187a1691a2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Interactable: 1
   ButtonPressedFirstTime:
     m_PersistentCalls:
       m_Calls:
@@ -8837,7 +8752,6 @@ MonoBehaviour:
   BumpOnDecrease: 0
   BumpDuration: 0.2
   ChangeColorWhenBumping: 1
-  StoreBarColorOnPlay: 1
   BumpColor: {r: 1, g: 1, b: 1, a: 1}
   BumpScaleAnimationCurve:
     serializedVersion: 2
@@ -9300,6 +9214,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TargetCamera: {fileID: 1399222101}
+  PressedOpacity: 0.5
   HorizontalAxisEnabled: 1
   VerticalAxisEnabled: 1
   MaxRange: 1.5
@@ -9317,30 +9232,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  JoystickNormalizedValue:
-    m_PersistentCalls:
-      m_Calls: []
-  JoystickMagnitudeValue:
-    m_PersistentCalls:
-      m_Calls: []
-  OnPointerDownEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  OnDragEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  OnPointerUpEvent:
-    m_PersistentCalls:
-      m_Calls: []
   RotatingIndicator: {fileID: 0}
   RotatingIndicatorThreshold: 0.1
-  PressedOpacity: 0.5
-  InterpolateOpacity: 1
-  InterpolateOpacitySpeed: 1
-  RawValue: {x: 0, y: 0}
-  NormalizedValue: {x: 0, y: 0}
-  Magnitude: 0
-  DrawGizmos: 1
+  _joystickValue: {x: 0, y: 0}
 --- !u!114 &1935828850
 MonoBehaviour:
   m_ObjectHideFlags: 0

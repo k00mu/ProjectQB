@@ -15,9 +15,6 @@ namespace MoreMountains.CorgiEngine
 		/// if true, the projectile will rotate at initialization towards its rotation
 		[Tooltip("if true, the projectile will rotate at initialization towards its rotation")]
 		public bool FaceDirection = true;
-		/// if this is true, the projectile will update its rotation every frame to match its movement direction
-		[Tooltip("if this is true, the projectile will update its rotation every frame to match its movement direction")]
-		public bool FaceMovementDirection = false;
 		/// the speed of the object (relative to the level's speed)
 		[Tooltip("the speed of the object (relative to the level's speed)")]
 		public float Speed = 200;
@@ -54,7 +51,7 @@ namespace MoreMountains.CorgiEngine
 		public LayerMask SpawnSecurityCheckLayerMask;
 
 		/// Returns the associated damage on touch zone
-		public virtual DamageOnTouch TargetDamageOnTouch { get { return _damageOnTouch; } }
+		public DamageOnTouch TargetDamageOnTouch { get { return _damageOnTouch; } }
 
 		protected Weapon _weapon;
 		protected GameObject _owner;
@@ -148,7 +145,6 @@ namespace MoreMountains.CorgiEngine
 		protected virtual void FixedUpdate ()
 		{
 			Movement();
-			HandleFaceMovement();
 		}
 
 		/// <summary>
@@ -160,33 +156,6 @@ namespace MoreMountains.CorgiEngine
 			transform.Translate(_movement,Space.World);
 			// We apply the acceleration to increase the speed
 			Speed += Acceleration * Time.deltaTime;
-		}
-
-		/// <summary>
-		/// If FaceMovementDirection is true, orients the projectile to match its current movement direction
-		/// </summary>
-		protected virtual void HandleFaceMovement()
-		{
-			if (!FaceMovementDirection)
-			{
-				return;
-			}
-			if (FaceMovementDirection)
-			{
-				if (_movement != Vector3.zero)
-				{
-					float angle = Mathf.Atan2(_movement.y, _movement.x) * Mathf.Rad2Deg;
-
-					if (_movement.x < 0)
-					{
-						transform.right = - _movement.normalized;
-					}
-					else
-					{
-						transform.right = _movement.normalized;
-					}
-				}
-			}
 		}
 
 		/// <summary>
@@ -215,7 +184,7 @@ namespace MoreMountains.CorgiEngine
 		/// <summary>
 		/// Flip the projectile
 		/// </summary>
-		public virtual void Flip()
+		protected virtual void Flip()
 		{
 			if (_spriteRenderer != null)
 			{

@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 using MoreMountains.Tools;
-using UnityEngine.Scripting.APIUpdating;
 
 namespace MoreMountains.Feedbacks
 {
@@ -11,7 +10,6 @@ namespace MoreMountains.Feedbacks
 	/// </summary>
 	[AddComponentMenu("")]
 	[FeedbackHelp("This feedback will trigger a MMGameEvent of the specified name when played")]
-	[MovedFrom(false, null, "MoreMountains.Feedbacks.MMTools")]
 	[FeedbackPath("Events/MMGameEvent")]
 	public class MMF_MMGameEvent : MMF_Feedback
 	{
@@ -27,13 +25,6 @@ namespace MoreMountains.Feedbacks
 
 		[MMFInspectorGroup("MMGameEvent", true, 57, true)]
 		public string MMGameEventName;
-		
-		[MMFInspectorGroup("Optional Payload", true, 58, true)]
-		public int IntParameter;
-		public Vector2 Vector2Parameter;
-		public Vector3 Vector3Parameter;
-		public bool BoolParameter;
-		public string StringParameter;
 
 		/// <summary>
 		/// On Play we change the values of our fog
@@ -46,7 +37,7 @@ namespace MoreMountains.Feedbacks
 			{
 				return;
 			}
-			MMGameEvent.Trigger(MMGameEventName, IntParameter, Vector2Parameter, Vector3Parameter, BoolParameter, StringParameter);
+			MMGameEvent.Trigger(MMGameEventName);
 		}
 	}
 }

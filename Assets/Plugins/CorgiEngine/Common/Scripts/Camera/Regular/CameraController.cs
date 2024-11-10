@@ -10,7 +10,7 @@ namespace MoreMountains.CorgiEngine
 	/// The Corgi Engine's Camera Controller. Handles camera movement, shakes, player follow.
 	/// </summary>
 	[AddComponentMenu("Corgi Engine/Camera/Camera Controller")]
-	public class CameraController : CorgiMonoBehaviour, MMEventListener<CorgiEngineEvent>, MMEventListener<MMCameraEvent>
+	public class CameraController : MonoBehaviour, MMEventListener<CorgiEngineEvent>, MMEventListener<MMCameraEvent>
 	{
 		/// True if the camera should follow the player
 		public bool FollowsPlayer { get; set; }
@@ -449,7 +449,7 @@ namespace MoreMountains.CorgiEngine
 		/// When a MMCameraShakeEvent is caught, shakes the camera
 		/// </summary>
 		/// <param name="shakeEvent">Shake event.</param>
-		public virtual void OnCameraShakeEvent(float duration, float amplitude, float frequency, float amplitudeX, float amplitudeY,  float amplitudeZ, bool infinite, MMChannelData channelData, bool useUnscaledTime)
+		public virtual void OnCameraShakeEvent(float duration, float amplitude, float frequency, float amplitudeX, float amplitudeY,  float amplitudeZ, bool infinite, int channel, bool useUnscaledTime)
 		{
 			Vector3 parameters = new Vector3(amplitude, duration, frequency);
 			Shake(parameters);

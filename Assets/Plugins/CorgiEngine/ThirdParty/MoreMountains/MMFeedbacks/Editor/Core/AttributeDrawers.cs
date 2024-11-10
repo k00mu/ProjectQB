@@ -55,12 +55,12 @@ namespace MoreMountains.Feedbacks
 			}
 			else
 			{
-				/*int multiplier = 1; // this multiplier fixes issues in differing property spacing between MMFeedbacks and MMF_Player
+				int multiplier = 1; // this multiplier fixes issues in differing property spacing between MMFeedbacks and MMF_Player
 				if (property.depth > 0)
 				{
 					multiplier = property.depth;
-				}*/
-				return -EditorGUIUtility.standardVerticalSpacing /** multiplier*/;
+				}
+				return -EditorGUIUtility.standardVerticalSpacing * multiplier;
 			}
 		}
 	}
@@ -74,19 +74,19 @@ namespace MoreMountains.Feedbacks
 			MMFConditionAttribute conditionAttribute = (MMFConditionAttribute)attribute;
 			bool enabled = GetConditionAttributeResult(conditionAttribute, property);
 			bool previouslyEnabled = GUI.enabled;
-			GUI.enabled = conditionAttribute.Negative ? !enabled : enabled;
-			if (ShouldDisplay(conditionAttribute, enabled))
+			GUI.enabled = enabled;
+			if (!conditionAttribute.Hidden || enabled)
 			{
 				EditorGUI.PropertyField(position, property, label, true);
 			}
 			GUI.enabled = previouslyEnabled;
 		}
 
-		private bool GetConditionAttributeResult(MMFConditionAttribute conditionAttribute, SerializedProperty property)
+		private bool GetConditionAttributeResult(MMFConditionAttribute condHAtt, SerializedProperty property)
 		{
 			bool enabled = true;
 			string propertyPath = property.propertyPath;
-			string conditionPath = propertyPath.Replace(property.name, conditionAttribute.ConditionBoolean);
+			string conditionPath = propertyPath.Replace(property.name, condHAtt.ConditionBoolean);
 			SerializedProperty sourcePropertyValue = property.serializedObject.FindProperty(conditionPath);
 
 			if (sourcePropertyValue != null)
@@ -95,20 +95,10 @@ namespace MoreMountains.Feedbacks
 			}
 			else
 			{
-				Debug.LogWarning("No matching boolean found for ConditionAttribute in object: " + conditionAttribute.ConditionBoolean);
+				Debug.LogWarning("No matching boolean found for ConditionAttribute in object: " + condHAtt.ConditionBoolean);
 			}
 
 			return enabled;
-		}
-		
-		private bool ShouldDisplay(MMFConditionAttribute conditionAttribute, bool result)
-		{
-			bool shouldDisplay = !conditionAttribute.Hidden || result;
-			if (conditionAttribute.Negative)
-			{
-				shouldDisplay = !shouldDisplay;
-			}
-			return shouldDisplay;
 		}
 
 		public override float GetPropertyHeight(SerializedProperty property, GUIContent label)
@@ -116,18 +106,18 @@ namespace MoreMountains.Feedbacks
 			MMFConditionAttribute conditionAttribute = (MMFConditionAttribute)attribute;
 			bool enabled = GetConditionAttributeResult(conditionAttribute, property);
 
-			if (ShouldDisplay(conditionAttribute, enabled))
+			if (!conditionAttribute.Hidden || enabled)
 			{
 				return EditorGUI.GetPropertyHeight(property, label);
 			}
 			else
 			{
-				/*int multiplier = 1; // this multiplier fixes issues in differing property spacing between MMFeedbacks and MMF_Player
+				int multiplier = 1; // this multiplier fixes issues in differing property spacing between MMFeedbacks and MMF_Player
 				if (property.depth > 0)
 				{
-					//multiplier = property.depth;
-				}*/
-				return -EditorGUIUtility.standardVerticalSpacing /** multiplier*/; 
+					multiplier = property.depth;
+				}
+				return -EditorGUIUtility.standardVerticalSpacing * multiplier;
 			}
 		}
 	}

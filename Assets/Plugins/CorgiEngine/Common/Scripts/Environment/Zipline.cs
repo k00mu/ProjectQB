@@ -11,7 +11,7 @@ namespace MoreMountains.CorgiEngine
 	/// </summary>
 	[ExecuteAlways]
 	[AddComponentMenu("Corgi Engine/Environment/Zipline")]
-	public class Zipline : CorgiMonoBehaviour
+	public class Zipline : MonoBehaviour
 	{
 		/// the line renderer used to draw a line between the two poles
 		[Tooltip("the line renderer used to draw a line between the two poles")]

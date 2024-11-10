@@ -32,11 +32,6 @@ namespace MoreMountains.CorgiEngine
 		/// </summary>
 		public virtual void Stun()
 		{
-			if (!AbilityAuthorized)
-            {
-				return;
-            }
-
 			if (_condition.CurrentState != CharacterStates.CharacterConditions.Stunned)
 			{
 				_previousCondition = _condition.CurrentState;	
@@ -61,11 +56,6 @@ namespace MoreMountains.CorgiEngine
 		/// </summary>
 		public virtual void ExitStun()
 		{
-			if (_condition.CurrentState != CharacterStates.CharacterConditions.Stunned)
-			{
-				return;
-			}
-			
 			AbilityStopFeedbacks?.PlayFeedbacks();
 			_condition.ChangeState(_previousCondition);
 			MMCharacterEvent.Trigger(_character, MMCharacterEventTypes.Stun, MMCharacterEvent.Moments.End);

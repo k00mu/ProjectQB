@@ -9,7 +9,7 @@ namespace MoreMountains.CorgiEngine
 	/// Add this component to an object containing multiple weapons and it'll turn it into a ComboWeapon, allowing you to chain attacks from all the different weapons
 	/// </summary>
 	[AddComponentMenu("Corgi Engine/Weapons/Combo Weapon")]
-	public class ComboWeapon : CorgiMonoBehaviour
+	public class ComboWeapon : MonoBehaviour
 	{
 		[Header("Combo")]
 
@@ -146,7 +146,6 @@ namespace MoreMountains.CorgiEngine
 					_countdownActive = true;
 					TimeSinceLastWeaponStopped = 0f;
 
-					Weapons[_currentWeaponIndex].SetCooldownStartAt();
 					Weapons[_currentWeaponIndex].enabled = false;
 					_currentWeaponIndex = newIndex;
 					OwnerCharacterHandleWeapon.CurrentWeapon = Weapons[newIndex];

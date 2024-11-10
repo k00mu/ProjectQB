@@ -6,7 +6,7 @@ namespace MoreMountains.CorgiEngine
 	/// <summary>
 	/// Add this script to a tree to make it dance slowly over time
 	/// </summary>
-	public class BackgroundTree : CorgiMonoBehaviour 
+	public class BackgroundTree : MonoBehaviour 
 	{
 		/// The speed (in seconds) at which a new target scale is determined. Bigger scaleSpeed means slower movement.
 		[Tooltip("The speed (in seconds) at which a new target scale is determined. Bigger scaleSpeed means slower movement.")]

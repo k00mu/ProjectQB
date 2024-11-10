@@ -1,9 +1,7 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 using MoreMountains.Feedbacks;
-#if MM_POSTPROCESSING
-using UnityEngine.Rendering.PostProcessing;
-#endif
-using UnityEngine.Scripting.APIUpdating;
 
 namespace MoreMountains.FeedbacksForThirdParty
 {
@@ -17,7 +15,6 @@ namespace MoreMountains.FeedbacksForThirdParty
 	#if MM_POSTPROCESSING
 	[FeedbackPath("PostProcess/Bloom")]
 	#endif
-	[MovedFrom(false, null, "MoreMountains.Feedbacks.PostProcessing")]
 	public class MMF_Bloom : MMF_Feedback
 	{
 		/// a static bool used to disable all feedbacks of this type at once
@@ -25,15 +22,12 @@ namespace MoreMountains.FeedbacksForThirdParty
 		/// sets the inspector color for this feedback
 		#if UNITY_EDITOR
 		public override Color FeedbackColor { get { return MMFeedbacksInspectorColors.PostProcessColor; } }
-		public override string RequiredTargetText => RequiredChannelText;
-		public override bool HasCustomInspectors => true;
-		public override bool HasAutomaticShakerSetup => true;
+		public override string RequiredTargetText { get { return "Channel "+Channel;  } }
 		#endif
 
 		/// the duration of this feedback is the duration of the shake
 		public override float FeedbackDuration { get { return ApplyTimeMultiplier(ShakeDuration); }  set { ShakeDuration = value;  } }
 		public override bool HasChannel => true;
-		public override bool HasRandomness => true;
 
 		[MMFInspectorGroup("Bloom", true, 41)]
 		/// the duration of the feedback, in seconds
@@ -58,7 +52,7 @@ namespace MoreMountains.FeedbacksForThirdParty
 		public float RemapIntensityZero = 0f;
 		/// the value to remap the curve's 1 to
 		[Tooltip("the value to remap the curve's 1 to")]
-		public float RemapIntensityOne = 10f;
+		public float RemapIntensityOne = 1f;
         
 		[MMFInspectorGroup("Threshold", true, 43)]
 		/// the curve to animate the threshold on
@@ -83,9 +77,9 @@ namespace MoreMountains.FeedbacksForThirdParty
 				return;
 			}
             
-			float intensityMultiplier = ComputeIntensity(feedbacksIntensity, position);
+			float intensityMultiplier = Timing.ConstantIntensity ? 1f : feedbacksIntensity;
 			MMBloomShakeEvent.Trigger(ShakeIntensity, FeedbackDuration, RemapIntensityZero, RemapIntensityOne, ShakeThreshold, RemapThresholdZero, RemapThresholdOne,
-				RelativeValues, intensityMultiplier, ChannelData, ResetShakerValuesAfterShake, ResetTargetValuesAfterShake, NormalPlayDirection, ComputedTimescaleMode);
+				RelativeValues, intensityMultiplier, Channel, ResetShakerValuesAfterShake, ResetTargetValuesAfterShake, NormalPlayDirection, Timing.TimescaleMode);
             
 		}
 
@@ -103,30 +97,6 @@ namespace MoreMountains.FeedbacksForThirdParty
 			base.CustomStopFeedback(position, feedbacksIntensity);
 			MMBloomShakeEvent.Trigger(ShakeIntensity, FeedbackDuration, RemapIntensityZero, RemapIntensityOne, ShakeThreshold, RemapThresholdZero, RemapThresholdOne,
 				RelativeValues, stop:true);
-		}
-
-		/// <summary>
-		/// On restore, we put our object back at its initial position
-		/// </summary>
-		protected override void CustomRestoreInitialValues()
-		{
-			if (!Active || !FeedbackTypeAuthorized)
-			{
-				return;
-			}
-			
-			MMBloomShakeEvent.Trigger(ShakeIntensity, FeedbackDuration, RemapIntensityZero, RemapIntensityOne, ShakeThreshold, RemapThresholdZero, RemapThresholdOne,
-				RelativeValues, restore:true);
-		}
-		
-		/// <summary>
-		/// Automaticall sets up the post processing profile and shaker
-		/// </summary>
-		public override void AutomaticShakerSetup()
-		{
-			#if UNITY_EDITOR && MM_POSTPROCESSING
-			MMPostProcessingHelpers.GetOrCreateVolume<Bloom, MMBloomShaker>(Owner, "Bloom");
-			#endif
 		}
 	}
 }

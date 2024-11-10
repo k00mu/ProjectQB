@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 using MoreMountains.Tools;
-using UnityEngine.Scripting.APIUpdating;
 
 namespace MoreMountains.Feedbacks
 {
@@ -11,13 +10,12 @@ namespace MoreMountains.Feedbacks
 	/// </summary>
 	[AddComponentMenu("")]
 	[FeedbackHelp("This feedback will let you output a message to the console, using a custom MM debug method, or Log, Assertion, Error or Warning logs.")]
-	[MovedFrom(false, null, "MoreMountains.Feedbacks.MMTools")]
 	[FeedbackPath("Debug/Log")]
 	public class MMF_DebugLog : MMF_Feedback
 	{
 		/// a static bool used to disable all feedbacks of this type at once
 		public static bool FeedbackTypeAuthorized = true;
-		/// the duration of this feedback is 0
+		/// the duration of this feedback is the duration of the light, or 0 if instant
 		public override float FeedbackDuration { get { return 0f; } }
 
 		/// sets the inspector color for this feedback
@@ -36,7 +34,7 @@ namespace MoreMountains.Feedbacks
 		/// the message to display 
 		[Tooltip("the message to display")]
 		[TextArea] 
-		public string DebugMessage = "YOUR DEBUG MESSAGE GOES HERE";
+		public string DebugMessage;
 		/// the color of the message when in DebugLogTime mode
 		[Tooltip("the color of the message when in DebugLogTime mode")]
 		[MMFEnumCondition("DebugLogMode", (int) DebugLogModes.DebugLogTime)]

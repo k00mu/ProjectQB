@@ -1,8 +1,6 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using UnityEngine;
+﻿using UnityEngine;
 using MoreMountains.Tools;
-#if ENABLE_INPUT_SYSTEM && !ENABLE_LEGACY_INPUT_MANAGER
+#if ENABLE_INPUT_SYSTEM
 using UnityEngine.InputSystem;
 #endif
 
@@ -14,7 +12,7 @@ namespace MoreMountains.CorgiEngine
 	/// </summary>
 	[RequireComponent(typeof(Weapon))]
 	[AddComponentMenu("Corgi Engine/Weapons/Weapon Aim")]
-	public class WeaponAim : CorgiMonoBehaviour 
+	public class WeaponAim : MonoBehaviour 
 	{
 		/// the list of possible control modes
 		public enum AimControls { Off, PrimaryMovement, SecondaryMovement, Mouse, Script }
@@ -27,7 +25,7 @@ namespace MoreMountains.CorgiEngine
 		/// the aim control mode of choice (off : no control, primary movement (typically your left stick), secondary  (right stick), mouse, script : when you want a script to drive your aim (typically for AI, but not only)
 		[Tooltip("the aim control mode of choice (off : no control, primary movement (typically your left stick), secondary  (right stick), mouse, script : when you want a script to drive your aim (typically for AI, but not only)")]
 		public AimControls AimControl = AimControls.SecondaryMovement;
-		
+
 		[Header("Weapon Rotation")]
 		[MMInformation("Here you can define whether the rotation is free, strict in 4 directions (top, bottom, left, right), or 8 directions (same + diagonals). You can also define a rotation speed, and a min and max angle. For example, if you don't want your character to be able to aim in its back, set min angle to -90 and max angle to 90.",MoreMountains.Tools.MMInformationAttribute.InformationType.Info,false)]
 
@@ -40,9 +38,6 @@ namespace MoreMountains.CorgiEngine
 		/// if this is true, a flip will be instant, regardless of the weapon rotation speed
 		[Tooltip("if this is true, a flip will be instant, regardless of the weapon rotation speed")]
 		public bool InstantFlip = false;
-		/// if this is true, you won't be able to aim this weapon's aim while it's in use
-		[Tooltip("if this is true, you won't be able to aim this weapon's aim while it's in use")]
-		public bool PreventAimWhileWeaponIsInUse = false;
 		/// the minimum angle at which the weapon's rotation will be clamped
 		[Range(-180, 180)]
 		[Tooltip("the minimum angle at which the weapon's rotation will be clamped")]
@@ -93,7 +88,7 @@ namespace MoreMountains.CorgiEngine
 		[MMCondition("DisplayReticle")]
 		public bool DisableReticleOnDeath = true;
 		/// the weapon's current rotation
-		public virtual Quaternion CurrentRotation { get { return transform.rotation; } }
+		public Quaternion CurrentRotation { get { return transform.rotation; } }
 		/// the current angle the weapon is aiming at
 		public float CurrentAngle { get; protected set; }
 		/// the current angle the weapon is aiming at, adjusted to compensate for the current orientation of the character
@@ -119,10 +114,14 @@ namespace MoreMountains.CorgiEngine
 			}
 		}
 		
+		#if ENABLE_INPUT_SYSTEM
+		[Header("Input System")]
+		public InputAction MousePositionAction;
+		#endif
+		
 		public Vector2 CurrentAimMultiplier { get; set; }
 
 		protected Weapon _weapon;
-		protected List<Weapon> _weapons;
 		protected Vector3 _currentAim = Vector3.zero;
 		protected Quaternion _lookRotation;
 		protected Vector3 _direction;
@@ -152,8 +151,6 @@ namespace MoreMountains.CorgiEngine
 		protected virtual void Initialization()
 		{
 			_weapon = this.gameObject.GetComponent<Weapon> ();
-			_weapons = this.gameObject.GetComponents<Weapon>().ToList();
-			
 			if (_weapon.Owner != null)
 			{
 				_characterGravity = _weapon.Owner?.FindAbility<CharacterGravity> ();
@@ -194,6 +191,12 @@ namespace MoreMountains.CorgiEngine
 			{
 				Debug.LogError("You've set the WeaponAim on " + this.name + " to be driven by SecondaryMovement, yet it's either driven by an AI or doesn't have an associated InputManager. Maybe you meant to have a Script AimControl instead.");
 			}
+			
+			#if ENABLE_INPUT_SYSTEM
+				MousePositionAction.Enable();
+				MousePositionAction.performed += context => _mousePosition = context.ReadValue<Vector2>();
+				MousePositionAction.canceled += context => _mousePosition = Vector2.zero;
+			#endif
 		}
 
 		/// <summary>
@@ -306,10 +309,8 @@ namespace MoreMountains.CorgiEngine
 						return;
 					}
 
-					#if !ENABLE_INPUT_SYSTEM || ENABLE_LEGACY_INPUT_MANAGER
+					#if !ENABLE_INPUT_SYSTEM
 					_mousePosition = Input.mousePosition;
-					#else
-					_mousePosition = Mouse.current.position.ReadValue();
 					#endif
 					_mousePosition.z = _mainCamera.transform.position.z * -1;
 
@@ -333,22 +334,6 @@ namespace MoreMountains.CorgiEngine
 		/// </summary>
 		protected virtual void LateUpdate()
 		{
-			bool weaponInUse = false;
-			foreach (Weapon weapon in _weapons)
-			{
-				if (weapon.WeaponState.CurrentState == Weapon.WeaponStates.WeaponDelayBeforeUse
-				    || weapon.WeaponState.CurrentState == Weapon.WeaponStates.WeaponUse
-				    || weapon.WeaponState.CurrentState == Weapon.WeaponStates.WeaponDelayBetweenUses)
-				{
-					weaponInUse = true;
-				}
-			}
-			
-			if (PreventAimWhileWeaponIsInUse && weaponInUse)
-			{
-				return;
-			}
-			
 			GetCurrentAim ();
 			DetermineWeaponRotation ();
 			MoveReticle();

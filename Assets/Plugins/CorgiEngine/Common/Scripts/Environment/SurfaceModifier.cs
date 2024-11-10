@@ -22,7 +22,7 @@ namespace MoreMountains.CorgiEngine
 	/// Add this component to a platform and define its new friction or force which will be applied to any CorgiController that walks on it
 	/// </summary>
 	[AddComponentMenu("Corgi Engine/Environment/Surface Modifier")]
-	public class SurfaceModifier : CorgiMonoBehaviour 
+	public class SurfaceModifier : MonoBehaviour 
 	{
 		/// the possible modes this surface can apply forces
 		public enum ForceApplicationModes { AddForce, SetForce }

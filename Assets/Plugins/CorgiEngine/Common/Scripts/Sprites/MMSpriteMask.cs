@@ -1,9 +1,9 @@
 ﻿using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
-using MoreMountains.Tools;
 
-namespace MoreMountains.CorgiEngine
+namespace MoreMountains.Tools
 {
 	/// <summary>
 	/// An event type used to set a new size for the mask from any class
@@ -43,7 +43,7 @@ namespace MoreMountains.CorgiEngine
 	/// This class will automatically look for sprite renderers, particle systems, tilemaps in the scene, and change their SpriteMaskInteraction settings according to the one set in the inspector
 	/// Use the NoMask tag on objects you don't want automatically setup
 	/// </summary>
-	public class MMSpriteMask : CorgiMonoBehaviour, MMEventListener<MMSpriteMaskEvent>
+	public class MMSpriteMask : MonoBehaviour, MMEventListener<MMSpriteMaskEvent>
 	{
 		/// the possible timescales this mask can operate on
 		public enum Timescales { Scaled, Unscaled }
@@ -77,7 +77,7 @@ namespace MoreMountains.CorgiEngine
 		[Tooltip("the type of interaction to apply to all renderers")]
 		public SpriteMaskInteraction MaskInteraction = SpriteMaskInteraction.VisibleInsideMask;
 
-		public virtual float MaskTime { get { float time = (Timescale == Timescales.Unscaled) ? Time.unscaledTime : Time.time; return time; } }
+		public float MaskTime { get { float time = (Timescale == Timescales.Unscaled) ? Time.unscaledTime : Time.time; return time; } }
 
 		/// <summary>
 		/// On Awake we setup our objects

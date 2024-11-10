@@ -6,7 +6,7 @@ using MoreMountains.Tools;
 namespace MoreMountains.CorgiEngine
 {
 
-	[CustomEditor (typeof(LevelManager), true)]
+	[CustomEditor (typeof(LevelManager))]
 	[InitializeOnLoad]
 
 	/// <summary>

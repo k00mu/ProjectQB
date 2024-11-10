@@ -17,7 +17,7 @@ namespace MoreMountains.CorgiEngine
 	/// Your magnetic enabler would make them follow this specific target on enter.
 	/// From the enabler you can also have it override the follow speed and acceleration.
 	/// </summary>
-	public class MagneticEnabler : CorgiMonoBehaviour
+	public class MagneticEnabler : MonoBehaviour
 	{
 		[Header("Detection")]
 		/// the layermask this magnetic enabler looks at to enable magnetic elements
