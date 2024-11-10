@@ -419,6 +419,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3888921573938273425}
   - component: {fileID: 7403060579320892010}
+  - component: {fileID: 4420117664384097230}
   m_Layer: 9
   m_Name: Glide
   m_TagString: Untagged
@@ -460,6 +461,23 @@ MonoBehaviour:
   BlockingConditionStates: 
   VerticalForce: -1.5
   GlideOnlyIfNoJumpsLeft: 1
+  _gliding: 0
+--- !u!114 &4420117664384097230
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4512240807466119141}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 863b270c8d38e484283ee048725c784e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxStamina: 90
+  stamina: 90
+  drain: 30
+  characterGlide: {fileID: 7403060579320892010}
 --- !u!1 &4998460576883146823
 GameObject:
   m_ObjectHideFlags: 0

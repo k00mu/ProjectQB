@@ -21,7 +21,7 @@ namespace MoreMountains.CorgiEngine
 		[Tooltip("whether or not the glide will wait for jumps to be exhausted")]
 		public bool GlideOnlyIfNoJumpsLeft = true;
 
-		protected bool _gliding;
+		public bool _gliding;
 		protected CharacterJump _characterJump;
 		protected CharacterWalljump _characterWallJump;
 		protected CharacterSwim _characterSwim;
@@ -116,7 +116,7 @@ namespace MoreMountains.CorgiEngine
 		/// <summary>
 		/// Stops the character from gliding
 		/// </summary>
-		protected virtual void GlideStop()
+		public virtual void GlideStop()
 		{           
 			// we play our stop sound
 			if (_movement.CurrentState == CharacterStates.MovementStates.Gliding)

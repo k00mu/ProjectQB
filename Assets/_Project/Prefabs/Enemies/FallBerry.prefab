@@ -63,6 +63,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8968849936185414806, guid: 2375d89ff3e54ae44ba25e6a2715b676,
+        type: 3}
+      propertyPath: DamageCausedKnockbackType
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 9170516187631079524, guid: 2375d89ff3e54ae44ba25e6a2715b676,
         type: 3}
       propertyPath: States.Array.data[1].Actions.array.Array.data[0]
