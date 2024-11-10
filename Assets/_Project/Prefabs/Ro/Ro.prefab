@@ -459,7 +459,7 @@ MonoBehaviour:
   AbilityPermitted: 1
   BlockingMovementStates: 
   BlockingConditionStates: 
-  VerticalForce: -1.5
+  VerticalForce: -1
   GlideOnlyIfNoJumpsLeft: 1
   _gliding: 0
 --- !u!114 &4420117664384097230
