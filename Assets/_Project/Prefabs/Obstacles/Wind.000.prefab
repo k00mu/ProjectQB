@@ -124,8 +124,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 369611b889347274f97fe4b2afc95ea5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  JumpPlatformBoost: 10
-  CanBeActivatedFromBelow: 1
+  JumpPlatformBoost: 5
+  CanBeActivatedFromBelow: 0
   ActivationFeedback: {fileID: 427874473401523266}
 --- !u!61 &6100000
 BoxCollider2D:

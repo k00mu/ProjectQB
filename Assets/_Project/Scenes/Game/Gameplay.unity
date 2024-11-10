@@ -34335,6 +34335,31 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 380439771583453876, guid: df547ccaa4c219041a43c63387fad9fb,
+        type: 3}
+      propertyPath: PlayerID
+      value: Player1
+      objectReference: {fileID: 0}
+    - target: {fileID: 380439771583453876, guid: df547ccaa4c219041a43c63387fad9fb,
+        type: 3}
+      propertyPath: ForcedMode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 380439771583453876, guid: df547ccaa4c219041a43c63387fad9fb,
+        type: 3}
+      propertyPath: SmoothMovement
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 380439771583453876, guid: df547ccaa4c219041a43c63387fad9fb,
+        type: 3}
+      propertyPath: MovementControl
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 380439771583453876, guid: df547ccaa4c219041a43c63387fad9fb,
+        type: 3}
+      propertyPath: HideMobileControlsInEditor
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5618264344656867008, guid: df547ccaa4c219041a43c63387fad9fb,
         type: 3}
       propertyPath: m_LocalPosition.x

@@ -81,20 +81,20 @@ MonoBehaviour:
   BlockingMovementStates: 
   BlockingConditionStates: 
   NumberOfJumps: 1
-  JumpHeight: 2
+  JumpHeight: 2.5
   JumpRestrictions: 2
   ResetCameraOffsetOnJump: 0
   CanJumpDownOneWayPlatforms: 1
   JumpIsProportionalToThePressTime: 1
   JumpMinimumAirTime: 0.2
-  JumpReleaseForceFactor: 2
-  CoyoteTime: 0
+  JumpReleaseForceFactor: 0.6
+  CoyoteTime: 0.5
   InputBufferDuration: 0.2
   OneWayPlatformsJumpCollisionOffDuration: 0.2
   MovingPlatformsJumpCollisionOffDuration: 0.05
   AirJumpFeedbacks: {fileID: 0}
   DoubleJumpFeedbacks: {fileID: 0}
-  NumberOfJumpsLeft: 0
+  NumberOfJumpsLeft: 1
 --- !u!1 &2153884772861706414
 GameObject:
   m_ObjectHideFlags: 0
@@ -146,8 +146,8 @@ MonoBehaviour:
   BlockingConditionStates: 
   DashDistance: 3
   DashForce: 40
-  ResetForcesOnExit: 0
-  ForceExactDistance: 0
+  ResetForcesOnExit: 1
+  ForceExactDistance: 1
   Aim:
     AimControl: 2
     RotationMode: 0
@@ -163,7 +163,7 @@ MonoBehaviour:
   SuccessiveDashesLeft: 1
   SuccessiveDashResetMethod: 0
   SuccessiveDashResetDuration: 2
-  InvincibleWhileDashing: 0
+  InvincibleWhileDashing: 1
 --- !u!1 &2309627235853448108
 GameObject:
   m_ObjectHideFlags: 0
@@ -259,7 +259,7 @@ MonoBehaviour:
   StateSpeedMultiplier: 1
   FlipCharacterToFaceDirection: 1
   ReadInput: 1
-  InstantAcceleration: 0
+  InstantAcceleration: 1
   InputThreshold: 0.1
   AirControl: 1
   AllowFlipInTheAir: 1
@@ -406,8 +406,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de1725182a473124d86c2cea5e2e542f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioSource: {fileID: 0}
-  bgmSource: {fileID: 0}
   onStart:
     m_PersistentCalls:
       m_Calls: []
@@ -460,7 +458,7 @@ MonoBehaviour:
   AbilityPermitted: 1
   BlockingMovementStates: 
   BlockingConditionStates: 
-  VerticalForce: -1
+  VerticalForce: -1.5
   GlideOnlyIfNoJumpsLeft: 1
 --- !u!1 &4998460576883146823
 GameObject:
@@ -509,8 +507,8 @@ MonoBehaviour:
   AbilityStartFeedbacks: {fileID: 0}
   AbilityStopFeedbacks: {fileID: 0}
   AbilityPermitted: 0
-  BlockingMovementStates: 
-  BlockingConditionStates: 
+  BlockingMovementStates: 02000000040000000e00000007000000
+  BlockingConditionStates: 0500000001000000
   InitialWeapon: {fileID: 114000010616902070, guid: a479b190396f5004cac00214ae9aa8b6,
     type: 3}
   CanPickupWeapons: 0
@@ -520,7 +518,7 @@ MonoBehaviour:
   AutomaticallyBindAnimator: 1
   AmmoDisplayID: 0
   ContinuousPress: 0
-  GettingHitInterruptsAttack: 0
+  GettingHitInterruptsAttack: 1
   CanShootFromLadders: 0
   FaceWeaponDirection: 0
   InvertHorizontalAimWhenWallclinging: 0
@@ -545,7 +543,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1711919542661040623
 Transform:
   m_ObjectHideFlags: 0
@@ -690,7 +688,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7839997961522161080}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dfe496f25bfc2d44faaf15027aee9731, type: 3}
   m_Name: 
@@ -722,6 +720,10 @@ GameObject:
   - component: {fileID: 5842658555804685761}
   - component: {fileID: 4243281314864376260}
   - component: {fileID: 1920649498624655575}
+  - component: {fileID: 1793115541832933643}
+  - component: {fileID: -6335086898718501415}
+  - component: {fileID: 5883916249763875742}
+  - component: {fileID: 8850916291429812910}
   m_Layer: 9
   m_Name: Ro
   m_TagString: Player
@@ -988,13 +990,13 @@ MonoBehaviour:
   TemporarilyInvulnerable: 0
   PostDamageInvulnerable: 0
   ImmuneToDamage: 0
-  DamageFeedbacks: {fileID: 0}
+  DamageFeedbacks: {fileID: 1793115541832933643}
   FeedbackIsProportionalToDamage: 0
   FlickerSpriteOnHit: 1
   FlickerColor: {r: 1, g: 0.078431375, b: 0.078431375, a: 1}
   ImmuneToKnockback: 0
   ImmuneToKnockbackIfZeroDamage: 1
-  DeathFeedbacks: {fileID: 0}
+  DeathFeedbacks: {fileID: 1793115541832933643}
   DestroyOnDeath: 1
   DelayBeforeDestruction: 0
   CollisionsOffOnDeath: 0
@@ -1038,6 +1040,186 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8499054158813040110}
   m_Enabled: 1
+--- !u!114 &1793115541832933643
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8499054158813040110}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 841b72de2996c5c40bfb394f3d0e0a98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Feedbacks:
+  - {fileID: -6335086898718501415}
+  - {fileID: 5883916249763875742}
+  - {fileID: 8850916291429812910}
+  InitializationMode: 2
+  SafeMode: 3
+  Direction: 0
+  AutoChangeDirectionOnEnd: 0
+  AutoPlayOnStart: 0
+  AutoPlayOnEnable: 0
+  ForceTimescaleMode: 0
+  ForcedTimescaleMode: 1
+  DurationMultiplier: 1
+  DisplayFullDurationDetails: 0
+  PlayerTimescaleMode: 1
+  CooldownDuration: 0
+  InitialDelay: 0
+  CanPlay: 1
+  CanPlayWhileAlreadyPlaying: 1
+  ChanceToPlay: 100
+  FeedbacksIntensity: 1
+  Events:
+    TriggerMMFeedbacksEvents: 0
+    TriggerUnityEvents: 1
+    OnPlay:
+      m_PersistentCalls:
+        m_Calls: []
+    OnPause:
+      m_PersistentCalls:
+        m_Calls: []
+    OnResume:
+      m_PersistentCalls:
+        m_Calls: []
+    OnRevert:
+      m_PersistentCalls:
+        m_Calls: []
+    OnComplete:
+      m_PersistentCalls:
+        m_Calls: []
+  DebugActive: 0
+--- !u!114 &-6335086898718501415
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8499054158813040110}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86fec89a17b5b2347a82ae1c77aced3d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Active: 1
+  Label: Freeze Frame
+  Chance: 100
+  Timing:
+    TimescaleMode: 0
+    ExcludeFromHoldingPauses: 0
+    ContributeToTotalDuration: 1
+    InitialDelay: 0
+    CooldownDuration: 0
+    InterruptsOnStop: 1
+    NumberOfRepeats: 0
+    RepeatForever: 0
+    DelayBetweenRepeats: 1
+    MMFeedbacksDirectionCondition: 0
+    PlayDirection: 0
+    ConstantIntensity: 0
+    UseIntensityInterval: 0
+    IntensityIntervalMin: 0
+    IntensityIntervalMax: 0
+    Sequence: {fileID: 0}
+    TrackID: 0
+    Quantized: 0
+    TargetBPM: 120
+  DebugActive: 0
+  FreezeFrameDuration: 0.02
+  MinimumTimescaleThreshold: 0.1
+--- !u!114 &5883916249763875742
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8499054158813040110}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f129222f02399ae42b78955d953ada11, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Active: 1
+  Label: Set Active
+  Chance: 100
+  Timing:
+    TimescaleMode: 0
+    ExcludeFromHoldingPauses: 0
+    ContributeToTotalDuration: 1
+    InitialDelay: 0.8
+    CooldownDuration: 0
+    InterruptsOnStop: 1
+    NumberOfRepeats: 0
+    RepeatForever: 0
+    DelayBetweenRepeats: 1
+    MMFeedbacksDirectionCondition: 0
+    PlayDirection: 0
+    ConstantIntensity: 0
+    UseIntensityInterval: 0
+    IntensityIntervalMin: 0
+    IntensityIntervalMax: 0
+    Sequence: {fileID: 0}
+    TrackID: 0
+    Quantized: 0
+    TargetBPM: 120
+  DebugActive: 0
+  TargetGameObject: {fileID: 3424816397244271586}
+  SetStateOnInit: 0
+  StateOnInit: 1
+  SetStateOnPlay: 0
+  StateOnPlay: 1
+  SetStateOnStop: 0
+  StateOnStop: 1
+  SetStateOnReset: 0
+  StateOnReset: 1
+--- !u!114 &8850916291429812910
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8499054158813040110}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f129222f02399ae42b78955d953ada11, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Active: 1
+  Label: Set Active
+  Chance: 100
+  Timing:
+    TimescaleMode: 0
+    ExcludeFromHoldingPauses: 0
+    ContributeToTotalDuration: 1
+    InitialDelay: 0
+    CooldownDuration: 0
+    InterruptsOnStop: 1
+    NumberOfRepeats: 0
+    RepeatForever: 0
+    DelayBetweenRepeats: 1
+    MMFeedbacksDirectionCondition: 0
+    PlayDirection: 0
+    ConstantIntensity: 0
+    UseIntensityInterval: 0
+    IntensityIntervalMin: 0
+    IntensityIntervalMax: 0
+    Sequence: {fileID: 0}
+    TrackID: 0
+    Quantized: 0
+    TargetBPM: 120
+  DebugActive: 0
+  TargetGameObject: {fileID: 3424816397244271586}
+  SetStateOnInit: 0
+  StateOnInit: 1
+  SetStateOnPlay: 0
+  StateOnPlay: 1
+  SetStateOnStop: 0
+  StateOnStop: 1
+  SetStateOnReset: 0
+  StateOnReset: 1
 --- !u!1 &8549420598227901437
 GameObject:
   m_ObjectHideFlags: 0

@@ -197,8 +197,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de1725182a473124d86c2cea5e2e542f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioSource: {fileID: 0}
-  bgmSource: {fileID: 0}
   onStart:
     m_PersistentCalls:
       m_Calls: []
@@ -337,6 +335,7 @@ GameObject:
   - component: {fileID: 4079848426157750013}
   - component: {fileID: 4052568502579888723}
   - component: {fileID: 6584081237064125976}
+  - component: {fileID: 4493386416599157446}
   m_Layer: 13
   m_Name: BotBomb
   m_TagString: Untagged
@@ -993,6 +992,55 @@ MonoBehaviour:
   TouchTheGroundFeedback: {fileID: 3313419945614886524}
   MinimumAirTimeBeforeFeedback: 0.2
   StopWalkingWhenCollidingWithAWall: 0
+--- !u!114 &4493386416599157446
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6456946989031147275}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 841b72de2996c5c40bfb394f3d0e0a98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Feedbacks: []
+  InitializationMode: 2
+  SafeMode: 3
+  Direction: 0
+  AutoChangeDirectionOnEnd: 0
+  AutoPlayOnStart: 0
+  AutoPlayOnEnable: 0
+  ForceTimescaleMode: 0
+  ForcedTimescaleMode: 1
+  DurationMultiplier: 1
+  DisplayFullDurationDetails: 0
+  PlayerTimescaleMode: 1
+  CooldownDuration: 0
+  InitialDelay: 0
+  CanPlay: 1
+  CanPlayWhileAlreadyPlaying: 1
+  ChanceToPlay: 100
+  FeedbacksIntensity: 1
+  Events:
+    TriggerMMFeedbacksEvents: 0
+    TriggerUnityEvents: 1
+    OnPlay:
+      m_PersistentCalls:
+        m_Calls: []
+    OnPause:
+      m_PersistentCalls:
+        m_Calls: []
+    OnResume:
+      m_PersistentCalls:
+        m_Calls: []
+    OnRevert:
+      m_PersistentCalls:
+        m_Calls: []
+    OnComplete:
+      m_PersistentCalls:
+        m_Calls: []
+  DebugActive: 0
 --- !u!1 &6482498843690194626
 GameObject:
   m_ObjectHideFlags: 0
