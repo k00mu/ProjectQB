@@ -1,7 +1,7 @@
 ﻿// ==================================================
-//
+// 
 //   Created by Atqa Munzir
-//
+// 
 // ==================================================
 
 using System.Collections;
@@ -14,7 +14,7 @@ namespace QuackleBit
 	{
 		private Image _image;
 		private Sprite _defaultSprite;
-
+		
 		private void Awake()
 		{
 			_image = GetComponent<Image>();
@@ -32,7 +32,7 @@ namespace QuackleBit
 			_image.sprite = sprite;
 			StartCoroutine(FadeImage(_image, _image.color.a, 1, duration, disable));
 		}
-
+		
 		public void FadeOut(Color color, float duration, bool disable = true)
 		{
 			_image.color = new Color(color.r, color.g, color.b);
@@ -58,10 +58,10 @@ namespace QuackleBit
 			}
 			color.a = end;
 			img.color = color;
-
+			
 			if (disable)
 				img.gameObject.SetActive(false);
-
+			
 			img.sprite = _defaultSprite;
 		}
 	}
