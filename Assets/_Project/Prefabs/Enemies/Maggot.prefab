@@ -860,5 +860,5 @@ MonoBehaviour:
     Quantized: 0
     TargetBPM: 120
   DebugActive: 0
-  FreezeFrameDuration: 0.02
+  FreezeFrameDuration: 0.1
   MinimumTimescaleThreshold: 0.1

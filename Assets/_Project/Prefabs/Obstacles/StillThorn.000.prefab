@@ -97,10 +97,10 @@ MonoBehaviour:
   MinDamageCaused: 10
   MaxDamageCaused: 10
   TypedDamages: []
-  DamageCausedKnockbackType: 1
+  DamageCausedKnockbackType: 2
   DamageCausedKnockbackDirection: 0
-  DamageCausedKnockbackForce: {x: 10, y: 2}
-  InvincibilityDuration: 0.5
+  DamageCausedKnockbackForce: {x: 30, y: 0}
+  InvincibilityDuration: 1
   RepeatDamageOverTime: 0
   AmountOfRepeats: 3
   DurationBetweenRepeats: 1

@@ -616,8 +616,8 @@ MonoBehaviour:
     Delay: 0
   - PathElementPosition: {x: 0, y: -10, z: 0}
     Delay: 0
-  MovementSpeed: 50
-  AccelerationType: 0
+  MovementSpeed: 10
+  AccelerationType: 1
   Acceleration:
     serializedVersion: 2
     m_Curve:

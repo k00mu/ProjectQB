@@ -23,9 +23,12 @@ namespace MoreMountains.CorgiEngine
             if(stamina <= 0)
             {
                 characterGlide.GlideStop();
-                stamina = maxStamina;
             }
+        }
 
+        public void ResetStamina()
+        {
+            stamina = maxStamina;
         }
     }
 }

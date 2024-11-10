@@ -589,19 +589,19 @@ MonoBehaviour:
         m_Calls: []
   DebugActive: 0
   FeedbacksList:
-  - rid: 4877620727829495810
+  - rid: 4877620727829495814
   KeepPlayModeChanges: 0
   PerformanceMode: 0
   ForceStopFeedbacksOnDisable: 1
   references:
     version: 2
     RefIds:
-    - rid: 4877620727829495810
-      type: {class: MMF_TimescaleModifier, ns: MoreMountains.Feedbacks, asm: MoreMountains.Feedbacks}
+    - rid: 4877620727829495814
+      type: {class: MMF_FreezeFrame, ns: MoreMountains.Feedbacks, asm: MoreMountains.Feedbacks}
       data:
         Active: 1
-        UniqueID: -327194228
-        Label: Timescale Modifier
+        UniqueID: -1513784733
+        Label: Freeze Frame
         Channel: 0
         Chance: 100
         DisplayColor: {r: 0, g: 0, b: 0, a: 1}
@@ -627,12 +627,8 @@ MonoBehaviour:
           TargetBPM: 120
         Owner: {fileID: -8887026596433540408}
         DebugActive: 0
-        Mode: 1
-        TimeScale: 0.1
-        TimeScaleDuration: 1
-        TimeScaleLerp: 0
-        TimeScaleLerpSpeed: 1
-        ResetTimescaleOnStop: 0
+        FreezeFrameDuration: 0.02
+        MinimumTimescaleThreshold: 0.1
 --- !u!1 &2510013848146066194
 GameObject:
   m_ObjectHideFlags: 0
