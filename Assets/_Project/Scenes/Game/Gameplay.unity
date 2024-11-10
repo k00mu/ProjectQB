@@ -386,7 +386,7 @@ MonoBehaviour:
   m_YDamping: 1
   m_ZDamping: 1
   m_TargetMovementOnly: 1
-  m_ScreenX: 0.5
+  m_ScreenX: 0.38
   m_ScreenY: 0.5
   m_CameraDistance: 10
   m_DeadZoneWidth: 0.1
@@ -3871,7 +3871,7 @@ MonoBehaviour:
   m_YDamping: 1
   m_ZDamping: 1
   m_TargetMovementOnly: 1
-  m_ScreenX: 0.5
+  m_ScreenX: 0.38
   m_ScreenY: 0.5
   m_CameraDistance: 10
   m_DeadZoneWidth: 0.1
@@ -5165,7 +5165,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FollowsAPlayer: 1
   ConfineCameraToLevelBounds: 0
-  ManualUpDownLookDistance: 3
+  ManualUpDownLookDistance: 5
   CharacterSpeed: {x: 0, y: 16}
   TargetCharacter: {fileID: 0}
   TargetController: {fileID: 0}
@@ -8521,7 +8521,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FollowsAPlayer: 1
   ConfineCameraToLevelBounds: 0
-  ManualUpDownLookDistance: 3
+  ManualUpDownLookDistance: 5
   CharacterSpeed: {x: 0, y: 16}
   TargetCharacter: {fileID: 0}
   TargetController: {fileID: 0}
@@ -8647,7 +8647,7 @@ MonoBehaviour:
   m_YDamping: 1
   m_ZDamping: 1
   m_TargetMovementOnly: 1
-  m_ScreenX: 0.5
+  m_ScreenX: 0.38
   m_ScreenY: 0.5
   m_CameraDistance: 10
   m_DeadZoneWidth: 0.1
@@ -13639,7 +13639,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FollowsAPlayer: 1
   ConfineCameraToLevelBounds: 0
-  ManualUpDownLookDistance: 3
+  ManualUpDownLookDistance: 5
   CharacterSpeed: {x: 0, y: 16}
   TargetCharacter: {fileID: 0}
   TargetController: {fileID: 0}
@@ -13765,7 +13765,7 @@ MonoBehaviour:
   m_YDamping: 1
   m_ZDamping: 1
   m_TargetMovementOnly: 1
-  m_ScreenX: 0.5
+  m_ScreenX: 0.38
   m_ScreenY: 0.5
   m_CameraDistance: 10
   m_DeadZoneWidth: 0.1
@@ -14592,11 +14592,11 @@ MonoBehaviour:
   TweenCurve: 4
   MaintainXEntryPositionOnExit: 0
   MaintainYEntryPositionOnExit: 0
-  Destination: {fileID: 2100266006}
+  Destination: {fileID: 76400690}
   AddToDestinationIgnoreList: 1
   CameraMode: 2
   CurrentRoom: {fileID: 0}
-  TargetRoom: {fileID: 881155922}
+  TargetRoom: {fileID: 1680393}
   TriggerFade: 1
   FaderID: 0
   FadeTween:
@@ -15288,7 +15288,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FollowsAPlayer: 1
   ConfineCameraToLevelBounds: 0
-  ManualUpDownLookDistance: 3
+  ManualUpDownLookDistance: 5
   CharacterSpeed: {x: 0, y: 16}
   TargetCharacter: {fileID: 0}
   TargetController: {fileID: 0}
@@ -15438,7 +15438,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FollowsAPlayer: 1
   ConfineCameraToLevelBounds: 0
-  ManualUpDownLookDistance: 3
+  ManualUpDownLookDistance: 5
   CharacterSpeed: {x: 0, y: 16}
   TargetCharacter: {fileID: 0}
   TargetController: {fileID: 0}
@@ -18292,7 +18292,7 @@ MonoBehaviour:
   m_YDamping: 1
   m_ZDamping: 1
   m_TargetMovementOnly: 1
-  m_ScreenX: 0.5
+  m_ScreenX: 0.38
   m_ScreenY: 0.5
   m_CameraDistance: 10
   m_DeadZoneWidth: 0.1
@@ -19088,7 +19088,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FollowsAPlayer: 1
   ConfineCameraToLevelBounds: 0
-  ManualUpDownLookDistance: 3
+  ManualUpDownLookDistance: 5
   CharacterSpeed: {x: 0, y: 16}
   TargetCharacter: {fileID: 0}
   TargetController: {fileID: 0}
@@ -19222,7 +19222,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FollowsAPlayer: 1
   ConfineCameraToLevelBounds: 0
-  ManualUpDownLookDistance: 3
+  ManualUpDownLookDistance: 5
   CharacterSpeed: {x: 0, y: 16}
   TargetCharacter: {fileID: 0}
   TargetController: {fileID: 0}
@@ -19993,7 +19993,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FollowsAPlayer: 1
   ConfineCameraToLevelBounds: 0
-  ManualUpDownLookDistance: 3
+  ManualUpDownLookDistance: 5
   CharacterSpeed: {x: 0, y: 16}
   TargetCharacter: {fileID: 0}
   TargetController: {fileID: 0}
@@ -23275,7 +23275,7 @@ MonoBehaviour:
   m_YDamping: 1
   m_ZDamping: 1
   m_TargetMovementOnly: 1
-  m_ScreenX: 0.5
+  m_ScreenX: 0.38
   m_ScreenY: 0.5
   m_CameraDistance: 10
   m_DeadZoneWidth: 0.1
@@ -24229,7 +24229,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FollowsAPlayer: 1
   ConfineCameraToLevelBounds: 0
-  ManualUpDownLookDistance: 3
+  ManualUpDownLookDistance: 5
   CharacterSpeed: {x: 0, y: 16}
   TargetCharacter: {fileID: 0}
   TargetController: {fileID: 0}
@@ -27331,7 +27331,7 @@ MonoBehaviour:
   m_YDamping: 1
   m_ZDamping: 1
   m_TargetMovementOnly: 1
-  m_ScreenX: 0.5
+  m_ScreenX: 0.38
   m_ScreenY: 0.5
   m_CameraDistance: 10
   m_DeadZoneWidth: 0.1
@@ -28097,7 +28097,7 @@ MonoBehaviour:
   m_YDamping: 1
   m_ZDamping: 1
   m_TargetMovementOnly: 1
-  m_ScreenX: 0.5
+  m_ScreenX: 0.38
   m_ScreenY: 0.5
   m_CameraDistance: 10
   m_DeadZoneWidth: 0.1
@@ -32112,7 +32112,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FollowsAPlayer: 1
   ConfineCameraToLevelBounds: 0
-  ManualUpDownLookDistance: 3
+  ManualUpDownLookDistance: 5
   CharacterSpeed: {x: 0, y: 16}
   TargetCharacter: {fileID: 0}
   TargetController: {fileID: 0}
@@ -33422,7 +33422,7 @@ MonoBehaviour:
   m_YDamping: 1
   m_ZDamping: 1
   m_TargetMovementOnly: 1
-  m_ScreenX: 0.5
+  m_ScreenX: 0.38
   m_ScreenY: 0.5
   m_CameraDistance: 10
   m_DeadZoneWidth: 0.1
@@ -35035,7 +35035,7 @@ MonoBehaviour:
   m_YDamping: 1
   m_ZDamping: 1
   m_TargetMovementOnly: 1
-  m_ScreenX: 0.5
+  m_ScreenX: 0.38
   m_ScreenY: 0.5
   m_CameraDistance: 10
   m_DeadZoneWidth: 0.1
