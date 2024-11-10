@@ -1131,7 +1131,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Press "E" again to skip the animation.
+  m_text: Press "E" to skip the animation.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f3c9ff23f4bf0184fbff872520dcdd06, type: 2}
   m_sharedMaterial: {fileID: -5453644357669071918, guid: f3c9ff23f4bf0184fbff872520dcdd06,
@@ -1922,8 +1922,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de1725182a473124d86c2cea5e2e542f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioSource: {fileID: 0}
-  bgmSource: {fileID: 0}
   onStart:
     m_PersistentCalls:
       m_Calls: []

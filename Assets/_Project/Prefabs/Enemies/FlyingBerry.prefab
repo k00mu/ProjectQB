@@ -678,8 +678,8 @@ MonoBehaviour:
   TypedDamages: []
   DamageCausedKnockbackType: 2
   DamageCausedKnockbackDirection: 0
-  DamageCausedKnockbackForce: {x: 30, y: 0}
-  InvincibilityDuration: 0.8
+  DamageCausedKnockbackForce: {x: 30, y: 3}
+  InvincibilityDuration: 1
   RepeatDamageOverTime: 0
   AmountOfRepeats: 3
   DurationBetweenRepeats: 1
@@ -688,9 +688,9 @@ MonoBehaviour:
   DamageTakenEveryTime: 0
   DamageTakenDamageable: 0
   DamageTakenNonDamageable: 0
-  DamageTakenKnockbackType: 0
+  DamageTakenKnockbackType: 2
   DamageTakenKnockbackDirection: 0
-  DamageTakenKnockbackForce: {x: 0, y: 0}
+  DamageTakenKnockbackForce: {x: 15, y: 3}
   DamageTakenInvincibilityDuration: 0.5
   HitDamageableFeedback: {fileID: 0}
   HitNonDamageableFeedback: {fileID: 0}
@@ -784,7 +784,7 @@ MonoBehaviour:
           TargetBPM: 120
         Owner: {fileID: 8118235901910337360}
         DebugActive: 0
-        FreezeFrameDuration: 0.02
+        FreezeFrameDuration: 0.05
         MinimumTimescaleThreshold: 0.1
 --- !u!1 &6444598895440473544
 GameObject:

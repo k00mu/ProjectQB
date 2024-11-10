@@ -19,7 +19,6 @@ namespace QuackleBit
             {
                 // Set initial alpha to 0
                 Color color = warningText.color;
-                color.a = 0;
                 warningText.color = color;
             }
         }
@@ -51,6 +50,8 @@ namespace QuackleBit
                 float elapsedTime = 0f;
                 while (elapsedTime < warningDuration)
                 {
+                    
+                warningText.text = "Press E again to skip";
                     elapsedTime += Time.deltaTime;
                     color.a = Mathf.Lerp(1, 0, elapsedTime / warningDuration);
                     warningText.color = color;

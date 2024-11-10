@@ -884,9 +884,9 @@ MonoBehaviour:
   DamageTakenEveryTime: 0
   DamageTakenDamageable: 0
   DamageTakenNonDamageable: 0
-  DamageTakenKnockbackType: 0
+  DamageTakenKnockbackType: 2
   DamageTakenKnockbackDirection: 0
-  DamageTakenKnockbackForce: {x: 0, y: 0}
+  DamageTakenKnockbackForce: {x: 15, y: 3}
   DamageTakenInvincibilityDuration: 0.5
   HitDamageableFeedback: {fileID: 0}
   HitNonDamageableFeedback: {fileID: 0}
@@ -978,7 +978,7 @@ MonoBehaviour:
     Quantized: 0
     TargetBPM: 120
   DebugActive: 0
-  FreezeFrameDuration: 0.02
+  FreezeFrameDuration: 0.05
   MinimumTimescaleThreshold: 0.1
 --- !u!1 &9215286763842565636
 GameObject:

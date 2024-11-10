@@ -692,8 +692,8 @@ MonoBehaviour:
   TypedDamages: []
   DamageCausedKnockbackType: 2
   DamageCausedKnockbackDirection: 0
-  DamageCausedKnockbackForce: {x: 30, y: 0}
-  InvincibilityDuration: 0.5
+  DamageCausedKnockbackForce: {x: 30, y: 3}
+  InvincibilityDuration: 1
   RepeatDamageOverTime: 0
   AmountOfRepeats: 3
   DurationBetweenRepeats: 1
@@ -796,7 +796,7 @@ MonoBehaviour:
     Quantized: 0
     TargetBPM: 120
   DebugActive: 0
-  FreezeFrameDuration: 0.02
+  FreezeFrameDuration: 0.05
   MinimumTimescaleThreshold: 0.1
 --- !u!1 &7827388170276300629
 GameObject:
